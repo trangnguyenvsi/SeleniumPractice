@@ -5,12 +5,14 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage {
 	// Identify Web element username
-	@FindBy(name = "uid")
-	private WebElement webUsername;
+	//@FindBy(name = "uid")
+	@FindBy(xpath = ".//*[@name='login']")
+	private WebElement userNametxt;
 
 	// Identify Web element password
-	@FindBy(name = "password")
-	private WebElement webPassword;
+	//@FindBy(name = "password")
+	@FindBy(xpath = ".//*[@name='password']")
+	private WebElement passwordtxt;
 
 	// Identify Web element title text
 	@FindBy(className = "barone")
@@ -21,8 +23,9 @@ public class LoginPage {
 	private WebElement webReset;
 
 	// Identify Submit button
-	@FindBy(name = "btnLogin")
-	private WebElement webLogin;
+	//@FindBy(name = "btnLogin")
+	@FindBy(xpath = ".//*[@name='submit']")
+	private WebElement loginbutt;
 
 	// Identify UserID Alert
 	@FindBy(id = "message23")
@@ -45,19 +48,19 @@ public class LoginPage {
 	}
 
 	public WebElement getWebUsername() {
-		return webUsername;
+		return userNametxt;
 	}
 
-	public void setWebUsername(WebElement webUsername) {
-		this.webUsername = webUsername;
+	public void setUserNametxt(WebElement userNametxt) {
+		this.userNametxt = userNametxt;
 	}
 
 	public WebElement getWebPassword() {
-		return webPassword;
+		return passwordtxt;
 	}
 
-	public void setWebPassword(WebElement webPassword) {
-		this.webPassword = webPassword;
+	public void setPasswordtxt(WebElement passwordtxt) {
+		this.passwordtxt = passwordtxt;
 	}
 
 	public WebElement getWebTitleText() {
@@ -77,11 +80,11 @@ public class LoginPage {
 	}
 
 	public WebElement getWebLogin() {
-		return webLogin;
+		return loginbutt;
 	}
 
-	public void setWebLogin(WebElement webLogin) {
-		this.webLogin = webLogin;
+	public void setWebLogin(WebElement loginbutt) {
+		this.loginbutt = loginbutt;
 	}
 
 	public WebElement getWebAlertUserID() {
