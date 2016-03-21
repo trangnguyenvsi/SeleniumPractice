@@ -114,10 +114,10 @@ public class LoginPageMethod {
 	}
 
 	public void loginToManagerPage(String username, String password) {
-	
+		objLoginPage.getWebUsername().clear();
 		objLoginPage.getWebUsername().sendKeys(username);
 	//	ExtentReporterNG.test.log(LogStatus.INFO, "Input user name");
-		
+		objLoginPage.getWebPassword().clear();
 		objLoginPage.getWebPassword().sendKeys(password);
 	//	ExtentReporterNG.test.log(LogStatus.INFO, "Input password");
 		
