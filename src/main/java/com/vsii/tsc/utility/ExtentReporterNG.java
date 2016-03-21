@@ -1,5 +1,6 @@
 package com.vsii.tsc.utility;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,7 @@ public class ExtentReporterNG implements IReporter {
 	@Override
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
 
-		extent = new ExtentReports(TestBase.p.getProperty("reportPath"), false);
+		extent = new ExtentReports(TestBase.p.getProperty("reportPath"), true);
 
 		for (ISuite suite : suites) {
 			Map<String, ISuiteResult> result = suite.getResults();
@@ -89,7 +90,7 @@ public class ExtentReporterNG implements IReporter {
 
 		extent.flush();
 		extent.close();
-		TestBase.driver.quit();
+		//TestBase.driver.quit();
 	}
 
 	private void buildTestNodes(IResultMap tests, LogStatus status) throws IOException {
@@ -116,9 +117,9 @@ public class ExtentReporterNG implements IReporter {
 
 				// Write test results to excel file
 				if (status.toString().equals("pass")) {
-					ExcelHandle.writeTestResults(method, 5, "Passed");
+					ExcelHandle.writeTestResults(method, 7, "Passed");
 				} else if (status.toString().equals("fail")) {
-					ExcelHandle.writeTestResults(method, 5, "Failed");
+					ExcelHandle.writeTestResults(method, 7, "Failed");
 				}
 
 				// Log test case's information

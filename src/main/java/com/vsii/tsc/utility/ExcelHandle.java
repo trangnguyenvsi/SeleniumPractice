@@ -140,7 +140,7 @@ public class ExcelHandle {
 
 		// Col is Test Case ID's column
 		columnWanted = tcIDCol;
-		for (int r = 12; r < sheet.getLastRowNum(); r++) {
+		for (int r = 11; r < sheet.getLastRowNum(); r++) {
 			Cell c = null;
 			Row row1 = sheet.getRow(r);
 			c = row1.getCell(columnWanted);

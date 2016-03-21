@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -91,16 +92,18 @@ public class TestBase {
 			}
 		}
 		// Open base URL
-		driver.get(p.getProperty("baseUrl"));
 		driver.manage().window().maximize();
+		driver.get(p.getProperty("baseUrl"));
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
 		// Create instance of report
 		// extent = ExtentReporterNG.Instance();
 	}
 
 	@AfterSuite
 	public void teardownSuite() throws Exception {
-		driver.quit();
-		SendMail.execute();
+		//driver.quit();
+		//SendMail.execute();
 	}
 
 }
