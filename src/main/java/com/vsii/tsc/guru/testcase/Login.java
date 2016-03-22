@@ -21,7 +21,7 @@ public class Login{
 		objLogin = new LoginPageMethod(TestBase.driver);
 	}
 
-	@Test(priority = 0, description = "Verify Title of Login Page")
+//	@Test(priority = 0, description = "Verify Title of Login Page")
 	public void LO01() throws IOException {
 		TestBase.methodName = "LO01";
 		// Verify Login page title
@@ -29,7 +29,7 @@ public class Login{
 		Assert.assertTrue(loginPageTitle.contains("Guru99 Bank"));
 	}
 	
-	@Test(priority = 2, description = "verify Login", dataProvider = "dpLogin", dataProviderClass = TestData.class)
+//	@Test(priority = 2, description = "verify Login", dataProvider = "dpLogin", dataProviderClass = TestData.class)
 	public void LO02(String username, String password, String message) throws Exception {
 
 		//get method's name

@@ -38,5 +38,14 @@ public class TestData {
 //		return data;
 //	}
 	
+	/*
+	 * quyentx dataProvider section
+	 */
+	
+	@DataProvider(name = "newService")
+	public static Object[][]  getServiceData() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W01");
+		return data;
+	}
 	
 }

@@ -4,17 +4,28 @@
 <listeners>
         <listener class-name="com.vsii.tsc.utility.ExtentReporterNG"/> 
 </listeners>
+  
   <test name="Login" preserve-order="true">
     <classes>
       <class name="com.vsii.tsc.utility.TestBase"/>
-  <class name="com.vsii.tsc.guru.testcase.Login"/> 
+<!--   	  <class name="com.vsii.tsc.guru.testcase.Login"/>  -->
     </classes>
-    </test>
-    <test name="CreateNewCustomer" preserve-order="true">
+  </test>
+  
+<!--   <test name="CreateNewCustomer" preserve-order="true"> -->
+<!--     <classes> -->
+<!--       	<class name="com.vsii.tsc.guru.testcase.NewCustomer"/> -->
+<!--     </classes> -->
+<!--   </test> -->
+  
+    <test name="CreateWebService" preserve-order="true">
     <classes>
-      	<class name="com.vsii.tsc.guru.testcase.NewCustomer"/>
+      	<class name="com.vsii.tsc.guru.testcase.CreateWebService"/>
     </classes>
-    </test>
+  </test>
+  
+  
+    
 <!--         <test name="EditCustomer" preserve-order="true"> -->
 <!--     <classes>	 -->
 <!--        <class name="com.vsii.tsc.guru.testcase.EditCustomer"/>  -->
