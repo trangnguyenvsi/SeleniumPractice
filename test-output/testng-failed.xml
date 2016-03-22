@@ -4,17 +4,25 @@
   <listeners>
     <listener class-name="com.vsii.tsc.utility.ExtentReporterNG"/>
   </listeners>
-  <test name="Login(failed)">
+  <test name="Test(failed)">
     <classes>
       <class name="com.vsii.tsc.guru.testcase.Login">
         <methods>
           <include name="afterMethod"/>
           <include name="teardownClass"/>
-          <include name="LO03"/>
+          <include name="LO01"/>
           <include name="setupClass"/>
-          <include name="LO02" invocation-numbers="3 4 6"/>
+          <include name="LO02" invocation-numbers="0 1 2 3 4 5 6"/>
         </methods>
       </class> <!-- com.vsii.tsc.guru.testcase.Login -->
+      <class name="com.vsii.tsc.guru.testcase.EditCustomer">
+        <methods>
+          <include name="setupClass"/>
+          <include name="teardownClass"/>
+          <include name="after"/>
+          <include name="ED01"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.guru.testcase.EditCustomer -->
       <class name="com.vsii.tsc.utility.TestBase">
         <methods>
           <include name="teardownSuite"/>
@@ -23,35 +31,31 @@
       </class> <!-- com.vsii.tsc.utility.TestBase -->
       <class name="com.vsii.tsc.guru.testcase.NewCustomer">
         <methods>
-          <include name="afterMethod"/>
-          <include name="setupClass"/>
-        </methods>
-      </class> <!-- com.vsii.tsc.guru.testcase.NewCustomer -->
-    </classes>
-  </test> <!-- Login(failed) -->
-  <test name="CreateNewCustomer(failed)">
-    <classes>
-      <class name="com.vsii.tsc.guru.testcase.Login">
-        <methods>
-          <include name="afterMethod"/>
-          <include name="teardownClass"/>
-          <include name="setupClass"/>
-        </methods>
-      </class> <!-- com.vsii.tsc.guru.testcase.Login -->
-      <class name="com.vsii.tsc.utility.TestBase">
-        <methods>
-          <include name="teardownSuite"/>
-          <include name="setupSuite"/>
-        </methods>
-      </class> <!-- com.vsii.tsc.utility.TestBase -->
-      <class name="com.vsii.tsc.guru.testcase.NewCustomer">
-        <methods>
+          <include name="CN01"/>
           <include name="CN02" invocation-numbers="0"/>
           <include name="afterMethod"/>
           <include name="setupClass"/>
           <include name="CN03" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.vsii.tsc.guru.testcase.NewCustomer -->
+      <class name="com.vsii.tsc.guru.testcase.SimpleTest">
+        <methods>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.guru.testcase.SimpleTest -->
+      <class name="com.vsii.tsc.guru.testcase.CreateTask">
+        <methods>
+          <include name="TM04"/>
+          <include name="setupClass"/>
+          <include name="teardownClass"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.guru.testcase.CreateTask -->
+      <class name="com.vsii.tsc.guru.testcase.CreateWebService">
+        <methods>
+          <include name="W01"/>
+          <include name="setupClass"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.guru.testcase.CreateWebService -->
     </classes>
-  </test> <!-- CreateNewCustomer(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
