@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Mar 23 09:18:34 ICT 2016</td>
+<td>Started on:</td><td>Wed Mar 23 11:02:57 ICT 2016</td>
 </tr>
-<tr><td>Total time:</td><td>35 seconds (35296 ms)</td>
+<tr><td>Total time:</td><td>19 seconds (19347 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,62 +75,23 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.vsii.tsc.guru.testcase.CreateWebService.W01()'><b>W01</b><br>Test class: com.vsii.tsc.guru.testcase.CreateWebService<br>Test method: Create new web service in OpenERP<br>Parameters: TestService3, Get, http, 192.168.0.200, 8085.0, issues.json, ISO 8601, basic, admin, 123456@a, vsii_project.vsii_JIRA_connector, collect_project_worklog</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;oe-field-input-70&quot;}
-Command duration or timeout: 30.07 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
-System info: host: &apos;quyentx-w7&apos;, ip: &apos;169.254.145.253&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_74&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 605ebe28-5bdd-45a5-908a-e2b80d13511e
-*** Element info: {Using=id, value=oe-field-input-70}
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy7.sendKeys(Unknown Source)
-	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.setServiceName(CreateWebServiceMethod.java:39)
-	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.createWebService(CreateWebServiceMethod.java:115)
-	at com.vsii.tsc.guru.testcase.CreateWebService.W01(CreateWebService.java:36)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;oe-field-input-70&quot;}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+<td title='com.vsii.tsc.guru.testcase.CreateWebService.W01()'><b>W01</b><br>Test class: com.vsii.tsc.guru.testcase.CreateWebService<br>Test method: Create new web service in OpenERP<br>Parameters: TestService3, 2.0, http, 192.168.0.200, 8085, issues.json, ISO 8601, basic, admin, 123456@a, vsii_project.vsii_JIRA_connector, collect_project_worklog</td>
+<td><div><pre>org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been &quot;select&quot; but was &quot;input&quot;
 Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
 System info: host: &apos;quyentx-w7&apos;, ip: &apos;169.254.145.253&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_74&apos;
 Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/quyentx/AppData/Local/Temp/anonymous8714576214101643520webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10723)
-	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/quyentx/AppData/Local/Temp/anonymous8714576214101643520webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:623)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace19549933", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace19549933'><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;oe-field-input-70&quot;}
-Command duration or timeout: 30.07 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:47)
+	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.setType(CreateWebServiceMethod.java:65)
+	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.createWebService(CreateWebServiceMethod.java:133)
+	at com.vsii.tsc.guru.testcase.CreateWebService.W01(CreateWebService.java:36)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace16164345", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace16164345'><pre>org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been &quot;select&quot; but was &quot;input&quot;
 Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
 System info: host: &apos;quyentx-w7&apos;, ip: &apos;169.254.145.253&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_74&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 605ebe28-5bdd-45a5-908a-e2b80d13511e
-*** Element info: {Using=id, value=oe-field-input-70}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy7.sendKeys(Unknown Source)
-	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.setServiceName(CreateWebServiceMethod.java:39)
-	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.createWebService(CreateWebServiceMethod.java:115)
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:47)
+	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.setType(CreateWebServiceMethod.java:65)
+	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.createWebService(CreateWebServiceMethod.java:133)
 	at com.vsii.tsc.guru.testcase.CreateWebService.W01(CreateWebService.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -156,15 +117,8 @@ Session ID: 605ebe28-5bdd-45a5-908a-e2b80d13511e
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;oe-field-input-70&quot;}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
-System info: host: &apos;quyentx-w7&apos;, ip: &apos;169.254.145.253&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_74&apos;
-Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/quyentx/AppData/Local/Temp/anonymous8714576214101643520webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10723)
-	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/quyentx/AppData/Local/Temp/anonymous8714576214101643520webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:623)
 </pre></div></td>
-<td>32</td>
+<td>9</td>
 <td>com.vsii.tsc.guru.testcase.CreateWebService@1fee20c</td></tr>
 </table><p>
 </body>

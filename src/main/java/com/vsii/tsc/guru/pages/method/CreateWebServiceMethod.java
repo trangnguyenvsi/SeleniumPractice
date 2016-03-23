@@ -1,10 +1,16 @@
 package com.vsii.tsc.guru.pages.method;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.thoughtworks.selenium.webdriven.commands.WaitForCondition;
 import com.vsii.tsc.guru.pages.CreateWebServicePage;
+import com.vsii.tsc.utility.TestBase;
 
 public class CreateWebServiceMethod {
 
@@ -30,8 +36,18 @@ public class CreateWebServiceMethod {
 	}
 
 	// Click button to create web service
+	/*
+	 * Input xpath here without using page object
+	 * Use either the existing way or the commented way (It's OK to wait or not) 
+	 *  
+	 */
 	public void clickCreateService() {
+
 		objCWSPage.getCreateService().click();
+//		WebDriverWait wait = new WebDriverWait(TestBase.driver, 10);
+//		 WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='oe_list_buttons']/button[contains(text(),'Create')]")));
+//		element.click();
+		
 	}
 
 	// Fill in service name

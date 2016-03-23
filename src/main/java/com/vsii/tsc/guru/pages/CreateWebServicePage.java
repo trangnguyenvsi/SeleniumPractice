@@ -32,7 +32,7 @@ public class CreateWebServicePage {
 	}
 	
 	//Create service button
-	@FindBy(xpath="(//button[@type='button'])[3]")
+	@FindBy(xpath="//div[@class='oe_list_buttons']/button[contains(text(),'Create')]")
 	private WebElement createService;
 	
 	public WebElement getCreateService(){

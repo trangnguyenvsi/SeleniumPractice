@@ -2,18 +2,18 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="35329" started-at="2016-03-23T02:18:34Z" finished-at="2016-03-23T02:19:09Z">
+  <suite name="Suite" duration-ms="19391" started-at="2016-03-23T04:02:57Z" finished-at="2016-03-23T04:03:16Z">
     <groups>
     </groups>
-    <test name="Login" duration-ms="6" started-at="2016-03-23T02:18:34Z" finished-at="2016-03-23T02:18:34Z">
+    <test name="Login" duration-ms="10" started-at="2016-03-23T04:02:57Z" finished-at="2016-03-23T04:02:57Z">
     </test> <!-- Login -->
-    <test name="CreateWebService" duration-ms="35296" started-at="2016-03-23T02:18:34Z" finished-at="2016-03-23T02:19:09Z">
+    <test name="CreateWebService" duration-ms="19347" started-at="2016-03-23T04:02:57Z" finished-at="2016-03-23T04:03:16Z">
       <class name="com.vsii.tsc.guru.testcase.CreateWebService">
-        <test-method status="PASS" signature="setupClass()[pri:0, instance:com.vsii.tsc.guru.testcase.CreateWebService@1fee20c]" name="setupClass" is-config="true" duration-ms="1515" started-at="2016-03-23T09:18:34Z" finished-at="2016-03-23T09:18:35Z">
+        <test-method status="PASS" signature="setupClass()[pri:0, instance:com.vsii.tsc.guru.testcase.CreateWebService@1fee20c]" name="setupClass" is-config="true" duration-ms="8372" started-at="2016-03-23T11:02:57Z" finished-at="2016-03-23T11:03:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupClass -->
-        <test-method status="FAIL" signature="W01(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.CreateWebService@1fee20c]" name="W01" duration-ms="32601" started-at="2016-03-23T09:18:36Z" description="Create new web service in OpenERP" data-provider="newService" finished-at="2016-03-23T09:19:09Z">
+        <test-method status="FAIL" signature="W01(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.CreateWebService@1fee20c]" name="W01" duration-ms="9509" started-at="2016-03-23T11:03:07Z" description="Create new web service in OpenERP" data-provider="newService" finished-at="2016-03-23T11:03:16Z">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,7 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[Get]]>
+                <![CDATA[2.0]]>
               </value>
             </param>
             <param index="2">
@@ -37,7 +37,7 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[8085.0]]>
+                <![CDATA[8085]]>
               </value>
             </param>
             <param index="5">
@@ -76,44 +76,21 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="org.openqa.selenium.support.ui.UnexpectedTagNameException">
             <message>
-              <![CDATA[Unable to locate element: {"method":"id","selector":"oe-field-input-70"}
-Command duration or timeout: 30.07 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[Element should have been "select" but was "input"
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
 System info: host: 'quyentx-w7', ip: '169.254.145.253', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_74'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 605ebe28-5bdd-45a5-908a-e2b80d13511e
-*** Element info: {Using=id, value=oe-field-input-70}]]>
+Driver info: driver.version: unknown]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"oe-field-input-70"}
-Command duration or timeout: 30.07 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been "select" but was "input"
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
 System info: host: 'quyentx-w7', ip: '169.254.145.253', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_74'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 605ebe28-5bdd-45a5-908a-e2b80d13511e
-*** Element info: {Using=id, value=oe-field-input-70}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy7.sendKeys(Unknown Source)
-	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.setServiceName(CreateWebServiceMethod.java:39)
-	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.createWebService(CreateWebServiceMethod.java:115)
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:47)
+	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.setType(CreateWebServiceMethod.java:65)
+	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.createWebService(CreateWebServiceMethod.java:133)
 	at com.vsii.tsc.guru.testcase.CreateWebService.W01(CreateWebService.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -139,26 +116,19 @@ Session ID: 605ebe28-5bdd-45a5-908a-e2b80d13511e
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"oe-field-input-70"}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'quyentx-w7', ip: '169.254.145.253', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_74'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/quyentx/AppData/Local/Temp/anonymous8714576214101643520webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10723)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/quyentx/AppData/Local/Temp/anonymous8714576214101643520webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:623)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.support.ui.UnexpectedTagNameException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- W01 -->
       </class> <!-- com.vsii.tsc.guru.testcase.CreateWebService -->
       <class name="com.vsii.tsc.utility.TestBase">
-        <test-method status="PASS" signature="setupSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@196751b]" name="setupSuite" is-config="true" duration-ms="12561" started-at="2016-03-23T09:18:21Z" finished-at="2016-03-23T09:18:34Z">
+        <test-method status="PASS" signature="setupSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@196751b]" name="setupSuite" is-config="true" duration-ms="10051" started-at="2016-03-23T11:02:47Z" finished-at="2016-03-23T11:02:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupSuite -->
-        <test-method status="PASS" signature="teardownSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@196751b]" name="teardownSuite" is-config="true" duration-ms="0" started-at="2016-03-23T09:19:09Z" finished-at="2016-03-23T09:19:09Z">
+        <test-method status="PASS" signature="teardownSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@196751b]" name="teardownSuite" is-config="true" duration-ms="0" started-at="2016-03-23T11:03:16Z" finished-at="2016-03-23T11:03:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownSuite -->
