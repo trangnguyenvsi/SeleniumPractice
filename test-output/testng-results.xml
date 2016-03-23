@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="2" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="47344" started-at="2016-03-23T09:38:56Z" finished-at="2016-03-23T09:39:43Z">
+  <suite name="Suite" duration-ms="42049" started-at="2016-03-23T09:49:27Z" finished-at="2016-03-23T09:50:09Z">
     <groups>
     </groups>
-    <test name="Login" duration-ms="6" started-at="2016-03-23T09:38:56Z" finished-at="2016-03-23T09:38:56Z">
+    <test name="Login" duration-ms="7" started-at="2016-03-23T09:49:27Z" finished-at="2016-03-23T09:49:27Z">
     </test> <!-- Login -->
-    <test name="WebService" duration-ms="47314" started-at="2016-03-23T09:38:56Z" finished-at="2016-03-23T09:39:43Z">
+    <test name="WebService" duration-ms="42017" started-at="2016-03-23T09:49:27Z" finished-at="2016-03-23T09:50:09Z">
       <class name="com.vsii.tsc.utility.TestBase">
-        <test-method status="PASS" signature="setupSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@196751b]" name="setupSuite" is-config="true" duration-ms="10366" started-at="2016-03-23T16:38:46Z" finished-at="2016-03-23T16:38:56Z">
+        <test-method status="PASS" signature="setupSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@196751b]" name="setupSuite" is-config="true" duration-ms="10522" started-at="2016-03-23T16:49:17Z" finished-at="2016-03-23T16:49:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupSuite -->
-        <test-method status="PASS" signature="teardownSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@196751b]" name="teardownSuite" is-config="true" duration-ms="0" started-at="2016-03-23T16:39:43Z" finished-at="2016-03-23T16:39:43Z">
+        <test-method status="PASS" signature="teardownSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@196751b]" name="teardownSuite" is-config="true" duration-ms="0" started-at="2016-03-23T16:50:09Z" finished-at="2016-03-23T16:50:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownSuite -->
       </class> <!-- com.vsii.tsc.utility.TestBase -->
       <class name="com.vsii.tsc.guru.testcase.WebService">
-        <test-method status="PASS" signature="setupClass()[pri:0, instance:com.vsii.tsc.guru.testcase.WebService@1fee20c]" name="setupClass" is-config="true" duration-ms="7822" started-at="2016-03-23T16:38:56Z" finished-at="2016-03-23T16:39:04Z">
+        <test-method status="PASS" signature="setupClass()[pri:0, instance:com.vsii.tsc.guru.testcase.WebService@1fee20c]" name="setupClass" is-config="true" duration-ms="8880" started-at="2016-03-23T16:49:27Z" finished-at="2016-03-23T16:49:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupClass -->
-        <test-method status="FAIL" signature="W01(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.WebService@1fee20c]" name="W01" duration-ms="6834" started-at="2016-03-23T16:39:05Z" description="Create new web service in OpenERP" data-provider="newService" finished-at="2016-03-23T16:39:12Z">
+        <test-method status="FAIL" signature="W01(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.WebService@1fee20c]" name="W01" duration-ms="30218" started-at="2016-03-23T16:49:38Z" description="Create new web service in OpenERP" data-provider="newService" finished-at="2016-03-23T16:50:08Z">
           <params>
             <param index="0">
               <value>
@@ -127,7 +127,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- W01 -->
-        <test-method status="FAIL" signature="W01(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.WebService@1fee20c]" name="W01" duration-ms="30977" started-at="2016-03-23T16:39:12Z" description="Create new web service in OpenERP" data-provider="newService" finished-at="2016-03-23T16:39:43Z">
+        <test-method status="FAIL" signature="W01(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.WebService@1fee20c]" name="W01" duration-ms="904" started-at="2016-03-23T16:50:08Z" description="Create new web service in OpenERP" data-provider="newService" finished-at="2016-03-23T16:50:09Z">
           <params>
             <param index="0">
               <value>
@@ -190,32 +190,30 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[1]/td[2]/span/input"}
+              <![CDATA[stale element reference: element is not attached to the page document
   (Session info: chrome=47.0.2526.80)
   (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 6.1 x86) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 30.07 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Command duration or timeout: 178 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
 System info: host: 'quyentx-w7', ip: '169.254.145.253', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_74'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\quyentx\AppData\Local\Temp\scoped_dir3888_32311}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=47.0.2526.80, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 36364eadb3626e0a96ae3d4145138724
-*** Element info: {Using=xpath, value=html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[1]/td[2]/span/input}]]>
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\quyentx\AppData\Local\Temp\scoped_dir524_6816}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=47.0.2526.80, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 9803cbcc24e34bd9e151d501fa68a19e]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[1]/td[2]/span/input"}
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
   (Session info: chrome=47.0.2526.80)
   (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 6.1 x86) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 30.07 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Command duration or timeout: 178 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
 System info: host: 'quyentx-w7', ip: '169.254.145.253', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_74'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\quyentx\AppData\Local\Temp\scoped_dir3888_32311}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=47.0.2526.80, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 36364eadb3626e0a96ae3d4145138724
-*** Element info: {Using=xpath, value=html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[1]/td[2]/span/input}
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\quyentx\AppData\Local\Temp\scoped_dir524_6816}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=47.0.2526.80, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 9803cbcc24e34bd9e151d501fa68a19e
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -223,15 +221,16 @@ Session ID: 36364eadb3626e0a96ae3d4145138724
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy7.sendKeys(Unknown Source)
-	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.setServiceName(CreateWebServiceMethod.java:49)
-	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.createWebService(CreateWebServiceMethod.java:134)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy7.click(Unknown Source)
+	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.clickCreateService(CreateWebServiceMethod.java:40)
+	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.createWebService(CreateWebServiceMethod.java:133)
 	at com.vsii.tsc.guru.testcase.WebService.W01(WebService.java:57)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -259,11 +258,11 @@ Session ID: 36364eadb3626e0a96ae3d4145138724
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- W01 -->
-        <test-method status="PASS" signature="W02()[pri:2, instance:com.vsii.tsc.guru.testcase.WebService@1fee20c]" name="W02" duration-ms="1" started-at="2016-03-23T16:39:43Z" description="Run web service and verify if JIRA project is synchronized with OpenERP" finished-at="2016-03-23T16:39:43Z">
+        <test-method status="PASS" signature="W02()[pri:2, instance:com.vsii.tsc.guru.testcase.WebService@1fee20c]" name="W02" duration-ms="1" started-at="2016-03-23T16:50:09Z" description="Run web service and verify if JIRA project is synchronized with OpenERP" finished-at="2016-03-23T16:50:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- W02 -->
