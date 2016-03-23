@@ -2,15 +2,9 @@ package com.vsii.tsc.guru.pages.method;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.thoughtworks.selenium.webdriven.commands.WaitForCondition;
 import com.vsii.tsc.guru.pages.CreateWebServicePage;
-import com.vsii.tsc.utility.TestBase;
 
 public class CreateWebServiceMethod {
 
@@ -57,12 +51,18 @@ public class CreateWebServiceMethod {
 
 	// Chooose user from dropdown list
 	public void setUser(String username) {
-		new Select(objCWSPage.getServiceUser()).selectByVisibleText(username);
+		Select select = new Select(driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[2]/td[2]/span/div/input")));
+		select.selectByVisibleText(username);
+		
+//		new Select(objCWSPage.getServiceUser()).selectByVisibleText(username);
 	}
 
 	// Set type of protocol
 	public void setType(String type) {
-		new Select(objCWSPage.getServiceType()).selectByVisibleText(type);
+		Select select = new Select(driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[3]/td[2]/span/select")));
+		select.selectByVisibleText(type);
+//		xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[3]/td[2]/span/select"
+//		new Select(objCWSPage.getServiceType()).selectByVisibleText(type);
 	}
 
 	// Set protocol
@@ -94,7 +94,10 @@ public class CreateWebServiceMethod {
 	public void setAuthMethod(String auth) {
 		new Select(objCWSPage.getServiceAuthOption()).selectByVisibleText(auth);
 	}
-
+//		Select select = new Select(driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[3]/td[2]/span/select")));
+//	select.selectByVisibleText(type);
+	
+	
 	// Set Jira username
 	public void setJiraUsername(String Jusername) {
 		objCWSPage.getServiceLogin().sendKeys(Jusername);

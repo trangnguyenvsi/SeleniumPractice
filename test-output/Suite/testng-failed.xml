@@ -4,14 +4,14 @@
   <listeners>
     <listener class-name="com.vsii.tsc.utility.ExtentReporterNG"/>
   </listeners>
-  <test name="CreateWebService(failed)">
+  <test name="WebService(failed)">
     <classes>
-      <class name="com.vsii.tsc.guru.testcase.CreateWebService">
+      <class name="com.vsii.tsc.guru.testcase.WebService">
         <methods>
-          <include name="W01" invocation-numbers="0"/>
+          <include name="W01" invocation-numbers="0 1"/>
           <include name="setupClass"/>
         </methods>
-      </class> <!-- com.vsii.tsc.guru.testcase.CreateWebService -->
+      </class> <!-- com.vsii.tsc.guru.testcase.WebService -->
       <class name="com.vsii.tsc.utility.TestBase">
         <methods>
           <include name="teardownSuite"/>
@@ -19,5 +19,5 @@
         </methods>
       </class> <!-- com.vsii.tsc.utility.TestBase -->
     </classes>
-  </test> <!-- CreateWebService(failed) -->
+  </test> <!-- WebService(failed) -->
 </suite> <!-- Failed suite [Suite] -->

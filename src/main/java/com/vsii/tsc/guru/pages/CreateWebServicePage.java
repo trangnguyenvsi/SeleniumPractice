@@ -44,7 +44,7 @@ public class CreateWebServicePage {
 	}
 	
 	//Elements in create service pop-up window
-	@FindBy(id = "oe-field-input-70")
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[1]/td[2]/span/input")
 	private WebElement serviceName;
 	
 	public WebElement getServiceName(){
@@ -55,7 +55,7 @@ public class CreateWebServicePage {
 		this.serviceName = serviceName;
 	}
 	
-	@FindBy(id = "oe-field-input-71")
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[2]/td[2]/span/div/input")
 	private WebElement serviceUser;
 	
 	public WebElement getServiceUser(){
@@ -66,7 +66,7 @@ public class CreateWebServicePage {
 		this.serviceUser = serviceUser;
 	}
 	
-	@FindBy(id = "oe-field-input-72")
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[3]/td[2]/span/select")
 	private WebElement serviceType;
 	
 	public WebElement getServiceType(){
@@ -77,7 +77,7 @@ public class CreateWebServicePage {
 		this.serviceType = serviceType;
 	}
 	
-	@FindBy(id = "oe-field-input-73")
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[4]/td[2]/span/input")
 	private WebElement serviceProtocol;
 	
 	public WebElement getServiceProtocol(){
@@ -88,7 +88,7 @@ public class CreateWebServicePage {
 		this.serviceProtocol = serviceProtocol;
 	}
 	
-	@FindBy(id = "oe-field-input-74")
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[5]/td[2]/span/input")
 	private WebElement serviceHost;
 	
 	public WebElement getServiceHost(){
@@ -99,7 +99,7 @@ public class CreateWebServicePage {
 		this.serviceHost = serviceHost;
 	}
 	
-	@FindBy(id = "oe-field-input-75")
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[6]/td[2]/span/input")
 	private WebElement servicePort;
 	
 	public WebElement getServicePort(){
@@ -121,7 +121,7 @@ public class CreateWebServicePage {
 		this.servicePath = servicePath;
 	}
 	
-	@FindBy(name = "datetime_format")
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[10]/td[2]/span/select")
 	private WebElement serviceDateTime;
 	
 	public WebElement getServiceDateTime(){
@@ -132,29 +132,29 @@ public class CreateWebServicePage {
 		this.serviceDateTime = serviceDateTime;
 	}
 	
-	@FindBy(id = "oe-field-input-80")
-	private WebElement serviceSoftLimit;
+//	@FindBy(id = "oe-field-input-80")
+//	private WebElement serviceSoftLimit;
+//	
+//	public WebElement getServiceSoftLimit(){
+//		return serviceSoftLimit;
+//	}
+//	
+//	public void setServiceSoftLimit(WebElement serviceSoftLimit) {
+//		this.serviceSoftLimit = serviceSoftLimit;
+//	}
+//	
+//	@FindBy(id = "oe-field-input-81")
+//	private WebElement serviceErrorLimit;
+//	
+//	public WebElement getServiceErrorLimit(){
+//		return serviceErrorLimit;
+//	}
+//	
+//	public void setServiceErrorLimit(WebElement serviceErrorLimit) {
+//		this.serviceErrorLimit = serviceErrorLimit;
+//	}
 	
-	public WebElement getServiceSoftLimit(){
-		return serviceSoftLimit;
-	}
-	
-	public void setServiceSoftLimit(WebElement serviceSoftLimit) {
-		this.serviceSoftLimit = serviceSoftLimit;
-	}
-	
-	@FindBy(id = "oe-field-input-81")
-	private WebElement serviceErrorLimit;
-	
-	public WebElement getServiceErrorLimit(){
-		return serviceErrorLimit;
-	}
-	
-	public void setServiceErrorLimit(WebElement serviceErrorLimit) {
-		this.serviceErrorLimit = serviceErrorLimit;
-	}
-	
-	@FindBy(id = "oe-field-input-90")
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[2]/td[1]/table/tbody/tr[1]/td[2]/span/select")
 	private WebElement serviceAuthOption;
 	
 	public WebElement getServiceAuthOption(){
@@ -165,7 +165,7 @@ public class CreateWebServicePage {
 		this.serviceAuthOption = serviceAuthOption;
 	}
 	
-	@FindBy(id = "oe-field-input-91")
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[2]/td[1]/table/tbody/tr[2]/td[2]/span/input")
 	private WebElement serviceLogin;
 	
 	public WebElement getServiceLogin(){
@@ -176,7 +176,7 @@ public class CreateWebServicePage {
 		this.serviceLogin = serviceLogin;
 	}
 
-	@FindBy(id = "oe-field-input-92")
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[2]/td[1]/table/tbody/tr[3]/td[2]/span/input")
 	private WebElement servicePassword;
 	
 	public WebElement getServicePassword(){
@@ -187,18 +187,18 @@ public class CreateWebServicePage {
 		this.servicePassword = servicePassword;
 	}
 	
-	@FindBy(id = "oe-field-input-83")
-	private WebElement servicePriority;
+//	@FindBy(id = "oe-field-input-83")
+//	private WebElement servicePriority;
+//	
+//	public WebElement getServicePriority(){
+//		return servicePriority;
+//	}
+//	
+//	public void setServicePriority(WebElement servicePriority) {
+//		this.servicePriority = servicePriority;
+//	}
 	
-	public WebElement getServicePriority(){
-		return servicePriority;
-	}
-	
-	public void setServicePriority(WebElement servicePriority) {
-		this.servicePriority = servicePriority;
-	}
-	
-	@FindBy(id = "oe-field-input-93")
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[2]/td[2]/table/tbody/tr[1]/td[2]/span/input")
 	private WebElement serviceModelName;
 	
 	public WebElement getServiceModelName(){
@@ -209,7 +209,7 @@ public class CreateWebServicePage {
 		this.serviceModelName = serviceModelName;
 	}
 	
-	@FindBy(id = "oe-field-input-97")
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[2]/td[2]/table/tbody/tr[5]/td[2]/span/input")
 	private WebElement serviceDecodeMethodName;
 	
 	public WebElement getServiceDecodeMethodName(){
@@ -221,6 +221,7 @@ public class CreateWebServicePage {
 	}
 	
 	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/table/tbody/tr[2]/td[1]/div/div[2]/span[2]/button")
+//	@FindBy(xpath="//div[@class='oe_form_buttons']/span[2]/button[@accesskey='S']")
 	private WebElement serviceSave;
 	
 	public WebElement getServiceSave(){
