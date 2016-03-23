@@ -128,15 +128,36 @@
                   </a> <!-- W01(TestService3, Get, http, 192.168.0.200, 8085.0, issues.json, ISO 8601, basic, admin, 123456@a, vsii_...) -->
                   <span class="method-name">W01</span>
                   <span class="parameters">(TestService3, Get, http, 192.168.0.200, 8085.0, issues.json, ISO 8601, basic, admin, 123456@a, vsii_project.vsii_JIRA_connector, collect_project_worklog)</span>
-                  <div class="stack-trace">org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been &quot;select&quot; but was &quot;input&quot;
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;oe-field-input-70&quot;}
+Command duration or timeout: 30.07 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
+System info: host: &apos;quyentx-w7&apos;, ip: &apos;169.254.145.253&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_74&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 605ebe28-5bdd-45a5-908a-e2b80d13511e
+*** Element info: {Using=id, value=oe-field-input-70}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy7.sendKeys(Unknown Source)
+	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.setServiceName(CreateWebServiceMethod.java:39)
+	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.createWebService(CreateWebServiceMethod.java:115)
+	at com.vsii.tsc.guru.testcase.CreateWebService.W01(CreateWebService.java:36)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;oe-field-input-70&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
 System info: host: &apos;quyentx-w7&apos;, ip: &apos;169.254.145.253&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_74&apos;
 Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:47)
-	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.setType(CreateWebServiceMethod.java:49)
-	at com.vsii.tsc.guru.pages.method.CreateWebServiceMethod.createWebService(CreateWebServiceMethod.java:117)
-	at com.vsii.tsc.guru.testcase.CreateWebService.W01(CreateWebService.java:36)
-... Removed 24 stack frames
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/quyentx/AppData/Local/Temp/anonymous8714576214101643520webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10723)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/quyentx/AppData/Local/Temp/anonymous8714576214101643520webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:623)
+... Removed 28 stack frames
 </div> <!-- stack-trace -->
                   <em>
 (Create new web service in OpenERP)                  </em>
@@ -211,12 +232,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'W01')
 data.setCell(0, 2, 'com.vsii.tsc.guru.testcase.CreateWebService')
-data.setCell(0, 3, 5925);
+data.setCell(0, 3, 32601);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 32 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -252,20 +273,20 @@ return data;
               <div class="chronological-class-name">com.vsii.tsc.guru.testcase.CreateWebService</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setupClass</span>
-                <span class="method-start">9116 ms</span>
+                <span class="method-start">12598 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">W01(TestService3, Get, http, 192.168.0.200, 8085.0, issues.json, ISO 8601, basic, admin, 123456@a, vsii_...)</span>
-                <span class="method-start">12919 ms</span>
+                <span class="method-start">15279 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.vsii.tsc.utility.TestBase</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">teardownSuite</span>
-                <span class="method-start">18864 ms</span>
+                <span class="method-start">47910 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
