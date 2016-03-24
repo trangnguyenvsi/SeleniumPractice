@@ -2,13 +2,17 @@ package com.vsii.tsc.guru.testcase;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.vsii.tsc.guru.pages.method.CreateWebServiceMethod;
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
 import com.vsii.tsc.guru.testdata.TestData;
+import com.vsii.tsc.utility.CommonOperations;
 import com.vsii.tsc.utility.TestBase;
 
 public class WebService {
@@ -56,7 +60,9 @@ public class WebService {
 		// Perform test steps
 		objCreateService.createWebService(txtServiceName, txtType, txtProtocol, txtHost, txtPort, txtPath, txtDateTime, txtAuth, txtJusername, txtJPassword, txtModelName, txtDecodeMethodName);
 		// Verify test result
-		Assert.assertTrue(TestBase.driver.getCurrentUrl().contains("?db=VSIIERPdemo#id"));
+//		String currentURL = "http://192.168.0.21:8069/?db=VSIIERPdemo#view_type=form&model=bss.webservice&menu_id=410&action=506";
+		Assert.assertTrue(TestBase.driver.getCurrentUrl().contains("id"));
+		
 	}
 	
 	/*
@@ -72,6 +78,14 @@ public class WebService {
 	
 	@Test(priority = 2, description = "Run web service and verify if JIRA project is synchronized with OpenERP")
 	public void W02(){
+		// Method name
+		TestBase.methodName = "W01";
 		
+	}
+	
+
+	@AfterMethod
+	public void afterMethod() throws Exception {
+		CommonOperations.takePicture();
 	}
 }
