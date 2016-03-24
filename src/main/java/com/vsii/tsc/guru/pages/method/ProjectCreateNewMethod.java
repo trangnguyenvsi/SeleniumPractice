@@ -1,6 +1,7 @@
 package com.vsii.tsc.guru.pages.method;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -25,56 +26,90 @@ public class ProjectCreateNewMethod {
 	  objCreateProject.getMenuProject();
 	  objCreateProject.getMenuProject().click();  
   }
-  public String getProjectName(){
-//	  objCreateProject.getTxtProjectName();
-	  return objCreateProject.getTxtProjectName().getText();
-	  
-  }
-  public String getRefContract(){ 
-//	  objCreateProject.getTxtRefContract();
-	  return objCreateProject.getTxtRefContract().getText();
-	  
-  }
-  public String getProjectCode(){
-//	  objCreateProject.getTxtProjectCode();
-	  return objCreateProject.getTxtProjectCode().getText();
-	  
-  }
-  public String getPrivacy(){
-//	  objCreateProject.getDropPrivacy();
-	  return objCreateProject.getDropPrivacy().getText();
-	  
-  }
-  public String getProjectManager(){
-//	  objCreateProject.getDropProjectManager();
-	  return objCreateProject.getDropProjectManager().getText();	  
-  }
-  public String getAppEffort(){ 
-//	  objCreateProject.getTxtApprovedEffort();
-	  return objCreateProject.getTxtApprovedEffort().getText();
-	  
-  }
-  public String getDepartment(){  
-//	  objCreateProject.getDropDepartment();
-	  return objCreateProject.getDropDepartment().getText();
-	  
-  }
-  public String getProjectType(){	  
-//	  objCreateProject.getDropProjectType();
-	  return objCreateProject.getDropProjectType().getText();
-	  
-  }
-  public String getCommercialDetails(){	  
-//	  objCreateProject.getDropCommercialDetails();
-	  return objCreateProject.getDropCommercialDetails().getText();
-	  
-  }
-  public String getCustomer(){	  
-//	  objCreateProject.getDropCustomer();
-	  return objCreateProject.getDropCustomer().getText();
-	  	  
-  }
   
+  public void inputProjectName(String projectName) throws InterruptedException {
+		Thread.sleep(1000);
+		objCreateProject.getTxtProjectName().clear();
+		objCreateProject.getTxtProjectName().sendKeys(projectName);
+		Thread.sleep(1000);
+		objCreateProject.getTxtProjectName().sendKeys(Keys.TAB);
+	}
+  
+  public void inputRefContract(String refContract) throws InterruptedException {
+		Thread.sleep(1000);
+		objCreateProject.getTxtRefContract().clear();
+		objCreateProject.getTxtRefContract().sendKeys(refContract);
+		Thread.sleep(1000);
+		objCreateProject.getTxtRefContract().sendKeys(Keys.TAB);
+	}
+  
+  public void inputProjectCode(String projectCode) throws InterruptedException {
+		Thread.sleep(1000);
+		objCreateProject.getTxtProjectCode().clear();
+		objCreateProject.getTxtProjectCode().sendKeys(projectCode);
+		Thread.sleep(1000);
+		objCreateProject.getTxtProjectCode().sendKeys(Keys.TAB);
+	}
+  
+  public void inputPrivacy(String privacy) throws InterruptedException {
+		Thread.sleep(1000);
+		objCreateProject.getDropPrivacy().clear();
+		objCreateProject.getDropPrivacy().sendKeys(privacy);
+		Thread.sleep(1000);
+		objCreateProject.getDropPrivacy().sendKeys(Keys.TAB);
+	}
+  
+  public void inputProjectManager(String projectManager) throws InterruptedException {
+		Thread.sleep(1000);
+		objCreateProject.getDropProjectManager().clear();
+		objCreateProject.getDropProjectManager().sendKeys(projectManager);
+		Thread.sleep(1000);
+		objCreateProject.getDropProjectManager().sendKeys(Keys.TAB);
+	}
+  
+  public void inputApprovedEffort(String approvedEffort) throws InterruptedException {
+		Thread.sleep(1000);
+		objCreateProject.getTxtApprovedEffort().clear();
+		objCreateProject.getTxtApprovedEffort().sendKeys(approvedEffort);
+		Thread.sleep(1000);
+		objCreateProject.getTxtApprovedEffort().sendKeys(Keys.TAB);
+	}
+  
+  public void inputDepartment(String department) throws InterruptedException {
+		Thread.sleep(1000);
+		objCreateProject.getDropDepartment().clear();
+		objCreateProject.getDropDepartment().sendKeys(department);
+		Thread.sleep(1000);
+		objCreateProject.getDropDepartment().sendKeys(Keys.TAB);
+	}
+  
+  public void inputProjectType(String projectType) throws InterruptedException {
+		Thread.sleep(1000);
+		objCreateProject.getDropProjectType().clear();
+		objCreateProject.getDropProjectType().sendKeys(projectType);
+		Thread.sleep(1000);
+		objCreateProject.getDropProjectType().sendKeys(Keys.TAB);
+	}
+  public void inputCommerDetails(String commDetails) throws InterruptedException {
+		Thread.sleep(1000);
+		objCreateProject.getDropCommercialDetails().clear();
+		objCreateProject.getDropCommercialDetails().sendKeys(commDetails);
+		Thread.sleep(1000);
+		objCreateProject.getDropCommercialDetails().sendKeys(Keys.TAB);
+	}
+  
+  public void chkVerifyWorlLog() throws InterruptedException {
+		objCreateProject.getDropProjectType().click();
+	}
+  
+  public void inputCustomer(String customer) throws InterruptedException {
+		Thread.sleep(1000);
+		objCreateProject.getDropCustomer().clear();
+		objCreateProject.getDropCustomer().sendKeys(customer);
+		Thread.sleep(1000);
+		objCreateProject.getDropCustomer().sendKeys(Keys.TAB);
+	}
+
   public WebElement getmnProject() {
 		return objCreateProject.getMenuProject();
 	}
@@ -82,7 +117,11 @@ public class ProjectCreateNewMethod {
   public WebElement getbtnCreate() {
 		return objCreateProject.getBtnCreate();
 	}
- // Get information in pop-up
+  public WebElement getbtnSave(){
+	  
+	  return objCreateProject.getBtnSave();
+  }
+//  Get information in pop-up
   
   public String getPopupText() {
 		Alert alert = driver.switchTo().alert();
@@ -96,21 +135,23 @@ public class ProjectCreateNewMethod {
   // Create New Project
   
   public void createNewProject (String projectName, String refContract, String projectCode, String privacy, String projectManager, 
-		  String appEffort, String department, String projectType, String commDetails, String customer ){
-	 objCreateProject.getMenuProject();
-	 objCreateProject.getBtnCreate();
-	 objCreateProject.getTxtProjectName();
-	 objCreateProject.getTxtRefContract();
-	 objCreateProject.getTxtProjectCode();
-	 objCreateProject.getDropPrivacy();
-	 objCreateProject.getDropProjectManager();
-	 objCreateProject.getTxtApprovedEffort();
-	 objCreateProject.getDropDepartment();
-	 objCreateProject.getDropProjectType();
-	 objCreateProject.getDropCommercialDetails();
-	 objCreateProject.getDropCustomer();
-	 objCreateProject.getBtnSave().click();
+		  String approvedEffort, String department, String projectType, String commDetails, String customer ) throws InterruptedException{
 	  
+	  this.getmnProject();
+	  this.getbtnCreate();
+	  this.clickCreatebtn();
+	  this.inputProjectName(projectName);
+	  this.inputRefContract(refContract);
+	  this.inputProjectCode(projectCode);
+	  this.inputPrivacy(privacy);
+	  this.inputProjectManager(projectManager);
+	  this.inputApprovedEffort(approvedEffort);
+	  this.inputDepartment(department);
+	  this.inputProjectType(projectType);
+	  this.inputCommerDetails(commDetails);
+	  this.chkVerifyWorlLog();
+	  this.inputCustomer(customer);
+	  this.getbtnSave();
   }	  
   public String CreateSuccess(){
 	  return  objCreateProject.getBtnSubmit().getText(); 
