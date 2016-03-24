@@ -56,7 +56,7 @@ public class WebService {
 		// Perform test steps
 		objCreateService.createWebService(txtServiceName, txtType, txtProtocol, txtHost, txtPort, txtPath, txtDateTime, txtAuth, txtJusername, txtJPassword, txtModelName, txtDecodeMethodName);
 		// Verify test result
-		Assert.assertTrue(TestBase.driver.getCurrentUrl().contains("?db=VSIIERPdemo#id"));
+		Assert.assertTrue(TestBase.driver.getCurrentUrl().contains("id"));
 	}
 	
 	/*
