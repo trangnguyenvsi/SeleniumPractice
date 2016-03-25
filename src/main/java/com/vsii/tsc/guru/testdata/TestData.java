@@ -31,7 +31,29 @@ public class TestData {
 		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "CreateNewCustomer", "CN03");
 		return data;
 	}
+	@DataProvider(name="dpNewProject")
+	public static Object[][]  getCreateNewData() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "CreateNewProject", "PM06");
+		return data;
+	}
+	
+	@DataProvider(name="dpInvalidCreate1")
+	public static Object[][]  getInvalidData1() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "CreateNewProject", "PM07");
+		return data;
+	}
+	
+	@DataProvider(name="dpInvalidCreate2")
+	public static Object[][]  getInvalidData2() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "CreateNewProject", "PM08");
+		return data;
+	}
 
+	@DataProvider(name = "dpEditProject")
+	public static Object[][] editCustomerData() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "EditProject", "PM09");
+		return data;
+	}
 //	@DataProvider(name = "dpEditCustomer")
 //	public static Object[][] editCustomerData() {
 //		Object[][] data = Utility.getTable("./data/TestData.xlsx", "EditCustomer", "ED03");
