@@ -247,7 +247,8 @@ public class WebServicePage {
 	}
 	
 	//Elements in WebService details window
-	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/tbody/tr[2]/td[2]")
+	//@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/tbody/tr[2]/td[2]")
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/header/button[1]/span")
 	private WebElement runService;
 
 	public WebElement getRunService() {

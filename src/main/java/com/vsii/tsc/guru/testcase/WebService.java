@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
@@ -86,13 +87,13 @@ public class WebService {
 		Assert.assertEquals(objService.getProjectType(), "JIRA");
 	}
 	
-	@Test(priority = 3, description = "Verify the ability of mapping imported project from JIRA with existed OpenERP project work correctly")
-	public void W03(){
+	@Test(priority = 3, description = "Verify the ability of mapping imported project from JIRA with existed OpenERP project work correctly", dataProvider="W03", dataProviderClass = TestData.class)
+	public void W03(String projectName){
 		// Method name
 		TestBase.methodName = "W03";
 	
 		// Perform test steps
-		objService.editImportedProject();
+		objService.editImportedProject(projectName);
 		
 		
 	}

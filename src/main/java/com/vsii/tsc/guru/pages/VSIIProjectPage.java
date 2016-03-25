@@ -16,6 +16,18 @@ public class VSIIProjectPage {
 	public void setEditProjectBtn(WebElement editProjectBtn) {
 		this.editProjectBtn = editProjectBtn;
 	}
+	
+	//Identify "Project" dropdown list
+	@FindBy(xpath="//div/input[@class='ui-autocomplete-input' and @id='oe-field-input-1230']")
+	private WebElement projectDropdown;
+
+	public WebElement getProjectDropdown() {
+		return projectDropdown;
+	}
+
+	public void setProjectDropdown(WebElement projectDropdown) {
+		this.projectDropdown = projectDropdown;
+	}
 
 	// Identify "No verify worklogs" check box
 	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[3]/td[4]/span/input")

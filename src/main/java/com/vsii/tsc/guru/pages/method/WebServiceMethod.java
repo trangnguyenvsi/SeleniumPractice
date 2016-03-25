@@ -217,6 +217,11 @@ public class WebServiceMethod {
 		objVsiiProjectPage.getEditProjectBtn().click();
 	}
 	
+	// Input Project name to "Project" dropdown
+	public void setProjectName(String projectName){
+		objVsiiProjectPage.getProjectDropdown().sendKeys(projectName);
+	}
+	
 	// Click "No verify worklog" check box
 	public void clickNoVerifyChkbox(){
 		objVsiiProjectPage.getNoVerifyWorklogchkbx().click();
@@ -228,10 +233,11 @@ public class WebServiceMethod {
 	}
 	
 	//PERFORM EDITING IMPORTED PROJECT
-	public void editImportedProject(){
+	public void editImportedProject(String projectName){
 		clickVsiiProject();
 		clickImportedProject();
 		clickEditImportedProject();
+		setProjectName(projectName);
 		clickNoVerifyChkbox();
 		clickSaveImportedProject();
 	}

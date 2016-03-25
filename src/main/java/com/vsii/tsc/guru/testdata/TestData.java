@@ -64,10 +64,15 @@ public class TestData {
 	 * quyentx dataProvider section
 	 */
 	
-	@DataProvider(name = "newService")
+	@DataProvider(name = "W01")
 	public static Object[][]  getServiceData() {
 		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W01");
 		return data;
 	}
 	
+	@DataProvider(name = "W03")
+	public static Object[][]  getProjectName() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W03");
+		return data;
+	}
 }
