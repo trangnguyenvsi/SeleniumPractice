@@ -6,22 +6,24 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.vsii.tsc.guru.pages.method.CreateWebServiceMethod;
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
+import com.vsii.tsc.guru.pages.method.WebServiceMethod;
 import com.vsii.tsc.guru.testdata.TestData;
 import com.vsii.tsc.utility.TestBase;
 
 public class WebService {
 	LoginPageMethod objLogin;
-	CreateWebServiceMethod objCreateService;
+	WebServiceMethod objService;
 	String username;
 	String password;
 
 	@BeforeClass
 	public void setupClass() throws Exception {
 		objLogin = new LoginPageMethod(TestBase.driver);
-		objCreateService = new CreateWebServiceMethod(TestBase.driver);
+		objService = new WebServiceMethod(TestBase.driver);
 		objLogin.loginToManagerPage("lienlt", "12345678");
+		objService.clickProjectMenu();
+		
 	}
 	
 	/*
@@ -54,7 +56,7 @@ public class WebService {
 		TestBase.methodName = "W01";
 
 		// Perform test steps
-		objCreateService.createWebService(txtServiceName, txtType, txtProtocol, txtHost, txtPort, txtPath, txtDateTime, txtAuth, txtJusername, txtJPassword, txtModelName, txtDecodeMethodName);
+		objService.createWebService(txtServiceName, txtType, txtProtocol, txtHost, txtPort, txtPath, txtDateTime, txtAuth, txtJusername, txtJPassword, txtModelName, txtDecodeMethodName);
 		// Verify test result
 		Assert.assertTrue(TestBase.driver.getCurrentUrl().contains("id"));
 	}
@@ -72,6 +74,26 @@ public class WebService {
 	
 	@Test(priority = 2, description = "Run web service and verify if JIRA project is synchronized with OpenERP")
 	public void W02(){
+		// Method name
+		TestBase.methodName = "W02";
+
+		// Perform test steps
+		objService.runService();
+		Assert.assertEquals(objService.getProjectKey(), "TES");
+		Assert.assertEquals(objService.getProjectName(), "TestProject");
+		Assert.assertEquals(objService.getProjectDepartment(), "VSII / TSC");
+		Assert.assertEquals(objService.getProjectProject(), "");
+		Assert.assertEquals(objService.getProjectType(), "JIRA");
+	}
+	
+	@Test(priority = 3, description = "Verify the ability of mapping imported project from JIRA with existed OpenERP project work correctly")
+	public void W03(){
+		// Method name
+		TestBase.methodName = "W03";
+	
+		// Perform test steps
+		objService.editImportedProject();
+		
 		
 	}
 }

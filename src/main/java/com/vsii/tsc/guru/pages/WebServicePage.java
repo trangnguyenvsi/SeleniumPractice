@@ -3,7 +3,7 @@ package com.vsii.tsc.guru.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class CreateWebServicePage {
+public class WebServicePage {
 
 	//Elements in home page
 	//Project button in menu bar
@@ -43,6 +43,19 @@ public class CreateWebServicePage {
 		this.createService = createService;
 	}
 	
+	//Identify TestService1 item on testservice table according to value in Name column
+	@FindBy(xpath= "//td[@data-field='name' and contains(text(),'TestService1')]")
+	private WebElement testService1;
+	
+	
+	public WebElement getTestService1() {
+		return testService1;
+	}
+
+	public void setTestService1(WebElement testService1) {
+		this.testService1 = testService1;
+	}
+
 	//Elements in create service pop-up window
 	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[1]/td[2]/span/input")
 	private WebElement serviceName;
@@ -50,6 +63,7 @@ public class CreateWebServicePage {
 	public WebElement getServiceName(){
 		return serviceName;
 	}
+	
 	
 	public void setServiceName(WebElement serviceName) {
 		this.serviceName = serviceName;
@@ -232,6 +246,95 @@ public class CreateWebServicePage {
 		this.serviceSave = serviceSave;
 	}
 	
+	//Elements in WebService details window
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/tbody/tr[2]/td[2]")
+	private WebElement runService;
+
+	public WebElement getRunService() {
+		return runService;
+	}
+
+	public void setRunService(WebElement runService) {
+		this.runService = runService;
+	}
 	
+	
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[1]/div[1]/div[3]/ul[1]/li[3]/a/span")
+	private WebElement vsiiProject;
+
+	public WebElement getVsiiProject() {
+		return vsiiProject;
+	}
+
+	public void setVsiiProject(WebElement vsiiProject) {
+		this.vsiiProject = vsiiProject;
+	}
+	
+	
+	@FindBy(xpath="//td[@data-field='name' and contains(text(),'TestProject')]")  // Read name column in project table to find a row with project name = "TestProject" 
+	private WebElement testProject;
+
+	public WebElement getTestProject() {
+		return testProject;
+	}
+
+	public void setTestProject(WebElement testProject) {
+		this.testProject = testProject;
+	}
+	
+	// Elements on imported  project details page
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[4]/span/span")
+	private WebElement projectKey;
+	
+	public WebElement getProjectKey() {
+		return projectKey;
+	}
+
+	public void setProjectKey(WebElement projectKey) {
+		this.projectKey = projectKey;
+	}
+	
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[2]/td[2]/span/span")
+	private WebElement projectName;
+	
+	public WebElement getProjectName() {
+		return projectName;
+	}
+
+	public void setProjectName(WebElement projectName) {
+		this.projectName = projectName;
+	}
+	
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[3]/td[2]/span/a")
+	private WebElement projectDepartment;
+	
+	public WebElement getProjectDepartment() {
+		return projectDepartment;
+	}
+
+	public void setProjectDepartment(WebElement projectDepartment) {
+		this.projectDepartment = projectDepartment;
+	}
+	
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[4]/td[2]")
+	private WebElement projectProject;
+	
+	public WebElement getProjectProject() {
+		return projectProject;
+	}
+
+	public void setProjectProject(WebElement projectProject) {
+		this.projectProject = projectProject;
+	}
+	
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[2]/td[4]/span/span")
+	private WebElement projectType;
+	public WebElement getProjectType() {
+		return projectType;
+	}
+
+	public void setProjectType(WebElement projectType) {
+		this.projectType = projectType;
+	}
 	
 }

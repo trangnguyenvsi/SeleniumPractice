@@ -4,29 +4,32 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import com.vsii.tsc.guru.pages.CreateWebServicePage;
 
-public class CreateWebServiceMethod {
+import com.vsii.tsc.guru.pages.VSIIProjectPage;
+import com.vsii.tsc.guru.pages.WebServicePage;
+
+public class WebServiceMethod {
 
 	// Create new Web Driver variable
 	WebDriver driver;
 	// Create new WebElementLogin object
-	public CreateWebServicePage objCWSPage = new CreateWebServicePage();
+	public WebServicePage objWSPage = new WebServicePage();
+	public VSIIProjectPage objVsiiProjectPage  = new VSIIProjectPage(); 
 
 	// Initialize all web element
-	public CreateWebServiceMethod(WebDriver driver) {
+	public WebServiceMethod(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(driver, objCWSPage);
+		PageFactory.initElements(driver, objWSPage);
 	}
 
 	// Enter Project module from home page
 	public void clickProjectMenu() {
-		objCWSPage.getWebProject().click();
+		objWSPage.getWebProject().click();
 	}
 
 	// Click on Web service option in side bar
 	public void clickWebServiceOption() {
-		objCWSPage.getWebService().click();
+		objWSPage.getWebService().click();
 	}
 
 	// Click button to create web service
@@ -37,7 +40,7 @@ public class CreateWebServiceMethod {
 	 */
 	public void clickCreateService() {
 
-		objCWSPage.getCreateService().click();
+		objWSPage.getCreateService().click();
 //		WebDriverWait wait = new WebDriverWait(TestBase.driver, 10);
 //		 WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='oe_list_buttons']/button[contains(text(),'Create')]")));
 //		element.click();
@@ -46,7 +49,7 @@ public class CreateWebServiceMethod {
 
 	// Fill in service name
 	public void setServiceName(String txtServiceName) {
-		objCWSPage.getServiceName().sendKeys(txtServiceName);
+		objWSPage.getServiceName().sendKeys(txtServiceName);
 	}
 
 	// Chooose user from dropdown list
@@ -67,32 +70,32 @@ public class CreateWebServiceMethod {
 
 	// Set protocol
 	public void setProtocol(String protocol) {
-		objCWSPage.getServiceProtocol().sendKeys(protocol);
+		objWSPage.getServiceProtocol().sendKeys(protocol);
 	}
 
 	// Set service host
 	public void setHost(String host) {
-		objCWSPage.getServiceHost().sendKeys(host);
+		objWSPage.getServiceHost().sendKeys(host);
 	}
 
 	// Set service port
 	public void setPort(String port) {
-		objCWSPage.getServicePort().sendKeys(port);
+		objWSPage.getServicePort().sendKeys(port);
 	}
 
 	// Set service path
 	public void setPath(String path) {
-		objCWSPage.getServicePath().sendKeys(path);
+		objWSPage.getServicePath().sendKeys(path);
 	}
 
 	// Choose date - time format
 	public void setDateTimeFormat(String datetime) {
-		new Select(objCWSPage.getServiceDateTime()).selectByVisibleText(datetime);
+		new Select(objWSPage.getServiceDateTime()).selectByVisibleText(datetime);
 	}
 
 	// Set authentication method
 	public void setAuthMethod(String auth) {
-		new Select(objCWSPage.getServiceAuthOption()).selectByVisibleText(auth);
+		new Select(objWSPage.getServiceAuthOption()).selectByVisibleText(auth);
 	}
 //		Select select = new Select(driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[1]/td[1]/table/tbody/tr[3]/td[2]/span/select")));
 //	select.selectByVisibleText(type);
@@ -100,27 +103,27 @@ public class CreateWebServiceMethod {
 	
 	// Set Jira username
 	public void setJiraUsername(String Jusername) {
-		objCWSPage.getServiceLogin().sendKeys(Jusername);
+		objWSPage.getServiceLogin().sendKeys(Jusername);
 	}
 
 	// Set Jira password
 	public void setJiraPassword(String Jpass) {
-		objCWSPage.getServicePassword().sendKeys(Jpass);
+		objWSPage.getServicePassword().sendKeys(Jpass);
 	}
 
 	// Set service model name
 	public void setModelName(String modelName) {
-		objCWSPage.getServiceModelName().sendKeys(modelName);
+		objWSPage.getServiceModelName().sendKeys(modelName);
 	}
 
 	// Set service Decode method name
 	public void setDecodeMethod(String decodeMethodName) {
-		objCWSPage.getServiceDecodeMethodName().sendKeys(decodeMethodName);
+		objWSPage.getServiceDecodeMethodName().sendKeys(decodeMethodName);
 	}
 	
 	// Click create service
 	public void clickSave(){
-		objCWSPage.getServiceSave().click();
+		objWSPage.getServiceSave().click();
 	}
 
 	// PERFORM CREATING SERVICE
@@ -128,7 +131,7 @@ public class CreateWebServiceMethod {
 			String txtHost, String txtPort, String txtPath, String txtDateTime, String txtAuth, String txtJusername, String txtJPassword, String txtModelName,
 			String txtDecodeMethodName) {
 
-		clickProjectMenu();
+//		clickProjectMenu();
 		clickWebServiceOption();
 		clickCreateService();
 		setServiceName(txtServiceName);
@@ -147,5 +150,90 @@ public class CreateWebServiceMethod {
 		clickSave();
 		 
 	}
+	
+	
+	//Click created service
+	public void clickChooseService(){
+		objWSPage.getTestService1().click();
+	}
+	
+	//Click running web service
+	public void clickRunningService(){
+		objWSPage.getRunService().click();
+	}
+	
+	//Click on VSII Projects option on side bar
+	public void clickVsiiProject(){
+		objWSPage.getVsiiProject().click();
+	}
+	
+	//Click imported project
+	public void clickImportedProject(){
+		objWSPage.getTestProject().click();
+	}
+	
+	//Get project key
+	public String getProjectKey(){
+		return objWSPage.getProjectKey().getText();
+	}
+	
+	//Get project name
+	public String getProjectName(){
+		return objWSPage.getProjectName().getText();
+	}
+	
+	//Get project department
+	public String getProjectDepartment(){
+		return objWSPage.getProjectDepartment().getText();
+	}
+	
+	//Get project Project field
+	public String getProjectProject(){
+		return objWSPage.getProjectProject().getText();
+	}
+	
+	//Get project type field
+	public String getProjectType(){
+		return objWSPage.getProjectType().getText();
+	}
+	
+	// PERFORM RUNNING SERVICE
+	public void runService(){
+//		clickProjectMenu();
+		clickWebServiceOption();
+		clickChooseService();
+		clickRunningService();
+		clickVsiiProject();
+		clickImportedProject();
+		getProjectKey();
+		getProjectName();
+		getProjectDepartment();
+		getProjectProject();
+		getProjectType();
+	}
 
+	// Click Edit imported project
+	public void clickEditImportedProject(){
+		objVsiiProjectPage.getEditProjectBtn().click();
+	}
+	
+	// Click "No verify worklog" check box
+	public void clickNoVerifyChkbox(){
+		objVsiiProjectPage.getNoVerifyWorklogchkbx().click();
+	}
+	
+	// Click Save project
+	public void clickSaveImportedProject(){
+		objVsiiProjectPage.getSaveBtn().click();
+	}
+	
+	//PERFORM EDITING IMPORTED PROJECT
+	public void editImportedProject(){
+		clickVsiiProject();
+		clickImportedProject();
+		clickEditImportedProject();
+		clickNoVerifyChkbox();
+		clickSaveImportedProject();
+	}
+	
 }
