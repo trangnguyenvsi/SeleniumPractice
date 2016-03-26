@@ -75,4 +75,14 @@ public class TestData {
 		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W03");
 		return data;
 	}
+	
+	
+	/*
+	 * anhptq
+	 */
+	@DataProvider(name = "dpLogin")
+	public static Object[][]  getLoginTS() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Login", "LTS");
+		return data;
+	}
 }

@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class MyTimesheetPage {
-	@FindBy(xpath = "/html/body/div/table/tbody/tr[2]/td/ul/li[3]/a")
+	@FindBy(xpath = "/html/body/div[1]/table/tbody/tr[2]/td/ul/li[3]/a")
 	private WebElement humanResources;
 	
 	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[1]/div[1]/div[3]/ul[2]/li[2]/a")

@@ -22,12 +22,12 @@ public class Login{
 	}
 
 //	@Test(priority = 0, description = "Verify Title of Login Page")
-	public void LO01() throws IOException {
-		TestBase.methodName = "LO01";
-		// Verify Login page title
-		String loginPageTitle = objLogin.getLoginTitle();
-		Assert.assertTrue(loginPageTitle.contains("Guru99 Bank"));
-	}
+//	public void LO01() throws IOException {
+//		TestBase.methodName = "LO01";
+//		// Verify Login page title
+//		String loginPageTitle = objLogin.getLoginTitle();
+//		Assert.assertTrue(loginPageTitle.contains("Guru99 Bank"));
+//	}
 	
 	@Test(priority = 2)
 //	, description = "verify Login", dataProvider = "dpLogin", dataProviderClass = TestData.class)
