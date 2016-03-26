@@ -49,13 +49,12 @@ public class WebService {
 	 *  Save new web service and verify if it has been created
 	 */
 	
-	@Test(priority = 1, description = "Create new web service in OpenERP", dataProvider="newService", dataProviderClass = TestData.class)
+	@Test(priority = 1, description = "Create new web service in OpenERP", dataProvider="W01", dataProviderClass = TestData.class)
 	public void W01(String txtServiceName, String txtType, String txtProtocol,
 			String txtHost, String txtPort, String txtPath, String txtDateTime, String txtAuth, String txtJusername, String txtJPassword, String txtModelName,
 			String txtDecodeMethodName) throws IOException {
 		// Method name
 		TestBase.methodName = "W01";
-
 		// Perform test steps
 		objService.createWebService(txtServiceName, txtType, txtProtocol, txtHost, txtPort, txtPath, txtDateTime, txtAuth, txtJusername, txtJPassword, txtModelName, txtDecodeMethodName);
 		// Verify test result
@@ -87,14 +86,16 @@ public class WebService {
 		Assert.assertEquals(objService.getProjectType(), "JIRA");
 	}
 	
+	/*
+	 * 
+	 */
+	
 	@Test(priority = 3, description = "Verify the ability of mapping imported project from JIRA with existed OpenERP project work correctly", dataProvider="W03", dataProviderClass = TestData.class)
 	public void W03(String projectName){
 		// Method name
 		TestBase.methodName = "W03";
-	
 		// Perform test steps
 		objService.editImportedProject(projectName);
-		
 		
 	}
 }

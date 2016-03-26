@@ -18,7 +18,7 @@ public class VSIIProjectPage {
 	}
 	
 	//Identify "Project" dropdown list
-	@FindBy(xpath="//div/input[@class='ui-autocomplete-input' and @id='oe-field-input-1230']")
+	@FindBy(xpath="//tr[@class='oe_form_group_row'][4]//input[contains(@id,'oe-field-input-') and @class='ui-autocomplete-input']")
 	private WebElement projectDropdown;
 
 	public WebElement getProjectDropdown() {

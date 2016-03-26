@@ -2,6 +2,7 @@ package com.vsii.tsc.guru.pages.method;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
@@ -20,6 +21,7 @@ public class WebServiceMethod {
 	public WebServiceMethod(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, objWSPage);
+		PageFactory.initElements(driver, objVsiiProjectPage);
 	}
 
 	// Enter Project module from home page
@@ -222,9 +224,14 @@ public class WebServiceMethod {
 		objVsiiProjectPage.getProjectDropdown().sendKeys(projectName);
 	}
 	
-	// Click "No verify worklog" check box
+	// Click "No verify worklog" check box if it is checked, leave it empty if it has not been checked
 	public void clickNoVerifyChkbox(){
-		objVsiiProjectPage.getNoVerifyWorklogchkbx().click();
+		
+		WebElement checkBox = objVsiiProjectPage.getNoVerifyWorklogchkbx();
+		
+		if(checkBox.isSelected()){
+			checkBox.click();
+		}
 	}
 	
 	// Click Save project
