@@ -85,4 +85,50 @@ public class TestData {
 		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Login", "LTS");
 		return data;
 	}
+	
+	
+	/*
+	 * TrangLT
+	 */
+	@DataProvider(name="dpNewTaskErr")
+	public static Object[][]  getTaskDataErr() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "CreateTask_PM", "TM03");
+		return data;
+	}
+	
+	@DataProvider(name="dpNewTaskPM")
+	public static Object[][]  getTaskDataPM() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "CreateTask_PM", "TM04");
+		return data;
+	}
+	
+	@DataProvider(name="dpNewTaskUserOutside")
+	public static Object[][]  getTaskDataUserOutside() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "CreateTask_PM", "TM05");
+		return data;
+	}
+	
+	@DataProvider(name="dpNewTaskEdit")
+	public static Object[][]  getTaskDataEdit() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "CreateTask_PM", "TM06");
+		return data;
+	}
+	
+	@DataProvider(name="dpStatusListNotAllowToDone")
+	public static Object[][]  getStatusListNotAllowToDone() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "CreateTask_Member", "TM18");
+		return data;
+	}
+	
+	@DataProvider(name="dpNumberOfTaskWantToSelect")
+	public static Object[][]  getNumberOfTaskWantToSelect() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "CreateTask_Member", "TM28");
+		return data;
+	}
+	
+	@DataProvider(name="dpTaskAdminDelete")
+	public static Object[][]  getTaskAdminDelete() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "CreateTask_PM", "TM31");
+		return data;
+	}
 }
