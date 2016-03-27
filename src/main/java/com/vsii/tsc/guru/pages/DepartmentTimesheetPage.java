@@ -4,39 +4,43 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class DepartmentTimesheetPage {
-	@FindBy(className = "oe_menu_toggler")
-	private WebElement humanResourcesPm;
 	
-	@FindBy(className = "oe_menu_leaf")
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[1]/div[1]/div[5]/ul[3]/li[3]/a")
 	private WebElement departmentTimesheets;
 	
-	@FindBy(className = "oe_list_header_many2one oe_sortable")
-	private WebElement employeePm;
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[3]/div")
+	private WebElement employeeD;
 	
-	@FindBy(className = "oe_list_header_date oe_sortable")
-	private WebElement dateFromPm;
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[4]/div")
+	private WebElement dateFromD;
 	
-	@FindBy(className = "oe_list_header_date oe_sortable")
-	private WebElement dateToPm;
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[5]/div")
+	private WebElement dateToD;
 	
-	@FindBy(className = "oe_list_header_many2one oe_sortable")
-	private WebElement departmentIdPm;
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[6]/div")
+	private WebElement departmentIdD;
 	
-	@FindBy(className = "oe_list_header_float_time oe_sortable")
-	private WebElement totalTimesheetPm;
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[7]/div")
+	private WebElement totalTimesheetD;
 	
-	@FindBy(className = "oe_list_header_selection oe_sortable")
-	private WebElement statePm;
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[8]/div")
+	private WebElement statusD;
 	
-	@FindBy(xpath = "/html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/tbody[1]/tr/th")
-	private WebElement groupMonth;
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[1]")
+	private WebElement groupD;
 
-	public WebElement getHumanResourcesPm() {
-		return humanResourcesPm;
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/tbody/tr[1]/td[1]")
+	private WebElement groupMonth;
+	
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/tbody[2]/tr[2]/td[7]")
+	private WebElement statusDetail;
+	
+	public WebElement getStatusDetail() {
+		return statusDetail;
 	}
 
-	public void setHumanResourcesPm(WebElement humanResourcesPm) {
-		this.humanResourcesPm = humanResourcesPm;
+	public void setStatusDetail(WebElement statusDetail) {
+		this.statusDetail = statusDetail;
 	}
 
 	public WebElement getDepartmentTimesheets() {
@@ -47,53 +51,70 @@ public class DepartmentTimesheetPage {
 		this.departmentTimesheets = departmentTimesheets;
 	}
 
-	public WebElement getEmployeePm() {
-		return employeePm;
+	public WebElement getEmployeeD() {
+		return employeeD;
 	}
 
-	public void setEmployeePm(WebElement employeePm) {
-		this.employeePm = employeePm;
+	public void setEmployeeD(WebElement employeeD) {
+		this.employeeD = employeeD;
 	}
 
-	public WebElement getDateFromPm() {
-		return dateFromPm;
+	public WebElement getDateFromD() {
+		return dateFromD;
 	}
 
-	public void setDateFromPm(WebElement dateFromPm) {
-		this.dateFromPm = dateFromPm;
+	public void setDateFromD(WebElement dateFromD) {
+		this.dateFromD = dateFromD;
 	}
 
-	public WebElement getDateToPm() {
-		return dateToPm;
+	public WebElement getDateToD() {
+		return dateToD;
 	}
 
-	public void setDateToPm(WebElement dateToPm) {
-		this.dateToPm = dateToPm;
+	public void setDateToD(WebElement dateToD) {
+		this.dateToD = dateToD;
 	}
 
-	public WebElement getDepartmentIdPm() {
-		return departmentIdPm;
+	public WebElement getDepartmentIdD() {
+		return departmentIdD;
 	}
 
-	public void setDepartmentIdPm(WebElement departmentIdPm) {
-		this.departmentIdPm = departmentIdPm;
+	public void setDepartmentIdD(WebElement departmentIdD) {
+		this.departmentIdD = departmentIdD;
 	}
 
-	public WebElement getTotalTimesheetPm() {
-		return totalTimesheetPm;
+	public WebElement getTotalTimesheetD() {
+		return totalTimesheetD;
 	}
 
-	public void setTotalTimesheetPm(WebElement totalTimesheetPm) {
-		this.totalTimesheetPm = totalTimesheetPm;
+	public void setTotalTimesheetD(WebElement totalTimesheetD) {
+		this.totalTimesheetD = totalTimesheetD;
 	}
 
-	public WebElement getStatePm() {
-		return statePm;
+	public WebElement getStatusD() {
+		return statusD;
 	}
 
-	public void setStatePm(WebElement statePm) {
-		this.statePm = statePm;
+	public void setStatusD(WebElement statusD) {
+		this.statusD = statusD;
 	}
+
+	public WebElement getGroupD() {
+		return groupD;
+	}
+
+	public void setGroupD(WebElement groupD) {
+		this.groupD = groupD;
+	}
+
+	public WebElement getGroupMonth() {
+		return groupMonth;
+	}
+
+	public void setGroupMonth(WebElement groupMonth) {
+		this.groupMonth = groupMonth;
+	}
+
 
 	
 	

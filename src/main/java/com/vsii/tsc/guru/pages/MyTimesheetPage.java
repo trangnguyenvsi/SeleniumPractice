@@ -28,16 +28,16 @@ public class MyTimesheetPage {
 	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[7]")
 	private WebElement status;
 	
-	@FindBy(className = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/table/tbody/tr[2]/td[1]/div/div/button[1]")
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/table/tbody/tr[2]/td[1]/div/div/button[1]")
 	private WebElement btnCreate;
 
-	@FindBy(className = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/table/tbody/tr[2]/td[1]/div/div/span/a[2]")
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/table/tbody/tr[2]/td[1]/div/div/span/a[2]")
 	private WebElement lnkImport;
 	
-	@FindBy(className = "/html/body/div[1]/table/tbody/tr[2]/td/span")
+	@FindBy(xpath = "/html/body/div[1]/table/tbody/tr[2]/td/span")
 	private WebElement lnkLogout;
 	
-	@FindBy(className = "/html/body/div[1]/table/tbody/tr[2]/td/span/ul/li[5]/a")
+	@FindBy(xpath = "/html/body/div[1]/table/tbody/tr[2]/td/span/ul/li[5]/a")
 	private WebElement lnkLogoutMenu;
 
 	public WebElement getHumanResources() {

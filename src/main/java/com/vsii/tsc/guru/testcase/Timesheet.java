@@ -9,37 +9,35 @@ import org.testng.annotations.Test;
 
 import com.vsii.tsc.guru.commethods.CommonMethods;
 import com.vsii.tsc.guru.pages.MyTimesheetPage;
-import com.vsii.tsc.guru.pages.method.ClickHumanResourcesMethod;
+import com.vsii.tsc.guru.pages.method.TimesheetMethod;
+import com.vsii.tsc.guru.pages.method.DepartmentTimesheetMethod;
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
 import com.vsii.tsc.utility.TestBase;
 
 public class Timesheet {
 
 	LoginPageMethod objLogin;
-	ClickHumanResourcesMethod objClickHumanResources;
-	MyTimesheetPage objMyTimesheet;
+	TimesheetMethod objMyTimesheet;
+	MyTimesheetPage objTS = new MyTimesheetPage();
+	DepartmentTimesheetMethod objDepartment;
 	
 	@BeforeClass
 	public void setupClass() throws NumberFormatException, IOException {
-		
-		objClickHumanResources = new ClickHumanResourcesMethod(TestBase.driver);		
+
+		objLogin = new LoginPageMethod(TestBase.driver);	
+		objMyTimesheet = new TimesheetMethod(TestBase.driver);		
 	}
 	
 	 @Test(priority = 1)
 		public void TS01() throws InterruptedException {
-			objClickHumanResources.clickHumanResources();
-		 
-//		 	TestBase.methodName = "TS01";
-//			objLogin = new LoginPageMethod(TestBase.driver);	
-//			//login user member
-//			objLogin.loginToManagerPage("anhptq", "12345678");
-//			CommonMethods.waitUntil(objMyTimesheet.getHumanResources());
-//			//click Human resources
-//			objMyTimesheet.getHumanResources().click();
-////			CommonMethods.waitUntil(objMyTimesheet.getMyTimesheet());
-//			//click My timesheet
-//			objMyTimesheet.getMyTimesheet().click();
-		 
+		 	TestBase.methodName = "TS01";
+			objLogin.loginToManagerPage("anhptq", "12345678");
+			
+			CommonMethods.waitUntil(objTS.getHumanResources());
+			objMyTimesheet.clickHumanResources();
+			CommonMethods.waitUntil(objTS.getMyTimesheet());
+			objMyTimesheet.clickMytimesheet();
+			
 			Assert.assertEquals(objMyTimesheet.getEmployeeId(),"Employee");
 			Assert.assertEquals(objMyTimesheet.getDateFrom(),"Date from");
 			Assert.assertEquals(objMyTimesheet.getDateTo(),"Date to");
@@ -50,6 +48,23 @@ public class Timesheet {
 			Assert.assertEquals(objMyTimesheet.getLnkImport(),"Import");
 		}
 	
+		public void TS03() throws InterruptedException {
+		 	TestBase.methodName = "TS03";
+			objLogin.loginToManagerPage("lienlt", "12345678");
+			
+			CommonMethods.waitUntil(objTS.getHumanResources());
+			objMyTimesheet.clickHumanResources();
+			CommonMethods.waitUntil(objTS.getMyTimesheet());
+			objDepartment.clickDepartment();
+			
+			Assert.assertEquals(objDepartment.getEmployeeD(),"Employee");
+			Assert.assertEquals(objDepartment.getDateFromD(),"Date from");
+			Assert.assertEquals(objDepartment.getDateToD(),"Date to");
+			Assert.assertEquals(objDepartment.getDepartmentIdD(),"Department");
+			Assert.assertEquals(objDepartment.getTotalTimesheetD(),"Total Timesheet");
+			Assert.assertEquals(objDepartment.getStatusD(),"Status");
+		}
+	 
 	 
 	 @AfterClass
 		public void logout() throws NumberFormatException, IOException {
