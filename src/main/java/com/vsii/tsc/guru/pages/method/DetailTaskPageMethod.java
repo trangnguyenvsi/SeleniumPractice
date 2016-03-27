@@ -22,6 +22,7 @@ public class DetailTaskPageMethod {
 	public void inputSummary(String summaryTxt) throws InterruptedException {
 		objDetailTaskPage.getSummaryTxt();
 		Thread.sleep(1000);
+		objDetailTaskPage.getSummaryTxt().clear();
 		objDetailTaskPage.getSummaryTxt().sendKeys(summaryTxt);
 		Thread.sleep(1000);
 		objDetailTaskPage.getSummaryTxt().sendKeys(Keys.TAB);
@@ -74,9 +75,11 @@ public class DetailTaskPageMethod {
 
 	public void inputTagOfProject(String tagOfProjectDrop) throws InterruptedException {
 		Thread.sleep(1000);
-		objDetailTaskPage.getTagOfProjectDrop().sendKeys(tagOfProjectDrop);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(objDetailTaskPage.getTagOfProjectDrop()).click();
+		actions.sendKeys(tagOfProjectDrop).perform();
 		Thread.sleep(1000);
-		objDetailTaskPage.getTagOfProjectDrop().sendKeys(Keys.TAB);
+		actions.sendKeys(Keys.TAB);
 	}
 
 	public void inputProgress(String progress) {
@@ -124,19 +127,23 @@ public class DetailTaskPageMethod {
 		objDetailTaskPage.getSaveButt();
 		objDetailTaskPage.getSaveButt().click();
 	}
-	
+
 	public WebElement getSummaryTxt() {
 		return objDetailTaskPage.getSummaryTxt();
 	}
-	
+
+	public WebElement getSummaryTit() {
+		return objDetailTaskPage.getSummaryTit();
+	}
+
 	public WebElement getProjectNameDrop() {
 		return objDetailTaskPage.getProjectNameDrop();
 	}
-	
+
 	public String getErrMessage1() {
 		return objDetailTaskPage.getErrMessage1().getText();
 	}
-	
+
 	public String getErrMessage2() {
 		return objDetailTaskPage.getErrMessage2().getText();
 	}
@@ -163,8 +170,113 @@ public class DetailTaskPageMethod {
 		this.inputTagOfWork(tagOfWorkDrop);
 		this.clickSaveButt();
 	}
-	
+
+	public void editSummaryOfTask(String summaryTxt) throws InterruptedException {
+		this.inputSummary(summaryTxt);
+		this.clickSaveButt();
+	}
+
 	public void goToTasks() {
-		objDetailTaskPage.getGoToTasks();
+		objDetailTaskPage.getGoToTasks().click();
+	}
+
+	public String getErrMessageUserOutside() {
+		return objDetailTaskPage.getErrMessageUserOutside().getText();
+	}
+
+	public void clickEditButt() {
+		objDetailTaskPage.getEditButt().click();
+	}
+
+	public WebElement getEditButt() {
+		return objDetailTaskPage.getEditButt();
+	}
+
+	public WebElement editButt() {
+		return objDetailTaskPage.getEditButt();
+	}
+
+	public void clickDiscardButt() {
+		objDetailTaskPage.getDiscardButt().click();
+	}
+
+	public void setSummaryTxt(String summaryTxt) {
+		objDetailTaskPage.getSummaryTxt().sendKeys(summaryTxt);
+	}
+
+	public void clickRefuseButt() {
+		objDetailTaskPage.getRefuseButt().click();
+	}
+
+	public void clickApproveButt() {
+		objDetailTaskPage.getApproveButt().click();
+	}
+
+	public void clickDeleteButt() {
+		objDetailTaskPage.getDeleteButt().click();
+	}
+
+	public String getWorkSummaryTit() {
+		return objDetailTaskPage.getWorkSummaryTit().getText();
+	}
+
+	public String getTimeSpentTit() {
+		return objDetailTaskPage.getTimeSpentTit().getText();
+	}
+
+	public WebElement isWorkSummaryTitExisted() {
+		return objDetailTaskPage.getWorkSummaryTit();
+	}
+
+	public WebElement isTimeSpentTitExisted() {
+		return objDetailTaskPage.getTimeSpentTit();
+	}
+
+	public String getStatus() {
+		return objDetailTaskPage.getStatusTit().getText();
+	}
+
+	public void clickDoneButt() {
+		objDetailTaskPage.getDoneButt().click();
+	}
+
+	public void clickCancelTaskButt() {
+		objDetailTaskPage.getCancelTaskButt().click();
+	}
+
+	public void clickReactiveButt() {
+		objDetailTaskPage.getReactiveButt().click();
+	}
+
+	public void clickEvaluateButt() {
+		objDetailTaskPage.getEvaluateButt().click();
+	}
+
+	public void clickApproveWorklogButt() {
+		objDetailTaskPage.getApproveWorklogButt().click();
+	}
+
+	public void clickMoreButt() {
+		objDetailTaskPage.getMoreButt().click();
+	}
+
+	public void clickPendingButt() {
+		objDetailTaskPage.getPendingButt().click();
+	}
+
+	public void clickInProgressButt() {
+		objDetailTaskPage.getInProgressButt().click();
+	}
+	
+	public WebElement getEvaluateButt() {
+		return objDetailTaskPage.getEvaluateButt();
+	}
+	
+	public void clickCancelButt() {
+		objDetailTaskPage.getCancelButt().click();
+	}
+	
+	public void clickApproveAllWorkLogs() {
+		objDetailTaskPage.getApproveAllWorkLogs().click();
 	}
 }

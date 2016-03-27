@@ -3,8 +3,6 @@ package com.vsii.tsc.guru.pages.method;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-
-import com.vsii.tsc.guru.pages.ProjectsPage;
 import com.vsii.tsc.guru.pages.TasksPage;
 
 public class TasksPageMethod {
@@ -73,6 +71,87 @@ public class TasksPageMethod {
 		return objTasksPage.getProgressTit().getText();
 	}
 	
+	public String getTaskSummaryInfo() {
+		return objTasksPage.getTaskSummaryInfo().getText();
+	}
 
+	public String getProjectNameInfo() {
+		return objTasksPage.getProjectNameInfo().getText();
+	}
 
+	public String getAssignToInfo() {
+		return objTasksPage.getAssignToInfo().getText();
+	}
+
+	public String getTaskTypeInfo() {
+		return objTasksPage.getTaskTypeInfo().getText();
+	}
+
+	public String getIsBillInfo() {
+		return objTasksPage.getIsBillInfo().getText();
+	}
+
+	public String getExternalKeyInfo() {
+		return objTasksPage.getExternalKeyInfo().getText();
+	}
+
+	public String getPlanHourInfo() {
+		return objTasksPage.getPlanHourInfo().getText();
+	}
+
+	public String getHourSpentInfo() {
+		return objTasksPage.getHourSpentInfo().getText();
+	}
+
+	public String getStageInfo() {
+		return objTasksPage.getStageInfo().getText();
+	}
+
+	public String getStartingDateInfo() {
+		return objTasksPage.getStartingDateInfo().getText();
+	}
+
+	public String getEndDateInfo() {
+		return objTasksPage.getEndDateInfo().getText();
+	}
+
+	public String getProgressInfo() {
+		return objTasksPage.getProgressInfo().getText();
+	}
+	
+	public void chooseOneExistedTask() {
+		objTasksPage.getTaskSummaryInfo().click();
+	}
+	
+	public void chooseTheFirstNewTask() {
+		objTasksPage.getFirstNewTask().click();
+	}
+	
+	public void chooseTheFirstCancelTask() {
+		objTasksPage.getFirstCancelTask().click();
+	}
+	
+	public void chooseTheFirstTaskOfOneUser() {
+		objTasksPage.getFirstTaskOfOneUser().click();;
+	}
+
+	public void setFirstTaskOfOneUser(WebElement firstTaskOfOneUser) {
+		objTasksPage.setFirstTaskOfOneUser(firstTaskOfOneUser);
+	}
+	
+	public void clickCheckboxOfNewTaskOfOneUser() {
+		objTasksPage.getCheckboxOfNewTaskOfOneUser().click();
+	}
+
+	public void setCheckboxOfNewTaskOfOneUser(WebElement checkboxOfNewTaskOfOneUser) {
+		objTasksPage.setCheckboxOfNewTaskOfOneUser(checkboxOfNewTaskOfOneUser);
+	}
+	
+	public void clickMoreButt() {
+		objTasksPage.getMoreButt().click();
+	}
+	
+	public void clickDeleteButt() {
+		objTasksPage.getDeleteButt().click();
+	}
 }

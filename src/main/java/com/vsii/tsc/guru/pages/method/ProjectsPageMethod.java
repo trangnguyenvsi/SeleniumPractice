@@ -19,12 +19,10 @@ public class ProjectsPageMethod {
 	}
 	
 	public void clickProjectLink() {
-		objProjectsPage.getProjectLinktxt();
 		objProjectsPage.getProjectLinktxt().click();
 	}
 	
 	public void chooseDepartment() {
-		objProjectsPage.getDepartment();
 		objProjectsPage.getDepartment().click();
 	}
 	
