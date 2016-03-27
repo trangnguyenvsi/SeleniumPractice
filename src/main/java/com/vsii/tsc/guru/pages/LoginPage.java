@@ -21,6 +21,12 @@ public class LoginPage {
 //			@FindBy(name = "btnReset")
 //			private WebElement webReset;
 
+			
+			// Identify Submit button
+			//@FindBy(name = "btnLogin")
+			@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div[3]/form/div/select")
+			private WebElement db;
+			
 			// Identify Submit button
 			//@FindBy(name = "btnLogin")
 			@FindBy(xpath = ".//*[@name='submit']")
@@ -65,6 +71,14 @@ public class LoginPage {
 
 			public void setPasswordtxt(WebElement passwordtxt) {
 				this.passwordtxt = passwordtxt;
+			}
+
+			public WebElement getDb() {
+				return db;
+			}
+
+			public void setDb(WebElement db) {
+				this.db = db;
 			}
 
 			public WebElement getLoginbutt() {

@@ -10,29 +10,35 @@ public class MyTimesheetPage {
 	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[1]/div[1]/div[3]/ul[2]/li[2]/a")
 	private WebElement myTimesheet;
 	
-	@FindBy(id = "employee_id")
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[2]")
 	private WebElement employeeId;
 	
-	@FindBy(id = "date_from")
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[3]")
 	private WebElement dateFrom;
 	
-	@FindBy(id = "date_to")
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[4]")
 	private WebElement dateTo;
 	
-	@FindBy(id = "department_id")
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[5]")
 	private WebElement departmentId;
 	
-	@FindBy(id = "total_timesheet")
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[6]")
 	private WebElement totalTimesheet;
 	
-	@FindBy(id = "state")
-	private WebElement stateId;
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[7]")
+	private WebElement status;
 	
-	@FindBy(className = "oe_button oe_list_add oe_highlight")
+	@FindBy(className = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/table/tbody/tr[2]/td[1]/div/div/button[1]")
 	private WebElement btnCreate;
 
-	@FindBy(className = "oe_bold oe_list_button_import")
+	@FindBy(className = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/table/tbody/tr[2]/td[1]/div/div/span/a[2]")
 	private WebElement lnkImport;
+	
+	@FindBy(className = "/html/body/div[1]/table/tbody/tr[2]/td/span")
+	private WebElement lnkLogout;
+	
+	@FindBy(className = "/html/body/div[1]/table/tbody/tr[2]/td/span/ul/li[5]/a")
+	private WebElement lnkLogoutMenu;
 
 	public WebElement getHumanResources() {
 		return humanResources;
@@ -90,12 +96,12 @@ public class MyTimesheetPage {
 		this.totalTimesheet = totalTimesheet;
 	}
 
-	public WebElement getStateId() {
-		return stateId;
+	public WebElement getStatus() {
+		return status;
 	}
 
-	public void setStateId(WebElement stateId) {
-		this.stateId = stateId;
+	public void setStatus(WebElement status) {
+		this.status = status;
 	}
 
 	public WebElement getBtnCreate() {
@@ -112,6 +118,22 @@ public class MyTimesheetPage {
 
 	public void setLnkImport(WebElement lnkImport) {
 		this.lnkImport = lnkImport;
+	}
+
+	public WebElement getLnkLogout() {
+		return lnkLogout;
+	}
+
+	public void setLnkLogout(WebElement lnkLogout) {
+		this.lnkLogout = lnkLogout;
+	}
+
+	public WebElement getLnkLogoutMenu() {
+		return lnkLogoutMenu;
+	}
+
+	public void setLnkLogoutMenu(WebElement lnkLogoutMenu) {
+		this.lnkLogoutMenu = lnkLogoutMenu;
 	}
 	
 	

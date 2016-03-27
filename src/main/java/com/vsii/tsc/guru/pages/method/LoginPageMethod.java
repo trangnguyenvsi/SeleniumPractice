@@ -19,6 +19,12 @@ public class LoginPageMethod {
 		log.debug("Initiate web driver");
 		}
 		
+		// Choose DB Demo
+//		public void chooseDB(String txtUsername) {
+//			objLogin.getDb().;
+//			log.debug("Set DB Demo");
+//		}
+		
 		// Enter username in UserID textbox
 		public void enterUserID(String txtUsername) {
 			objLogin.getUserNametxt().sendKeys(txtUsername);
@@ -37,7 +43,7 @@ public class LoginPageMethod {
 			log.debug("Click login button");
 		}
 		
-		// Get the title of Login page
+//		 Get the title of Login page
 //		public String getLoginTitle() {
 ////			log.debug("Get web title text");
 //			return objLogin.getWebTitleText().getText();
