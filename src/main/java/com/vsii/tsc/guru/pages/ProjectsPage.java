@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ProjectsPage {
-	@FindBy(xpath = ".//*[@class='oe_menu']/li[3]/a/span")
+	@FindBy(xpath = ".//*[@class='oe_menu']/li/a/span[contains(text(),'Project')]")
 	private WebElement projectLinktxt;
 
 	@FindBy(xpath = ".//*[@class='oe_group_header'][2]")

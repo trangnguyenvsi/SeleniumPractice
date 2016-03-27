@@ -4,68 +4,148 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class DetailTaskPage {
-	@FindBy(xpath = ".//*[@placeholder='Task summary...']")
+	@FindBy(xpath = ".//*[@class='oe_view_manager oe_view_manager_current']/div/div[3]/div/div[4]/div/div/div[1]/div/h1/span/input")
 	private WebElement summaryTxt;
-	
-	@FindBy(xpath = ".//*[@id='oe-field-input-99']")
+
+	@FindBy(xpath = ".//*[@class='oe_view_manager oe_view_manager_current']/div/div[3]/div/div[4]/div/div/div[1]/div/h1/span/span")
+	private WebElement summaryTit;
+
+	@FindBy(xpath = ".//*[@class='oe_view_manager oe_view_manager_current']/div/div[3]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]/span/div/input")
 	private WebElement projectNameDrop;
-	
-	@FindBy(xpath = ".//*[@id='oe-field-input-100']")
+
+	@FindBy(xpath = ".//*[@class='oe_view_manager oe_view_manager_current']/div/div[3]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/span/div/input")
 	private WebElement assignToDrop;
-	
-	@FindBy(xpath = ".//*[@id='oe-field-input-102']")
+
+	@FindBy(xpath = ".//*[@class='oe_view_manager oe_view_manager_current']/div/div[3]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[4]/td[2]/span/div/input")
 	private WebElement taskTypeDrop;
-	
-	@FindBy(xpath = ".//*[@id='oe-field-input-103']")
+
+	@FindBy(xpath = ".//*[@class='oe_view_manager oe_view_manager_current']/div/div[3]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[5]/td[2]/span/input")
 	private WebElement isBillCheckbox;
-	
-	@FindBy(xpath = ".//*[@id='oe-field-input-104']")
+
+	@FindBy(xpath = ".//*[@class='oe_view_manager oe_view_manager_current']/div/div[3]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[6]/td[2]/span/div/input")
 	private WebElement projectPhaseDrop;
-	
-	@FindBy(xpath = ".//*[@id='oe-field-input-106']")
+
+	@FindBy(xpath = ".//*[@class='oe_view_manager oe_view_manager_current']/div/div[3]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[8]/td[2]/span/input")
 	private WebElement planHourTxt;
-	
+
 	@FindBy(xpath = ".//*[@name='date_deadline']")
 	private WebElement deadlineTxt;
-	
-	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td[2]/div/div/div/div[3]")
+
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td[2]/div/div/div/div[1]")
 	private WebElement tagOfProjectDrop;
-	
+
 	@FindBy(xpath = ".//*[@role='progressbar']")
 	private WebElement progress;
-	
+
 	@FindBy(xpath = ".//*[@name='description']")
 	private WebElement descriptionTxtA;
-	
+
 	@FindBy(xpath = ".//*[contains(text(),'Add an item')]")
 	private WebElement addItemButt;
-	
+
 	@FindBy(xpath = ".//*[@class='oe_view_manager oe_view_manager_current'][2]/table/tbody/tr[2]/td[1]/div/div[2]/span[2]/button")
 	private WebElement saveButt;
-	
-	@FindBy(xpath = ".//*[@id='notebook_page_110']/div[2]/div/div/div/div/div/div/div[4]/div/div/span[1]/input")
+
+	@FindBy(xpath = ".//*[@class='oe_view_manager oe_view_manager_current'][2]/table/tbody/tr[2]/td[1]/div/div[2]/span[2]/a")
+	private WebElement discardButt;
+
+	@FindBy(xpath = ".//*[@class='oe_view_manager oe_view_manager_current'][2]/table/tbody/tr[2]/td[1]/div/div[2]/span[1]/div/button")
+	private WebElement editButt;
+
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/header/button[2]")
+	private WebElement doneButt;
+
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/header/button[3]")
+	private WebElement cancelTaskButt;
+
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/header/button[1]")
+	private WebElement reactiveButt;
+
+	@FindBy(xpath = "html/body/div[2]/div[11]/div/footer/button[1]/span")
+	private WebElement evaluateButt;
+
+	@FindBy(xpath = "html/body/div[2]/div[11]/div/footer/button[2]/span")
+	private WebElement cancelButt;
+
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/header/button[4]")
+	private WebElement approveWorklogButt;
+
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/table/tbody/tr[2]/td[2]/div/div[2]/div/div[2]/button")
+	private WebElement moreButt;
+
+	@FindBy(xpath = "")
+	private WebElement pendingButt;
+
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/table/tbody/tr[2]/td[2]/div/div[2]/div/div[2]/ul/li/a[contains(text(),'Approve Worklogs')]")
+	private WebElement approveAllWorkLogs;
+
+	@FindBy(xpath = ".//*[@class='oe_form_field_status oe_form_status_clickable']/li[2]/span")
+	private WebElement inProgressButt;
+
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div/div[4]/div/div/span[1]/input")
 	private WebElement workSummaryTxt;
-	
-	@FindBy(xpath = ".//*[@id='notebook_page_110']/div[2]/div/div/div/div/div/div/div[4]/div/div/span[2]/input")
+
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div/div[4]/div/div/span[2]/input")
 	private WebElement timeSpentTxt;
-	
-	@FindBy(xpath = ".//*[@id='notebook_page_110']/div[2]/div/div/div/div/div/div/div[4]/div/div/span[3]/span/input[2]")
+
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div/div[4]/div/div/span[3]/span/input[2]")
 	private WebElement dateTxt;
-	
-	@FindBy(xpath = ".//*[@id='notebook_page_110']/div[2]/div/div/div/div/div/div/div[4]/div/div/span[4]/div/input")
+
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div/div[4]/div/div/span[4]/div/input")
 	private WebElement doneByDrop;
-	
-	@FindBy(xpath = ".//*[@id='notebook_page_110']/div[2]/div/div/div/div/div/div/div[4]/div/div/div/div/div/div[3]")
+
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div/div[4]/div/div/div/div/div/textarea")
 	private WebElement tagOfWorkDrop;
-	
+
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/table/tbody/tr[1]/td[1]")
+	private WebElement workSummaryTit;
+
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/table/tbody/tr[1]/td[2]")
+	private WebElement timeSpentTit;
+
+	@FindBy(xpath = ".//*[@class='oe_view_manager oe_view_manager_current'][2]/div/div[3]/div/div[4]/div/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/table/tbody/tr[1]/td[6]")
+	private WebElement statusTit;
+
 	@FindBy(xpath = ".//*[@class='openerp openerp_webclient_container']/div/div[5]/h1")
 	private WebElement errMessage1;
-	
+
 	@FindBy(xpath = ".//*[@class='openerp openerp_webclient_container']/div/div[5]/ul/li")
 	private WebElement errMessage2;
-	
-	@FindBy(xpath = ".//*[@data-id='breadcrumb_86']")
+
+	@FindBy(xpath = ".//*[@class='oe_breadcrumb_item' and contains(text(), 'Tasks')]")
 	private WebElement goToTasks;
+
+	@FindBy(xpath = ".//*[@class='oe_dialog_warning']/tbody/tr/td[2]/p")
+	private WebElement errMessageUserOutside;
+
+	@FindBy(xpath = ".//*[@class='oe_view_manager oe_view_manager_current'][2]/div/div[3]/div/div[4]/div/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/table/tbody/tr[1]/td[9]/button")
+	private WebElement refuseButt;
+
+	@FindBy(xpath = ".//*[@class='oe_view_manager oe_view_manager_current'][2]/div/div[3]/div/div[4]/div/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/table/tbody/tr[1]/td[8]/button")
+	private WebElement approveButt;
+
+	@FindBy(xpath = ".//*[@class='oe_view_manager oe_view_manager_current'][2]/div/div[3]/div/div[4]/div/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/table/tbody/tr[1]/td[10]/button")
+	private WebElement deleteButt;
+
+	public WebElement getStatusTit() {
+		return statusTit;
+	}
+
+	public WebElement getDiscardButt() {
+		return discardButt;
+	}
+
+	public WebElement getSummaryTit() {
+		return summaryTit;
+	}
+
+	public WebElement getEditButt() {
+		return editButt;
+	}
+
+	public WebElement getErrMessageUserOutside() {
+		return errMessageUserOutside;
+	}
 
 	public WebElement getGoToTasks() {
 		return goToTasks;
@@ -150,7 +230,7 @@ public class DetailTaskPage {
 	public void setTagOfProjectDrop(WebElement tagOfProjectDrop) {
 		this.tagOfProjectDrop = tagOfProjectDrop;
 	}
-	
+
 	public WebElement getProgress() {
 		return progress;
 	}
@@ -222,5 +302,65 @@ public class DetailTaskPage {
 	public void setTagOfWorkDrop(WebElement tagOfWorkDrop) {
 		this.tagOfWorkDrop = tagOfWorkDrop;
 	}
-	
+
+	public WebElement getRefuseButt() {
+		return refuseButt;
+	}
+
+	public WebElement getApproveButt() {
+		return approveButt;
+	}
+
+	public WebElement getDeleteButt() {
+		return deleteButt;
+	}
+
+	public WebElement getWorkSummaryTit() {
+		return workSummaryTit;
+	}
+
+	public WebElement getTimeSpentTit() {
+		return timeSpentTit;
+	}
+
+	public WebElement getDoneButt() {
+		return doneButt;
+	}
+
+	public WebElement getCancelTaskButt() {
+		return cancelTaskButt;
+	}
+
+	public WebElement getReactiveButt() {
+		return reactiveButt;
+	}
+
+	public WebElement getEvaluateButt() {
+		return evaluateButt;
+	}
+
+	public WebElement getApproveWorklogButt() {
+		return approveWorklogButt;
+	}
+
+	public WebElement getMoreButt() {
+		return moreButt;
+	}
+
+	public WebElement getPendingButt() {
+		return pendingButt;
+	}
+
+	public WebElement getInProgressButt() {
+		return inProgressButt;
+	}
+
+	public WebElement getCancelButt() {
+		return cancelButt;
+	}
+
+	public WebElement getApproveAllWorkLogs() {
+		return approveAllWorkLogs;
+	}
+
 }
