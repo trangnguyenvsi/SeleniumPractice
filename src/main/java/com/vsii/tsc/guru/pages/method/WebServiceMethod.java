@@ -135,7 +135,19 @@ public class WebServiceMethod {
 
 //		clickProjectMenu();
 		clickWebServiceOption();
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		clickCreateService();
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		setServiceName(txtServiceName);
 //		setUser(txtUser);
 		setType(txtType);

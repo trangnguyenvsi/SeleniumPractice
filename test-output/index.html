@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>D:\quyentx\Data\Git\SeleniumPractice\testng.xml</span>
+                    <span>D:\workspace\SeleniumPractice\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,31 +90,31 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">3 methods, 3 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Suite">
+                    <div class="method-list-content failed suite-Suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.WebService" hash-for-method="W01(TestService3, Get, http, 192.168.0.200, 8085, /rest/api/2/search?jql=updated%20%3E%20startOfWeek(-2)...)">W01(TestService3, Get, http, 192.168.0.200, 8085, /rest/api/2/search?jql=updated%20%3E%20startOfWeek(-2)...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.WebService" hash-for-method="W02">W02</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.WebService" hash-for-method="W03(TestProject)">W03(TestProject)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -126,9 +126,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">com.vsii.tsc.guru.testcase.WebService</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -138,6 +138,32 @@
                   </a> <!-- W01(TestService3, Get, http, 192.168.0.200, 8085, /rest/api/2/search?jql=updated%20%3E%20startOfWeek(-2)...) -->
                   <span class="method-name">W01</span>
                   <span class="parameters">(TestService3, Get, http, 192.168.0.200, 8085, /rest/api/2/search?jql=updated%20%3E%20startOfWeek(-2)%20ORDER%20BY%20updated%20DESC&startAt=0&maxResults=1500&fields=assignee,description,summary,created,updated,duedate,priority,status,worklog,key,id,project,timeestimate,timeoriginalestimate, ISO 8601, Basic, admin, 123456@a, vsii_project.vsii_JIRA_connector, collect_project_worklog)</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;Webservices&quot;}
+  (Session info: chrome=49.0.2623.87)
+  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 10.0 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 30.58 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
+System info: host: &apos;quyentx&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_74&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\QUYENT~1\AppData\Local\Temp\scoped_dir4676_30306}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=49.0.2623.87, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 9ab302d106fc7a3fb9be33a640d6d598
+*** Element info: {Using=link text, value=Webservices}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:246)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy7.click(Unknown Source)
+	at com.vsii.tsc.guru.pages.method.WebServiceMethod.clickWebServiceOption(WebServiceMethod.java:34)
+	at com.vsii.tsc.guru.pages.method.WebServiceMethod.createWebService(WebServiceMethod.java:137)
+	at com.vsii.tsc.guru.testcase.WebService.W01(WebService.java:59)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
                   <em>
 (Create new web service in OpenERP)                  </em>
                 </div> <!-- method-content -->
@@ -147,6 +173,32 @@
                   <a name="W02">
                   </a> <!-- W02 -->
                   <span class="method-name">W02</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;Webservices&quot;}
+  (Session info: chrome=49.0.2623.87)
+  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 10.0 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 30.43 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
+System info: host: &apos;quyentx&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_74&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\QUYENT~1\AppData\Local\Temp\scoped_dir4676_30306}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=49.0.2623.87, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 9ab302d106fc7a3fb9be33a640d6d598
+*** Element info: {Using=link text, value=Webservices}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:246)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy7.click(Unknown Source)
+	at com.vsii.tsc.guru.pages.method.WebServiceMethod.clickWebServiceOption(WebServiceMethod.java:34)
+	at com.vsii.tsc.guru.pages.method.WebServiceMethod.runService(WebServiceMethod.java:217)
+	at com.vsii.tsc.guru.testcase.WebService.W02(WebService.java:81)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
                   <em>
 (Run web service and verify if JIRA project is synchronized with OpenERP)                  </em>
                 </div> <!-- method-content -->
@@ -157,16 +209,37 @@
                   </a> <!-- W03(TestProject) -->
                   <span class="method-name">W03</span>
                   <span class="parameters">(TestProject)</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=49.0.2623.87)
+  (Driver info: chromedriver=2.20.353145 (343b531d31eeb933ec778dbcf7081628a1396067),platform=Windows NT 10.0 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 129 milliseconds
+Build info: version: &apos;2.52.0&apos;, revision: &apos;4c2593cfc3689a7fcd7be52549167e5ccc93ad28&apos;, time: &apos;2016-02-11 11:22:43&apos;
+System info: host: &apos;quyentx&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_74&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, chrome={userDataDir=C:\Users\QUYENT~1\AppData\Local\Temp\scoped_dir4676_30306}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=49.0.2623.87, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 9ab302d106fc7a3fb9be33a640d6d598
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy7.click(Unknown Source)
+	at com.vsii.tsc.guru.pages.method.WebServiceMethod.clickVsiiProject(WebServiceMethod.java:181)
+	at com.vsii.tsc.guru.pages.method.WebServiceMethod.editImportedProject(WebServiceMethod.java:256)
+	at com.vsii.tsc.guru.testcase.WebService.W03(WebService.java:98)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
                   <em>
 (Verify the ability of mapping imported project from JIRA with existed OpenERP project work correctly)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-failed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\quyentx\Data\Git\SeleniumPractice\testng.xml</span>
+            <span class="header-content">D:\workspace\SeleniumPractice\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -230,15 +303,15 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'W01')
 data.setCell(0, 2, 'com.vsii.tsc.guru.testcase.WebService')
-data.setCell(0, 3, 35462);
+data.setCell(0, 3, 30636);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'W02')
 data.setCell(1, 2, 'com.vsii.tsc.guru.testcase.WebService')
-data.setCell(1, 3, 22071);
+data.setCell(1, 3, 30446);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'W03')
 data.setCell(2, 2, 'com.vsii.tsc.guru.testcase.WebService')
-data.setCell(2, 3, 9948);
+data.setCell(2, 3, 200);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -279,26 +352,32 @@ return data;
               <div class="chronological-class-name">com.vsii.tsc.guru.testcase.WebService</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setupClass</span>
-                <span class="method-start">9578 ms</span>
+                <span class="method-start">9186 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">W01(TestService3, Get, http, 192.168.0.200, 8085, /rest/api/2/search?jql=updated%20%3E%20startOfWeek(-2)...)</span>
-                <span class="method-start">20321 ms</span>
+                <span class="method-start">14419 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">W02</span>
-                <span class="method-start">55787 ms</span>
+                <span class="method-start">45069 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">W03(TestProject)</span>
-                <span class="method-start">77949 ms</span>
+                <span class="method-start">75931 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.vsii.tsc.utility.TestBase</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">teardownSuite</span>
-                <span class="method-start">87911 ms</span>
+                <span class="method-start">76286 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
