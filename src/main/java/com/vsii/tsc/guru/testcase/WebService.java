@@ -161,8 +161,8 @@ public class WebService {
 		
 	}
 	
-	@Test(priority = 4, description = "Verify importing JIRA project to OpenERP project work correctly")
-	public void W04(){
+	@Test(priority = 4, description = "Verify importing JIRA project to OpenERP project work correctly", dataProvider="W04", dataProviderClass = TestData.class)
+	public void W04(String timeSpent, String doneBy){
 		// Method name
 		TestBase.methodName = "W04";
 
@@ -172,14 +172,24 @@ public class WebService {
 		objService.clickRunningService();
 		objService.clickVsiiProject();
 		objService.clickImportedProject();
-		objService.getProjectKey();
-		objService.getProjectName();
-		objService.getProjectDepartment();
-		objService.getProjectProject();
-		objService.getProjectType();
+		
+		objProject.clickProjectLink();
+		objProject.chooseDepartment();
+//		objProject.chooseProject();
+		objProject.chooseTestProject();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		objProject.clickTaskBtn();
+		
+		objTasks.clickLatestTask();
 		
 		// Verify test result
 //		System.out.println(objTasks.getWorklogDetail());
-		Assert.assertEquals(actual, expected);
+		Assert.assertEquals(objTasks.getTimeSpent(), timeSpent);
+		Assert.assertEquals(objTasks.getDoneBy(), doneBy);
 	}
 }

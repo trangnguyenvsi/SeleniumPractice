@@ -9,7 +9,7 @@
       <class name="com.vsii.tsc.guru.testcase.WebService">
         <methods>
           <include name="setupClass"/>
-          <include name="W04"/>
+          <include name="W02" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.vsii.tsc.guru.testcase.WebService -->
       <class name="com.vsii.tsc.utility.TestBase">

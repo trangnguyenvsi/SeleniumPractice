@@ -49,17 +49,10 @@ public class ProjectsPageMethod {
 	
 	// Click on Task button
 	public void clickTaskBtn(){
-		
 		try{
 			objProjectsPage.getBtnTasks().click();
-		}
-		catch(org.openqa.selenium.StaleElementReferenceException ex)
-		{
+		}catch(org.openqa.selenium.StaleElementReferenceException ex){
 			objProjectsPage.getBtnTasks().click();
 		}
-
 	}
-	
-	
-
 }

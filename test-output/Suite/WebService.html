@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Mar 28 16:03:21 ICT 2016</td>
+<td>Started on:</td><td>Mon Mar 28 17:38:32 ICT 2016</td>
 </tr>
-<tr><td>Total time:</td><td>52 seconds (52020 ms)</td>
+<tr><td>Total time:</td><td>54 seconds (54682 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,18 +75,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.vsii.tsc.guru.testcase.WebService.W04()'><b>W04</b><br>Test class: com.vsii.tsc.guru.testcase.WebService<br>Test method: Verify importing JIRA project to OpenERP project work correctly</td>
-<td><div><pre>java.lang.Error: Unresolved compilation problems: 
-	actual cannot be resolved to a variable
-	expected cannot be resolved to a variable
-
-	at com.vsii.tsc.guru.testcase.WebService.W04(WebService.java:183)
-... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace13444735", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace13444735'><pre>java.lang.Error: Unresolved compilation problems: 
-	actual cannot be resolved to a variable
-	expected cannot be resolved to a variable
-
-	at com.vsii.tsc.guru.testcase.WebService.W04(WebService.java:183)
+<td title='com.vsii.tsc.guru.testcase.WebService.W02()'><b>W02</b><br>Test class: com.vsii.tsc.guru.testcase.WebService<br>Test method: Run web service and verify if JIRA project is synchronized with OpenERP<br>Parameters: SP, Selenium Practice, VSII / TSC, JIRA</td>
+<td><div><pre>java.lang.AssertionError: expected [] but found [Selenium Practice]
+	at com.vsii.tsc.guru.testcase.WebService.W02(WebService.java:130)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace25836334", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace25836334'><pre>java.lang.AssertionError: expected [] but found [Selenium Practice]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertEquals(Assert.java:125)
+	at org.testng.Assert.assertEquals(Assert.java:178)
+	at org.testng.Assert.assertEquals(Assert.java:188)
+	at com.vsii.tsc.guru.testcase.WebService.W02(WebService.java:130)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -112,8 +111,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
 </pre></div></td>
-<td>0</td>
-<td>com.vsii.tsc.guru.testcase.WebService@1fee20c</td></tr>
+<td>2</td>
+<td>com.vsii.tsc.guru.testcase.WebService@616ca2</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -125,18 +124,18 @@ function toggleAllBoxes() {
 <tr>
 <td title='com.vsii.tsc.guru.testcase.WebService.W01()'><b>W01</b><br>Test class: com.vsii.tsc.guru.testcase.WebService<br>Test method: Create new web service in OpenERP<br>Parameters: TestService3, Get, http, 192.168.0.200, 8085, /rest/api/2/search?jql=updated%20%3E%20startOfWeek(-2)%20ORDER%20BY%20updated%20DESC&startAt=0&maxResults=1500&fields=assignee,description,summary,created,updated,duedate,priority,status,worklog,key,id,project,timeestimate,timeoriginalestimate, ISO 8601, Basic, admin, 123456@a, vsii_project.vsii_JIRA_connector, collect_project_worklog</td>
 <td></td>
-<td>32</td>
-<td>com.vsii.tsc.guru.testcase.WebService@1fee20c</td></tr>
-<tr>
-<td title='com.vsii.tsc.guru.testcase.WebService.W02()'><b>W02</b><br>Test class: com.vsii.tsc.guru.testcase.WebService<br>Test method: Run web service and verify if JIRA project is synchronized with OpenERP<br>Parameters: SP, Selenium Practice, VSII / TSC, JIRA</td>
-<td></td>
-<td>2</td>
-<td>com.vsii.tsc.guru.testcase.WebService@1fee20c</td></tr>
+<td>29</td>
+<td>com.vsii.tsc.guru.testcase.WebService@616ca2</td></tr>
 <tr>
 <td title='com.vsii.tsc.guru.testcase.WebService.W03()'><b>W03</b><br>Test class: com.vsii.tsc.guru.testcase.WebService<br>Test method: Verify the ability of mapping imported project from JIRA with existed OpenERP project work correctly<br>Parameters: Selenium Practice, SP-1</td>
 <td></td>
 <td>5</td>
-<td>com.vsii.tsc.guru.testcase.WebService@1fee20c</td></tr>
+<td>com.vsii.tsc.guru.testcase.WebService@616ca2</td></tr>
+<tr>
+<td title='com.vsii.tsc.guru.testcase.WebService.W04()'><b>W04</b><br>Test class: com.vsii.tsc.guru.testcase.WebService<br>Test method: Verify importing JIRA project to OpenERP project work correctly<br>Parameters: 04:00, Trang-Nguyen Thi Thu Trang</td>
+<td></td>
+<td>5</td>
+<td>com.vsii.tsc.guru.testcase.WebService@616ca2</td></tr>
 </table><p>
 </body>
 </html>

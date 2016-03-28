@@ -161,9 +161,18 @@ public class TasksPageMethod {
 		return objTasksPage.getExtKeyValue().getText();
 	}
 	
-	// Get worklog detail in Text
-	public String getWorklogDetail(){
-		return objTasksPage.getWorklogDetail().getText();
+	//Click on the latest task record
+	public void clickLatestTask(){
+		objTasksPage.getLatestTaskRecord().click();
 	}
 	
+	// Get worklog time spent in Text
+	public String getTimeSpent(){
+		return objTasksPage.getTimeSpent().getText();
+	}
+	
+	// Get worklog done by in text
+	public String getDoneBy(){
+		return objTasksPage.getDoneBy().getText();
+	}
 }

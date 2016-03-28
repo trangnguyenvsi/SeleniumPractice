@@ -20,7 +20,7 @@ public class WebServicePage {
 	
 	// Elements in Projects page
 	// Web service option in side bar
-	@FindBy(linkText = "Webservices")
+	@FindBy(xpath = "//table/tbody/tr[3]/td[1]/div[1]/div[3]/ul[5]/li[3]/a/span")
 	private WebElement webService;
 	
 	public WebElement getWebService(){
