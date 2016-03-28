@@ -29,6 +29,7 @@ public class JiraNewIssuePageMethod {
 	public void choosoProject(String project){
 		new Select(objJiraNewIssuePage.getWebProjectList()).selectByVisibleText(project);
 	}
+	
 	// 
 	
 }

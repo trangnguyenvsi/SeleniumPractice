@@ -154,4 +154,16 @@ public class TasksPageMethod {
 	public void clickDeleteButt() {
 		objTasksPage.getDeleteButt().click();
 	}
+	
+	
+	// Get task external key value
+	public String getExtkeyValue(){
+		return objTasksPage.getExtKeyValue().getText();
+	}
+	
+	// Get worklog detail in Text
+	public String getWorklogDetail(){
+		return objTasksPage.getWorklogDetail().getText();
+	}
+	
 }

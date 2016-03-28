@@ -127,48 +127,18 @@ public class WebServiceMethod {
 	public void clickSave(){
 		objWSPage.getServiceSave().click();
 	}
-
-	// PERFORM CREATING SERVICE
-	public void createWebService(String txtServiceName, String txtType, String txtProtocol,
-			String txtHost, String txtPort, String txtPath, String txtDateTime, String txtAuth, String txtJusername, String txtJPassword, String txtModelName,
-			String txtDecodeMethodName) {
-
-//		clickProjectMenu();
-		clickWebServiceOption();
-		try {
-			Thread.sleep(100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		clickCreateService();
-		try {
-			Thread.sleep(100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		setServiceName(txtServiceName);
-//		setUser(txtUser);
-		setType(txtType);
-		setProtocol(txtProtocol);
-		setHost(txtHost);
-		setPort(txtPort);
-		setPath(txtPath);
-		setDateTimeFormat(txtDateTime) ;
-		setAuthMethod(txtAuth);
-		setJiraUsername(txtJusername);
-		setJiraPassword(txtJPassword); 
-		setModelName(txtModelName);
-		setDecodeMethod(txtDecodeMethodName);
-		clickSave();
-		 
-	}
-	
 	
 	//Click created service
 	public void clickChooseService(){
-		objWSPage.getTestService1().click();
+		try{
+		    objWSPage.getTestService1().click();
+		}
+		catch(org.openqa.selenium.StaleElementReferenceException ex)
+		{
+			objWSPage.getTestService1().click();
+		}
+		
+		
 	}
 	
 	//Click running web service
@@ -183,7 +153,14 @@ public class WebServiceMethod {
 	
 	//Click imported project
 	public void clickImportedProject(){
-		objWSPage.getTestProject().click();
+		try{
+			objWSPage.getTestProject().click();
+		}
+		catch(org.openqa.selenium.StaleElementReferenceException ex)
+		{
+			objWSPage.getTestProject().click();
+		}
+
 	}
 	
 	//Get project key
@@ -210,29 +187,21 @@ public class WebServiceMethod {
 	public String getProjectType(){
 		return objWSPage.getProjectType().getText();
 	}
-	
-	// PERFORM RUNNING SERVICE
-	public void runService(){
-//		clickProjectMenu();
-		clickWebServiceOption();
-		clickChooseService();
-		clickRunningService();
-		clickVsiiProject();
-		clickImportedProject();
-		getProjectKey();
-		getProjectName();
-		getProjectDepartment();
-		getProjectProject();
-		getProjectType();
-	}
 
 	// Click Edit imported project
 	public void clickEditImportedProject(){
-		objVsiiProjectPage.getEditProjectBtn().click();
+		try{
+			objVsiiProjectPage.getEditProjectBtn().click();
+		}
+		catch(org.openqa.selenium.StaleElementReferenceException ex)
+		{
+			objVsiiProjectPage.getEditProjectBtn().click();
+		}
 	}
 	
 	// Input Project name to "Project" dropdown
 	public void setProjectName(String projectName){
+		objVsiiProjectPage.getProjectDropdown().clear();
 		objVsiiProjectPage.getProjectDropdown().sendKeys(projectName);
 	}
 	
@@ -244,21 +213,16 @@ public class WebServiceMethod {
 		if(checkBox.isSelected()){
 			checkBox.click();
 		}
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	// Click Save project
 	public void clickSaveImportedProject(){
 		objVsiiProjectPage.getSaveBtn().click();
-	}
-	
-	//PERFORM EDITING IMPORTED PROJECT
-	public void editImportedProject(String projectName){
-		clickVsiiProject();
-		clickImportedProject();
-		clickEditImportedProject();
-		setProjectName(projectName);
-		clickNoVerifyChkbox();
-		clickSaveImportedProject();
-	}
-	
+	}	
 }

@@ -70,12 +70,20 @@ public class TestData {
 		return data;
 	}
 	
+	@DataProvider(name = "W02")
+	public static Object[][]  getVSIIProjectDetails() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W02");
+		return data;
+	}
+	
+	
 	@DataProvider(name = "W03")
 	public static Object[][]  getProjectName() {
 		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W03");
 		return data;
 	}
 	
+
 	
 	/*
 	 * anhptq

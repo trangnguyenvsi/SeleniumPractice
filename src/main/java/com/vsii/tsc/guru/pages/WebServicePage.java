@@ -272,7 +272,7 @@ public class WebServicePage {
 	}
 	
 	
-	@FindBy(xpath="//td[@data-field='name' and contains(text(),'TestProject')]")  // Read name column in project table to find a row with project name = "TestProject" 
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/tbody/tr[9]/td[@data-field='extprj_key' and contains(text(),'SP')]")  // Read Ext Key column in project table to find a row with project extkey = "TES" 
 	private WebElement testProject;
 
 	public WebElement getTestProject() {

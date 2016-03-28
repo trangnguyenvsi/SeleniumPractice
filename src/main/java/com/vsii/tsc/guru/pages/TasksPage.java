@@ -99,6 +99,31 @@ public class TasksPage {
 	
 	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/table/tbody/tr[2]/td[2]/div/div/div/div[2]/ul/li[4]/a")
 	private WebElement deleteButt;
+	
+	// Identify Task External Key Value 
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[1]/div/table/tbody/tr[1]/td[6]")
+	private WebElement extKeyValue;
+
+	public WebElement getExtKeyValue() {
+		return extKeyValue;
+	}
+
+	public void setExtKeyValue(WebElement extKeyValue) {
+		this.extKeyValue = extKeyValue;
+	}
+	
+	
+	// Identify new worklog row in Task detail window
+	@FindBy(xpath="//div/div/div[1]/div[2]/div/div/div/div/table/tbody/tr[1]")
+	private WebElement worklogDetail;
+
+	public WebElement getWorklogDetail() {
+		return worklogDetail;
+	}
+
+	public void setWorklogDetail(WebElement worklogDetail) {
+		this.worklogDetail = worklogDetail;
+	}
 
 	public WebElement getFirstNewTask() {
 		return firstNewTask;

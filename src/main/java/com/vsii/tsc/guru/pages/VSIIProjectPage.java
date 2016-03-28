@@ -53,4 +53,17 @@ public class VSIIProjectPage {
 		this.saveBtn = saveBtn;
 	}
 	
+	// Identify the first row in Task Summary table
+	@FindBy(xpath="//div/div/div[1]/div[2]/div/div/div/div/table/tbody/tr[1]")
+	private WebElement firstRowInTaskSummary;
+
+	public WebElement getFirstRowInTaskSummary() {
+		return firstRowInTaskSummary;
+	}
+
+	public void setFirstRowInTaskSummary(WebElement firstRowInTaskSummary) {
+		this.firstRowInTaskSummary = firstRowInTaskSummary;
+	}
+	
+	
 }

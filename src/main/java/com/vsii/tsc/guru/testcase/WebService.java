@@ -8,6 +8,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
+import com.vsii.tsc.guru.pages.method.ProjectsPageMethod;
+import com.vsii.tsc.guru.pages.method.TasksPageMethod;
 import com.vsii.tsc.guru.pages.method.WebServiceMethod;
 import com.vsii.tsc.guru.testdata.TestData;
 import com.vsii.tsc.utility.TestBase;
@@ -15,6 +17,8 @@ import com.vsii.tsc.utility.TestBase;
 public class WebService {
 	LoginPageMethod objLogin;
 	WebServiceMethod objService;
+	ProjectsPageMethod objProject;
+	TasksPageMethod objTasks;
 	String username;
 	String password;
 
@@ -22,6 +26,8 @@ public class WebService {
 	public void setupClass() throws Exception {
 		objLogin = new LoginPageMethod(TestBase.driver);
 		objService = new WebServiceMethod(TestBase.driver);
+		objProject = new ProjectsPageMethod(TestBase.driver);
+		objTasks = new TasksPageMethod(TestBase.driver);
 		objLogin.loginToManagerPage("lienlt", "12345678");
 		objService.clickProjectMenu();
 		
@@ -56,7 +62,35 @@ public class WebService {
 		// Method name
 		TestBase.methodName = "W01";
 		// Perform test steps
-		objService.createWebService(txtServiceName, txtType, txtProtocol, txtHost, txtPort, txtPath, txtDateTime, txtAuth, txtJusername, txtJPassword, txtModelName, txtDecodeMethodName);
+//		objService.createWebService(txtServiceName, txtType, txtProtocol, txtHost, txtPort, txtPath, txtDateTime, txtAuth, txtJusername, txtJPassword, txtModelName, txtDecodeMethodName);
+		objService.clickWebServiceOption();
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		objService.clickCreateService();
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		objService.setServiceName(txtServiceName);
+//		setUser(txtUser);
+		objService.setType(txtType);
+		objService.setProtocol(txtProtocol);
+		objService.setHost(txtHost);
+		objService.setPort(txtPort);
+		objService.setPath(txtPath);
+		objService.setDateTimeFormat(txtDateTime) ;
+		objService.setAuthMethod(txtAuth);
+		objService.setJiraUsername(txtJusername);
+		objService.setJiraPassword(txtJPassword); 
+		objService.setModelName(txtModelName);
+		objService.setDecodeMethod(txtDecodeMethodName);
+		objService.clickSave();
 		// Verify test result
 		Assert.assertTrue(TestBase.driver.getCurrentUrl().contains("id"));
 	}
@@ -72,18 +106,29 @@ public class WebService {
 	 *  (this can be checked by looking at page source) 
 	 */
 	
-	@Test(priority = 2, description = "Run web service and verify if JIRA project is synchronized with OpenERP")
-	public void W02(){
+	@Test(priority = 2, description = "Run web service and verify if JIRA project is synchronized with OpenERP", dataProvider="W02", dataProviderClass = TestData.class)
+	public void W02(String projectKey, String projectName, String projectDepartment, String projectType)throws IOException {
+		
 		// Method name
 		TestBase.methodName = "W02";
 
 		// Perform test steps
-		objService.runService();
-		Assert.assertEquals(objService.getProjectKey(), "TES");
-		Assert.assertEquals(objService.getProjectName(), "TestProject");
-		Assert.assertEquals(objService.getProjectDepartment(), "VSII / TSC");
+		objService.clickWebServiceOption();
+		objService.clickChooseService();
+		objService.clickRunningService();
+		objService.clickVsiiProject();
+		objService.clickImportedProject();
+		objService.getProjectKey();
+		objService.getProjectName();
+		objService.getProjectDepartment();
+		objService.getProjectProject();
+		objService.getProjectType();
+		
+		Assert.assertEquals(objService.getProjectKey(), projectKey);
+		Assert.assertEquals(objService.getProjectName(), projectName);
+		Assert.assertEquals(objService.getProjectDepartment(), projectDepartment);
 		Assert.assertEquals(objService.getProjectProject(), "");
-		Assert.assertEquals(objService.getProjectType(), "JIRA");
+		Assert.assertEquals(objService.getProjectType(), projectType);
 	}
 	
 	/*
@@ -91,11 +136,50 @@ public class WebService {
 	 */
 	
 	@Test(priority = 3, description = "Verify the ability of mapping imported project from JIRA with existed OpenERP project work correctly", dataProvider="W03", dataProviderClass = TestData.class)
-	public void W03(String projectName){
+	public void W03(String projectName, String expectedTaskKey){
 		// Method name
 		TestBase.methodName = "W03";
 		// Perform test steps
-		objService.editImportedProject(projectName);
+		objService.clickVsiiProject();
+		objService.clickImportedProject();
+		objService.clickEditImportedProject();
+		objService.setProjectName(projectName);
+		objService.clickNoVerifyChkbox();
+		objService.clickSaveImportedProject();
+		// Verify imported info
+		objProject.clickProjectLink();
+		objProject.chooseDepartment();
+		objProject.chooseTestProject();
+		objProject.clickTaskBtn();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Assert.assertEquals(objTasks.getExtkeyValue(), expectedTaskKey);
 		
+	}
+	
+	@Test(priority = 4, description = "Verify importing JIRA project to OpenERP project work correctly")
+	public void W04(){
+		// Method name
+		TestBase.methodName = "W04";
+
+		// Perform test steps
+		objService.clickWebServiceOption();
+		objService.clickChooseService();
+		objService.clickRunningService();
+		objService.clickVsiiProject();
+		objService.clickImportedProject();
+		objService.getProjectKey();
+		objService.getProjectName();
+		objService.getProjectDepartment();
+		objService.getProjectProject();
+		objService.getProjectType();
+		
+		// Verify test result
+//		System.out.println(objTasks.getWorklogDetail());
+		Assert.assertEquals(actual, expected);
 	}
 }
