@@ -16,6 +16,10 @@ public class JiraDashboardPage {
 	//Identify Issue menu drop down list
 	@FindBy(id = "find_link")
 	private WebElement webIssueDropdown;
+	
+	// Identify All projects dropdown 
+	@FindBy(xpath="//div[2]/div[4]/ul/li/a")
+	private WebElement allProjects;
 
 	public WebElement getWebCreateItem() {
 		return webCreateItem;
@@ -39,5 +43,13 @@ public class JiraDashboardPage {
 
 	public void setWebIssueDropdown(WebElement webIssueDropdown) {
 		this.webIssueDropdown = webIssueDropdown;
+	}
+	
+	public WebElement getAllProjects() {
+		return allProjects;
+	}
+
+	public void setAllProjects(WebElement allProjects) {
+		this.allProjects = allProjects;
 	}
 }

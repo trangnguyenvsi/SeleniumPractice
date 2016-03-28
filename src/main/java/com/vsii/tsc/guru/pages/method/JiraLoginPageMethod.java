@@ -4,16 +4,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import com.vsii.tsc.guru.pages.JiraLoginPage;
+import com.vsii.tsc.utility.TestBase;
 
-public class JiraLoginPageMethod {
-	// Create new Web Driver variable
-	WebDriver driver;
+public class JiraLoginPageMethod extends TestBase {
+//	// Create new Web Driver variable
+//	WebDriver driver;
 	// Create new WebElementLogin object
 	public JiraLoginPage objJiraLoginPage = new JiraLoginPage();
 
 	// Initialize all web element
 	public JiraLoginPageMethod(WebDriver driver) {
-		this.driver = driver;
+		TestBase.driver = driver;
 		PageFactory.initElements(driver, objJiraLoginPage);
 	}
 

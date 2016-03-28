@@ -8,6 +8,7 @@
     <classes>
       <class name="com.vsii.tsc.guru.testcase.WebService">
         <methods>
+          <include name="W05" invocation-numbers="0"/>
           <include name="setupClass"/>
           <include name="W02" invocation-numbers="0"/>
         </methods>

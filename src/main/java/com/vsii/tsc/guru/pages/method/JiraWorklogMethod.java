@@ -13,6 +13,7 @@ public class JiraWorklogMethod {
 	// Create new WebElementLogin object
 	public JiraBrowseProjectPage objJiraProjectPage = new JiraBrowseProjectPage();
 	public JiraProjectDetailPage objJiraProjectDetailPage = new JiraProjectDetailPage();
+	
 
 	// Initialize all web element
 	public JiraWorklogMethod(WebDriver driver) {
@@ -23,17 +24,17 @@ public class JiraWorklogMethod {
 	}
 
 	//Click on JIRA project to view details
-	public void clickProject(){
+	public void clickChooseProject(){
 		objJiraProjectPage.getProjectName().click();
 	}
 	
 	//Click on task
-	public void clickTask(){
+	public void clickChooseTask(){
 		objJiraProjectDetailPage.getTaskName().click();
 	}
 	
 	//Click on "More..." tab on menu
-	public void clickMore(){
+	public void clickOnMore(){
 		objJiraProjectDetailPage.getDropdownMore().click();
 	}
 	
@@ -47,6 +48,11 @@ public class JiraWorklogMethod {
 		objJiraProjectDetailPage.getLogTime().sendKeys(timeSpent);
 	}
 	
+	// Set start time log
+	public void setStartTime(String startTime){
+		objJiraProjectDetailPage.getStartTime().sendKeys(startTime);
+	}
+	
 	// Click submit log
 	public void clickSubmitWorklog(){
 		objJiraProjectDetailPage.getLogSubmit().click();
@@ -54,9 +60,9 @@ public class JiraWorklogMethod {
 	
 	//EXECUTE ADD WORKLOG CASE
 	public void addWorklog(String timeSpent){
-		clickProject();
-		clickTask();
-		clickMore();
+		clickChooseProject();
+		clickChooseTask();
+		clickOnMore();
 		addWorklogOption();
 		setTimeSpent(timeSpent);
 		clickSubmitWorklog();

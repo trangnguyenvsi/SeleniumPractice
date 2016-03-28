@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 public class JiraProjectDetailPage {
 
 	//Identify Task Name
-	@FindBy(xpath=".//*[@id='activity-stream']/div[2]/div[1]/a[2]")
+	@FindBy(xpath="//span[@class='issue-link-summary' and contains(text(),'Execute Test')]")
 	private WebElement taskName;
 	
 	//Identify More... dropdown
@@ -34,11 +34,11 @@ public class JiraProjectDetailPage {
 	private WebElement worklogTab;
 	
 	// Identify Edit worklog button
-	@FindBy(xpath=".//*[@id='edit_worklog_10000']/span")
+	@FindBy(xpath="//span[@class='icon-default aui-icon aui-icon-small aui-iconfont-edit' and contains(text(),'Edit')]")
 	private WebElement editWorklogOption;
 	
 	//Identify Delete worklog button
-	@FindBy(xpath=".//*[@id='delete_worklog_10000']/span")
+	@FindBy(xpath="//span[@class='icon-default aui-icon aui-icon-small aui-iconfont-delete' and contains(text(),'Delete')]")
 	private WebElement deleteWorklogOption;
 	
 	// Identify Delete worklog button

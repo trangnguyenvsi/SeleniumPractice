@@ -46,7 +46,6 @@ public class ProjectsPageMethod {
 		return objProjectsPage.getProject();
 	}
 	
-	
 	// Click on Task button
 	public void clickTaskBtn(){
 		try{

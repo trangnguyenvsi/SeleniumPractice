@@ -89,6 +89,13 @@ public class TestData {
 		return data;
 	}
 	
+	@DataProvider(name = "W05")
+	public static Object[][]  getWorklogJira() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W05");
+		return data;
+	}
+	
+	
 	/*
 	 * anhptq
 	 */
