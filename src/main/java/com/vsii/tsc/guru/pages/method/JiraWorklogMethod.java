@@ -76,7 +76,11 @@ public class JiraWorklogMethod {
 	
 	//Click workog tab
 	public void clickWorklogTab(){
-		objJiraProjectDetailPage.getWorklogTab().click();
+		try{
+			objJiraProjectDetailPage.getWorklogTab().click();
+		}catch(org.openqa.selenium.StaleElementReferenceException ex){
+			objJiraProjectDetailPage.getWorklogTab().click();
+		}
 	}
 	
 	//Click edit worklog button

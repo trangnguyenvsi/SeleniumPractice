@@ -20,6 +20,31 @@ public class JiraDashboardPage {
 	// Identify All projects dropdown 
 	@FindBy(xpath="//div[2]/div[4]/ul/li/a")
 	private WebElement allProjects;
+	
+	// Identify account options link
+	@FindBy(xpath="//div[1]/header/nav/div/div[2]/ul/li[3]")
+	private WebElement accountOptions;
+	
+	// Identify Logout button
+	@FindBy(xpath="//div[2]/div[3]/ul/li/a")
+	private WebElement logOutBtn;
+	
+
+	public WebElement getAccountOptions() {
+		return accountOptions;
+	}
+
+	public void setAccountOptions(WebElement accountOptions) {
+		this.accountOptions = accountOptions;
+	}
+
+	public WebElement getLogOutBtn() {
+		return logOutBtn;
+	}
+
+	public void setLogOutBtn(WebElement logOutBtn) {
+		this.logOutBtn = logOutBtn;
+	}
 
 	public WebElement getWebCreateItem() {
 		return webCreateItem;

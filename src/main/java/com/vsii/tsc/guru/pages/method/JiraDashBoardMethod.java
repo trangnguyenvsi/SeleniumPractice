@@ -29,4 +29,19 @@ public class JiraDashBoardMethod {
 		objJiraDashboardPage.getAllProjects().click();
 	}
 	
+	// Click account option button
+	public void clickAccountOption(){
+		objJiraDashboardPage.getAccountOptions().click();
+	}
+	
+	// Click lot out button
+	public void clickLogOut(){
+		objJiraDashboardPage.getLogOutBtn().click();
+	}
+	
+	// LogOut
+	public void exeLogOut(){
+		clickAccountOption();
+		clickLogOut();
+	}
 }

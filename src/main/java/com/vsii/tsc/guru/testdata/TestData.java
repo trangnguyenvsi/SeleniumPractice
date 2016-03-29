@@ -90,8 +90,20 @@ public class TestData {
 	}
 	
 	@DataProvider(name = "W05")
-	public static Object[][]  getWorklogJira() {
+	public static Object[][]  getAddWorklogJira() {
 		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W05");
+		return data;
+	}
+	
+	@DataProvider(name = "W06")
+	public static Object[][]  getEditWorklogJira() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W06");
+		return data;
+	}
+	
+	@DataProvider(name = "W07")
+	public static Object[][]  getDeleteWorklogJira() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W07");
 		return data;
 	}
 	
