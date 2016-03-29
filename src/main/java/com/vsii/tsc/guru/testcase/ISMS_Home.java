@@ -48,7 +48,6 @@ public class ISMS_Home extends TestBase
   public void afterMethod() throws Exception {
    CommonOperations.takePicture();
   //TestBase.driver.quit();
-   TestBase.driver.manage().deleteCookieNamed("__utmb");
  }
 
 //   @AfterClass

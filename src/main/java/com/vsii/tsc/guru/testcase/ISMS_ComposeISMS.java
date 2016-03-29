@@ -54,5 +54,4 @@ public class ISMS_ComposeISMS extends TestBase
 public void afterMethod() throws Exception {
  CommonOperations.takePicture();
 //TestBase.driver.quit();
- TestBase.driver.manage().deleteAllCookies();
 }}

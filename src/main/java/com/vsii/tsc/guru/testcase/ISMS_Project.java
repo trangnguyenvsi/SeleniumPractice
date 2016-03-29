@@ -333,6 +333,11 @@ objProject.editTaskToPheDuyetSucc(note,Descripex,StageExp);
 
 
 }
+@AfterMethod
+public void afterMethod() throws Exception {
+ CommonOperations.takePicture();
+//TestBase.driver.quit();
+}
 //   @AfterClass
 //    public void teardownClass() {
 //       objLogin = null;    
