@@ -150,4 +150,65 @@ public class TestData {
 		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "CreateTask_PM", "TM31");
 		return data;
 	}
+	    @DataProvider(name="Adminlogin")
+	    public static Object[][] Adminlogin() {
+	        Object[][] data = ExcelHandle.getTable("./data/ISMS_TestData.xlsx", "Login", "TC02");
+	        return data;
+	    }
+	    
+	    @DataProvider(name="notAdminlogin")
+	    public static Object[][] getLoginnotAdmin() {
+	        Object[][] data = ExcelHandle.getTable("./data/ISMS_TestData.xlsx", "Login", "TC03");
+	        return data;
+	    }
+	    @DataProvider(name="ISMSSelectType")
+	    public static Object[][] ISMSSelectType() {
+	        Object[][] data = ExcelHandle.getTable("./data/ISMS_TestData.xlsx", "ISMSType", "TC10");
+	        return data;
+	    }
+	    @DataProvider(name = "ISMSAssginIssue")
+	    public static Object[][] ISMSAssginIssue() {
+	        Object[][] data = ExcelHandle.getTable("./data/ISMS_TestData.xlsx", "ISMSType", "TC11");
+	        return data;
+	    }
+	    @DataProvider(name="ISMSAssginSearch")
+	    public static Object[][]  ISMSAssginSearch() {
+	        Object[][] data = ExcelHandle.getTable("./data/ISMS_TestData.xlsx", "ISMSType", "TC16");
+	        return data;
+	    }
+	    @DataProvider(name="LogAnote")
+	    public static Object[][]  LogAnote() {
+	        Object[][] data = ExcelHandle.getTable("./data/ISMS_TestData.xlsx", "ISMSType", "TC20");
+	        return data;}
+	        @DataProvider(name="approveAnote")
+	        public static Object[][]  approveAnote() {
+	            Object[][] data = ExcelHandle.getTable("./data/ISMS_TestData.xlsx", "ISMSType", "TC21");
+	            return data;
+	    }
+	    
+	    @DataProvider(name="loginTask")
+	    public static Object[][]  loginTask() {
+	        Object[][] data = ExcelHandle.getTable("./data/ISMS_TestData.xlsx", "ISMSType", "TC28");
+	        return data;
+	    }
+	    @DataProvider(name="createATask")
+	    public static Object[][]  createATask() {
+	        Object[][] data = ExcelHandle.getTable("./data/ISMS_TestData.xlsx", "CreateTask", "TC30");
+	        return data;
+	    }
+	    @DataProvider(name="phantich")
+	    public static Object[][]  phantich() {
+	        Object[][] data = ExcelHandle.getTable("./data/ISMS_TestData.xlsx", "CreateTask", "TC32");
+	        return data;
+	    }
+	    @DataProvider(name="giaiphap")
+	    public static Object[][]  giaiphap() {
+	        Object[][] data = ExcelHandle.getTable("./data/ISMS_TestData.xlsx", "CreateTask", "TC33");
+	        return data;
+	    }
+	       @DataProvider(name="duyet")
+	        public static Object[][]  duyet() {
+	            Object[][] data = ExcelHandle.getTable("./data/ISMS_TestData.xlsx", "CreateTask", "TC34");
+	            return data;
+	        }
 }
