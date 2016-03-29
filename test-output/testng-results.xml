@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" total="5" passed="4">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="58847" started-at="2016-03-29T03:32:10Z" finished-at="2016-03-29T03:33:09Z">
+  <suite name="Suite" duration-ms="98162" started-at="2016-03-29T04:26:48Z" finished-at="2016-03-29T04:28:27Z">
     <groups>
     </groups>
-    <test name="Login" duration-ms="7" started-at="2016-03-29T03:32:10Z" finished-at="2016-03-29T03:32:10Z">
+    <test name="Login" duration-ms="7" started-at="2016-03-29T04:26:48Z" finished-at="2016-03-29T04:26:48Z">
     </test> <!-- Login -->
-    <test name="WebService" duration-ms="58811" started-at="2016-03-29T03:32:10Z" finished-at="2016-03-29T03:33:09Z">
+    <test name="WebService" duration-ms="98117" started-at="2016-03-29T04:26:48Z" finished-at="2016-03-29T04:28:27Z">
       <class name="com.vsii.tsc.utility.TestBase">
-        <test-method status="PASS" signature="setupSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@16532d6]" name="setupSuite" is-config="true" duration-ms="9543" started-at="2016-03-29T10:32:01Z" finished-at="2016-03-29T10:32:10Z">
+        <test-method status="PASS" signature="setupSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@16532d6]" name="setupSuite" is-config="true" duration-ms="9530" started-at="2016-03-29T11:26:39Z" finished-at="2016-03-29T11:26:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupSuite -->
-        <test-method status="PASS" signature="teardownSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@16532d6]" name="teardownSuite" is-config="true" duration-ms="0" started-at="2016-03-29T10:33:09Z" finished-at="2016-03-29T10:33:09Z">
+        <test-method status="PASS" signature="teardownSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@16532d6]" name="teardownSuite" is-config="true" duration-ms="0" started-at="2016-03-29T11:28:27Z" finished-at="2016-03-29T11:28:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownSuite -->
       </class> <!-- com.vsii.tsc.utility.TestBase -->
       <class name="com.vsii.tsc.guru.testcase.WebService">
-        <test-method status="PASS" signature="setupClass()[pri:0, instance:com.vsii.tsc.guru.testcase.WebService@616ca2]" name="setupClass" is-config="true" duration-ms="9711" started-at="2016-03-29T10:32:10Z" finished-at="2016-03-29T10:32:20Z">
+        <test-method status="PASS" signature="setupClass()[pri:0, instance:com.vsii.tsc.guru.testcase.WebService@616ca2]" name="setupClass" is-config="true" duration-ms="7946" started-at="2016-03-29T11:26:48Z" finished-at="2016-03-29T11:26:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupClass -->
-        <test-method status="PASS" signature="W01(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.WebService@616ca2]" name="W01" duration-ms="27985" started-at="2016-03-29T10:32:21Z" description="Create new web service in OpenERP" data-provider="W01" finished-at="2016-03-29T10:32:49Z">
+        <test-method status="PASS" signature="W01(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.WebService@616ca2]" name="W01" duration-ms="34269" started-at="2016-03-29T11:26:58Z" description="Create new web service in OpenERP" data-provider="W01" finished-at="2016-03-29T11:27:32Z">
           <params>
             <param index="0">
               <value>
@@ -89,7 +89,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- W01 -->
-        <test-method status="PASS" signature="W02(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.vsii.tsc.guru.testcase.WebService@616ca2]" name="W02" duration-ms="5292" started-at="2016-03-29T10:32:50Z" description="Run web service and verify if JIRA project is synchronized with OpenERP" data-provider="W02" finished-at="2016-03-29T10:32:55Z">
+        <test-method status="PASS" signature="W02(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.vsii.tsc.guru.testcase.WebService@616ca2]" name="W02" duration-ms="12151" started-at="2016-03-29T11:27:32Z" description="Run web service and verify if JIRA project is synchronized with OpenERP" data-provider="W02" finished-at="2016-03-29T11:27:44Z">
           <params>
             <param index="0">
               <value>
@@ -115,7 +115,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- W02 -->
-        <test-method status="PASS" signature="W03(java.lang.String, java.lang.String)[pri:3, instance:com.vsii.tsc.guru.testcase.WebService@616ca2]" name="W03" duration-ms="6086" started-at="2016-03-29T10:32:55Z" description="Verify the ability of mapping imported project from JIRA with existed OpenERP project work correctly" data-provider="W03" finished-at="2016-03-29T10:33:01Z">
+        <test-method status="PASS" signature="W03(java.lang.String, java.lang.String)[pri:3, instance:com.vsii.tsc.guru.testcase.WebService@616ca2]" name="W03" duration-ms="6207" started-at="2016-03-29T11:27:45Z" description="Verify the ability of mapping imported project from JIRA with existed OpenERP project work correctly" data-provider="W03" finished-at="2016-03-29T11:27:51Z">
           <params>
             <param index="0">
               <value>
@@ -131,7 +131,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- W03 -->
-        <test-method status="PASS" signature="W04(java.lang.String, java.lang.String)[pri:4, instance:com.vsii.tsc.guru.testcase.WebService@616ca2]" name="W04" duration-ms="8074" started-at="2016-03-29T10:33:01Z" description="Verify importing JIRA project to OpenERP project work correctly" data-provider="W04" finished-at="2016-03-29T10:33:09Z">
+        <test-method status="PASS" signature="W04(java.lang.String, java.lang.String)[pri:4, instance:com.vsii.tsc.guru.testcase.WebService@616ca2]" name="W04" duration-ms="8695" started-at="2016-03-29T11:27:51Z" description="Verify importing JIRA project to OpenERP project work correctly" data-provider="W04" finished-at="2016-03-29T11:28:00Z">
           <params>
             <param index="0">
               <value>
@@ -147,42 +147,57 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- W04 -->
-        <test-method status="SKIP" signature="W07(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:7, instance:com.vsii.tsc.guru.testcase.WebService@616ca2]" name="W07" duration-ms="0" started-at="2016-03-29T10:33:09Z" description="Verify that when add new worklog in JIRA project webservice importing work correctly" data-provider="W07" finished-at="2016-03-29T10:33:09Z">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Method public void com.vsii.tsc.guru.testcase.WebService.W07(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) requires a @DataProvider named : W07 in class com.vsii.tsc.guru.testdata.TestData]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Method public void com.vsii.tsc.guru.testcase.WebService.W07(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) requires a @DataProvider named : W07 in class com.vsii.tsc.guru.testdata.TestData
-	at org.testng.internal.Parameters.findDataProvider(Parameters.java:263)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:419)
-	at org.testng.internal.Invoker.handleParameters(Invoker.java:1270)
-	at org.testng.internal.Invoker.createParameters(Invoker.java:985)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1075)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        <test-method status="PASS" signature="W05(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:5, instance:com.vsii.tsc.guru.testcase.WebService@616ca2]" name="W05" duration-ms="26958" started-at="2016-03-29T11:28:00Z" description="Verify that when add new worklog in JIRA project webservice importing work correctly" data-provider="W05" finished-at="2016-03-29T11:28:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://192.168.0.200:8085/secure/Dashboard.jspa]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[lienlt]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[12345678]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2h]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[26-Mar-2016]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[lienlt]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[12345678]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[02:00]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[LIENLT]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- W07 -->
+        </test-method> <!-- W05 -->
       </class> <!-- com.vsii.tsc.guru.testcase.WebService -->
     </test> <!-- WebService -->
   </suite> <!-- Suite -->

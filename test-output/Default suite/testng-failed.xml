@@ -5,10 +5,8 @@
     <classes>
       <class name="com.vsii.tsc.guru.testcase.WebService">
         <methods>
-          <include name="W03"/>
-          <include name="W01"/>
+          <include name="W05"/>
           <include name="setupClass"/>
-          <include name="W02"/>
         </methods>
       </class> <!-- com.vsii.tsc.guru.testcase.WebService -->
     </classes>

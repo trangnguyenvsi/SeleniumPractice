@@ -168,7 +168,13 @@ public class TasksPageMethod {
 	
 	// Get worklog time spent in Text
 	public String getTimeSpent(){
-		return objTasksPage.getTimeSpent().getText();
+		try{
+			return objTasksPage.getTimeSpent().getText();
+		}catch(org.openqa.selenium.StaleElementReferenceException ex){
+
+			return objTasksPage.getTimeSpent().getText();
+		}
+
 	}
 	
 	// Get worklog done by in text

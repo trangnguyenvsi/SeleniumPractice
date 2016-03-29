@@ -1,5 +1,6 @@
 package com.vsii.tsc.guru.pages.method;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -35,7 +36,11 @@ public class JiraWorklogMethod {
 	
 	//Click on "More..." tab on menu
 	public void clickOnMore(){
-		objJiraProjectDetailPage.getDropdownMore().click();
+		try{
+			objJiraProjectDetailPage.getDropdownMore().click();
+		}catch(org.openqa.selenium.StaleElementReferenceException ex){
+			objJiraProjectDetailPage.getDropdownMore().click();
+		}
 	}
 	
 	//Click to add worklog
@@ -46,6 +51,7 @@ public class JiraWorklogMethod {
 	//Set time spent
 	public void setTimeSpent(String timeSpent){
 		objJiraProjectDetailPage.getLogTime().sendKeys(timeSpent);
+		objJiraProjectDetailPage.getLogTime().sendKeys(Keys.TAB);
 	}
 	
 	// Set start time log
