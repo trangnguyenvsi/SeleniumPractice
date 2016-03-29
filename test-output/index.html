@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-skipped">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,26 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods, 2 failed,   3 passed</span>
+                    <span class="method-stats">5 methods,  1 skipped,  4 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
                     </span>
-                    <div class="method-list-content failed suite-Suite">
+                    <div class="method-list-content skipped suite-Suite">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.WebService" hash-for-method="W02(SP, Selenium Practice, VSII / TSC, JIRA)">W02(SP, Selenium Practice, VSII / TSC, JIRA)</a> <!-- method navigator-link -->
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.WebService" hash-for-method="W07">W07</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.WebService" hash-for-method="W05(http://192.168.0.200:8085/secure/Dashboard.jspa, lienlt, 12345678, 4h, 26-Mar-2016, lienlt, 12345678...)">W05(http://192.168.0.200:8085/secure/Dashboard.jspa, lienlt, 12345678, 4h, 26-Mar-2016, lienlt, 12345678...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -121,6 +116,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.WebService" hash-for-method="W01(TestService3, Get, http, 192.168.0.200, 8085, /rest/api/2/search?jql=updated%20%3E%20startOfWeek(-2)...)">W01(TestService3, Get, http, 192.168.0.200, 8085, /rest/api/2/search?jql=updated%20%3E%20startOfWeek(-2)...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.vsii.tsc.guru.testcase.WebService" hash-for-method="W02(SP, Selenium Practice, VSII / TSC, JIRA)">W02(SP, Selenium Practice, VSII / TSC, JIRA)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -145,42 +145,27 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
+          <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">com.vsii.tsc.guru.testcase.WebService</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="W02(SP, Selenium Practice, VSII / TSC, JIRA)">
-                  </a> <!-- W02(SP, Selenium Practice, VSII / TSC, JIRA) -->
-                  <span class="method-name">W02</span>
-                  <span class="parameters">(SP, Selenium Practice, VSII / TSC, JIRA)</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [] but found [Selenium Practice]
-	at com.vsii.tsc.guru.testcase.WebService.W02(WebService.java:134)
-... Removed 29 stack frames
-</div> <!-- stack-trace -->
-                  <em>
-(Run web service and verify if JIRA project is synchronized with OpenERP)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="W05(http://192.168.0.200:8085/secure/Dashboard.jspa, lienlt, 12345678, 4h, 26-Mar-2016, lienlt, 12345678...)">
-                  </a> <!-- W05(http://192.168.0.200:8085/secure/Dashboard.jspa, lienlt, 12345678, 4h, 26-Mar-2016, lienlt, 12345678...) -->
-                  <span class="method-name">W05</span>
-                  <span class="parameters">(http://192.168.0.200:8085/secure/Dashboard.jspa, lienlt, 12345678, 4h, 26-Mar-2016, lienlt, 12345678, 02:00, Lien-Le Thi Lien)</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at com.vsii.tsc.guru.testcase.WebService.W05(WebService.java:209)
-... Removed 24 stack frames
+                  <a name="W07">
+                  </a> <!-- W07 -->
+                  <span class="method-name">W07</span>
+                  <div class="stack-trace">org.testng.TestNGException: 
+Method public void com.vsii.tsc.guru.testcase.WebService.W07(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) requires a @DataProvider named : W07 in class com.vsii.tsc.guru.testdata.TestData
+... Removed 21 stack frames
 </div> <!-- stack-trace -->
                   <em>
 (Verify that when add new worklog in JIRA project webservice importing work correctly)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-skipped -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -195,6 +180,16 @@
                   <span class="parameters">(TestService3, Get, http, 192.168.0.200, 8085, /rest/api/2/search?jql=updated%20%3E%20startOfWeek(-2)%20ORDER%20BY%20updated%20DESC&startAt=0&maxResults=1500&fields=assignee,description,summary,created,updated,duedate,priority,status,worklog,key,id,project,timeestimate,timeoriginalestimate, ISO 8601, Basic, admin, 123456@a, vsii_project.vsii_JIRA_connector, collect_project_worklog)</span>
                   <em>
 (Create new web service in OpenERP)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="W02(SP, Selenium Practice, VSII / TSC, JIRA)">
+                  </a> <!-- W02(SP, Selenium Practice, VSII / TSC, JIRA) -->
+                  <span class="method-name">W02</span>
+                  <span class="parameters">(SP, Selenium Practice, VSII / TSC, JIRA)</span>
+                  <em>
+(Run web service and verify if JIRA project is synchronized with OpenERP)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -286,28 +281,28 @@ data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'W01')
 data.setCell(0, 2, 'com.vsii.tsc.guru.testcase.WebService')
-data.setCell(0, 3, 33346);
+data.setCell(0, 3, 27985);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'W03')
+data.setCell(1, 1, 'W04')
 data.setCell(1, 2, 'com.vsii.tsc.guru.testcase.WebService')
-data.setCell(1, 3, 6157);
+data.setCell(1, 3, 8074);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'W04')
+data.setCell(2, 1, 'W03')
 data.setCell(2, 2, 'com.vsii.tsc.guru.testcase.WebService')
-data.setCell(2, 3, 5282);
+data.setCell(2, 3, 6086);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'W02')
 data.setCell(3, 2, 'com.vsii.tsc.guru.testcase.WebService')
-data.setCell(3, 3, 3134);
+data.setCell(3, 3, 5292);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'W05')
+data.setCell(4, 1, 'W07')
 data.setCell(4, 2, 'com.vsii.tsc.guru.testcase.WebService')
-data.setCell(4, 3, 2790);
+data.setCell(4, 3, 0);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 50 seconds</span>
+              <span class="suite-total-time">Total running time: 47 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -343,38 +338,30 @@ return data;
               <div class="chronological-class-name">com.vsii.tsc.guru.testcase.WebService</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setupClass</span>
-                <span class="method-start">8803 ms</span>
+                <span class="method-start">9581 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">W01(TestService3, Get, http, 192.168.0.200, 8085, /rest/api/2/search?jql=updated%20%3E%20startOfWeek(-2)...)</span>
-                <span class="method-start">19340 ms</span>
+                <span class="method-start">20593 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">W02(SP, Selenium Practice, VSII / TSC, JIRA)</span>
-                <span class="method-start">52845 ms</span>
+                <span class="method-start">48792 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">W03(Selenium Practice, SP-1)</span>
-                <span class="method-start">56089 ms</span>
+                <span class="method-start">54154 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">W04(04:00, Trang-Nguyen Thi Thu Trang)</span>
-                <span class="method-start">62315 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">W05(http://192.168.0.200:8085/secure/Dashboard.jspa, lienlt, 12345678, 4h, 26-Mar-2016, lienlt, 12345678...)</span>
-                <span class="method-start">67698 ms</span>
+                <span class="method-start">60312 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.vsii.tsc.utility.TestBase</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">teardownSuite</span>
-                <span class="method-start">70515 ms</span>
+                <span class="method-start">68400 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

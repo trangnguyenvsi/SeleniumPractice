@@ -1,6 +1,7 @@
 package com.vsii.tsc.guru.pages.method;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -143,7 +144,27 @@ public class WebServiceMethod {
 	
 	//Click running web service
 	public void clickRunningService(){
-		objWSPage.getRunService().click();
+			objWSPage.getRunService().click();
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			objWSPage.getRunService().click();
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			objWSPage.getRunService().click();
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 	
 	//Click on VSII Projects option on side bar
@@ -155,12 +176,9 @@ public class WebServiceMethod {
 	public void clickImportedProject(){
 		try{
 			objWSPage.getTestProject().click();
-		}
-		catch(org.openqa.selenium.StaleElementReferenceException ex)
-		{
+		}catch(org.openqa.selenium.StaleElementReferenceException ex){
 			objWSPage.getTestProject().click();
 		}
-
 	}
 	
 	//Get project key
@@ -203,6 +221,13 @@ public class WebServiceMethod {
 	public void setProjectName(String projectName){
 		objVsiiProjectPage.getProjectDropdown().clear();
 		objVsiiProjectPage.getProjectDropdown().sendKeys(projectName);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		objVsiiProjectPage.getProjectDropdown().sendKeys(Keys.TAB);
 	}
 	
 	// Click "No verify worklog" check box if it is checked, leave it empty if it has not been checked

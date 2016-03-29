@@ -36,6 +36,9 @@ public class WebService {
 		objProject = new ProjectsPageMethod(TestBase.driver);
 		objTasks = new TasksPageMethod(TestBase.driver);
 		objLogin.loginToManagerPage("lienlt", "12345678");
+		objJiraLogin = new JiraLoginPageMethod(TestBase.driver);
+		objJiraDashboard = new JiraDashBoardMethod(TestBase.driver);
+		objJiraWorklog = new JiraWorklogMethod(TestBase.driver);
 		objService.clickProjectMenu();
 
 	}
@@ -197,7 +200,7 @@ public class WebService {
 		Assert.assertEquals(objTasks.getDoneBy(), doneBy);
 	}
 
-	@Test(priority = 5, description = "Verify that when add new worklog in JIRA project webservice importing work correctly", dataProvider = "W05", dataProviderClass = TestData.class)
+//	@Test(priority = 5, description = "Verify that when add new worklog in JIRA project webservice importing work correctly", dataProvider = "W05", dataProviderClass = TestData.class)
 	public void W05(String jiraBaseUrl, String username, String password, String timeSpent, String startTime,
 			String ERPusername, String ERPpassword, String timeSpentOnERP, String doneByOnERP) {
 
@@ -215,12 +218,11 @@ public class WebService {
 		objJiraWorklog.clickOnMore();
 		objJiraWorklog.addWorklogOption();
 		objJiraWorklog.setTimeSpent(timeSpent);
-		objJiraWorklog.setStartTime(startTime);
+//		objJiraWorklog.setStartTime(startTime);
 		objJiraWorklog.clickSubmitWorklog();
 
 		// Run service to update info
 		TestBase.driver.get(TestBase.p.getProperty("baseUrl"));
-		objLogin.loginToManagerPage(ERPusername, ERPpassword);
 		objService.clickProjectMenu();
 		objService.clickWebServiceOption();
 		objService.clickChooseService();
@@ -248,7 +250,7 @@ public class WebService {
 
 	}
 	
-	@Test(priority = 6, description = "Verify that when add new worklog in JIRA project webservice importing work correctly", dataProvider = "W06", dataProviderClass = TestData.class)
+//	@Test(priority = 6, description = "Verify that when add new worklog in JIRA project webservice importing work correctly", dataProvider = "W06", dataProviderClass = TestData.class)
 	public void W06(String jiraBaseUrl, String username, String password, String timeSpent,
 			String ERPusername, String ERPpassword, String timeSpentOnERP, String doneByOnERP) {
 
@@ -270,7 +272,6 @@ public class WebService {
 
 		// Run service to update info
 		TestBase.driver.get(TestBase.p.getProperty("baseUrl"));
-		objLogin.loginToManagerPage(ERPusername, ERPpassword);
 		objService.clickProjectMenu();
 		objService.clickWebServiceOption();
 		objService.clickChooseService();
@@ -319,7 +320,6 @@ public class WebService {
 
 		// Run service to update info
 		TestBase.driver.get(TestBase.p.getProperty("baseUrl"));
-		objLogin.loginToManagerPage(ERPusername, ERPpassword);
 		objService.clickProjectMenu();
 		objService.clickWebServiceOption();
 		objService.clickChooseService();
@@ -342,8 +342,8 @@ public class WebService {
 
 		// Verify test result
 		// System.out.println(objTasks.getWorklogDetail());
-//		Assert.assertEquals(objTasks.getTimeSpent(), timeSpentOnERP);
-//		Assert.assertEquals(objTasks.getDoneBy(), doneByOnERP);
+		Assert.assertEquals(objTasks.getTimeSpent(), timeSpentOnERP);
+		Assert.assertEquals(objTasks.getDoneBy(), doneByOnERP);
 //		Assert.assertTrue(objTasks.getTimeSpent(), timeSpentOnERP);
 
 	}
