@@ -1,19 +1,19 @@
 package com.vsii.tsc.guru.testcase;
 
 import java.io.IOException;
-import java.util.Properties;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.vsii.tsc.guru.pages.method.JiraBrowseProjectPageMethod;
 import com.vsii.tsc.guru.pages.method.JiraDashBoardMethod;
 import com.vsii.tsc.guru.pages.method.JiraLoginPageMethod;
-import com.vsii.tsc.guru.pages.method.JiraWorklogMethod;
+import com.vsii.tsc.guru.pages.method.JiraProjectDetailsPageMethod;
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
 import com.vsii.tsc.guru.pages.method.ProjectsPageMethod;
 import com.vsii.tsc.guru.pages.method.TasksPageMethod;
+import com.vsii.tsc.guru.pages.method.VSIIProjectPageMethod;
 import com.vsii.tsc.guru.pages.method.WebServiceMethod;
 import com.vsii.tsc.guru.testdata.TestData;
 import com.vsii.tsc.utility.TestBase;
@@ -25,7 +25,9 @@ public class WebService {
 	TasksPageMethod objTasks;
 	JiraLoginPageMethod objJiraLogin;
 	JiraDashBoardMethod objJiraDashboard;
-	JiraWorklogMethod objJiraWorklog;
+	JiraProjectDetailsPageMethod objJiraProjectDetail;
+	JiraBrowseProjectPageMethod objJiraBrowseProject;
+	VSIIProjectPageMethod objVSIIProject;
 	String username;
 	String password;
 
@@ -38,7 +40,9 @@ public class WebService {
 		objLogin.loginToManagerPage("lienlt", "12345678");
 		objJiraLogin = new JiraLoginPageMethod(TestBase.driver);
 		objJiraDashboard = new JiraDashBoardMethod(TestBase.driver);
-		objJiraWorklog = new JiraWorklogMethod(TestBase.driver);
+		objJiraProjectDetail = new JiraProjectDetailsPageMethod(TestBase.driver);
+		objJiraBrowseProject = new JiraBrowseProjectPageMethod(TestBase.driver);
+		objVSIIProject = new VSIIProjectPageMethod(TestBase.driver);
 		objService.clickProjectMenu();
 
 	}
@@ -65,29 +69,15 @@ public class WebService {
 	@Test(priority = 1, description = "Create new web service in OpenERP", dataProvider = "W01", dataProviderClass = TestData.class)
 	public void W01(String txtServiceName, String txtType, String txtProtocol, String txtHost, String txtPort,
 			String txtPath, String txtDateTime, String txtAuth, String txtJusername, String txtJPassword,
-			String txtModelName, String txtDecodeMethodName) throws IOException {
+			String txtModelName, String txtDecodeMethodName) throws IOException, InterruptedException {
 		// Method name
 		TestBase.methodName = "W01";
+		
 		// Perform test steps
-		// objService.createWebService(txtServiceName, txtType, txtProtocol,
-		// txtHost, txtPort, txtPath, txtDateTime, txtAuth, txtJusername,
-		// txtJPassword, txtModelName, txtDecodeMethodName);
 		objService.clickWebServiceOption();
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		Thread.sleep(100);
 		objService.clickCreateService();
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		objService.setServiceName(txtServiceName);
-		// setUser(txtUser);
 		objService.setType(txtType);
 		objService.setProtocol(txtProtocol);
 		objService.setHost(txtHost);
@@ -100,6 +90,7 @@ public class WebService {
 		objService.setModelName(txtModelName);
 		objService.setDecodeMethod(txtDecodeMethodName);
 		objService.clickSave();
+		
 		// Verify test result
 		Assert.assertTrue(TestBase.driver.getCurrentUrl().contains("id"));
 	}
@@ -114,7 +105,7 @@ public class WebService {
 
 	@Test(priority = 2, description = "Run web service and verify if JIRA project is synchronized with OpenERP", dataProvider = "W02", dataProviderClass = TestData.class)
 	public void W02(String projectKey, String projectName, String projectDepartment, String projectType)
-			throws IOException {
+			throws IOException, InterruptedException {
 
 		// Method name
 		TestBase.methodName = "W02";
@@ -143,33 +134,30 @@ public class WebService {
 	 */
 
 	@Test(priority = 3, description = "Verify the ability of mapping imported project from JIRA with existed OpenERP project work correctly", dataProvider = "W03", dataProviderClass = TestData.class)
-	public void W03(String projectName, String expectedTaskKey) {
+	public void W03(String projectName, String expectedTaskKey) throws InterruptedException {
 		// Method name
 		TestBase.methodName = "W03";
+		
 		// Perform test steps
 		objService.clickVsiiProject();
 		objService.clickImportedProject();
-		objService.clickEditImportedProject();
-		objService.setProjectName(projectName);
-		objService.clickNoVerifyChkbox();
-		objService.clickSaveImportedProject();
+		objVSIIProject.clickEditImportedProject();
+		objVSIIProject.setProjectName(projectName);
+		objVSIIProject.clickNoVerifyChkbox();
+		objVSIIProject.clickSaveImportedProject();
+		
 		// Verify imported info
 		objProject.clickProjectLink();
 		objProject.chooseDepartment();
 		objProject.chooseTestProject();
 		objProject.clickTaskBtn();
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		Thread.sleep(1000);
 		Assert.assertEquals(objTasks.getExtkeyValue(), expectedTaskKey);
 
 	}
 
 	@Test(priority = 4, description = "Verify importing JIRA project to OpenERP project work correctly", dataProvider = "W04", dataProviderClass = TestData.class)
-	public void W04(String timeSpent, String doneBy) {
+	public void W04(String timeSpent, String doneBy) throws InterruptedException {
 		// Method name
 		TestBase.methodName = "W04";
 
@@ -182,27 +170,19 @@ public class WebService {
 
 		objProject.clickProjectLink();
 		objProject.chooseDepartment();
-		// objProject.chooseProject();
 		objProject.chooseTestProject();
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		objProject.clickTaskBtn();
 
 		objTasks.clickLatestTask();
 
 		// Verify test result
-		// System.out.println(objTasks.getWorklogDetail());
 		Assert.assertEquals(objTasks.getTimeSpent(), timeSpent);
 		Assert.assertEquals(objTasks.getDoneBy(), doneBy);
 	}
 
 	@Test(priority = 5, description = "Verify that when add new worklog in JIRA project webservice importing work correctly", dataProvider = "W05", dataProviderClass = TestData.class)
 	public void W05(String jiraBaseUrl, String username, String password, String timeSpent, String startTime,
-			String timeSpentOnERP, String doneByOnERP) {
+			String timeSpentOnERP, String doneByOnERP) throws InterruptedException {
 
 		// Method name
 		TestBase.methodName = "W05";
@@ -213,91 +193,29 @@ public class WebService {
 		objJiraDashboard.clickProjectDropdownMenu();
 		objJiraDashboard.clickAllProjects();
 
-		objJiraWorklog.clickChooseProject();
-		objJiraWorklog.clickChooseTask();
-		objJiraWorklog.clickOnMore();
-		objJiraWorklog.addWorklogOption();
-		objJiraWorklog.setTimeSpent(timeSpent);
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		// objJiraWorklog.setStartTime(startTime);
-		objJiraWorklog.clickSubmitWorklog();
-
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
+		objJiraBrowseProject.clickChooseProject();
+		objJiraProjectDetail.clickChooseTask();
+		objJiraProjectDetail.clickOnMore();
+		objJiraProjectDetail.addWorklogOption();
+		objJiraProjectDetail.setTimeSpent(timeSpent);
+		objJiraProjectDetail.clickSubmitWorklog();
+		
 		// Run service to update info
 		TestBase.driver.get(TestBase.p.getProperty("baseUrl"));
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		objService.clickProjectMenu();
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		objService.clickWebServiceOption();
 		objService.clickChooseService();
 		objService.clickRunningService();
-
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		
 		// Verify
 		objProject.clickProjectLink();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		objProject.chooseDepartment();
-		// objProject.chooseProject();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		objProject.chooseTestProject();
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		objProject.clickTaskBtn();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		objTasks.clickLatestTask();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		Thread.sleep(500);
+		
 		// Verify test result
-		// System.out.println(objTasks.getWorklogDetail());
 		Assert.assertEquals(objTasks.getTimeSpent(), timeSpentOnERP);
 		Assert.assertEquals(objTasks.getDoneBy(), doneByOnERP);
 
@@ -305,7 +223,7 @@ public class WebService {
 
 	@Test(priority = 6, description = "Verify that when add new worklog in JIRA project webservice importing work correctly", dataProvider = "W06", dataProviderClass = TestData.class)
 	public void W06(String jiraBaseUrl, String username, String password, String timeSpent, String timeSpentOnERP,
-			String doneByOnERP) {
+			String doneByOnERP) throws InterruptedException {
 
 		// Method name
 		TestBase.methodName = "W06";
@@ -318,82 +236,37 @@ public class WebService {
 		objJiraDashboard.clickProjectDropdownMenu();
 		objJiraDashboard.clickAllProjects();
 
-		objJiraWorklog.clickChooseProject();
-		objJiraWorklog.clickChooseTask();
-		objJiraWorklog.clickWorklogTab();
-		objJiraWorklog.clickEditWorklog();
-		objJiraWorklog.setTimeSpent(timeSpent);
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		objJiraWorklog.clickSubmitWorklog();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		objJiraBrowseProject.clickChooseProject();
+		objJiraProjectDetail.clickChooseTask();
+		objJiraProjectDetail.clickOnMore();
+		objJiraProjectDetail.addWorklogOption();
+		objJiraProjectDetail.setTimeSpent(timeSpent);
+		objJiraProjectDetail.clickSubmitWorklog();
+
 		// Run service to update info
 		TestBase.driver.get(TestBase.p.getProperty("baseUrl"));
 		objService.clickProjectMenu();
 		objService.clickWebServiceOption();
 		objService.clickChooseService();
 		objService.clickRunningService();
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+
 		// Verify
 		objProject.clickProjectLink();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		Thread.sleep(500);
 		objProject.chooseDepartment();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		// objProject.chooseProject();
 		objProject.chooseTestProject();
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		objProject.clickTaskBtn();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		objTasks.clickLatestTask();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		Thread.sleep(500);
+		
 		// Verify test result
-		// System.out.println(objTasks.getWorklogDetail());
 		Assert.assertEquals(objTasks.getTimeSpent(), timeSpentOnERP);
 		Assert.assertEquals(objTasks.getDoneBy(), doneByOnERP);
 
 	}
 
 	@Test(priority = 7, description = "Verify that when add new worklog in JIRA project webservice importing work correctly", dataProvider = "W07", dataProviderClass = TestData.class)
-	public void W07(String jiraBaseUrl, String username, String password, String timeSpentOnERP, String doneByOnERP) {
+	public void W07(String jiraBaseUrl, String username, String password, String timeSpentOnERP, String doneByOnERP) throws InterruptedException {
 
 		// Method name
 		TestBase.methodName = "W07";
@@ -406,92 +279,31 @@ public class WebService {
 		objJiraDashboard.clickProjectDropdownMenu();
 		objJiraDashboard.clickAllProjects();
 
-		objJiraWorklog.clickChooseProject();
-		objJiraWorklog.clickChooseTask();
-		objJiraWorklog.clickWorklogTab();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		objJiraWorklog.clickDeleteWorklogOption();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		objJiraWorklog.submitDeleteWorklog();
+		objJiraBrowseProject.clickChooseProject();
+		objJiraProjectDetail.clickChooseTask();
+		objJiraProjectDetail.clickWorklogTab();
+		objJiraProjectDetail.clickDeleteWorklogOption();
+		objJiraProjectDetail.submitDeleteWorklog();
 
 		// Run service to update info
 		TestBase.driver.get(TestBase.p.getProperty("baseUrl"));
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		objService.clickProjectMenu();
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		objService.clickWebServiceOption();
 		objService.clickChooseService();
 		objService.clickRunningService();
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 
 		// Verify
 		objProject.clickProjectLink();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		objProject.chooseDepartment();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		// objProject.chooseProject();
 		objProject.chooseTestProject();
-
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		objProject.clickTaskBtn();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		Thread.sleep(500);
 		objTasks.clickLatestTask();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		Thread.sleep(500);
+
 		// Verify test result
-		// System.out.println(objTasks.getWorklogDetail());
 		Assert.assertEquals(objTasks.getTimeSpent(), timeSpentOnERP);
 		Assert.assertEquals(objTasks.getDoneBy(), doneByOnERP);
-		// Assert.assertTrue(objTasks.getTimeSpent(), timeSpentOnERP);
 
 	}
 

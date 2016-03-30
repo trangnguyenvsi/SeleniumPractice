@@ -780,4 +780,19 @@ public String getPopupText() {
 		 this.clickSaveMem();
 	  }	
   
+  /*
+   * This section is added by QuyenTX on ProjectCreateNewMethod
+   * The following methods are used in Websevice Testing module 
+   */
+  
+  // Create project to use in webservice testing
+  public void createProject(String projectName, String approvedEffort, String projectType, String commDetails ) throws InterruptedException{
+	  this.clickCreatebtn();
+	  this.inputProjectName(projectName);
+	  this.inputApprovedEffort(approvedEffort);
+	  this.inputProjectType(projectType);
+	  this.inputCommerDetails(commDetails);
+	  this.clickSavebtn();
+  }
+  
 }

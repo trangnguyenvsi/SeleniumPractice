@@ -107,20 +107,4 @@ public class TestBase {
 		//driver.quit();
 		//SendMail.execute();
 	}
-	
-	@BeforeMethod
-	public void beforeMethod(){
-		
-	}
-
-	@AfterMethod
-	public void afterMethod(){
-		try {
-			Thread.sleep(100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
 }
