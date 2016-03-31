@@ -1,3 +1,33 @@
+
+/*
+ * 	Check if JIRA project is existed
+ * 		if(yes){
+ * 			Click on the first project
+ * 			Get projectName, projectKey and store in variables
+ * 			Check if any task has been created
+ * 			if(yes){
+ * 				Click on the first task
+ * 				Get taskName and timeSpent, stored in variables
+ * 						=>> Perform integration in OpenERP
+ * 				else{
+ * 					Create worklog with given info from DataProvider
+ * 						=>> Perform integration in OpenERP
+ * 					}
+ * 			else{
+ * 				Create new task
+ * 				Create new worklog with given info from DataProvider
+ * 						=>> Perform integration in OpenERP
+ * 			}
+ * 		else{
+ * 			Create new project
+ * 			Create new task
+ * 			Create new worklog with given info from DataProvider
+ * 						=>> Perform integration in OpenERP
+ * 	}  
+ */
+
+
+
 package com.vsii.tsc.guru.testcase;
 
 import java.io.IOException;
@@ -405,6 +435,9 @@ public class WebService {
 		Assert.assertEquals(objTasks.getDoneBy(), doneByOnERP);
 
 	}
+	
+	
+	
 
 }
 
