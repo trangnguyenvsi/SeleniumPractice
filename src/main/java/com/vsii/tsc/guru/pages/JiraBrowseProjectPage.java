@@ -8,7 +8,7 @@ public class JiraBrowseProjectPage {
 	//Project page can be reached at https://path/to/JIRA/projects
 	
 	//Identify Prject Name 
-	@FindBy(linkText = "Selenium Practice")
+	@FindBy(xpath = "//a[contains(.,'Selenium Practice')]")
 	private WebElement projectName;
 
 	

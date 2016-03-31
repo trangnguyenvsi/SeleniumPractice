@@ -40,6 +40,7 @@ import org.testng.annotations.Test;
 import com.vsii.tsc.guru.pages.method.JiraBrowseProjectPageMethod;
 import com.vsii.tsc.guru.pages.method.JiraDashBoardMethod;
 import com.vsii.tsc.guru.pages.method.JiraLoginPageMethod;
+import com.vsii.tsc.guru.pages.method.JiraNewIssuePageMethod;
 import com.vsii.tsc.guru.pages.method.JiraProjectDetailsPageMethod;
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
 import com.vsii.tsc.guru.pages.method.ProjectCreateNewMethod;
@@ -61,6 +62,7 @@ public class WebService {
 	JiraBrowseProjectPageMethod objJiraBrowseProject;
 	ProjectCreateNewMethod objErpProject;
 	VSIIProjectPageMethod objVSIIProject;
+	JiraNewIssuePageMethod objIssueMethod;
 	String username;
 	String password;
 
@@ -77,10 +79,99 @@ public class WebService {
 		objJiraBrowseProject = new JiraBrowseProjectPageMethod(TestBase.driver);
 		objErpProject = new ProjectCreateNewMethod(TestBase.driver);
 		objVSIIProject = new VSIIProjectPageMethod(TestBase.driver);
+		objIssueMethod = new JiraNewIssuePageMethod(TestBase.driver);
 		objService.clickProjectMenu();
 
 	}
 
+	@Test
+	public void checkJira(String username, String password){
+		String defProjectName = "Selenium Practice";
+		String defIssueType = "Task";
+		String defTaskName = "Execute Test";
+		String defProjectKey = "SP";
+		String defMemberName = "Nguyen Thi Thu Trang";
+		String defLoggedHour = "4h"; 
+		String projectListXpath = "html/body/div/section/div/div/section/div[1]/div[2]/div/table/tbody";
+		String issueListXpath = "html/body/div[1]/section/div[2]/div/section/div/div/div/div/div/div/div[1]/div[1]/div/div[1]/div[2]/div/ol";
+		String worklogListXpath = "html/body/div[1]/section/div[2]/div/section/div/div/div/div/div/div/div[2]/div[1]/div/div/div/div[1]/div[5]/div[2]/div[2]/div[2]";
+		
+		TestBase.driver.get("http://192.168.0.200:8085/secure/Dashboard.jspa");
+		objJiraLogin.Login(username, password);
+		objJiraDashboard.clickProjectDropdownMenu();
+		objJiraDashboard.clickAllProjects();
+		int projectListSize = TestBase.driver.findElements(By.xpath(projectListXpath)).size();
+		if(projectListSize>0){
+			String firstProjectXpath="html/body/div[1]/section/div/div/section/div[1]/div[2]/div/table/tbody/tr[1]/td[2]/a";
+			String firstProjectName = TestBase.driver.findElement(By.xpath(firstProjectXpath)).getText();
+			
+			//Click on the first project
+			TestBase.driver.findElement(By.xpath(firstProjectXpath)).click();
+			
+			int issueListSize = TestBase.driver.findElements(By.xpath(issueListXpath)).size();
+			if(issueListSize>0){
+//				String firstIssueXpath = "html/body/div[1]/section/div[2]/div/section/div/div/div/div/div/div/div[1]/div[1]/div/div[1]/div[2]/div/ol/li["+issueListSize+"]";
+				String firstIssueXpath = "html/body/div[1]/section/div[2]/div/section/div/div/div/div/div/div/div[1]/div[1]/div/div[1]/div[2]/div/ol/li["+issueListSize+"]/a/span[2]";
+				String firstIssueName = TestBase.driver.findElement(By.xpath(firstIssueXpath)).getText();
+				
+				//Click on the first issue
+				TestBase.driver.findElement(By.xpath(firstIssueXpath)).click();
+				objJiraProjectDetail.clickWorklogTab();
+				
+				int worklogListSize =TestBase.driver.findElements(By.xpath(worklogListXpath)).size();
+				if(worklogListSize>0){
+					String firstWorklogXpath = "html/body/div[1]/section/div[2]/div/section/div/div/div/div/div/div/div[2]/div[1]/div/div/div/div[1]/div[5]/div[2]/div[2]/div[2]/div["+worklogListSize+"]";
+					String firstWorklogName = TestBase.driver.findElement(By.xpath(firstWorklogXpath+"/div/div[2]/a")).getText();
+					String firstWorklogTime = TestBase.driver.findElement(By.xpath(firstWorklogXpath+"/div/div[3]/ul/li/dl[1]/dd")).getText();
+					
+				}else{
+					// Create new worklog with given info
+					objJiraProjectDetail.createNewWorklog(defLoggedHour);
+					
+					//Run any test here
+					//Run any test here
+					//Run any test here
+					//Run any test here
+					//Run any test here
+					//Run any test here
+					//Run any test here
+					
+				}
+				
+			}else{
+				//Create new task with given info
+				objIssueMethod.createNewIssue(defIssueType, defTaskName);
+				
+				// Create new worklog with given info
+				objJiraProjectDetail.createNewWorklog(defLoggedHour);
+				
+				//Run any test here
+				//Run any test here
+				//Run any test here
+				//Run any test here
+				//Run any test here
+				
+				
+			}
+		}else{
+			// Create project
+			objJiraDashboard.createNewProject(defProjectName, defProjectKey);;
+			
+			//Create new task with given info
+			objIssueMethod.createNewIssue(defIssueType, defTaskName);
+			
+			// Create new worklog with given info
+			objJiraProjectDetail.createNewWorklog(defLoggedHour);
+			
+			// Run any test
+			// Run any test
+			// Run any test
+			// Run any test
+			// Run any test
+			// Run any test
+		}
+	}
+	
 	/*
 	 * Open webDriver
 	 * 
@@ -435,12 +526,4 @@ public class WebService {
 		Assert.assertEquals(objTasks.getDoneBy(), doneByOnERP);
 
 	}
-	
-	
-	
-
 }
-
-
-
-

@@ -44,4 +44,15 @@ public class JiraDashBoardMethod {
 		clickAccountOption();
 		clickLogOut();
 	}
+	
+	// Create a new project
+	public void createNewProject(String projectName, String projectKey){
+		objJiraDashboardPage.getCreateProjectButton().click();
+		objJiraDashboardPage.getBasicSoftwareOption().click();
+		objJiraDashboardPage.getNextBtn().click();
+		objJiraDashboardPage.getSelectBtn().click();
+		objJiraDashboardPage.getProjectName().sendKeys(projectName);
+		objJiraDashboardPage.getProjectKey().sendKeys(projectKey);
+		objJiraDashboardPage.getSubmitBtn().click();
+	}
 }

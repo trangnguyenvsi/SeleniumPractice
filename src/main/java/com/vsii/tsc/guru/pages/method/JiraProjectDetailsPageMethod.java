@@ -55,6 +55,14 @@ public class JiraProjectDetailsPageMethod {
 		objJiraProjectDetailPage.getLogSubmit().click();
 	}
 	
+	// CREATE NEW WORKLOG
+	public void createNewWorklog(String DefLoggedHour){
+		clickOnMore();
+		addWorklogOption();
+		setTimeSpent(DefLoggedHour);
+		clickSubmitWorklog();
+	}
+	
 	//Click workog tab
 	public void clickWorklogTab(){
 		try{
