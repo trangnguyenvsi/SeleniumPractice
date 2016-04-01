@@ -144,6 +144,13 @@ public class WebServiceMethod {
 		Thread.sleep(1000);
 
 	}
+	
+	// RUN SERVICE
+	public void runService() throws InterruptedException{
+		clickWebServiceOption();
+		clickChooseService();
+		clickRunningService();
+	}
 
 	// Click on VSII Projects option on side bar
 	public void clickVsiiProject() {
@@ -157,6 +164,13 @@ public class WebServiceMethod {
 		} catch (org.openqa.selenium.StaleElementReferenceException ex) {
 			objWSPage.getTestProject().click();
 		}
+	}
+	
+	
+	// Choose imported project
+	public void chooseImportedProject(){
+		clickVsiiProject();
+		clickImportedProject();
 	}
 
 	// Get project key

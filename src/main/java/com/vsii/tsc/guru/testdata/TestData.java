@@ -129,6 +129,12 @@ public class TestData {
 		return data;
 	}
 	
+	@DataProvider(name = "CheckJIRA")
+	public static Object[][]  getCheckJiraInfo() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "CheckJIRA");
+		return data;
+	}
+	
 	/*
 	 * anhptq
 	 */

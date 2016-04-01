@@ -51,4 +51,13 @@ public class VSIIProjectPageMethod {
 	public void clickSaveImportedProject() {
 		objVsiiProjectPage.getSaveBtn().click();
 	}
+	
+	
+	public void editVSIIProject(String firstProjectName) throws InterruptedException{
+
+		clickEditImportedProject();
+		setProjectName(firstProjectName);
+		clickNoVerifyChkbox();
+		clickSaveImportedProject();
+	}
 }

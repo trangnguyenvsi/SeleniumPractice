@@ -12,7 +12,6 @@
           <include name="W05" invocation-numbers="0"/>
           <include name="W03"/>
           <include name="W06" invocation-numbers="0"/>
-          <include name="W01" invocation-numbers="0"/>
           <include name="setupClass"/>
           <include name="W04"/>
           <include name="W02" invocation-numbers="0"/>

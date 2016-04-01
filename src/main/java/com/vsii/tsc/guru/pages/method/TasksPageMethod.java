@@ -157,8 +157,8 @@ public class TasksPageMethod {
 	
 	
 	// Get task external key value
-	public String getExtkeyValue(){
-		return objTasksPage.getExtKeyValue().getText();
+	public String getTaskNameValue(){
+		return objTasksPage.getTaskNameValue().getText();
 	}
 	
 	//Click on the latest task record

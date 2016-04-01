@@ -101,15 +101,15 @@ public class TasksPage {
 	private WebElement deleteButt;
 	
 	// Identify Task External Key Value 
-	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[1]/div/table/tbody/tr[1]/td[6]")
-	private WebElement extKeyValue;
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[1]/div/table/tbody/tr[1]/td[1]")
+	private WebElement taskNameValue;
 
-	public WebElement getExtKeyValue() {
-		return extKeyValue;
+	public WebElement getTaskNameValue() {
+		return taskNameValue;
 	}
 
-	public void setExtKeyValue(WebElement extKeyValue) {
-		this.extKeyValue = extKeyValue;
+	public void setExtKeyValue(WebElement taskNameValue) {
+		this.taskNameValue = taskNameValue;
 	}
 	
 	// Identify latest tasks record
