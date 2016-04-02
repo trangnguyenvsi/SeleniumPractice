@@ -29,6 +29,20 @@ public class CommonOperations {
 	List<String> list = null;
 
 	/*
+	 * Read AnhPTQ properties file
+	 */
+	public static Properties readTSConfig() throws IOException {
+		// Create new properties variable
+		Properties p = new Properties();
+		// Read object properties file
+		InputStream stream = new FileInputStream("./properties/AnhPTQ_HR.properties");
+		// Load input stream file
+		p.load(stream);
+		return p;
+	}
+	
+	
+	/*
 	 * Read from configuration file
 	 */
 	public static Properties readConfig() throws IOException {

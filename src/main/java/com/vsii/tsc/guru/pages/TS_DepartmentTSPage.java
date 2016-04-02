@@ -3,7 +3,7 @@ package com.vsii.tsc.guru.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AnhPTQ_DepartmentTSPage {
+public class TS_DepartmentTSPage {
 	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[1]/div[1]/div[5]/ul[3]/li[3]/a/span")
 	private WebElement mnDptTS;
 	

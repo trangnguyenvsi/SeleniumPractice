@@ -1,9 +1,9 @@
-package com.vsii.tsc.guru.pages.method;
+package com.vsii.tsc.guru.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AnhPTQ_PMOViewPage {
+public class TS_PMOViewPage {
 	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[1]/div[1]/div[3]/ul[3]/li[6]/a/span")
 	private WebElement mnPMOView;
 	

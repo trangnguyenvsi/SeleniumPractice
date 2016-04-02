@@ -1,9 +1,9 @@
-package com.vsii.tsc.guru.pages.method;
+package com.vsii.tsc.guru.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AnhPTQ_MainPage {
+public class TS_MainPage {
 	@FindBy(xpath="html/body/div[1]/table/tbody/tr[2]/td/ul/li[5]/a/span")
 	private WebElement mnHR;
 
