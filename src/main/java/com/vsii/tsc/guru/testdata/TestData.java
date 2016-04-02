@@ -138,9 +138,15 @@ public class TestData {
 	/*
 	 * anhptq
 	 */
-	@DataProvider(name = "dpLogin")
-	public static Object[][]  getLoginTS() {
-		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Login", "LTS");
+	@DataProvider(name = "dp_PMOLoginAnhPTQ")
+	public static Object[][] anhPTQPMOLogin() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Timesheet", "PMO");
+		return data;
+	}
+
+	@DataProvider(name = "dpLogin_AnhPTQ")
+	public static Object[][] anhPTQLogin() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Timesheet", "ProjectMember");
 		return data;
 	}
 	
