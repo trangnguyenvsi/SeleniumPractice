@@ -4,7 +4,6 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,11 +23,12 @@ public class ISMS_ProjectMethod
     
     WebDriver driver;    
     public ISMS_ProjectPage ObjecProject = new ISMS_ProjectPage();
-    ISMS_LoginPageMethod objLogin = new ISMS_LoginPageMethod(TestBase.driver);
+     ISMS_LoginPageMethod objLogin;
 
     public ISMS_ProjectMethod(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver, ObjecProject);      
+        PageFactory.initElements(driver, ObjecProject);  
+        objLogin = new ISMS_LoginPageMethod(TestBase.driver);
     }  
     
 public void GotoProjectPage(){
@@ -91,38 +91,17 @@ public void VerifyissueofProject(){
     ObjecProject.huyboCol.isDisplayed();  
 }
 public void clickEditIssue(){
-    
-    //new Actions(driver).moveToElement(ObjecProject.editIssue_btn).click().perform();
-    //ObjecProject.adIssueBtn();
-
-    //ObjecProject.adIssueBtn.sendKeys(Keys.TAB);
-
-//  ObjecProject.editIssue_btn.click();
-//ObjecProject.issueLink.sendKeys(Keys.TAB);
-//ObjecProject.issueLink.sendKeys(Keys.TAB);
-
-
-//    ObjecProject.editIssue_btn.sendKeys(Keys.RETURN);
- // Actions action = new Actions(driver);
-//    action.moveToElement(ObjecProject.editIssue_btn).doubleClick().build().perform();
-//driver.findElement(By.xpath="//div/button[@class='oe_button oe_form_button_edit']");
-//JavascriptExecutor jse = (JavascriptExecutor) driver;
-//jse.executeScript("document.getElementByxpath('//div/button[@class='oe_button oe_form_button_edit']').focus())");
-//ObjecProject.editIssue_btn.click();
-//WebDriver driver = new FirefoxDriver();
-//JavascriptExecutor jse = (JavascriptExecutor) driver;
-//jse.executeScript("document.getElementById('elementid').focus();");
 TestBase.driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[4]/div/div[4]/div/div/div[1]/div/h1/span/span")).click();
 WebElement myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.oe_button.oe_form_button_edit")));
 myDynamicElement.click();
-//action.moveToElement(ObjecProject.editIssue_btn).clickAndHold();
+
 }
 public void selectLevel(String level){
 	new Select(ObjecProject.type_level).selectByVisibleText(level);  	
 }
-public void verifyselectlevelcorrect(String level2){
-    TestBase.driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[4]/div/div[4]/div/div/div[1]/div/h1/span/span")).click();
-	Assert.assertEquals(ObjecProject.expectedLevel.getText(),level2);
+public String getActulLevel(){
+TestBase.driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[4]/div/div[4]/div/div/div[1]/div/h1/span/span")).click();
+return ObjecProject.expectedLevel.getText();
 }
 public void inputAssginee(String Assignee){
     Actions action = new Actions(driver);
@@ -138,6 +117,15 @@ public void verifyselectassigncorrect(String Assignee2){
 }
 public void clickSaveIssueBtn(){
 	ObjecProject.saveIssuebtn.click();
+}
+public void editLevel(String user, String pass, String Level){
+    objLogin.login(user,pass);   
+    GotoProjectPage();
+    clickIssueProjbtn2();
+    clickIssueTitle1();
+    clickEditIssue();
+    selectLevel(Level);
+    clickSaveIssueBtn();
 }
 public void clickDoneBtn(){
     TestBase.driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[4]/div/div[4]/div/div/div[1]/div/h1/span/span")).click();
@@ -162,13 +150,10 @@ public void verifyDeleteSuccess(){
     Assert.assertEquals(ObjecProject.Issuetitle2.getText(), "Issues");
 }
 
-public void inputSearchissueCondition(String searchCodi){
-//    WebElement myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(" html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/table/tbody/tr[1]/td[2]/div/div/div[1]")));
-//    myDynamicElement.click();
-   // new Actions(driver).moveToElement(ObjecProject.searchIssue_Txb).perform();
-//    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-//    ObjecProject.searchIssue_Txb.sendKeys(Keys.TAB);
-
+public void inputSearchissueCondition(String user, String pass, String searchCodi){
+    objLogin.login(user,pass);   
+    GotoProjectPage();
+    clickIssueProjbtn2(); 
     ObjecProject.searchIssue_Txb.sendKeys(searchCodi);
     ObjecProject.searchIssue_Txb.sendKeys(Keys.ENTER);
 }
@@ -273,6 +258,17 @@ public void inputassign(String Sum){
     ObjecProject.taskassignto_txb.click();
     ObjecProject.taskassignto_txb.clear();
     ObjecProject.taskassignto_txb.sendKeys(Sum);
+}
+public void createTask(String user, String pass, String taskTitle, String assgnee){ 
+    objLogin.login(user,pass);     
+    GotoProjectPage();
+    clickIssueProjbtn();
+    clickIssueTitle1();
+    clickEditIssue();
+  clickCreateEditTask_icon();
+  selectCreateEditTasklable();
+  inputTasksummary(taskTitle);
+  inputassign(assgnee);
 }
 public void clickVSIIProject(){ 
     ObjecProject.VSIIProject.click();
@@ -431,8 +427,44 @@ public void editTaskToPheDuyetSucc(String note, String Descripex, String StageEx
     clickTaskLinkTex();
     Assert.assertEquals(ObjecProject.StageCol.getText(), StageExp);     
 }
-//public void editTaskToPheDuyet(String note){ 
-//    clickpheduyet();
-//    logAnoteSucc(note);
-//}
+public void editTaskToThucHienGiaiPhapSucc(String note, String Descripex, String StageExp) throws InterruptedException{ 
+    clickthuchiengiaiphap();
+    logAnoteSucc(note);
+    Assert.assertEquals(ObjecProject.actLog.getText(), Descripex);
+    clickTaskLinkTex();
+    Assert.assertEquals(ObjecProject.StageCol.getText(), StageExp);     
+}
+public void clickthuchiengiaiphap(){ 
+    ObjecProject.thuchiengiaiphap.click();
+}
+public void clickkiemtra1(){ 
+    ObjecProject.kiemtra1.click();
+}
+public void clickaddAnItem(){ 
+    ObjecProject.addAnItem.click();
+   ObjecProject. content.click();
+    ObjecProject. content.sendKeys(Keys.TAB);
+   // ObjecProject. timeSpent.clear();
+    ObjecProject. timeSpent.sendKeys("12");
+    ObjecProject. timeSpent.sendKeys(Keys.TAB);
+}
+public void editTaskToKiemtra1Succ(String user, String pass, String Description, String StageExp) throws InterruptedException{ 
+    objLogin.login(user,pass);   
+    GotoProjectPage();
+    clickVSIIProject();
+    selectkhacphucphongngua();
+    clicktitle();
+    clickkhacphucphongnguataskBtn(); 
+    clickKppnTaskTitle();
+    clickkiemtra1();
+    clickkppnEditBtn();
+    inputDescription(Description);
+    clickSave();  
+}
+public String getActDes() throws InterruptedException{ 
+    return ObjecProject.epctdescripttion.getText() ;   
+}
+public String getActStage() throws InterruptedException{ 
+    return ObjecProject.StageCol.getText() ;        
+}
 }

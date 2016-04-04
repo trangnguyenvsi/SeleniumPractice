@@ -2,20 +2,23 @@ package com.vsii.tsc.guru.pages.method;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import com.vsii.tsc.guru.pages.ISMSPage;
+import com.vsii.tsc.utility.TestBase;
 
 public class ISMSMethod
 {    
     //Logger log = Logger.getLogger("minhdiu");
     
     WebDriver driver;
-
+    ISMS_LoginPageMethod objLogin = new ISMS_LoginPageMethod(TestBase.driver);
     public ISMSPage objISMSPage = new ISMSPage();
 
     public ISMSMethod(WebDriver driver) {
@@ -27,6 +30,9 @@ public class ISMSMethod
 public void GotoISMSPage(){
     objISMSPage.ISMSHelpdesk_btn.click();
 }
+public void closePopup(){
+    objISMSPage.xBtn.click();
+}
 
 public void ClickComposeISMSRequest(){
 
@@ -35,6 +41,9 @@ public void ClickComposeISMSRequest(){
 }
 public void ClickISMSissue(){
     objISMSPage.ISMSIssue.click();
+}
+public void ClickAssetCategories(){
+    objISMSPage.AssetCategories.click();
 }
 
 public void VerifyISMSAdmin(){
@@ -140,16 +149,13 @@ public void verifyDescripBlank(){
 public void ComposeISMSReuest(String issue,String category){    
     SetIssue(issue);
    SetCategory(category);
-//SetProblem(problem);
-//SetsimilarIssue(similarIssue);
-// SetDescrip(Descrip);    
    ClickcomposeSend();
-//   driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-//  driver.navigate().refresh();
-   //ClickISMSissue();
-   System.out.println(objISMSPage.issueNamefirstcol.getText());
-   Assert.assertEquals(objISMSPage.issueNamefirstcol.getText(), issue);
+ 
 }
+public String getActIssueRes(){    
+    return objISMSPage.issueNamefirstcol.getText(); 
+}
+
 public void VerrifyISMSIssuesListdisplayedcorrectly(){
     objISMSPage.issuecol.isDisplayed();
     objISMSPage.contacrcol.isDisplayed();
@@ -161,5 +167,141 @@ public void VerrifyISMSIssuesListdisplayedcorrectly(){
     objISMSPage.StageCol.isDisplayed();
    
 }
+public void VerrifyAssetManagedisplayedcorrectly(){
+    objISMSPage.assetCatename.isDisplayed();
+    objISMSPage.assetparentCategory.isDisplayed();
+    objISMSPage.assetSequence.isDisplayed();
+    objISMSPage.assetDescrip.isDisplayed();
+    Assert.assertEquals(objISMSPage.assetCatename.getText(), "");
+    Assert.assertEquals(objISMSPage.assetparentCategory.getText(), "");
+    Assert.assertEquals(objISMSPage.assetDescrip.getText(), "");
+}
+public void VerrifyAssetCompanydisplayedcorrectly(){
+    objISMSPage.assetCatename.isDisplayed();
+    objISMSPage.assetparentCategory.isDisplayed();
+    objISMSPage.assetSequence.isDisplayed();
+    objISMSPage.assetDescrip.isDisplayed();
+    objISMSPage.AssetpopularIssue.isDisplayed();
+    objISMSPage.AssetpopularIssueName.isDisplayed();
+    objISMSPage.AssetpopularIssuePriority.isDisplayed();
+    objISMSPage.AssetpopularIssueType.isDisplayed();
+    
+    Assert.assertEquals(objISMSPage.assetCatename.getText(), "");
+    Assert.assertEquals(objISMSPage.assetparentCategory.getText(), "");
+    Assert.assertEquals(objISMSPage.assetDescrip.getText(), "");
+}
+public void ClickSaveAsset(){    
+    objISMSPage.assetSaveBtn.click();
+}
+public void ClickassetCreatBtn(){ 
+    objISMSPage.assetTitle.click();
+    
+    objISMSPage.assetCreatBtn.click();
+}
+public void verifyerrormsg() throws InterruptedException{ 
+    WebElement element = driver.findElement(By.cssSelector(".ui-state-error.ui-notify-message.ui-notify-message-style:first-child>ul>li"));
+    WebElement element1 = driver.findElement(By.cssSelector(".ui-state-error.ui-notify-message.ui-notify-message-style:first-child>h1"));
+    Assert.assertEquals(element.getText(), "Name");
+    Assert.assertEquals(element1.getText(), "The following fields are invalid:");
+    Thread.sleep(10);
+    
+}
+public void inputAssetName(String Name){    
+    objISMSPage.assetCatename.sendKeys(Name);
+}
+public void createAssetCategories(String user, String pass, String Name) throws InterruptedException{ 
+    objLogin.login(user,pass);
+    GotoISMSPage();
+    ClickAssetCategories(); 
+    clickexistCate(); 
+    //ClickassetCreatBtn();
+    inputAssetName(Name);
+    ClickSaveAsset();    
+}
+public String actualName(){    
+   return objISMSPage.AssetexpectName.getText();    
+}   
+public String actualParent(){    
+    return objISMSPage.Assetexpectparent.getText();    
+ }   
+public String actuaSeq(){    
+    return objISMSPage.expectSeq.getText();    
+ }   
+public String actualCate(){    
+    return objISMSPage.actualCate.getText();    
+ }   
+public String existCate(){    
+    return objISMSPage.existCate.getText();    
+ }   
+public String actualDes(){    
+    return objISMSPage.expectDes.getText();    
+ } 
+public void clickexistCate(){    
+    if(driver.findElements(By.xpath(" //td[contains(text(),'Test')]")).size()!=0)
+        {
+        objISMSPage.radioBtn.click();        
+        objISMSPage.moreBtn.click();
+        objISMSPage.deleteBtn.click();
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+       ClickassetCreatBtn();}
+   
+      else 
+     {  ClickassetCreatBtn();}
+}
+public void clickexistCateNAme(){    
+    if(driver.findElements(By.xpath(" //td[contains(text(),'test123')]")).size()!=0)
+        {
+        objISMSPage.radioBtn1.click();        
+        objISMSPage.moreBtn.click();
+        objISMSPage.deleteBtn.click();
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+        ClickassetCreatBtn();}   
+    
+        else 
+            ClickassetCreatBtn();
+}
+
+public void clickdeleteBtn(){      
+    objISMSPage.deleteBtn.click();
+}
+public void inputassetCatename(String name){      
+    objISMSPage.assetCatename.sendKeys(name);
+}
+public void inputAssetcompanyCate(String Cate){      
+    objISMSPage.AssetcompanyCate.sendKeys(Cate);
+    objISMSPage.AssetcompanyCate.sendKeys(Keys.ARROW_DOWN);
+    objISMSPage.AssetcompanyCate.sendKeys(Keys.ENTER);
+}
+public void clickAsset(){      
+    objISMSPage.Assets.click();
+}
+public void createAssetCompany(String user, String pass, String name, String Cate) throws InterruptedException{ 
+    objLogin.login(user,pass);
+    GotoISMSPage();
+    clickAsset(); 
+    clickexistCateNAme();
+    inputassetCatename(name);
+    inputAssetcompanyCate(Cate);    
+    ClickSaveAsset();    
+}
+public String getErrTit(){      
+    return objISMSPage.errmsgTit.getText();
+}
+public String geterrmsCont1(){      
+    return objISMSPage.errmsCont1.getText();
+}
+public String geterrmsCont2(){      
+    return objISMSPage.errmsCont2.getText();
+}
+//public void createAssetCompany(String user, String pass) throws InterruptedException{ 
+//    objLogin.login(user,pass);
+//    objISMS.GotoISMSPage();
+//    objISMS.clickAsset(); 
+//    objISMS. ClickassetCreatBtn();
+//    objISMS.VerrifyAssetCompanydisplayedcorrectly();
+//}
+
 }
 

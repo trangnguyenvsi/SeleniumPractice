@@ -276,4 +276,11 @@ public class ISMS_ProjectPage
    
    @FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/div[2]/div[2]/div/div[2]/div[1]/div[2]/div[2]/div/p")
    public WebElement actLog;
+   @FindBy(linkText = "Add an item")
+   public WebElement addAnItem;
+   @FindBy(css = ".oe_form_field.oe_form_field_char>input")
+   public WebElement content;
+   @FindBy(xpath = " //div[2]/div/div/div/div/div/div/div[4]/div/div/span[2]/input")
+   public WebElement timeSpent;
+
    }
