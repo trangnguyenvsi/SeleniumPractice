@@ -88,4 +88,12 @@ public class TS_HRPageMethod {
 		}
 		return isMatch;
 	}
+	
+	public void clickStatus() throws InterruptedException {
+		Thread.sleep(2000);
+		String status = objHR.getLblStatus().getText();
+		if (status.equals("Open")) {
+			objHR.getLblStatus().click();
+		}
+	}
 }

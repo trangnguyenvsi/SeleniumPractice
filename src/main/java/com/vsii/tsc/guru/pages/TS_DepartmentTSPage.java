@@ -10,6 +10,9 @@ public class TS_DepartmentTSPage {
 	@FindBy(className="oe_view_manager_body")
 	private WebElement deptTSTable;
 	
+	@FindBy(xpath="/html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/tbody[2]")
+	private WebElement tblUser;
+	
 	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[3]/div")
 	private WebElement ttlEmployee;
 	
@@ -27,6 +30,47 @@ public class TS_DepartmentTSPage {
 	
 	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/thead/tr/th[8]/div")
 	private WebElement ttlStatus;
+
+	@FindBy(xpath="/html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/tbody/tr[21]/th")
+	private WebElement lstMonth;
+	
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/table/tbody/tr[2]/td[2]/div/div/div/div[2]/button")			
+	private WebElement btnMore;
+	
+	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/table/tbody/tr[2]/td[2]/div/div/div/div[2]/ul/li[4]/a")			
+	private WebElement btnDelete;
+	
+	public WebElement getTblUser() {
+		return tblUser;
+	}
+
+	public void setTblUser(WebElement tblUser) {
+		this.tblUser = tblUser;
+	}
+
+	public WebElement getBtnMore() {
+		return btnMore;
+	}
+
+	public void setBtnMore(WebElement btnMore) {
+		this.btnMore = btnMore;
+	}
+
+	public WebElement getBtnDelete() {
+		return btnDelete;
+	}
+
+	public void setBtnDelete(WebElement btnDelete) {
+		this.btnDelete = btnDelete;
+	}
+
+	public WebElement getLstMonth() {
+		return lstMonth;
+	}
+
+	public void setLstMonth(WebElement lstMonth) {
+		this.lstMonth = lstMonth;
+	}
 
 	public WebElement getTtlEmployee() {
 		return ttlEmployee;

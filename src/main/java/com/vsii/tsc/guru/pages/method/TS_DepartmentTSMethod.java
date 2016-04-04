@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -58,6 +59,11 @@ public class TS_DepartmentTSMethod {
 		Thread.sleep(2000);
 		return objDptTS.getTtlStatus().getText();
 	}
+	
+	public String getLstMonth() throws InterruptedException {
+		Thread.sleep(2000);
+		return objDptTS.getLstMonth().getText();
+	}
 
 	public boolean compareTitle() throws InterruptedException {
 		boolean isMatch = false;
@@ -96,7 +102,7 @@ public class TS_DepartmentTSMethod {
 		}
 		Thread.sleep(20000);
 	}
-
+	
 	public boolean getTSStatus() throws InterruptedException {
 		boolean isColor = false;
 		List<WebElement> rows = objDptTS.getDeptTSTable().findElements(By.tagName("tr"));
@@ -170,5 +176,73 @@ public class TS_DepartmentTSMethod {
 			isMatch = false;
 		}
 		return isMatch;
+	}
+	
+	//click vao list thang 3
+	public void clickLstMonth() throws InterruptedException {
+//		objDptTS.getLstMonth().click();
+		Thread.sleep(4000);		
+		driver.findElement(By.cssSelector(getLstMonth())).click();
+	}
+	
+	//Duyet tim theo dong, cot co du ten user = namUser va Date from = timeDel, sau do click chon dong do
+	public void selectUser(String nameUser, Date timeDel) {
+		List<WebElement> rows = objDptTS.getTblUser().findElements(By.tagName("tr"));
+		for (int rnum = 1; rnum < rows.size(); rnum++) {
+			List<WebElement> columns = rows.get(rnum).findElements(By.tagName("td"));
+			for (int cnum = 0; cnum < columns.size(); cnum++) {
+				if (columns.get(cnum).getText().equals(nameUser)) {
+					if (columns.get(cnum).getText().equals(timeDel)) {
+						columns.get(1).click();
+					}
+				}
+			}
+		}
+	}
+	
+	//Duyet tim theo dong, cot co du ten user = namUser va Date from = timeDel, sau do click chon nhieu dong thoa man dk
+		public void selectMultiUser(String nameUser, Date timeDel) {
+			List<WebElement> rows = objDptTS.getTblUser().findElements(By.tagName("tr"));
+			for (int rnum = 1; rnum < rows.size(); rnum++) {
+				List<WebElement> columns = rows.get(rnum).findElements(By.tagName("td"));
+				for (int cnum = 0; cnum < columns.size(); cnum++) {
+					if (columns.get(cnum).getText().equals(nameUser)) {
+						if (columns.get(cnum).getText().equals(timeDel)) {
+							columns.get(cnum).click();
+						}
+					}
+				}
+			}
+		}
+	
+	//click button More
+	public void clickBtnMore() throws InterruptedException {
+		objDptTS.getBtnMore().click();
+//		Thread.sleep(4000);		
+	}
+	
+	//click button Delete
+	public void clickBtnDelete() throws InterruptedException {
+		objDptTS.getBtnDelete().click();
+		Thread.sleep(2000);		
+	}
+	
+	//check da xoa
+	public boolean checkDel(String nameUser, Date timeDel) throws InterruptedException {
+		boolean isDel = false;
+		List<WebElement> rows = objDptTS.getTblUser().findElements(By.tagName("tr"));
+		for (int rnum = 1; rnum < rows.size(); rnum++) {
+			List<WebElement> columns = rows.get(rnum).findElements(By.tagName("td"));
+			for (int cnum = 0; cnum < columns.size(); cnum++) {
+				if (columns.get(cnum).getText().equals(nameUser)) {
+					if (columns.get(cnum).getText().equals(timeDel)) {
+						isDel = true;
+					} else {
+						isDel = false;
+					}
+				}
+			}
+		}
+		return isDel;
 	}
 }

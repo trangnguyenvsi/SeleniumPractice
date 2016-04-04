@@ -2,7 +2,6 @@ package com.vsii.tsc.guru.pages.method;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -49,4 +48,16 @@ public class TS_CurrentTSMethod {
 // Thread.sleep(10000);
 // return objcurTS.getCurrentDate().getText();
 // }
+	
+	public void clickEdit() {
+		objcurTS.getBtnEdit().click();
+	}
+	
+	public String getLblStatus() {
+		return objcurTS.getLblStatus().getText();
+	}
+	
+	public void clickSubmit() {
+		objcurTS.getBtnSubmit().click();
+	}
 }

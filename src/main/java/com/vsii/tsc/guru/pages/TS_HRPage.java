@@ -31,6 +31,17 @@ public class TS_HRPage {
 	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/table/tbody/tr[2]/td[1]/div/div/span/a[2]")
 	private WebElement btnImport;
 	
+	@FindBy(xpath="/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/tbody/tr[1]/td[6]")
+	private WebElement lblStatus;
+	
+	public WebElement getLblStatus() {
+		return lblStatus;
+	}
+
+	public void setLblStatus(WebElement lblStatus) {
+		this.lblStatus = lblStatus;
+	}
+
 	public WebElement getTtlDateFrom() {
 		return ttlDateFrom;
 	}
