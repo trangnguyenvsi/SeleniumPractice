@@ -8,10 +8,7 @@
     <classes>
       <class name="com.vsii.tsc.guru.testcase.WebService">
         <methods>
-          <include name="W07" invocation-numbers="0"/>
           <include name="W05" invocation-numbers="0"/>
-          <include name="W03" invocation-numbers="0"/>
-          <include name="W06" invocation-numbers="0"/>
           <include name="W01"/>
           <include name="createERPProject"/>
           <include name="setupClass"/>

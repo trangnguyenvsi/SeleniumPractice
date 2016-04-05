@@ -70,9 +70,6 @@ public class WebService {
 	        Thread.sleep(1000);
 	        objCreateProjectMethod.clickCreatebtn();
 	        objCreateProjectMethod.createProject(projectName, approvedEffort,projectType, commDetails );
-//	        Thread.sleep(3000);
-//	        Assert.assertEquals(objCreateProjectMethod.getCreateSucc(),projectName);
-//	        Thread.sleep(2000);
 		}
 		objLogin.loginToManagerPage(PMacc, PMPass);
 		objService.clickProjectMenu();
@@ -210,7 +207,7 @@ public class WebService {
 		String xpath="//td[@data-field='name' and contains(text(),'"+projectName+"')]";
 		TestBase.driver.findElement(By.xpath(xpath)).click();
 		objProject.clickTaskBtn();
-
+		Thread.sleep(3000);
 		objTasks.clickLatestTask();
 
 		// Verify test result
@@ -242,6 +239,7 @@ public class WebService {
 		// Run service to update info
 		TestBase.driver.get(TestBase.p.getProperty("baseUrl"));
 		objService.clickProjectMenu();
+		Thread.sleep(3000);
 		objService.clickWebServiceOption();
 		objService.clickChooseService();
 		objService.clickRunningService();
