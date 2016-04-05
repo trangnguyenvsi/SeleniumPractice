@@ -677,8 +677,26 @@ public String getPopupText() {
 	 public WebElement getUsername() {
 			return objCreateProject.getUserNametxt();
 		}
-  //
 	 
+	 public void clickSubmitReview(){
+		 objCreateProject.getSubmitToReviewBtn().click();
+	 }
+	 
+	 public void clickCurrentUser(){
+		 objCreateProject.getCurrentUser().click();
+	 }
+	 
+	 public void clickLogout(){
+		 objCreateProject.getLogOutBtn().click();
+	 }
+	 
+	 public void closeOpenOption(){
+		 objCreateProject.getOpenOption().click();
+	 }
+	 
+	 public void clickApproveBtn(){
+		 objCreateProject.getApproveBtn().click();
+	 }
 	 
   // Create New Project:
   
@@ -793,6 +811,9 @@ public String getPopupText() {
 	  this.inputProjectType(projectType);
 	  this.inputCommerDetails(commDetails);
 	  this.clickSavebtn();
+	  this.clickSubmitReview();
+	  this.clickCurrentUser();
+	  this.clickLogout();
   }
   
 }

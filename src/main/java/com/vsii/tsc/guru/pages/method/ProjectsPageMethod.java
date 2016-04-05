@@ -30,9 +30,6 @@ public class ProjectsPageMethod {
 		objProjectsPage.getProject().click();
 	}
 	
-	public void chooseTestProject(){
-		objProjectsPage.getTestProject().click();
-	}
 	
 	public WebElement getProjectLinktxt() {
 		return objProjectsPage.getProjectLinktxt();

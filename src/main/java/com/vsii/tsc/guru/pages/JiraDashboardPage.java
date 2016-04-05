@@ -18,7 +18,7 @@ public class JiraDashboardPage {
 	private WebElement webIssueDropdown;
 	
 	// Identify All projects dropdown 
-	@FindBy(xpath="//div[2]/div[4]/ul/li/a")
+	@FindBy(linkText="View All Projects")
 	private WebElement allProjects;
 	
 	// Identify account options link

@@ -406,6 +406,68 @@ public class ProjectCreateNew {
 	@FindBy(xpath=".//td[contains(text(),'Project with 3 stage')]")
 	private WebElement projectWith3Stage;
 	
+	
+	// Identify Submit to review button
+	@FindBy(xpath="//div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[3]/div/div[4]/div/div/header/button[1]")
+	private WebElement submitToReviewBtn;
+	
+	// Identify user account
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[2]/td/span/span")
+	private WebElement currentUser;
+	
+	// Identify logout button
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[2]/td/span/ul/li[5]/a")
+	private WebElement logOutBtn;
+	
+	// Identify Open option in search bar
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/table/tbody/tr[1]/td[2]/div/div/div[1]/div[2]/span[1]")
+	private WebElement openOption;
+	
+	// Identify approve button
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[3]/div/div[4]/div/div/header/button[2]")
+	private WebElement approveBtn;
+	
+	
+	public WebElement getApproveBtn() {
+		return approveBtn;
+	}
+
+	public void setApproveBtn(WebElement approveBtn) {
+		this.approveBtn = approveBtn;
+	}
+
+	public WebElement getOpenOption() {
+		return openOption;
+	}
+
+	public void setOpenOption(WebElement openOption) {
+		this.openOption = openOption;
+	}
+
+	public WebElement getLogOutBtn() {
+		return logOutBtn;
+	}
+
+	public void setLogOutBtn(WebElement logOutBtn) {
+		this.logOutBtn = logOutBtn;
+	}
+
+	public WebElement getCurrentUser() {
+		return currentUser;
+	}
+
+	public void setCurrentUser(WebElement currentUser) {
+		this.currentUser = currentUser;
+	}
+
+	public WebElement getSubmitToReviewBtn() {
+		return submitToReviewBtn;
+	}
+
+	public void setSubmitToReviewBtn(WebElement submitToReviewBtn) {
+		this.submitToReviewBtn = submitToReviewBtn;
+	}
+
 	public WebElement getProjectWith3Stage() {
 		return projectWith3Stage;
 	}
