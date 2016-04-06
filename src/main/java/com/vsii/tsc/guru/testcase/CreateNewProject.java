@@ -118,7 +118,7 @@ public class CreateNewProject {
  
     }
 
-//  @Test(priority = 0, description = "Create New Project with valid data", dataProvider = "dpNewProject", dataProviderClass = TestData.class)
+  @Test(priority = 0, description = "Create New Project with valid data", dataProvider = "dpNewProject", dataProviderClass = TestData.class)
     public void PM06(String projectName, String refContract, String projectCode, String privacy, String projectManager,
             String appEffort, String department, String projectType, String commDetails, String customer)
                     throws Exception {
@@ -143,7 +143,7 @@ public class CreateNewProject {
 
     }
     
-//  @Test(priority = 1, description = "Create New Project with invalid data", dataProvider = "dpInvalidCreate1", dataProviderClass = TestData.class)
+  @Test(priority = 1, description = "Create New Project with invalid data", dataProvider = "dpInvalidCreate1", dataProviderClass = TestData.class)
     public void PM07(String projectName, String refContract, String projectCode, String privacy, String projectManager,
             String appEffort, String department2, String projectType, String commDetails, String customer)
                     throws Exception {
@@ -165,7 +165,7 @@ public class CreateNewProject {
 
     }
     
-//  @Test(priority = 2, description = "Create New Project with leaving required fields blank", dataProvider = "dpInvalidCreate2", dataProviderClass = TestData.class)
+  @Test(priority = 2, description = "Create New Project with leaving required fields blank", dataProvider = "dpInvalidCreate2", dataProviderClass = TestData.class)
     public void PM08(String projectName, String refContract, String projectCode, String privacy, String projectManager,
             String appEffort, String department, String projectType, String commDetails, String customer)
                     throws Exception {
@@ -188,7 +188,7 @@ public class CreateNewProject {
 
     }
     
-//  @Test(priority = 0, description = "Edit Project with valid data", dataProvider = "dpEditProject", dataProviderClass = TestData.class)
+  @Test(priority = 0, description = "Edit Project with valid data", dataProvider = "dpEditProject", dataProviderClass = TestData.class)
     public void PM09(String privacy,String appEffort)
                     throws Exception {
 
@@ -214,7 +214,7 @@ public class CreateNewProject {
     }
     
 //  Case 10 always wrong: Edit successfully instead of changing department
-//  @Test(priority = 0, description = "Edit Project with invalid data 1", dataProvider = "dpEditProject1", dataProviderClass = TestData.class)
+  @Test(priority = 0, description = "Edit Project with invalid data 1", dataProvider = "dpEditProject1", dataProviderClass = TestData.class)
     public void PM10(String department)
                     throws Exception {
 
@@ -224,8 +224,10 @@ public class CreateNewProject {
         objCreateProjectMethod.clickProjectmn();
         CommonMethods.waitUntil(objCreateProjectMethod.getDepart());
         objCreateProjectMethod.clickDepart();
-        CommonMethods.waitUntil(objCreateProjectMethod.getProjectDemo1());
-        objCreateProjectMethod.clickProjectDemo1();
+//      CommonMethods.waitUntil(objCreateProjectMethod.getProjectDemo1());
+//      objCreateProjectMethod.clickProjectDemo1();
+        CommonMethods.waitUntil(objCreateProjectMethod.getProjectDemo());
+        objCreateProjectMethod.clickProjectDemo();
         objCreateProjectMethod.getEditbtn();
         objCreateProjectMethod.editProject2(department);
         Assert.assertEquals(objCreateProjectMethod.getDepart(),department);
@@ -239,7 +241,7 @@ public class CreateNewProject {
 
     }
 //  Case 11: Can NOT get xpath of alert at the right corner 
-//  @Test(priority = 0, description = "Edit Project with invalid data 2", dataProvider = "dpEditProject2", dataProviderClass = TestData.class)
+  @Test(priority = 0, description = "Edit Project with invalid data 2", dataProvider = "dpEditProject2", dataProviderClass = TestData.class)
     public void PM11(String department, String projectType, String commDetails)
                     throws Exception {
 
@@ -264,7 +266,7 @@ public class CreateNewProject {
     }
     
 //  Case 12:
-//  @Test(priority = 0, description = "Verify cancel edit by clicking Discard")
+  @Test(priority = 0, description = "Verify cancel edit by clicking Discard")
     public void PM12()
             throws Exception {
 
@@ -289,7 +291,7 @@ public class CreateNewProject {
         }
     }
 //  Case 13: Click on OK on pop-up
-//  @Test(priority = 0, description = "Verify cancel edit by clicking Discard")
+  @Test(priority = 0, description = "Verify cancel edit by clicking Discard")
     public void PM13()
             throws Exception {
 
@@ -315,7 +317,7 @@ public class CreateNewProject {
     }
     
 //  Case 14: Submit to review
-//  @Test(priority = 0, description = "Verify Submit to Review")
+  @Test(priority = 0, description = "Verify Submit to Review")
     public void PM14() throws Exception {
 
         TestBase.methodName = "PM14";
@@ -339,7 +341,7 @@ public class CreateNewProject {
         }
     }
 //  Case 15: Login with account TSC's  management
-//  @Test(priority = 0, description = "Verify Submit to Review")
+  @Test(priority = 0, description = "Verify Submit to Review")
     public void PM15() throws Exception {
 
         TestBase.methodName = "PM15";
@@ -366,7 +368,7 @@ public class CreateNewProject {
     
 //  Case 16: Projects with new/review status will NOT have Timesheet and Task 
     
-//  @Test(priority = 0, description = "Verify Submit to Review")
+  @Test(priority = 0, description = "Verify Submit to Review")
     public void PM16() throws Exception {
 
         TestBase.methodName = "PM16";
@@ -393,7 +395,7 @@ public class CreateNewProject {
         }
     }
     // Case 17: Verify function Approve a Project
-//  @Test(priority = 0, description = "Verify function Approve a Project")
+  @Test(priority = 0, description = "Verify function Approve a Project")
     public void PM17() throws Exception {
 
         TestBase.methodName = "PM17";
@@ -407,8 +409,10 @@ public class CreateNewProject {
         objCreateProjectMethod.clickReviewStt();
         CommonMethods.waitUntil(objCreateProjectMethod.getDepart());
         objCreateProjectMethod.clickDepart();
-        objCreateProjectMethod.clickProjectApproving();
-        objCreateProjectMethod.getEditbtn();
+        CommonMethods.waitUntil(objCreateProjectMethod.getProjectDemo());
+        objCreateProjectMethod.clickProjectDemo();
+//      objCreateProjectMethod.clickProjectApproving();
+//      objCreateProjectMethod.getEditbtn();
         objCreateProjectMethod.editProject("Employees Only","100");
         Thread.sleep(3000); 
         objCreateProjectMethod.clickApprove();
@@ -424,7 +428,7 @@ public class CreateNewProject {
     }
     
     // Case 18: Verify that PMO can not approve a Project unless PMO input approve effort
-//      @Test(priority = 0, description = "Verify fuction Approve a Project")
+      @Test(priority = 0, description = "Verify fuction Approve a Project")
         public void PM18() throws Exception {
 
             TestBase.methodName = "PM18";
@@ -438,7 +442,9 @@ public class CreateNewProject {
             objCreateProjectMethod.clickReviewStt();
             CommonMethods.waitUntil(objCreateProjectMethod.getDepart());
             objCreateProjectMethod.clickDepart();
-            objCreateProjectMethod.clickProjectApproving();
+//           objCreateProjectMethod.clickProjectApproving();
+//           CommonMethods.waitUntil(objCreateProjectMethod.getProjectDemo());
+            objCreateProjectMethod.clickProjectDemo();
             Thread.sleep(3000); 
             objCreateProjectMethod.clickApprove();
             Assert.assertTrue(objCreateProjectMethod.getWarning().contains("Please enter the Approve Effort !!!"));
@@ -452,7 +458,7 @@ public class CreateNewProject {
         }
         
         // Case 19: Verify function Refuse a Project
-//      @Test(priority = 0, description = "Verify function Refuse a Project")
+      @Test(priority = 0, description = "Verify function Refuse a Project")
         public void PM19() throws Exception {
 
             TestBase.methodName = "PM19";
@@ -466,7 +472,8 @@ public class CreateNewProject {
             objCreateProjectMethod.clickReviewStt();
             CommonMethods.waitUntil(objCreateProjectMethod.getDepart());
             objCreateProjectMethod.clickDepart();
-            objCreateProjectMethod.clickProjectApproving();
+            objCreateProjectMethod.clickProjectDemo();
+//            objCreateProjectMethod.clickProjectApproving();
             objCreateProjectMethod.getEditbtn();
             objCreateProjectMethod.editProject("Employees Only","100");
             objCreateProjectMethod.clickRefuseApproving();
@@ -485,7 +492,7 @@ public class CreateNewProject {
         }
         
     // Case 20: Verify that when Edit an in progress project with Not required fields, project is not change to NEW
-//  @Test(priority = 0, description = "Verify edit an in progress Project")
+  @Test(priority = 0, description = "Verify edit an in progress Project")
             public void PM20() throws Exception {
 
             TestBase.methodName = "PM20";
@@ -495,7 +502,8 @@ public class CreateNewProject {
             Thread.sleep(1000);
             CommonMethods.waitUntil(objCreateProjectMethod.getDepart());
             objCreateProjectMethod.clickDepart();
-            objCreateProjectMethod.clickProjectEditWithPS();
+            objCreateProjectMethod.clickProjectDemo();
+//            objCreateProjectMethod.clickProjectEditWithPS();
 //          objCreateProjectMethod.clickEditbtn();
             objCreateProjectMethod.getEditbtn();
             objCreateProjectMethod.editProject4("LIENLT", "Employees Only");
@@ -517,7 +525,7 @@ public class CreateNewProject {
                 }
         
     // Case 21: Verify function Close a Project 
-//  @Test(priority = 0, description = "Verify function Close a Project")
+  @Test(priority = 0, description = "Verify function Close a Project")
         public void PM21() throws Exception {
         TestBase.methodName = "PM21";
         objLogin.loginToManagerPage("phuongnt3", "12345678");
@@ -526,7 +534,8 @@ public class CreateNewProject {
         Thread.sleep(1000);
         CommonMethods.waitUntil(objCreateProjectMethod.getDepart());
         objCreateProjectMethod.clickDepart();
-        objCreateProjectMethod.clickProjectEditWithPS();
+        objCreateProjectMethod.clickProjectDemo();
+//        objCreateProjectMethod.clickProjectEditWithPS();
         Thread.sleep(3000);
         objCreateProjectMethod.clickCloseProjectbtn();
         Thread.sleep(3000);
@@ -538,7 +547,7 @@ public class CreateNewProject {
     }
     
     // Case 22: Verify function Pending a Project   
-//  @Test(priority = 0, description = "Verify function Pending a Project")
+  @Test(priority = 0, description = "Verify function Pending a Project")
         public void PM22() throws Exception {
         TestBase.methodName = "PM22";
         objLogin.loginToManagerPage("phuongnt3", "12345678");
@@ -547,7 +556,8 @@ public class CreateNewProject {
         Thread.sleep(1000);
         CommonMethods.waitUntil(objCreateProjectMethod.getDepart());
         objCreateProjectMethod.clickDepart();
-        objCreateProjectMethod.clickProjectEditWithPS();
+        objCreateProjectMethod.clickProjectDemo();
+//        objCreateProjectMethod.clickProjectEditWithPS();
         Thread.sleep(3000);
         objCreateProjectMethod.clickPendingProjbtn();
         Thread.sleep(3000);
@@ -563,7 +573,7 @@ public class CreateNewProject {
         }
         
     // Case 23: Verify function Set as Template a Project   
-//  @Test(priority = 0, description = "Verify function Set as Template a Project")
+  @Test(priority = 0, description = "Verify function Set as Template a Project")
         public void PM23() throws Exception {
         TestBase.methodName = "PM23";
         objLogin.loginToManagerPage("phuongnt3", "12345678");
@@ -572,7 +582,8 @@ public class CreateNewProject {
         Thread.sleep(1000);
         CommonMethods.waitUntil(objCreateProjectMethod.getDepart());
         objCreateProjectMethod.clickDepart();
-        objCreateProjectMethod.clickProjectEditWithPS();
+        objCreateProjectMethod.clickProjectDemo();
+//        objCreateProjectMethod.clickProjectEditWithPS();
         Thread.sleep(1000);
         objCreateProjectMethod.clickSetAsTempbtn();
         Thread.sleep(3000);
@@ -582,7 +593,7 @@ public class CreateNewProject {
     }   
                 
     // Case 24: Verify function Cancel a Project    
-//  @Test(priority = 0, description = "Verify function Cancel a Project")
+  @Test(priority = 0, description = "Verify function Cancel a Project")
         public void PM24() throws Exception {
         TestBase.methodName = "PM24";
         objLogin.loginToManagerPage("phuongnt3", "12345678");
@@ -591,7 +602,8 @@ public class CreateNewProject {
         Thread.sleep(1000);
         CommonMethods.waitUntil(objCreateProjectMethod.getDepart());
         objCreateProjectMethod.clickDepart();
-        objCreateProjectMethod.clickProjectEditWithPS();
+        objCreateProjectMethod.clickProjectDemo();
+//        objCreateProjectMethod.clickProjectEditWithPS();
         Thread.sleep(1000);
         objCreateProjectMethod.clickCancelProjbtn();
         Thread.sleep(3000);
@@ -599,7 +611,7 @@ public class CreateNewProject {
         }
         
     // Case 25: Verify function Add member into a project
-//  @Test(priority = 0, description = "Verify function Add member into a project", dataProvider = "dpAddNewMem", dataProviderClass = TestData.class)
+  @Test(priority = 0, description = "Verify function Add member into a project", dataProvider = "dpAddNewMem", dataProviderClass = TestData.class)
         public void PM25(String usernameMember, String startDate, String endDate, String allocate) throws Exception {
         TestBase.methodName = "PM25";
         objLogin.loginToManagerPage("phuongnt3", "12345678");
@@ -608,7 +620,8 @@ public class CreateNewProject {
         Thread.sleep(1000);
         CommonMethods.waitUntil(objCreateProjectMethod.getDepart());
         objCreateProjectMethod.clickDepart();
-        objCreateProjectMethod.clickProjectEditWithPS();
+        objCreateProjectMethod.clickProjectDemo();
+//        objCreateProjectMethod.clickProjectEditWithPS();
         Thread.sleep(1000);
         objCreateProjectMethod.editProject4("LIENLT", "Employees Only");
         Thread.sleep(3000);
@@ -620,7 +633,7 @@ public class CreateNewProject {
         }
     
     // Case 26: Verify that Allocation Rate is displayed correctly with valid data
-//  @Test(priority = 0, description = "Verify that Allocation Rate is displayed correctly with valid data")
+  @Test(priority = 0, description = "Verify that Allocation Rate is displayed correctly with valid data")
     public void PM26() throws Exception {
         TestBase.methodName = "PM26";
         objLogin.loginToManagerPage("phuongnt3", "12345678");
@@ -629,7 +642,8 @@ public class CreateNewProject {
         Thread.sleep(1000);
         CommonMethods.waitUntil(objCreateProjectMethod.getDepart());
         objCreateProjectMethod.clickDepart();
-        objCreateProjectMethod.clickProjectEditWithPS();
+        objCreateProjectMethod.clickProjectDemo();
+//        objCreateProjectMethod.clickProjectEditWithPS();
         objCreateProjectMethod.getEditbtn();
         objCreateProjectMethod.editProject4("LIENLT", "Employees Only");
         objCreateProjectMethod.isCheckedWorklog();
@@ -641,7 +655,7 @@ public class CreateNewProject {
     }
     
     // Case 27: Verify that Allocation Rate is displayed correctly with invalid data
-//  @Test(priority = 0, description = "Verify that Allocation Rate is displayed correctly with invalid data")
+  @Test(priority = 0, description = "Verify that Allocation Rate is displayed correctly with invalid data")
     public void PM27() throws Exception {
         TestBase.methodName = "PM27";
         objLogin.loginToManagerPage("phuongnt3", "12345678");
@@ -650,7 +664,8 @@ public class CreateNewProject {
         Thread.sleep(1000);
         CommonMethods.waitUntil(objCreateProjectMethod.getDepart());
         objCreateProjectMethod.clickDepart();
-        objCreateProjectMethod.clickProjectEditWithPS();
+        objCreateProjectMethod.clickProjectDemo();
+//        objCreateProjectMethod.clickProjectEditWithPS();
         objCreateProjectMethod.getEditbtn();
         objCreateProjectMethod.editProject4("LIENLT", "Employees Only");
         objCreateProjectMethod.isCheckedWorklog();
@@ -663,7 +678,7 @@ public class CreateNewProject {
     }
     
     // Case 28: Verify function Add member into a project. To check with dataProvider has many row, must logout
-//  @Test(priority = 0, description = "Verify function Add member into a project", dataProvider = "dpAddNewMem2", dataProviderClass = TestData.class)
+  @Test(priority = 0, description = "Verify function Add member into a project", dataProvider = "dpAddNewMem2", dataProviderClass = TestData.class)
     public void PM28(String usernameMember, String startDate, String endDate, String allocate) throws Exception {
         TestBase.methodName = "PM28";
         objLogin.loginToManagerPage("anhhm", "12345678");
@@ -672,7 +687,8 @@ public class CreateNewProject {
         Thread.sleep(1000);
         CommonMethods.waitUntil(objCreateProjectMethod.getDepart());
         objCreateProjectMethod.clickDepart();
-        objCreateProjectMethod.clickProjectEditWithPS();
+        objCreateProjectMethod.clickProjectDemo();
+//        objCreateProjectMethod.clickProjectEditWithPS();
         Thread.sleep(1000);
         objCreateProjectMethod.editProject4("LIENLT", "Employees Only");
         Thread.sleep(3000);
@@ -684,7 +700,7 @@ public class CreateNewProject {
         }   
 
     // Case 29: Verify function Remove member from a project
-//  @Test(priority = 0, description = "Verify function Remove member from a project")
+  @Test(priority = 0, description = "Verify function Remove member from a project")
     public void PM29() throws Exception {
         TestBase.methodName = "PM29";
         objLogin.loginToManagerPage("anhhm", "12345678");
@@ -693,7 +709,8 @@ public class CreateNewProject {
         Thread.sleep(1000);
         CommonMethods.waitUntil(objCreateProjectMethod.getDepart());
         objCreateProjectMethod.clickDepart();
-        objCreateProjectMethod.clickProjectEditWithPS();
+        objCreateProjectMethod.clickProjectDemo();
+//        objCreateProjectMethod.clickProjectEditWithPS();
         objCreateProjectMethod.clickEditProjbtn();
         Thread.sleep(3000);
         objCreateProjectMethod.clickDelMem();
@@ -703,7 +720,7 @@ public class CreateNewProject {
 //      Assert.assertFalse(objCreateProjectMethod.getteamMember().contains("Anh-Hoang Mai Anh"));
     }   
 // Case 30: Verify project member list be paged correctly
-//  @Test(priority = 0, description = "Verify project member list be paged correctly")
+  @Test(priority = 0, description = "Verify project member list be paged correctly")
     public void PM30() throws Exception {
         TestBase.methodName = "PM30";
         objLogin.loginToManagerPage("anhhm", "12345678");
@@ -712,7 +729,8 @@ public class CreateNewProject {
         Thread.sleep(1000);
         CommonMethods.waitUntil(objCreateProjectMethod.getDepart());
         objCreateProjectMethod.clickDepart();
-        objCreateProjectMethod.clickProjectEditWithPS();
+        objCreateProjectMethod.clickProjectDemo();
+//        objCreateProjectMethod.clickProjectEditWithPS();
         objCreateProjectMethod.clickEditProjbtn();
         Thread.sleep(3000);
         objCreateProjectMethod.clickDelMem();
@@ -723,7 +741,7 @@ public class CreateNewProject {
     }
     
     // Case 31: Verify that PM can change Project Stages correctly: Default
-//  @Test(priority = 0, description = "Verify that PM can change Project Stages correctly")
+  @Test(priority = 0, description = "Verify that PM can change Project Stages correctly")
     public void PM31() throws Exception {
         TestBase.methodName = "PM31";
         objLogin.loginToManagerPage("anhhm", "12345678");
@@ -743,7 +761,7 @@ public class CreateNewProject {
     }   
     
     // Case 31_InCase: Verify that PM can change Project Stages correctly
-//      @Test(priority = 0, description = "Verify that PM can change Project Stages correctly")
+      @Test(priority = 0, description = "Verify that PM can change Project Stages correctly")
         public void PM312() throws Exception {
             TestBase.methodName = "PM31";
             objLogin.loginToManagerPage("anhhm", "12345678");
@@ -805,7 +823,7 @@ public class CreateNewProject {
         }   
         
     // Case 32: Verify that PM can delete stage/ stages correctly
-//  @Test(priority = 0, description = "Verify that PM can delete stage/ stages correctly")
+  @Test(priority = 0, description = "Verify that PM can delete stage/ stages correctly")
     public void PM32() throws Exception {
         TestBase.methodName = "PM31";
         objLogin.loginToManagerPage("anhhm", "12345678");
@@ -857,6 +875,7 @@ public class CreateNewProject {
     @AfterMethod
     public void afterMethod() throws Exception {
         CommonOperations.takePicture();
+        objCreateProjectMethod.logout();
     }
 
     @AfterClass
