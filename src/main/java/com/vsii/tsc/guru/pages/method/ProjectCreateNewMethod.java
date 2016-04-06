@@ -25,6 +25,7 @@ public class ProjectCreateNewMethod {
   public void logout (){
 		objCreateProject.getUserLogged().click();
 		objCreateProject.getLogout_btn().click();	
+		objCreateProject.getUserNametxt().clear();
 	}
   
   public void clickProjectMenu (){
