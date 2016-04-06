@@ -18,18 +18,20 @@ public class ProjectsPageMethod {
 		PageFactory.initElements(driver, objProjectsPage);
 	}
 	
-	public void clickProjectLink() {
+	public void clickProjectLink() throws InterruptedException {
 		objProjectsPage.getProjectLinktxt().click();
+		Thread.sleep(4000);
 	}
 	
-	public void chooseDepartment() {
+	public void chooseDepartment() throws InterruptedException {
 		objProjectsPage.getDepartment().click();
+		Thread.sleep(4000);
 	}
 	
-	public void chooseProject() {
+	public void chooseProject() throws InterruptedException {
 		objProjectsPage.getProject().click();
+		Thread.sleep(4000);
 	}
-	
 	
 	public WebElement getProjectLinktxt() {
 		return objProjectsPage.getProjectLinktxt();
@@ -42,13 +44,5 @@ public class ProjectsPageMethod {
 	public WebElement getProject() {
 		return objProjectsPage.getProject();
 	}
-	
-	// Click on Task button
-	public void clickTaskBtn(){
-		try{
-			objProjectsPage.getBtnTasks().click();
-		}catch(org.openqa.selenium.StaleElementReferenceException ex){
-			objProjectsPage.getBtnTasks().click();
-		}
-	}
+
 }
