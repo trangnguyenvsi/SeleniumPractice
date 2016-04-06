@@ -47,7 +47,7 @@ public class CreateTask_PM {
 		objLogin.loginToManagerPage(GetAccountInfo.getPMName(), GetAccountInfo.getPMPass());
 	}
 
-	// @Test(priority = 0)
+	@Test(priority = 0)
 	public void TM01() throws InterruptedException {
 		TestBase.methodName = "TM01";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -71,8 +71,7 @@ public class CreateTask_PM {
 		Assert.assertEquals(objTasksPage.getProgressTit(), "Progress (%)");
 	}
 
-	// @Test(priority = 4, dataProvider = "dpNewTaskUserOutside",
-	// dataProviderClass = TestData.class)
+	@Test(priority = 1, dataProvider = "dpNewTaskUserOutside", dataProviderClass = TestData.class)
 	public void TM05(String summaryTxt, String projectNameDrop, String assignToDrop, String taskTypeDrop,
 			String projectPhaseDrop, String planHourTxt, String deadlineTxt, String tagOfProjectDrop,
 			String descriptionTxtA, String workSummaryTxt, String timeSpentTxt, String dateTxt, String doneByDrop,
@@ -91,10 +90,12 @@ public class CreateTask_PM {
 				tagOfWorkDrop);
 		Thread.sleep(2000);
 		Assert.assertEquals(objDetailTask.getErrMessageUserOutside(), errMessageUserOutside);
+		TestBase.driver.findElement(By.xpath("html/body/div[last()]/div[11]/div/button")).click();
+		objProjects.clickProjectLink();
+		TestBase.driver.switchTo().alert().accept();
 	}
 
-	// @Test(priority = 5, dataProvider = "dpNewTaskEdit", dataProviderClass =
-	// TestData.class)
+	@Test(priority = 2, dataProvider = "dpNewTaskEdit", dataProviderClass = TestData.class)
 	public void TM06(String summaryTxt, String projectNameDrop, String assignToDrop, String taskTypeDrop,
 			String projectPhaseDrop, String planHourTxt, String deadlineTxt, String tagOfProjectDrop,
 			String descriptionTxtA, String workSummaryTxt, String timeSpentTxt, String dateTxt, String doneByDrop,
@@ -114,7 +115,7 @@ public class CreateTask_PM {
 		Assert.assertEquals(objDetailTask.getSummaryTit().getText(), summaryTxt);
 	}
 
-	// @Test(priority = 6)
+	@Test(priority = 3)
 	public void TM07() throws InterruptedException {
 		TestBase.methodName = "TM04";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -135,9 +136,11 @@ public class CreateTask_PM {
 				"Warning, the record has been modified, your changes will be discarded." + "\n" + "\n"
 						+ "Are you sure you want to leave this page ?");
 		TestBase.driver.switchTo().alert().dismiss();
+		objProjects.clickProjectLink();
+		TestBase.driver.switchTo().alert().accept();
 	}
 
-	// @Test(priority = 6)
+	@Test(priority = 4)
 	public void TM08() throws InterruptedException {
 		TestBase.methodName = "TM04";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -154,9 +157,11 @@ public class CreateTask_PM {
 		objDetailTask.setSummaryTxt("hehehe123");
 		objDetailTask.clickDiscardButt();
 		TestBase.driver.switchTo().alert().dismiss();
+		objProjects.clickProjectLink();
+		TestBase.driver.switchTo().alert().accept();
 	}
 
-	// @Test(priority = 6)
+	@Test(priority = 5)
 	public void TM09() throws InterruptedException {
 		TestBase.methodName = "TM04";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -169,14 +174,12 @@ public class CreateTask_PM {
 		objTasksPage.chooseOneExistedTask();
 		CommonMethods.waitUntil(objDetailTask.editButt());
 		objDetailTask.clickEditButt();
-		CommonMethods.waitUntil(objDetailTask.getEditButt());
 		objDetailTask.setSummaryTxt("hehehe123");
 		objDetailTask.clickDiscardButt();
 		TestBase.driver.switchTo().alert().accept();
 	}
 
-	// @Test(priority = 3, dataProvider = "dpNewTaskPM", dataProviderClass =
-	// TestData.class)
+	@Test(priority = 6, dataProvider = "dpNewTask", dataProviderClass = TestData.class)
 	public void TM12(String summaryTxt, String projectNameDrop, String assignToDrop, String taskTypeDrop,
 			String projectPhaseDrop, String planHourTxt, String deadlineTxt, String tagOfProjectDrop,
 			String descriptionTxtA, String workSummaryTxt, String timeSpentTxt, String dateTxt, String doneByDrop,
@@ -201,8 +204,7 @@ public class CreateTask_PM {
 		Assert.assertEquals(objDetailTask.getStatus(), "Refused");
 	}
 
-	// @Test(priority = 3, dataProvider = "dpNewTaskPM", dataProviderClass =
-	// TestData.class)
+	@Test(priority = 7, dataProvider = "dpNewTask", dataProviderClass = TestData.class)
 	public void TM13(String summaryTxt, String projectNameDrop, String assignToDrop, String taskTypeDrop,
 			String projectPhaseDrop, String planHourTxt, String deadlineTxt, String tagOfProjectDrop,
 			String descriptionTxtA, String workSummaryTxt, String timeSpentTxt, String dateTxt, String doneByDrop,
@@ -225,9 +227,10 @@ public class CreateTask_PM {
 		objDetailTask.clickApproveButt();
 		Thread.sleep(7000);
 		Assert.assertEquals(objDetailTask.getStatus(), "Approved");
+
 	}
 
-	// @Test
+	@Test(priority = 8)
 	public void TM17() throws InterruptedException {
 		TestBase.methodName = "TM13";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -248,7 +251,7 @@ public class CreateTask_PM {
 
 	}
 
-	// @Test
+	@Test(priority = 9)
 	public void TM19() throws InterruptedException {
 		TestBase.methodName = "TM13";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -272,7 +275,7 @@ public class CreateTask_PM {
 				.getText(), "Reactivate");
 	}
 
-	// @Test
+	@Test(priority = 10)
 	public void TM21() throws InterruptedException {
 		TestBase.methodName = "TM13";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -296,15 +299,15 @@ public class CreateTask_PM {
 						.getAttribute("type"),
 				"text");
 		Assert.assertEquals(
-				TestBase.driver.findElement(By.xpath("html/body/div[2]/div[11]/div/footer/button[1]/span")).getText(),
+				TestBase.driver.findElement(By.xpath("html/body/div[4]/div[11]/div/footer/button[1]/span")).getText(),
 				"Evaluate");
 		Assert.assertEquals(
-				TestBase.driver.findElement(By.xpath("html/body/div[2]/div[11]/div/footer/button[2]/span")).getText(),
+				TestBase.driver.findElement(By.xpath("html/body/div[4]/div[11]/div/footer/button[2]/span")).getText(),
 				"Cancel");
 		objDetailTask.clickCancelButt();
 	}
 
-	// @Test
+	@Test(priority = 11)
 	public void TM22() throws InterruptedException {
 		TestBase.methodName = "TM13";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -326,7 +329,7 @@ public class CreateTask_PM {
 				.getText(), "In Progress");
 	}
 
-	// @Test
+	@Test(priority = 12)
 	public void TM23() throws InterruptedException {
 		TestBase.methodName = "TM13";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -348,8 +351,7 @@ public class CreateTask_PM {
 				.getText(), "Cancelled");
 	}
 
-	// @Test(priority = 3, dataProvider = "dpNumberOfTaskWantToSelect",
-	// dataProviderClass = TestData.class)
+	@Test(priority = 13, dataProvider = "dpNumberOfTaskWantToSelect", dataProviderClass = TestData.class)
 	public void TM29(String number) throws InterruptedException {
 		TestBase.methodName = "TM04";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -393,8 +395,7 @@ public class CreateTask_PM {
 				.getText(), "Approve Worklogs");
 	}
 
-	// @Test(priority = 3, dataProvider = "dpNumberOfTaskWantToSelect",
-	// dataProviderClass = TestData.class)
+	@Test(priority = 14, dataProvider = "dpNumberOfTaskWantToSelect", dataProviderClass = TestData.class)
 	public void TM30(String number) throws InterruptedException {
 		TestBase.methodName = "TM04";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -418,7 +419,7 @@ public class CreateTask_PM {
 				"Do you really want to remove these records?");
 	}
 
-	@Test(priority = 3, dataProvider = "dpTaskAdminDelete", dataProviderClass = TestData.class)
+	@Test(priority = 15, dataProvider = "dpTaskAdminDelete", dataProviderClass = TestData.class)
 	public void TM31(String summaryTxt, String projectNameDrop, String assignToDrop, String taskTypeDrop,
 			String projectPhaseDrop, String planHourTxt, String deadlineTxt, String tagOfProjectDrop,
 			String descriptionTxtA, String workSummaryTxt, String timeSpentTxt, String dateTxt, String doneByDrop,
@@ -450,10 +451,11 @@ public class CreateTask_PM {
 		Thread.sleep(10000);
 		Assert.assertFalse(TestBase.driver.findElements(By
 				.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[1]/div/table/tbody/tr[td[contains(text(),'"
-						+ summaryTxt + "')]][1]/th")).size()>0);
+						+ summaryTxt + "')]][1]/th"))
+				.size() > 0);
 	}
-	
-	//@Test(priority = 3, dataProvider = "dpTaskAdminDelete", dataProviderClass = TestData.class)
+
+	@Test(priority = 16, dataProvider = "dpTaskAdminDelete", dataProviderClass = TestData.class)
 	public void TM32(String summaryTxt, String projectNameDrop, String assignToDrop, String taskTypeDrop,
 			String projectPhaseDrop, String planHourTxt, String deadlineTxt, String tagOfProjectDrop,
 			String descriptionTxtA, String workSummaryTxt, String timeSpentTxt, String dateTxt, String doneByDrop,
@@ -485,7 +487,8 @@ public class CreateTask_PM {
 		Thread.sleep(10000);
 		Assert.assertTrue(TestBase.driver.findElement(By
 				.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[1]/div/table/tbody/tr[td[contains(text(),'"
-						+ summaryTxt + "')]][1]/th")).isDisplayed());
+						+ summaryTxt + "')]][1]/th"))
+				.isDisplayed());
 		objTasksPage.clickMoreButt();
 		objTasksPage.clickDeleteButt();
 		TestBase.driver.switchTo().alert().accept();

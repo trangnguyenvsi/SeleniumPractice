@@ -14,6 +14,7 @@ import com.vsii.tsc.guru.commethods.GetAccountInfo;
 import com.vsii.tsc.guru.pages.method.DetailProjectPageMethod;
 import com.vsii.tsc.guru.pages.method.DetailTaskPageMethod;
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
+import com.vsii.tsc.guru.pages.method.LogoutPageMethod;
 import com.vsii.tsc.guru.pages.method.ProjectsPageMethod;
 import com.vsii.tsc.guru.pages.method.TasksPageMethod;
 import com.vsii.tsc.guru.testdata.TestData;
@@ -26,6 +27,7 @@ public class CreateTask_Member {
 	DetailProjectPageMethod objDetailProject;
 	TasksPageMethod objTasksPage;
 	DetailTaskPageMethod objDetailTask;
+	LogoutPageMethod objLogout;
 
 	@BeforeClass
 	public void setupClass() throws NumberFormatException, IOException {
@@ -34,10 +36,11 @@ public class CreateTask_Member {
 		objDetailProject = new DetailProjectPageMethod(TestBase.driver);
 		objTasksPage = new TasksPageMethod(TestBase.driver);
 		objDetailTask = new DetailTaskPageMethod(TestBase.driver);
+		objLogout = new LogoutPageMethod(TestBase.driver);
 		objLogin.loginToManagerPage(GetAccountInfo.getUserName(), GetAccountInfo.getUserPass());
 	}
 
-	// @Test(priority = 1)
+//	@Test(priority = 0)
 	public void TM02() throws InterruptedException {
 		TestBase.methodName = "TM01";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -51,8 +54,7 @@ public class CreateTask_Member {
 
 	}
 
-	// @Test(priority = 2, dataProvider = "dpNewTaskErr", dataProviderClass =
-	// TestData.class)
+//	@Test(priority = 1, dataProvider = "dpNewTaskErr", dataProviderClass = TestData.class)
 	public void TM03(String summaryTxt, String projectNameDrop, String assignToDrop, String taskTypeDrop,
 			String projectPhaseDrop, String planHourTxt, String deadlineTxt, String tagOfProjectDrop,
 			String descriptionTxtA, String workSummaryTxt, String timeSpentTxt, String dateTxt, String doneByDrop,
@@ -70,10 +72,11 @@ public class CreateTask_Member {
 				deadlineTxt, tagOfProjectDrop, descriptionTxtA, workSummaryTxt, timeSpentTxt, dateTxt, doneByDrop,
 				tagOfWorkDrop);
 		Assert.assertTrue(TestBase.driver.getCurrentUrl().contains(expectUrl));
+		objProjects.clickProjectLink();
+		TestBase.driver.switchTo().alert().accept();
 	}
 
-	// @Test(priority = 3, dataProvider = "dpNewTask", dataProviderClass =
-	// TestData.class)
+	@Test(priority = 2, dataProvider = "dpNewTask", dataProviderClass = TestData.class)
 	public void TM04(String summaryTxt, String projectNameDrop, String assignToDrop, String taskTypeDrop,
 			String projectPhaseDrop, String planHourTxt, String deadlineTxt, String tagOfProjectDrop,
 			String descriptionTxtA, String workSummaryTxt, String timeSpentTxt, String dateTxt, String doneByDrop,
@@ -90,7 +93,7 @@ public class CreateTask_Member {
 		objDetailTask.createTask(summaryTxt, projectNameDrop, assignToDrop, taskTypeDrop, projectPhaseDrop, planHourTxt,
 				deadlineTxt, tagOfProjectDrop, descriptionTxtA, workSummaryTxt, timeSpentTxt, dateTxt, doneByDrop,
 				tagOfWorkDrop);
-		Thread.sleep(2000);
+		Thread.sleep(7000);
 		objDetailTask.goToTasks();
 		Assert.assertEquals(objTasksPage.getTaskSummaryInfo(), summaryTxt);
 		Assert.assertEquals(objTasksPage.getProjectNameInfo(), projectNameDrop);
@@ -99,8 +102,7 @@ public class CreateTask_Member {
 		Assert.assertEquals(objTasksPage.getPlanHourInfo(), planHourTxt);
 	}
 
-	// @Test(priority = 3, dataProvider = "dpNewTask", dataProviderClass =
-	// TestData.class)
+	@Test(priority = 3, dataProvider = "dpNewTask", dataProviderClass = TestData.class)
 	public void TM11(String summaryTxt, String projectNameDrop, String assignToDrop, String taskTypeDrop,
 			String projectPhaseDrop, String planHourTxt, String deadlineTxt, String tagOfProjectDrop,
 			String descriptionTxtA, String workSummaryTxt, String timeSpentTxt, String dateTxt, String doneByDrop,
@@ -117,15 +119,17 @@ public class CreateTask_Member {
 		objDetailTask.createTask(summaryTxt, projectNameDrop, assignToDrop, taskTypeDrop, projectPhaseDrop, planHourTxt,
 				deadlineTxt, tagOfProjectDrop, descriptionTxtA, workSummaryTxt, timeSpentTxt, dateTxt, doneByDrop,
 				tagOfWorkDrop);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		objDetailTask.clickEditButt();
 		Thread.sleep(2000);
 		objDetailTask.clickDeleteButt();
 		Thread.sleep(3000);
-		Assert.assertFalse(objDetailTask.isTimeSpentTitExisted().isDisplayed());
+		Assert.assertFalse(TestBase.driver.findElements(By.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/table/tbody/tr[1]/td[2]")).size()>0);
+		objProjects.clickProjectLink();
+		TestBase.driver.switchTo().alert().accept();
 	}
 
-	// @Test
+	@Test(priority = 4)
 	public void TM14() throws InterruptedException {
 		TestBase.methodName = "TM04";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -149,9 +153,11 @@ public class CreateTask_Member {
 				"Warning, the record has been modified, your changes will be discarded." + "\n" + "\n"
 						+ "Are you sure you want to leave this page ?");
 		TestBase.driver.switchTo().alert().dismiss();
+		objProjects.clickProjectLink();
+		TestBase.driver.switchTo().alert().accept();
 	}
 
-	// @Test(priority = 6)
+	@Test(priority = 5)
 	public void TM15() throws InterruptedException {
 		TestBase.methodName = "TM04";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -167,9 +173,11 @@ public class CreateTask_Member {
 		Thread.sleep(2000);
 		objDetailTask.clickDiscardButt();
 		TestBase.driver.switchTo().alert().dismiss();
+		objProjects.clickProjectLink();
+		TestBase.driver.switchTo().alert().accept();
 	}
 
-	// @Test()
+	@Test(priority = 6)
 	public void TM16() throws InterruptedException {
 		TestBase.methodName = "TM04";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -187,8 +195,7 @@ public class CreateTask_Member {
 		TestBase.driver.switchTo().alert().accept();
 	}
 
-	// @Test(priority = 3, dataProvider = "dpStatusListNotAllowToDone",
-	// dataProviderClass = TestData.class)
+	@Test(priority = 7, dataProvider = "dpStatusListNotAllowToDone", dataProviderClass = TestData.class)
 	public void TM18(String status) throws InterruptedException {
 		TestBase.methodName = "TM04";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -212,9 +219,8 @@ public class CreateTask_Member {
 		Thread.sleep(10000);
 	}
 
-	// @Test(priority = 3, dataProvider = "dpStatusListNotAllowToDone",
-	// dataProviderClass = TestData.class)
-	public void TM19(String status) throws InterruptedException {
+	@Test(priority = 8, dataProvider = "dpStatusListNotAllowToDone", dataProviderClass = TestData.class)
+	public void TM20(String status) throws InterruptedException {
 		TestBase.methodName = "TM04";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
 		objProjects.clickProjectLink();
@@ -237,7 +243,7 @@ public class CreateTask_Member {
 		Thread.sleep(10000);
 	}
 
-	// @Test(priority = 3)
+	@Test(priority = 9)
 	public void TM24() throws InterruptedException {
 		TestBase.methodName = "TM04";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -260,7 +266,7 @@ public class CreateTask_Member {
 				.getText(), "In Progress");
 	}
 
-	//@Test(priority = 3)
+	@Test(priority = 10)
 	public void TM27() throws InterruptedException {
 		TestBase.methodName = "TM04";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -281,9 +287,10 @@ public class CreateTask_Member {
 		Assert.assertEquals(
 				TestBase.driver.findElement(By.xpath("html/body/div[last()]/div[2]/table/tbody/tr/td[2]/p")).getText(),
 				"Invalid Action!" + "\n" + "\n" + "Only Project Manager could Approve Worklogs.");
+		TestBase.driver.findElement(By.xpath("html/body/div[last()]/div[11]/div/button")).click();
 	}
 
-	@Test(priority = 3, dataProvider = "dpNumberOfTaskWantToSelect", dataProviderClass = TestData.class)
+	@Test(priority = 11, dataProvider = "dpNumberOfTaskWantToSelect", dataProviderClass = TestData.class)
 	public void TM28(String number) throws InterruptedException {
 		TestBase.methodName = "TM04";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -297,15 +304,26 @@ public class CreateTask_Member {
 				.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[1]/div/table/tbody/tr[td[contains(text(),'New')] and td[contains(text(),'"
 						+ GetAccountInfo.getUserFullName() + "')]][1]")));
 		for (int i = 1; i <= Integer.parseInt(number); i++) {
-			objTasksPage.setCheckboxOfNewTaskOfOneUser(TestBase.driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[1]/div/table/tbody/tr[td[contains(text(),'New')] and td[contains(text(),'"+GetAccountInfo.getUserFullName()+"')]]["+i+"]/th")));
+			objTasksPage.setCheckboxOfNewTaskOfOneUser(TestBase.driver.findElement(By
+					.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[1]/div/table/tbody/tr[td[contains(text(),'New')] and td[contains(text(),'"
+							+ GetAccountInfo.getUserFullName() + "')]][" + i + "]/th")));
 			Thread.sleep(1000);
 			objTasksPage.clickCheckboxOfNewTaskOfOneUser();
 			Thread.sleep(1000);
 		}
 		objTasksPage.clickMoreButt();
-		Assert.assertEquals(TestBase.driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/table/tbody/tr[2]/td[2]/div/div/div/div[2]/ul/li[1]/a")).getText(), "Export");
-		Assert.assertEquals(TestBase.driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/table/tbody/tr[2]/td[2]/div/div/div/div[2]/ul/li[2]/a")).getText(), "Delete");
-		Assert.assertEquals(TestBase.driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/table/tbody/tr[2]/td[2]/div/div/div/div[2]/ul/li[3]/a")).getText(), "Approve Worklogs");
+		Assert.assertEquals(TestBase.driver
+				.findElement(By
+						.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/table/tbody/tr[2]/td[2]/div/div/div/div[2]/ul/li[1]/a"))
+				.getText(), "Export");
+		Assert.assertEquals(TestBase.driver
+				.findElement(By
+						.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/table/tbody/tr[2]/td[2]/div/div/div/div[2]/ul/li[2]/a"))
+				.getText(), "Delete");
+		Assert.assertEquals(TestBase.driver
+				.findElement(By
+						.xpath("html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/table/tbody/tr[2]/td[2]/div/div/div/div[2]/ul/li[3]/a"))
+				.getText(), "Approve Worklogs");
 	}
 
 	@AfterMethod
@@ -316,5 +334,6 @@ public class CreateTask_Member {
 	@AfterClass
 	public void teardownClass() {
 		objLogin = null;
+		objLogout.performLogout();
 	}
 }
