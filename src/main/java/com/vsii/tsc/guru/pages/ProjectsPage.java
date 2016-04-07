@@ -10,24 +10,8 @@ public class ProjectsPage {
 	@FindBy(xpath = ".//*[@class='oe_group_header'][2]")
 	private WebElement department;
 	
-
-	
 	@FindBy(xpath = ".//*[@class='ui-sortable']/tr[1]")
 	private WebElement project;
-	
-	
-	//Identify Task button on Project details
-	@FindBy(xpath="//div/div/div[1]/div/div[2]/button[1]")
-	private WebElement btnTasks;
-	
-
-	public WebElement getBtnTasks() {
-		return btnTasks;
-	}
-
-	public void setBtnTasks(WebElement btnTasks) {
-		this.btnTasks = btnTasks;
-	}
 
 	public WebElement getProjectLinktxt() {
 		return projectLinktxt;

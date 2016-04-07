@@ -61,10 +61,10 @@ public class DetailTaskPage {
 	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/header/button[1]")
 	private WebElement reactiveButt;
 
-	@FindBy(xpath = "html/body/div[2]/div[11]/div/footer/button[1]/span")
+	@FindBy(xpath = "html/body/div[4]/div[11]/div/footer/button[1]/span")
 	private WebElement evaluateButt;
 
-	@FindBy(xpath = "html/body/div[2]/div[11]/div/footer/button[2]/span")
+	@FindBy(xpath = "html/body/div[4]/div[11]/div/footer/button[2]/span")
 	private WebElement cancelButt;
 
 	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div[2]/div/div[3]/div/div[4]/div/div/header/button[4]")

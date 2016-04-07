@@ -119,8 +119,9 @@ public class TasksPageMethod {
 		return objTasksPage.getProgressInfo().getText();
 	}
 	
-	public void chooseOneExistedTask() {
+	public void chooseOneExistedTask() throws InterruptedException {
 		objTasksPage.getTaskSummaryInfo().click();
+		Thread.sleep(3000);
 	}
 	
 	public void chooseTheFirstNewTask() {
@@ -153,32 +154,5 @@ public class TasksPageMethod {
 	
 	public void clickDeleteButt() {
 		objTasksPage.getDeleteButt().click();
-	}
-	
-	
-	// Get task external key value
-	public String getTaskNameValue(){
-		return objTasksPage.getTaskNameValue().getText();
-	}
-	
-	//Click on the latest task record
-	public void clickLatestTask(){
-		objTasksPage.getLatestTaskRecord().click();
-	}
-	
-	// Get worklog time spent in Text
-	public String getTimeSpent(){
-		try{
-			return objTasksPage.getTimeSpent().getText();
-		}catch(org.openqa.selenium.StaleElementReferenceException ex){
-
-			return objTasksPage.getTimeSpent().getText();
-		}
-
-	}
-	
-	// Get worklog done by in text
-	public String getDoneBy(){
-		return objTasksPage.getDoneBy().getText();
 	}
 }

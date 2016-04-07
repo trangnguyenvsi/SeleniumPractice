@@ -184,8 +184,9 @@ public class DetailTaskPageMethod {
 		return objDetailTaskPage.getErrMessageUserOutside().getText();
 	}
 
-	public void clickEditButt() {
+	public void clickEditButt() throws InterruptedException {
 		objDetailTaskPage.getEditButt().click();
+		Thread.sleep(3000);
 	}
 
 	public WebElement getEditButt() {

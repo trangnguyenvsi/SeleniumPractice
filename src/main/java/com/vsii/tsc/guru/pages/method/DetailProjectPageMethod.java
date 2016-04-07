@@ -19,7 +19,8 @@ public class DetailProjectPageMethod {
 		PageFactory.initElements(driver, objDetailProjectPage);
 	}
 	
-	public void clickTasksBut() {
+	public void clickTasksBut() throws InterruptedException {
 		objDetailProjectPage.getTasksBut().click();
+		Thread.sleep(4000);
 	}
 }

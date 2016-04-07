@@ -297,7 +297,8 @@ public class ProjectCreateNew {
 	@FindBy(xpath=".//th[contains(text(),'VSII / SDC')]")
 	private WebElement depSDC;
 		
-	@FindBy(xpath=".//td[contains(text(),'Demo Project 2016')]")
+//	@FindBy(xpath=".//td[contains(text(),'Demo Project 2016')]")
+	@FindBy(xpath="//tr[21]/td[3]")
 	private WebElement projectNametxt;
 	
 	@FindBy(xpath=".//td[contains(text(),'PM100')]")
