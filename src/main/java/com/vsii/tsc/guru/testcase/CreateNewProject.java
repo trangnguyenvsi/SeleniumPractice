@@ -188,7 +188,7 @@ public class CreateNewProject {
 
     }
     
-  @Test(priority = 0, description = "Edit Project with valid data", dataProvider = "dpEditProject", dataProviderClass = TestData.class)
+  @Test(priority = 3, description = "Edit Project with valid data", dataProvider = "dpEditProject", dataProviderClass = TestData.class)
     public void PM09(String privacy,String appEffort)
                     throws Exception {
 
@@ -214,7 +214,7 @@ public class CreateNewProject {
     }
     
 //  Case 10 always wrong: Edit successfully instead of changing department
-  @Test(priority = 0, description = "Edit Project with invalid data 1", dataProvider = "dpEditProject1", dataProviderClass = TestData.class)
+  @Test(priority = 4, description = "Edit Project with invalid data 1", dataProvider = "dpEditProject1", dataProviderClass = TestData.class)
     public void PM10(String department)
                     throws Exception {
 
@@ -241,7 +241,7 @@ public class CreateNewProject {
 
     }
 //  Case 11: Can NOT get xpath of alert at the right corner 
-  @Test(priority = 0, description = "Edit Project with invalid data 2", dataProvider = "dpEditProject2", dataProviderClass = TestData.class)
+  @Test(priority = 5, description = "Edit Project with invalid data 2", dataProvider = "dpEditProject2", dataProviderClass = TestData.class)
     public void PM11(String department, String projectType, String commDetails)
                     throws Exception {
 
@@ -266,7 +266,7 @@ public class CreateNewProject {
     }
     
 //  Case 12:
-  @Test(priority = 0, description = "Verify cancel edit by clicking Discard")
+  @Test(priority = 6, description = "Verify cancel edit by clicking Discard")
     public void PM12()
             throws Exception {
 
@@ -291,7 +291,7 @@ public class CreateNewProject {
         }
     }
 //  Case 13: Click on OK on pop-up
-  @Test(priority = 0, description = "Verify cancel edit by clicking Discard")
+  @Test(priority = 7, description = "Verify cancel edit by clicking Discard")
     public void PM13()
             throws Exception {
 
@@ -317,7 +317,7 @@ public class CreateNewProject {
     }
     
 //  Case 14: Submit to review
-  @Test(priority = 0, description = "Verify Submit to Review")
+  @Test(priority = 8, description = "Verify Submit to Review")
     public void PM14() throws Exception {
 
         TestBase.methodName = "PM14";
@@ -341,7 +341,7 @@ public class CreateNewProject {
         }
     }
 //  Case 15: Login with account TSC's  management
-  @Test(priority = 0, description = "Verify Submit to Review")
+  @Test(priority = 9, description = "Verify Submit to Review")
     public void PM15() throws Exception {
 
         TestBase.methodName = "PM15";
@@ -368,7 +368,7 @@ public class CreateNewProject {
     
 //  Case 16: Projects with new/review status will NOT have Timesheet and Task 
     
-  @Test(priority = 0, description = "Verify Submit to Review")
+  @Test(priority = 10, description = "Verify Submit to Review")
     public void PM16() throws Exception {
 
         TestBase.methodName = "PM16";
@@ -395,7 +395,7 @@ public class CreateNewProject {
         }
     }
     // Case 17: Verify function Approve a Project
-  @Test(priority = 0, description = "Verify function Approve a Project")
+  @Test(priority = 11, description = "Verify function Approve a Project")
     public void PM17() throws Exception {
 
         TestBase.methodName = "PM17";
@@ -428,7 +428,7 @@ public class CreateNewProject {
     }
     
     // Case 18: Verify that PMO can not approve a Project unless PMO input approve effort
-      @Test(priority = 0, description = "Verify fuction Approve a Project")
+      @Test(priority = 12, description = "Verify fuction Approve a Project")
         public void PM18() throws Exception {
 
             TestBase.methodName = "PM18";
@@ -458,7 +458,7 @@ public class CreateNewProject {
         }
         
         // Case 19: Verify function Refuse a Project
-      @Test(priority = 0, description = "Verify function Refuse a Project")
+      @Test(priority = 13, description = "Verify function Refuse a Project")
         public void PM19() throws Exception {
 
             TestBase.methodName = "PM19";
@@ -492,7 +492,7 @@ public class CreateNewProject {
         }
         
     // Case 20: Verify that when Edit an in progress project with Not required fields, project is not change to NEW
-  @Test(priority = 0, description = "Verify edit an in progress Project")
+  @Test(priority = 14, description = "Verify edit an in progress Project")
             public void PM20() throws Exception {
 
             TestBase.methodName = "PM20";
@@ -525,7 +525,7 @@ public class CreateNewProject {
                 }
         
     // Case 21: Verify function Close a Project 
-  @Test(priority = 0, description = "Verify function Close a Project")
+  @Test(priority = 15, description = "Verify function Close a Project")
         public void PM21() throws Exception {
         TestBase.methodName = "PM21";
         objLogin.loginToManagerPage("phuongnt3", "12345678");
@@ -547,7 +547,7 @@ public class CreateNewProject {
     }
     
     // Case 22: Verify function Pending a Project   
-  @Test(priority = 0, description = "Verify function Pending a Project")
+  @Test(priority = 16, description = "Verify function Pending a Project")
         public void PM22() throws Exception {
         TestBase.methodName = "PM22";
         objLogin.loginToManagerPage("phuongnt3", "12345678");
@@ -573,7 +573,7 @@ public class CreateNewProject {
         }
         
     // Case 23: Verify function Set as Template a Project   
-  @Test(priority = 0, description = "Verify function Set as Template a Project")
+  @Test(priority = 17, description = "Verify function Set as Template a Project")
         public void PM23() throws Exception {
         TestBase.methodName = "PM23";
         objLogin.loginToManagerPage("phuongnt3", "12345678");
@@ -593,7 +593,7 @@ public class CreateNewProject {
     }   
                 
     // Case 24: Verify function Cancel a Project    
-  @Test(priority = 0, description = "Verify function Cancel a Project")
+  @Test(priority = 18, description = "Verify function Cancel a Project")
         public void PM24() throws Exception {
         TestBase.methodName = "PM24";
         objLogin.loginToManagerPage("phuongnt3", "12345678");
@@ -611,7 +611,7 @@ public class CreateNewProject {
         }
         
     // Case 25: Verify function Add member into a project
-  @Test(priority = 0, description = "Verify function Add member into a project", dataProvider = "dpAddNewMem", dataProviderClass = TestData.class)
+  @Test(priority = 19, description = "Verify function Add member into a project", dataProvider = "dpAddNewMem", dataProviderClass = TestData.class)
         public void PM25(String usernameMember, String startDate, String endDate, String allocate) throws Exception {
         TestBase.methodName = "PM25";
         objLogin.loginToManagerPage("phuongnt3", "12345678");
@@ -633,7 +633,7 @@ public class CreateNewProject {
         }
     
     // Case 26: Verify that Allocation Rate is displayed correctly with valid data
-  @Test(priority = 0, description = "Verify that Allocation Rate is displayed correctly with valid data")
+  @Test(priority = 20, description = "Verify that Allocation Rate is displayed correctly with valid data")
     public void PM26() throws Exception {
         TestBase.methodName = "PM26";
         objLogin.loginToManagerPage("phuongnt3", "12345678");
@@ -655,7 +655,7 @@ public class CreateNewProject {
     }
     
     // Case 27: Verify that Allocation Rate is displayed correctly with invalid data
-  @Test(priority = 0, description = "Verify that Allocation Rate is displayed correctly with invalid data")
+  @Test(priority = 21, description = "Verify that Allocation Rate is displayed correctly with invalid data")
     public void PM27() throws Exception {
         TestBase.methodName = "PM27";
         objLogin.loginToManagerPage("phuongnt3", "12345678");
@@ -678,7 +678,7 @@ public class CreateNewProject {
     }
     
     // Case 28: Verify function Add member into a project. To check with dataProvider has many row, must logout
-  @Test(priority = 0, description = "Verify function Add member into a project", dataProvider = "dpAddNewMem2", dataProviderClass = TestData.class)
+  @Test(priority = 22, description = "Verify function Add member into a project", dataProvider = "dpAddNewMem2", dataProviderClass = TestData.class)
     public void PM28(String usernameMember, String startDate, String endDate, String allocate) throws Exception {
         TestBase.methodName = "PM28";
         objLogin.loginToManagerPage("anhhm", "12345678");
@@ -700,7 +700,7 @@ public class CreateNewProject {
         }   
 
     // Case 29: Verify function Remove member from a project
-  @Test(priority = 0, description = "Verify function Remove member from a project")
+  @Test(priority = 23, description = "Verify function Remove member from a project")
     public void PM29() throws Exception {
         TestBase.methodName = "PM29";
         objLogin.loginToManagerPage("anhhm", "12345678");
@@ -720,7 +720,7 @@ public class CreateNewProject {
 //      Assert.assertFalse(objCreateProjectMethod.getteamMember().contains("Anh-Hoang Mai Anh"));
     }   
 // Case 30: Verify project member list be paged correctly
-  @Test(priority = 0, description = "Verify project member list be paged correctly")
+  @Test(priority = 24, description = "Verify project member list be paged correctly")
     public void PM30() throws Exception {
         TestBase.methodName = "PM30";
         objLogin.loginToManagerPage("anhhm", "12345678");
@@ -741,7 +741,7 @@ public class CreateNewProject {
     }
     
     // Case 31: Verify that PM can change Project Stages correctly: Default
-  @Test(priority = 0, description = "Verify that PM can change Project Stages correctly")
+  @Test(priority = 25, description = "Verify that PM can change Project Stages correctly")
     public void PM31() throws Exception {
         TestBase.methodName = "PM31";
         objLogin.loginToManagerPage("anhhm", "12345678");
@@ -761,7 +761,7 @@ public class CreateNewProject {
     }   
     
     // Case 31_InCase: Verify that PM can change Project Stages correctly
-      @Test(priority = 0, description = "Verify that PM can change Project Stages correctly")
+      @Test(priority = 26, description = "Verify that PM can change Project Stages correctly")
         public void PM312() throws Exception {
             TestBase.methodName = "PM31";
             objLogin.loginToManagerPage("anhhm", "12345678");
@@ -823,7 +823,7 @@ public class CreateNewProject {
         }   
         
     // Case 32: Verify that PM can delete stage/ stages correctly
-  @Test(priority = 0, description = "Verify that PM can delete stage/ stages correctly")
+  @Test(priority = 27, description = "Verify that PM can delete stage/ stages correctly")
     public void PM32() throws Exception {
         TestBase.methodName = "PM31";
         objLogin.loginToManagerPage("anhhm", "12345678");
