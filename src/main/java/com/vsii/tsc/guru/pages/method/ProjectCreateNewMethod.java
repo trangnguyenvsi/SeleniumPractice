@@ -22,10 +22,12 @@ public class ProjectCreateNewMethod {
   }
   // 
   //Logout method
-  public void logout (){
+  public void logout () throws InterruptedException{
 		objCreateProject.getUserLogged().click();
 		objCreateProject.getLogout_btn().click();	
+		Thread.sleep(6000);
 		objCreateProject.getUserNametxt().clear();
+	
 	}
   
   public void clickProjectMenu (){
