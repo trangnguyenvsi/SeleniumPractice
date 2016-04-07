@@ -17,7 +17,7 @@
 	<test name="Project Management" preserve-order="true">
 		<classes>
 			<class name="com.vsii.tsc.utility.TestBase" />
-			<class name="com.vsii.tsc.guru.testcase.CreateNewProject" />
+			<class name="com.vsii.tsc.guru.testcase.WebService" />
 		</classes>
 	</test>
 

@@ -44,5 +44,15 @@ public class ProjectsPageMethod {
 	public WebElement getProject() {
 		return objProjectsPage.getProject();
 	}
+	
+	
+	// Click on Task button
+	public void clickTaskBtn(){
+		try{
+			objProjectsPage.getBtnTasks().click();
+		}catch(org.openqa.selenium.StaleElementReferenceException ex){
+			objProjectsPage.getBtnTasks().click();
+		}
+	}
 
 }
