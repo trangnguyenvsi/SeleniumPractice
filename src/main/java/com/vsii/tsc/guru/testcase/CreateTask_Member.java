@@ -40,7 +40,7 @@ public class CreateTask_Member {
 		objLogin.loginToManagerPage(GetAccountInfo.getUserName(), GetAccountInfo.getUserPass());
 	}
 
-//	@Test(priority = 0)
+	@Test(priority = 0)
 	public void TM02() throws InterruptedException {
 		TestBase.methodName = "TM01";
 		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
@@ -54,7 +54,7 @@ public class CreateTask_Member {
 
 	}
 
-//	@Test(priority = 1, dataProvider = "dpNewTaskErr", dataProviderClass = TestData.class)
+	@Test(priority = 1, dataProvider = "dpNewTaskErr", dataProviderClass = TestData.class)
 	public void TM03(String summaryTxt, String projectNameDrop, String assignToDrop, String taskTypeDrop,
 			String projectPhaseDrop, String planHourTxt, String deadlineTxt, String tagOfProjectDrop,
 			String descriptionTxtA, String workSummaryTxt, String timeSpentTxt, String dateTxt, String doneByDrop,
@@ -189,10 +189,12 @@ public class CreateTask_Member {
 		objDetailProject.clickTasksBut();
 		Thread.sleep(2000);
 		objTasksPage.clickCreateBut();
-		objDetailTask.setSummaryTxt("hehehe123");
+		objDetailTask.setSummaryTxt("Test: No Task is created when clicking discard");
 		Thread.sleep(2000);
 		objDetailTask.clickDiscardButt();
 		TestBase.driver.switchTo().alert().accept();
+		Thread.sleep(2000);
+		Assert.assertFalse(TestBase.driver.findElements(By.xpath(".//*[contains(text(),'Test: No Task is created when clicking discard')]")).size()>0);
 	}
 
 	@Test(priority = 7, dataProvider = "dpStatusListNotAllowToDone", dataProviderClass = TestData.class)
