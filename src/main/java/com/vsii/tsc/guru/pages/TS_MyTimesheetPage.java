@@ -19,18 +19,65 @@ public class TS_MyTimesheetPage {
 	
 	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/div[1]/div/div[3]/div[1]/div/div/table/tbody/tr[5]/td[9]")			
 	private WebElement lblTotalTS;
-//	
-//	@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/div[1]/div/div[2]/h1/span/a")			
-//	private WebElement lblName;
-//	
-//	public WebElement getLblName() {
-//		return lblName;
-//	}
-//
-//	public void setLblName(WebElement lblName) {
-//		this.lblName = lblName;
-//	}
+	
+	@FindBy(className = "oe_list_content")
+	private WebElement tblMyTS;
 
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/div[1]/div/div[2]/h1/span/a")
+	private WebElement empName;
+
+	@FindBy(className = "oe_timesheet_weekly")
+	private WebElement tblTSWeekly;
+
+	@FindBy(linkText = "Details")
+	private WebElement tabDetails;
+	
+	@FindBy(className = "oe_list_content")
+	private WebElement tblDetails;
+//	
+//	@FindBy(xpath = "")
+//	private WebElement chkboxToDel;
+
+	public WebElement getTblDetails() {
+		return tblDetails;
+	}
+
+	public void setTblDetails(WebElement tblDetails) {
+		this.tblDetails = tblDetails;
+	}
+
+	public WebElement getTabDetails() {
+		return tabDetails;
+	}
+
+	public void setTabDetails(WebElement tabDetails) {
+		this.tabDetails = tabDetails;
+	}
+
+	public WebElement getTblTSWeekly() {
+		return tblTSWeekly;
+	}
+
+	public void setTblTSWeekly(WebElement tblTSWeekly) {
+		this.tblTSWeekly = tblTSWeekly;
+	}
+
+	public WebElement getEmpName() {
+		return empName;
+	}
+
+	public void setEmpName(WebElement empName) {
+		this.empName = empName;
+	}
+
+	public WebElement getTblMyTS() {
+		return tblMyTS;
+	}
+
+	public void setTblMyTS(WebElement tblMyTS) {
+		this.tblMyTS = tblMyTS;
+	}
+	
 	public WebElement getLblTotalTS() {
 		return lblTotalTS;
 	}

@@ -16,6 +16,17 @@ public class TS_MainPage {
 	@FindBy(xpath="html/body/div[1]/table/tbody/tr[2]/td/span/ul/li[5]/a")
 	private WebElement btnLogout;
 	
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[2]/td/ul/li[3]/a/span")
+	private WebElement mnHREmp;
+	
+	public WebElement getMnHREmp() {
+		return mnHREmp;
+	}
+
+	public void setMnHREmp(WebElement mnHREmp) {
+		this.mnHREmp = mnHREmp;
+	}
+	
 	public WebElement getDrpdwnMenu() {
 		return drpdwnMenu;
 	}

@@ -31,4 +31,9 @@ public class TS_MainPageMethod {
 	public void clickLogout() {
 		objMainPage.getBtnLogout().click();
 	}
+	
+	public void clickMnHREmp() throws InterruptedException {
+		Thread.sleep(5000);
+		objMainPage.getMnHREmp().click();
+	}
 }

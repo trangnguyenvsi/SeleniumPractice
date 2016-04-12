@@ -60,4 +60,12 @@ public class TS_CurrentTSMethod {
 	public void clickSubmit() {
 		objcurTS.getBtnSubmit().click();
 	}
+	
+	public String getLblNameUser() {
+		return objcurTS.getLblNameUser().getText();
+	}
+	
+	public String getLblTimePeriod() {
+		return objcurTS.getLblTimePeriod().getText();
+	}
 }

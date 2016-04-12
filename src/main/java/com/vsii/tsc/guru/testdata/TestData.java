@@ -78,13 +78,73 @@ public class TestData {
 	
 	
 	/*
-	 * anhptq
-	 */
-	@DataProvider(name = "dpLogin")
-	public static Object[][]  getLoginTS() {
-		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Login", "LTS");
-		return data;
-	}
+	  * anhptq
+	  */
+	 @DataProvider(name = "dp_PMOLoginTS")
+	 public static Object[][] anhPTQPMOLogin() {
+	  Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Timesheet", "PMO");
+	  return data;
+	 }
+
+	 @DataProvider(name = "dpLogin_TS")
+	 public static Object[][] anhPTQLogin() {
+	  Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Timesheet", "ProjectMember");
+	  return data;
+	 }
+	 
+	 @DataProvider(name = "dpLogin_PMO_TS")
+	 public static Object[][] anhPTQLoginPMO() {
+	  Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Timesheet", "TC03");
+	  return data;
+	 }
+	 
+	 @DataProvider(name = "dpLogin_PM_TS")
+	 public static Object[][] anhPTQLoginPM() {
+	  Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Timesheet", "TC05");
+	  return data;
+	 }
+	 
+	 @DataProvider(name = "dpCreate_TS_Valid")
+	 public static Object[][] anhPTQCreateTS() {
+	  Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Timesheet", "TS09");
+	  return data;
+	 }
+	 
+	 @DataProvider(name = "dpCreate_TS_Invalid")
+	 public static Object[][] anhPTQCreateTSInvalid() {
+	  Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Timesheet", "TS10");
+	  return data;
+	 }
+	 
+	 @DataProvider(name = "dpEdit_TS_Valid")
+	 public static Object[][] anhPTQEditTSValid() {
+	  Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Timesheet", "TS17");
+	  return data;
+	 }
+	 
+	 @DataProvider(name = "dpDel_TS_Single")
+	 public static Object[][] anhPTQDelSingleTS() {
+	  Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Timesheet", "TS20");
+	  return data;
+	 }
+	 
+	 @DataProvider(name = "dpDismis_TS_Single")
+	 public static Object[][] anhPTQDismisSingleTS() {
+	  Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Timesheet", "TS21");
+	  return data;
+	 }
+	 
+	 @DataProvider(name = "dpDel_TS_Multi")
+	 public static Object[][] anhPTQDelMultiTS() {
+	  Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Timesheet", "TS22");
+	  return data;
+	 }
+	 
+	 @DataProvider(name = "dpSelect_User_Multi")
+	 public static Object[][] anhPTQSelectMultiUser() {
+	  Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "Timesheet", "TS26");
+	  return data;
+	 }
 	
 	
 	/*

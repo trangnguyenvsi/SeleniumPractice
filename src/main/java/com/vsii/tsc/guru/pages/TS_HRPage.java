@@ -34,6 +34,17 @@ public class TS_HRPage {
 	@FindBy(xpath="/html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/tbody/tr[1]/td[6]")
 	private WebElement lblStatus;
 	
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[1]/div[1]/div[3]/ul[2]/li[2]/a/span")
+	private WebElement mnMyTimeSheetEmp;
+	
+	public WebElement getMnMyTimeSheetEmp() {
+		return mnMyTimeSheetEmp;
+	}
+
+	public void setMnMyTimeSheetEmp(WebElement mnMyTimeSheetEmp) {
+		this.mnMyTimeSheetEmp = mnMyTimeSheetEmp;
+	}
+	
 	public WebElement getLblStatus() {
 		return lblStatus;
 	}

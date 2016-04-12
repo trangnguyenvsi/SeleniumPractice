@@ -15,7 +15,7 @@ public class TS_PMOViewMethod {
 	TS_PMOViewPage objPMO = new TS_PMOViewPage();
 
 	public TS_PMOViewMethod(WebDriver driver) throws IOException {
-		p = CommonOperations.readTSConfig();
+		p = CommonOperations.readConfig();
 		this.driver = driver;
 		PageFactory.initElements(driver, objPMO);
 	}
@@ -54,7 +54,8 @@ public class TS_PMOViewMethod {
 		objPMO.getMnPMOView().click();
 	}
 	
-	public boolean compareTitle() throws InterruptedException {
+	public boolean compareTitle(String employee, String dateFrom, String dateTo, String department,
+			String totalTimesheet, String status) throws InterruptedException {
 		boolean isMatch = false;
 		String ttlEmp = getTtlEmp();
 		String ttlDateFrom = getTtlDateFrom();
@@ -63,10 +64,10 @@ public class TS_PMOViewMethod {
 		String ttlTotalTS = getTtlTotalTS();
 		String ttlStatus = getTtlStatus();
 
-		if (ttlEmp.equals(p.getProperty("ttlEmployee")) && ttlDateFrom.equals(p.getProperty("ttlDateFrom"))
-				&& ttlDateTo.equals(p.getProperty("ttlDateTo")) && ttlDepartment.equals(p.getProperty("ttlDepartment"))
-				&& ttlTotalTS.equals(p.getProperty("ttlTotalTimesheet"))
-				&& ttlStatus.equals(p.getProperty("ttlStatus"))) {
+		if (ttlEmp.equals(employee) && ttlDateFrom.equals(dateFrom)
+				&& ttlDateTo.equals(dateTo) && ttlDepartment.equals(department)
+				&& ttlTotalTS.equals(totalTimesheet)
+				&& ttlStatus.equals(status)) {
 			isMatch = true;
 		} else {
 			isMatch = false;

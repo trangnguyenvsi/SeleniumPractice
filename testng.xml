@@ -45,4 +45,10 @@
 	<!-- <class name="com.vsii.tsc.guru.testcase.SimpleTest"/> -->
 	<!-- </classes> -->
 	<!-- </test> -->
+	
+	<test name="Timesheet management" preserve-order="true">
+		<classes>
+			<class name="com.vsii.tsc.guru.testcase.TS_Timesheet" />
+		</classes>
+	</test>
 </suite> 

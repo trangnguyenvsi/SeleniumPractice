@@ -25,7 +25,7 @@ public class TS_DepartmentTSMethod {
 	TS_DepartmentTSPage objDptTS = new TS_DepartmentTSPage();
 
 	public TS_DepartmentTSMethod(WebDriver driver) throws IOException {
-		p = CommonOperations.readTSConfig();
+		p = CommonOperations.readConfig();
 		this.driver = driver;
 		PageFactory.initElements(driver, objDptTS);
 	}
@@ -59,13 +59,14 @@ public class TS_DepartmentTSMethod {
 		Thread.sleep(2000);
 		return objDptTS.getTtlStatus().getText();
 	}
-	
+
 	public String getLstMonth() throws InterruptedException {
 		Thread.sleep(2000);
 		return objDptTS.getLstMonth().getText();
 	}
 
-	public boolean compareTitle() throws InterruptedException {
+	public boolean compareTitle(String employee, String dateFrom, String dateTo, String department,
+			String totalTimesheet, String status) throws InterruptedException {
 		boolean isMatch = false;
 
 		String ttlEmp = getTtlEmp();
@@ -75,10 +76,10 @@ public class TS_DepartmentTSMethod {
 		String ttlTotalTS = getTtlTotalTS();
 		String ttlStatus = getTtlStatus();
 
-		if (ttlEmp.equals(p.getProperty("ttlEmployee")) && ttlDateFrom.equals(p.getProperty("ttlDateFrom"))
-				&& ttlDateTo.equals(p.getProperty("ttlDateTo")) && ttlDepartment.equals(p.getProperty("ttlDepartment"))
-				&& ttlTotalTS.equals(p.getProperty("ttlTotalTimesheet"))
-				&& ttlStatus.equals(p.getProperty("ttlStatus"))) {
+		if (ttlEmp.equals(employee) && ttlDateFrom.equals(dateFrom)
+				&& ttlDateTo.equals(dateTo) && ttlDepartment.equals(department)
+				&& ttlTotalTS.equals(totalTimesheet)
+				&& ttlStatus.equals(status)) {
 			isMatch = true;
 		} else {
 			isMatch = false;
@@ -102,7 +103,7 @@ public class TS_DepartmentTSMethod {
 		}
 		Thread.sleep(20000);
 	}
-	
+
 	public boolean getTSStatus() throws InterruptedException {
 		boolean isColor = false;
 		List<WebElement> rows = objDptTS.getDeptTSTable().findElements(By.tagName("tr"));
@@ -177,68 +178,73 @@ public class TS_DepartmentTSMethod {
 		}
 		return isMatch;
 	}
-	
-	//click vao list thang 3
+
+	// click vao list thang 3
 	public void clickLstMonth() throws InterruptedException {
-//		objDptTS.getLstMonth().click();
-		Thread.sleep(4000);		
+		// objDptTS.getLstMonth().click();
+		Thread.sleep(4000);
 		driver.findElement(By.cssSelector(getLstMonth())).click();
 	}
-	
-	//Duyet tim theo dong, cot co du ten user = namUser va Date from = timeDel, sau do click chon dong do
-	public void selectUser(String nameUser, Date timeDel) {
+
+	// Duyet tim theo dong, cot co du ten user = namUser va Date from = timeDel,
+	// sau do click chon dong do
+	public void selectUser(String nameUser, String timeDel) {
 		List<WebElement> rows = objDptTS.getTblUser().findElements(By.tagName("tr"));
 		for (int rnum = 1; rnum < rows.size(); rnum++) {
 			List<WebElement> columns = rows.get(rnum).findElements(By.tagName("td"));
 			for (int cnum = 0; cnum < columns.size(); cnum++) {
 				if (columns.get(cnum).getText().equals(nameUser)) {
 					if (columns.get(cnum).getText().equals(timeDel)) {
-						columns.get(1).click();
+						columns.get(1)
+								.findElement(By
+										.xpath("/html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/table/tbody[2]/tr[1]/th/input"))
+								.click();
 					}
 				}
 			}
 		}
 	}
-	
-	//Duyet tim theo dong, cot co du ten user = namUser va Date from = timeDel, sau do click chon nhieu dong thoa man dk
-		public void selectMultiUser(String nameUser, Date timeDel) {
-			List<WebElement> rows = objDptTS.getTblUser().findElements(By.tagName("tr"));
-			for (int rnum = 1; rnum < rows.size(); rnum++) {
-				List<WebElement> columns = rows.get(rnum).findElements(By.tagName("td"));
-				for (int cnum = 0; cnum < columns.size(); cnum++) {
-					if (columns.get(cnum).getText().equals(nameUser)) {
-						if (columns.get(cnum).getText().equals(timeDel)) {
-							columns.get(cnum).click();
-						}
+
+	// Duyet tim theo dong, cot co du ten user = namUser va Date from = timeDel,
+	// sau do click chon nhieu dong thoa man dk
+	public void selectMultiUser(String nameUser, String timeDel, String i) {
+		List<WebElement> rows = objDptTS.getTblUser().findElements(By.tagName("tr"));
+		for (int rnum = 1; rnum < rows.size(); rnum++) {
+			List<WebElement> columns = rows.get(rnum).findElements(By.tagName("td"));
+			for (int cnum = 0; cnum < columns.size(); cnum++) {
+				if (columns.get(cnum).getText().equals(nameUser)) {
+					if (columns.get(cnum).getText().equals(timeDel)) {
+						columns.get(cnum).click();
 					}
 				}
 			}
 		}
-	
-	//click button More
+	}
+
+	// click button More
 	public void clickBtnMore() throws InterruptedException {
 		objDptTS.getBtnMore().click();
-//		Thread.sleep(4000);		
+		// Thread.sleep(4000);
 	}
-	
-	//click button Delete
+
+	// click button Delete
 	public void clickBtnDelete() throws InterruptedException {
 		objDptTS.getBtnDelete().click();
-		Thread.sleep(2000);		
+		Thread.sleep(2000);
 	}
-	
-	//check da xoa
-	public boolean checkDel(String nameUser, Date timeDel) throws InterruptedException {
-		boolean isDel = false;
+
+	// check da xoa
+	public boolean checkDel(String nameUser, String timeDel) throws InterruptedException {
+		boolean isDel = true;
 		List<WebElement> rows = objDptTS.getTblUser().findElements(By.tagName("tr"));
 		for (int rnum = 1; rnum < rows.size(); rnum++) {
 			List<WebElement> columns = rows.get(rnum).findElements(By.tagName("td"));
 			for (int cnum = 0; cnum < columns.size(); cnum++) {
 				if (columns.get(cnum).getText().equals(nameUser)) {
 					if (columns.get(cnum).getText().equals(timeDel)) {
-						isDel = true;
-					} else {
 						isDel = false;
+					} else {
+						isDel = true;
 					}
 				}
 			}

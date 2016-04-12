@@ -20,6 +20,28 @@ public class TS_CurrentTSPage {
 	@FindBy(xpath = "/html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/div[4]/div/div/header/ul/li[2]/span[1]")
 	private WebElement lblStatus;
 	
+	@FindBy(xpath = "/html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/h1/span/a")
+	private WebElement lblNameUser;
+	
+	@FindBy(xpath = "/html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[1]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]/div/span[1]")
+	private WebElement lblTimePeriod ;
+	
+	public WebElement getLblNameUser() {
+		return lblNameUser;
+	}
+
+	public void setLblNameUser(WebElement lblNameUser) {
+		this.lblNameUser = lblNameUser;
+	}
+
+	public WebElement getLblTimePeriod() {
+		return lblTimePeriod;
+	}
+
+	public void setLblTimePeriod(WebElement lblTimePeriod) {
+		this.lblTimePeriod = lblTimePeriod;
+	}
+
 	public WebElement getBtnSubmit() {
 		return btnSubmit;
 	}

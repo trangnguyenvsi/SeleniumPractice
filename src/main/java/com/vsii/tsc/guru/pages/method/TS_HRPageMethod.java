@@ -17,7 +17,7 @@ public class TS_HRPageMethod {
 
 	public TS_HRPageMethod(WebDriver driver) throws IOException {
 		this.driver = driver;
-		p = CommonOperations.readTSConfig();
+		p = CommonOperations.readConfig();
 		PageFactory.initElements(driver, objHR);
 	}
 
@@ -66,7 +66,8 @@ public class TS_HRPageMethod {
 		return objHR.getBtnImport().getText();
 	}
 
-	public boolean compareTitle() throws InterruptedException {
+	public boolean compareTitle(String employee, String dateFrom, String dateTo, String department,
+			String totalTimesheet, String status, String createBtn, String importBtn) throws InterruptedException {
 		boolean isMatch = false;
 		String ttlEmployee = getTtlEmployee();
 		String ttlDateFrom = getTtlDateFrom();
@@ -77,23 +78,27 @@ public class TS_HRPageMethod {
 		String btnCreate = getBtnCreate();
 		String btnImport = getBtnImport();
 
-		if (ttlEmployee.equals(p.getProperty("ttlEmployee")) && ttlDateFrom.equals(p.getProperty("ttlDateFrom"))
-				&& ttlDateTo.equals(p.getProperty("ttlDateTo")) && ttlDepartment.equals(p.getProperty("ttlDepartment"))
-				&& ttlTotalTimesheet.equals(p.getProperty("ttlTotalTimesheet"))
-				&& ttlStatus.equals(p.getProperty("ttlStatus")) && btnCreate.equals(p.getProperty("btnCreate"))
-				&& btnImport.equals(p.getProperty("btnImport"))) {
+		if (ttlEmployee.equals(employee) && ttlDateFrom.equals(dateFrom)
+				&& ttlDateTo.equals(dateTo) && ttlDepartment.equals(department)
+				&& ttlTotalTimesheet.equals(totalTimesheet)
+				&& ttlStatus.equals(status) && btnCreate.equals(createBtn)
+				&& btnImport.equals(importBtn)) {
 			isMatch = true;
 		} else {
 			isMatch = false;
 		}
 		return isMatch;
 	}
-	
+
 	public void clickStatus() throws InterruptedException {
 		Thread.sleep(2000);
 		String status = objHR.getLblStatus().getText();
 		if (status.equals("Open")) {
 			objHR.getLblStatus().click();
 		}
+	}
+
+	public void clickMyTS() throws InterruptedException {
+		objHR.getMnMyTimeSheetEmp().click();
 	}
 }

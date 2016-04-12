@@ -60,6 +60,11 @@ public class LoginPageMethod {
 		log.debug("Login to Manager page");
 	}
 
+	public void clearText() {
+		objLogin.getUserNametxt().clear();
+		objLogin.getPasswordtxt().clear();
+	}
+	
 	// Get Manager ID in Manager page
 	// public String getManagerIDInManagerPage() {
 	//// log.debug("Get Manager ID in manager page");
