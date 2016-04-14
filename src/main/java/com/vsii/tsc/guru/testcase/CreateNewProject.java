@@ -1,6 +1,7 @@
 package com.vsii.tsc.guru.testcase;
 
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -872,11 +873,14 @@ public class CreateNewProject {
         objCreateProjectMethod.clickProjectwith3Stage();
         }
     
+    /* Cac ban update phan nay vao trong script cua minh nhe*/
     @AfterMethod
-    public void afterMethod() throws Exception {
-        CommonOperations.takePicture();
-        objCreateProjectMethod.logout();
-    }
+	public void afterMethod(ITestResult testResult) throws Exception {
+		CommonOperations.getMethodTestResult(testResult);
+		CommonOperations.takePicture();
+		objCreateProjectMethod.logout();
+	}
+
 
     @AfterClass
     public void teardownClass() {

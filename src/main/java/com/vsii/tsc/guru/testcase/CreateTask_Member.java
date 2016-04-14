@@ -132,7 +132,9 @@ public class CreateTask_Member {
 	@Test(priority = 4)
 	public void TM14() throws InterruptedException {
 		TestBase.methodName = "TM04";
-		CommonMethods.waitUntil(objProjects.getProjectLinktxt());
+		CommonMethods.waitUntil(objProjects
+				
+				.getProjectLinktxt());
 		objProjects.clickProjectLink();
 		CommonMethods.waitUntil(objProjects.getDepartment());
 		objProjects.chooseDepartment();

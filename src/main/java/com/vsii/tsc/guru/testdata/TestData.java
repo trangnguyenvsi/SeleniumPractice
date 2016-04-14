@@ -1,10 +1,6 @@
 package com.vsii.tsc.guru.testdata;
 
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Factory;
-
-import com.vsii.tsc.guru.testcase.Login;
-import com.vsii.tsc.guru.testcase.NewCustomer;
 import com.vsii.tsc.utility.ExcelHandle;;
 
 public class TestData {
