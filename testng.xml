@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<listeners>
-		<listener class-name="com.vsii.tsc.utility.ExtentReporterNG" />
+		<listener class-name="com.vsii.tsc.utility.Reports" />
 	</listeners>
 
 	<test name="Task Management" preserve-order="true">
@@ -14,12 +14,12 @@
 		</classes>
 	</test>
 	
-	<test name="Project Management" preserve-order="true">
-		<classes>
-			<class name="com.vsii.tsc.utility.TestBase" />
-			<class name="com.vsii.tsc.guru.testcase.WebService" />
-		</classes>
-	</test>
+<!-- 	<test name="Project Management" preserve-order="true"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.vsii.tsc.utility.TestBase" /> -->
+<!-- 			<class name="com.vsii.tsc.guru.testcase.WebService" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 
 	<!-- <test name="CreateNewCustomer" preserve-order="true"> -->
 	<!-- <classes> -->
@@ -27,11 +27,11 @@
 	<!-- </classes> -->
 	<!-- </test> -->
 
-	<test name="WebService" preserve-order="true">
-		<classes>
-			<class name="com.vsii.tsc.guru.testcase.WebService" />
-		</classes>
-	</test>
+<!-- 	<test name="WebService" preserve-order="true"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.vsii.tsc.guru.testcase.WebService" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 
 	<!-- <test name="EditCustomer" preserve-order="true"> -->
 	<!-- <classes> -->
@@ -46,9 +46,9 @@
 	<!-- </classes> -->
 	<!-- </test> -->
 	
-	<test name="Timesheet management" preserve-order="true">
-		<classes>
-			<class name="com.vsii.tsc.guru.testcase.TS_Timesheet" />
-		</classes>
-	</test>
+<!-- 	<test name="Timesheet management" preserve-order="true"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.vsii.tsc.guru.testcase.TS_Timesheet" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 </suite> 
