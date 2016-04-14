@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -330,8 +331,9 @@ public class CreateTask_Member {
 				.getText(), "Approve Worklogs");
 	}
 
-	@AfterMethod
-	public void afterMethod() throws Exception {
+    @AfterMethod
+	public void afterMethod(ITestResult testResult) throws Exception {
+		CommonOperations.getMethodTestResult(testResult);
 		CommonOperations.takePicture();
 	}
 
