@@ -21,7 +21,6 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.vsii.tsc.model.TCImageResults;
 
-
 public class TestBase {
 	public static WebDriver driver;
 	public static Properties p;
@@ -36,7 +35,7 @@ public class TestBase {
 	public RemoteWebDriver remoteDriver;
 
 	@BeforeSuite
-	public void setupSuite() throws IOException {
+	public void setupSuite() throws IOException, InterruptedException {
 
 		// Read config file
 		p = CommonOperations.readConfig();
@@ -82,14 +81,15 @@ public class TestBase {
 			}
 		}
 		// Open base URL
-		driver.get(p.getProperty("baseUrl"));
 		driver.manage().window().maximize();
+		driver.get(p.getProperty("baseUrl"));
+		Thread.sleep(3000);
 	}
 
 	@AfterSuite
 	public void teardownSuite() throws Exception {
-		//driver.quit();
-		//SendMail.execute();
+		// driver.quit();
+		// SendMail.execute();
 	}
 
 }
