@@ -30,6 +30,11 @@ public class WebServiceMethod {
 		objWSPage.getWebProject().click();
 	}
 
+	// Enter project module for PMO
+	public void clickProjectMenuPM(){
+		objWSPage.getProjectBtn().click();
+	}
+	
 	// Click on Web service option in side bar
 	public void clickWebServiceOption() {
 		objWSPage.getWebService().click();
@@ -43,7 +48,12 @@ public class WebServiceMethod {
 	 */
 	public void clickCreateService() {
 
-		objWSPage.getCreateService().click();
+		try {
+			objWSPage.getCreateService().click();
+		} catch (org.openqa.selenium.StaleElementReferenceException ex) {
+			objWSPage.getCreateService().click();
+		}
+
 
 	}
 

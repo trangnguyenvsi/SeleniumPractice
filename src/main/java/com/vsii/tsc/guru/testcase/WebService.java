@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -19,6 +21,7 @@ import com.vsii.tsc.guru.pages.method.TasksPageMethod;
 import com.vsii.tsc.guru.pages.method.VSIIProjectPageMethod;
 import com.vsii.tsc.guru.pages.method.WebServiceMethod;
 import com.vsii.tsc.guru.testdata.TestData;
+import com.vsii.tsc.utility.CommonOperations;
 import com.vsii.tsc.utility.TestBase;
 
 public class WebService {
@@ -48,6 +51,7 @@ public class WebService {
 		objJiraBrowseProject = new JiraBrowseProjectPageMethod(TestBase.driver);
 		objVSIIProject = new VSIIProjectPageMethod(TestBase.driver);
 		objCreateProjectMethod = new ProjectCreateNewMethod(TestBase.driver);
+		Thread.sleep(1000);
 		objService.clickProjectMenu();
 
 	}
@@ -55,7 +59,8 @@ public class WebService {
 	@Test(priority = 0, dataProvider = "createProject", dataProviderClass = TestData.class)
 	public void createERPProject(String projectName, String approvedEffort, String projectType, String commDetails,String PMacc, String PMPass) throws InterruptedException{
 		
-		// Verify if an empty OpenERP project has been created		
+		// Verify if an empty OpenERP project has been created or not
+		// If not, create a new one
 		objProject.clickProjectLink();
 		Thread.sleep(1000);
 		objProject.chooseDepartment();
@@ -64,20 +69,28 @@ public class WebService {
 		if(size>0){
 			System.out.println("A project named "+projectName+" has already been created! No need to create a new one.");
 		}else{
+			//Create a new project
 			objService.clickProjectMenu();
 	        Thread.sleep(1000);
 	        CommonMethods.waitUntil(objCreateProjectMethod.getbtnCreate());
 	        Thread.sleep(1000);
 	        objCreateProjectMethod.clickCreatebtn();
+	        Thread.sleep(500);
 	        objCreateProjectMethod.createProject(projectName, approvedEffort,projectType, commDetails );
+			// Approving Project
+	        Thread.sleep(3000);
+			objLogin.loginToManagerPage(PMacc, PMPass);
+			objService.clickProjectMenuPM();
+			objProject.clickProjectLink();
+			objCreateProjectMethod.closeOpenOption();
+			objProject.chooseDepartment();
+			TestBase.driver.findElement(By.xpath(xpath)).click();
+			objCreateProjectMethod.clickApprove();
+			objCreateProjectMethod.clickCurrentUser();
+			objCreateProjectMethod.clickLogout();
+			objLogin.loginToManagerPage("lienlt", "12345678");
 		}
-		objLogin.loginToManagerPage(PMacc, PMPass);
-		objService.clickProjectMenu();
-		objProject.clickProjectLink();
-		objCreateProjectMethod.closeOpenOption();
-		objProject.chooseDepartment();
-		TestBase.driver.findElement(By.xpath(xpath)).click();
-		objCreateProjectMethod.clickApprove();
+
 	}
 
 	/*
@@ -110,7 +123,7 @@ public class WebService {
 		// Perform test steps
 		objService.clickProjectMenu();
 		objService.clickWebServiceOption();
-		Thread.sleep(100);
+        CommonMethods.waitUntil(objCreateProjectMethod.getbtnCreate());
 		objService.clickCreateService();
 		objService.setServiceName(txtServiceName);
 		objService.setType(txtType);
@@ -351,4 +364,9 @@ public class WebService {
 
 	}
 
+	@AfterMethod
+	 public void afterMethod(ITestResult testResult) throws Exception {
+	  CommonOperations.getMethodTestResult(testResult);
+	  CommonOperations.takePicture();
+	}
 }

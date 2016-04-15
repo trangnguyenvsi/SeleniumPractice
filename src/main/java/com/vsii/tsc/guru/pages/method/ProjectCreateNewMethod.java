@@ -808,13 +808,16 @@ public String getPopupText() {
   
   // Create project to use in webservice testing
   public void createProject(String projectName, String approvedEffort, String projectType, String commDetails ) throws InterruptedException{
-	  this.clickCreatebtn();
+//	  this.clickCreatebtn();
 	  this.inputProjectName(projectName);
 	  this.inputApprovedEffort(approvedEffort);
 	  this.inputProjectType(projectType);
 	  this.inputCommerDetails(commDetails);
+	  Thread.sleep(1000);
 	  this.clickSavebtn();
+	  Thread.sleep(1000);
 	  this.clickSubmitReview();
+	  Thread.sleep(1000);
 	  this.clickCurrentUser();
 	  this.clickLogout();
   }

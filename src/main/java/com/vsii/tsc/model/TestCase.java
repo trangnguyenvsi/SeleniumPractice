@@ -47,11 +47,4 @@ public class TestCase {
 		this.tcImageResults = tcImageResults;
 	}
 	
-	
-	
-
-	
-	
-	
-
 }

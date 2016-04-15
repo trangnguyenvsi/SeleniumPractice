@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -83,6 +84,7 @@ public class TestBase {
 		// Open base URL
 		driver.manage().window().maximize();
 		driver.get(p.getProperty("baseUrl"));
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		Thread.sleep(3000);
 	}
 

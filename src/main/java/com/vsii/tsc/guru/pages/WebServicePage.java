@@ -18,6 +18,18 @@ public class WebServicePage {
 		this.webProject = webProject;
 	}
 	
+	//QuyenTX: finds project button on menu bar for PMO
+	@FindBy(xpath="html/body/div[1]/table/tbody/tr[2]/td/ul/li[2]/a/span")
+	private WebElement projectBtn;
+	
+	public WebElement getProjectBtn() {
+		return projectBtn;
+	}
+
+	public void setProjectBtn(WebElement projectBtn) {
+		this.projectBtn = projectBtn;
+	}
+
 	// Elements in Projects page
 	// Web service option in side bar
 	@FindBy(xpath = "//table/tbody/tr[3]/td[1]/div[1]/div[3]/ul[5]/li[3]/a/span")

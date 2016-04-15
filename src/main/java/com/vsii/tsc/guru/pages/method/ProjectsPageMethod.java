@@ -24,8 +24,15 @@ public class ProjectsPageMethod {
 	}
 	
 	public void chooseDepartment() throws InterruptedException {
-		objProjectsPage.getDepartment().click();
-		Thread.sleep(4000);
+		try {
+			objProjectsPage.getDepartment().click();
+			Thread.sleep(2000);
+
+		} catch (org.openqa.selenium.StaleElementReferenceException ex) {
+			objProjectsPage.getDepartment().click();
+			Thread.sleep(2000);
+
+		}
 	}
 	
 	public void chooseProject() throws InterruptedException {

@@ -2,17 +2,20 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <listeners>
-    <listener class-name="com.vsii.tsc.utility.ExtentReporterNG"/>
+    <listener class-name="com.vsii.tsc.utility.Reports"/>
   </listeners>
   <test name="WebService(failed)">
     <classes>
       <class name="com.vsii.tsc.guru.testcase.WebService">
         <methods>
+          <include name="W07" invocation-numbers="0"/>
+          <include name="afterMethod"/>
           <include name="W05" invocation-numbers="0"/>
-          <include name="W01"/>
-          <include name="createERPProject"/>
+          <include name="W03" invocation-numbers="0"/>
+          <include name="W06" invocation-numbers="0"/>
           <include name="setupClass"/>
           <include name="W04" invocation-numbers="0"/>
+          <include name="W02" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.vsii.tsc.guru.testcase.WebService -->
       <class name="com.vsii.tsc.utility.TestBase">

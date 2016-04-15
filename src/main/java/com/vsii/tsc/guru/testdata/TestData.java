@@ -66,12 +66,48 @@ public class TestData {
 		return data;
 	}
 	
+	@DataProvider(name = "W02")
+	public static Object[][]  getVSIIProjectDetails() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W02");
+		return data;
+	}
+	
+	
 	@DataProvider(name = "W03")
 	public static Object[][]  getProjectName() {
 		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W03");
 		return data;
 	}
 	
+	@DataProvider(name = "W04")
+	public static Object[][]  getWorklogDetail() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W04");
+		return data;
+	}
+	
+	@DataProvider(name = "W05")
+	public static Object[][]  getWorklogJira() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W05");
+		return data;
+	}
+	
+	@DataProvider(name = "W06")
+	public static Object[][]  getEditWorklogJira() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W06");
+		return data;
+	}
+	
+	@DataProvider(name = "W07")
+	public static Object[][]  getDeleteWorklogJira() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "W07");
+		return data;
+	}
+	
+	@DataProvider(name = "createProject")
+	public static Object[][]  getProjectInfo() {
+		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "ServiceImporting", "CreateProject");
+		return data;
+	}	
 	
 	/*
 	  * anhptq
