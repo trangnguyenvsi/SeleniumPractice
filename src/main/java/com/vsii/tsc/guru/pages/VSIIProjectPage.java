@@ -18,7 +18,7 @@ public class VSIIProjectPage {
 	}
 	
 	//Identify "Project" dropdown list
-	@FindBy(xpath="//table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[4]/td[2]/span/div/input")
+	@FindBy(xpath="html/body/div/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/table/tbody/tr[4]/td[2]/span/div/input")
 	private WebElement projectDropdown;
 
 	public WebElement getProjectDropdown() {

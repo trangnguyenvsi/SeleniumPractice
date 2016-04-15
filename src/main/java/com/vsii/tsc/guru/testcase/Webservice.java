@@ -24,7 +24,7 @@ import com.vsii.tsc.guru.testdata.TestData;
 import com.vsii.tsc.utility.CommonOperations;
 import com.vsii.tsc.utility.TestBase;
 
-public class WebService {
+public class Webservice {
 	LoginPageMethod objLogin;
 	WebServiceMethod objService;
 	ProjectsPageMethod objProject;
@@ -56,7 +56,7 @@ public class WebService {
 
 	}
 	
-	@Test(priority = 0, dataProvider = "createProject", dataProviderClass = TestData.class)
+//	@Test(priority = 0, dataProvider = "createProject", dataProviderClass = TestData.class)
 	public void createERPProject(String projectName, String approvedEffort, String projectType, String commDetails,String PMacc, String PMPass) throws InterruptedException{
 		
 		// Verify if an empty OpenERP project has been created or not
@@ -125,6 +125,7 @@ public class WebService {
 		objService.clickWebServiceOption();
         CommonMethods.waitUntil(objCreateProjectMethod.getbtnCreate());
 		objService.clickCreateService();
+		Thread.sleep(2000);
 		objService.setServiceName(txtServiceName);
 		objService.setType(txtType);
 		objService.setProtocol(txtProtocol);
@@ -143,7 +144,7 @@ public class WebService {
 		Assert.assertTrue(TestBase.driver.getCurrentUrl().contains("id"));
 	}
 	
-	@Test(priority = 2, description = "Run web service and verify if JIRA project is synchronized with OpenERP", dataProvider = "W02", dataProviderClass = TestData.class)
+//	@Test(priority = 2, description = "Run web service and verify if JIRA project is synchronized with OpenERP", dataProvider = "W02", dataProviderClass = TestData.class)
 	public void W02(String projectKey, String projectName, String projectDepartment, String projectType)
 			throws IOException, InterruptedException {
 
@@ -153,9 +154,11 @@ public class WebService {
 		// Perform test steps
 		objService.clickProjectMenu();
 		objService.clickWebServiceOption();
+		Thread.sleep(1000);
 		objService.clickChooseService();
 		objService.clickRunningService();
 		objService.clickVsiiProject();
+		Thread.sleep(1000);
 		objService.clickImportedProject();
 		objService.getProjectKey();
 		objService.getProjectName();
@@ -174,7 +177,7 @@ public class WebService {
 	 * 
 	 */
 
-	@Test(priority = 3, description = "Verify the ability of mapping imported project from JIRA with existed OpenERP project work correctly", dataProvider = "W03", dataProviderClass = TestData.class)
+//	@Test(priority = 3, description = "Verify the ability of mapping imported project from JIRA with existed OpenERP project work correctly", dataProvider = "W03", dataProviderClass = TestData.class)
 	public void W03(String projectKey, String projectName, String projectDepartment, String projectType) throws InterruptedException {
 		// Method name
 		TestBase.methodName = "W03";
@@ -184,7 +187,9 @@ public class WebService {
 		objService.clickVsiiProject();
 		objService.clickImportedProject();
 		objVSIIProject.clickEditImportedProject();
+		Thread.sleep(2000);
 		objVSIIProject.setProjectName(projectName);
+		Thread.sleep(1000);
 		objVSIIProject.clickNoVerifyChkbox();
 		objVSIIProject.clickSaveImportedProject();
 		objService.getProjectKey();
@@ -201,7 +206,7 @@ public class WebService {
 
 	}
 
-	@Test(priority = 4, description = "Verify importing JIRA project to OpenERP project work correctly", dataProvider = "W04", dataProviderClass = TestData.class)
+//	@Test(priority = 4, description = "Verify importing JIRA project to OpenERP project work correctly", dataProvider = "W04", dataProviderClass = TestData.class)
 	public void W04(String projectName, String timeSpent, String doneBy) throws InterruptedException {
 		// Method name
 		TestBase.methodName = "W04";
@@ -221,6 +226,7 @@ public class WebService {
 		TestBase.driver.findElement(By.xpath(xpath)).click();
 		objProject.clickTaskBtn();
 		Thread.sleep(3000);
+		
 		objTasks.clickLatestTask();
 
 		// Verify test result
@@ -228,7 +234,7 @@ public class WebService {
 		Assert.assertEquals(objTasks.getDoneBy(), doneBy);
 	}
 
-	@Test(priority = 5, description = "Verify that when add new worklog in JIRA project webservice importing work correctly", dataProvider = "W05", dataProviderClass = TestData.class)
+//	@Test(priority = 5, description = "Verify that when add new worklog in JIRA project webservice importing work correctly", dataProvider = "W05", dataProviderClass = TestData.class)
 	public void W05(String jiraBaseUrl, String username, String password, String projectName, String timeSpent,
 			String timeSpentOnERP, String doneByOnERP) throws InterruptedException {
 
@@ -272,7 +278,7 @@ public class WebService {
 
 	}
 
-	@Test(priority = 6, description = "Verify that when add new worklog in JIRA project webservice importing work correctly", dataProvider = "W06", dataProviderClass = TestData.class)
+//	@Test(priority = 6, description = "Verify that when add new worklog in JIRA project webservice importing work correctly", dataProvider = "W06", dataProviderClass = TestData.class)
 	public void W06(String jiraBaseUrl, String username, String password, String projectName, String timeSpent, String timeSpentOnERP,
 			String doneByOnERP) throws InterruptedException {
 
@@ -319,7 +325,7 @@ public class WebService {
 
 	}
 
-	@Test(priority = 7, description = "Verify that when add new worklog in JIRA project webservice importing work correctly", dataProvider = "W07", dataProviderClass = TestData.class)
+//	@Test(priority = 7, description = "Verify that when add new worklog in JIRA project webservice importing work correctly", dataProvider = "W07", dataProviderClass = TestData.class)
 	public void W07(String jiraBaseUrl, String username, String password, String projectName, String timeSpentOnERP, String doneByOnERP) throws InterruptedException {
 
 		// Method name

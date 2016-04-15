@@ -81,10 +81,11 @@ public class TestBase {
 				break;
 			}
 		}
+		
 		// Open base URL
 		driver.manage().window().maximize();
 		driver.get(p.getProperty("baseUrl"));
-		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		Thread.sleep(3000);
 	}
 
