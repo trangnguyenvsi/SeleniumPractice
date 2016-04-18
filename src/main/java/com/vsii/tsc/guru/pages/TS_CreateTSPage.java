@@ -5,22 +5,22 @@ import org.openqa.selenium.support.FindBy;
 
 public class TS_CreateTSPage {
 	
-	@FindBy(className = "oe_button oe_list_add oe_highlight")
+	@FindBy(xpath = "//div[@class='oe_list_buttons']/button[contains(text(),'Create')]")
 	private WebElement btnCreate;
 	
-	@FindBy(xpath = "/html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]/div/span[1]/span/img")
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]/div/span[1]/span/input[2]")
 	private WebElement dtFrom;
 	
-	@FindBy(xpath = "/html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]/div/span[2]/span/img")
+	@FindBy(xpath = "html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]/div/span[2]/span/input[2]")
 	private WebElement dtTo;
 	
-	@FindBy(xpath = "/html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/div[1]/div/div[3]/div[1]/div/div/table/tbody/tr[3]/td[1]/div/div[1]/button")
+	@FindBy(className = "oe_timesheet_button_add")
 	private WebElement btnAddLine;
 	
 	@FindBy(xpath = "/html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/div[1]/div/div[3]/div[1]/div/div/table/tbody/tr[2]/td/span/div/span[2]/img")
 	private WebElement cbbProject;
 	
-	@FindBy(id = "ui-id-124")
+	@FindBy(className = "ui-autocomplete-input")
 	private WebElement eleProject;
 	
 	@FindBy(xpath = "/html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[2]/div/div[4]/div/div/div[1]/div/div[3]/div[1]/div/div/table/tbody/tr[2]/td/button")

@@ -1,18 +1,7 @@
 package com.vsii.tsc.guru.pages.method;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-
-import org.apache.bcel.generic.Select;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import com.vsii.tsc.guru.pages.TS_CreateTSPage;
@@ -27,24 +16,29 @@ public class TS_CreateTSMethod {
 		PageFactory.initElements(driver, objCreateTS);
 	}
 
-	public void clickBtnCreate() {
+	public void clickBtnCreate() throws InterruptedException {
+		Thread.sleep(2000);
 		objCreateTS.getBtnCreate().click();
+		
 	}
 	
-	public void getDtFrom(Date dtFrom) throws InterruptedException {
+	public void getDtFrom(String dtFrom) throws InterruptedException {
 		Thread.sleep(2000);
+		objCreateTS.getDtFrom().clear();
 		objCreateTS.getDtFrom().sendKeys(dtFrom.toString());
 	}
 
-	public void getDtTo(Date dtTo) throws InterruptedException {
+	public void getDtTo(String dtTo) throws InterruptedException {
 		Thread.sleep(2000);
+		objCreateTS.getDtTo().clear();
 		objCreateTS.getDtTo().sendKeys(dtTo.toString());;
 	}
 	
-	public void inputDate(Date dtFrom, Date dtTo) throws InterruptedException {
+	public void inputDate(String dtFrom, String dtTo) throws InterruptedException {
 		Thread.sleep(2000);
 		this.getDtFrom(dtFrom);
 		this.getDtTo(dtTo);
+		objCreateTS.getDtTo().sendKeys(Keys.TAB);
 	}
 
 	// public void selectDatefromMultiDate(String date) {
@@ -75,8 +69,8 @@ public class TS_CreateTSMethod {
 	}
 
 	public void selectEleProject(String project) throws InterruptedException {
-		Thread.sleep(1000);
-		objCreateTS.getEleProject().clear();
+//		Thread.sleep(1000);
+//		objCreateTS.getEleProject().clear();
 		objCreateTS.getEleProject().sendKeys(project);
 		Thread.sleep(1000);
 		objCreateTS.getEleProject().sendKeys(Keys.TAB);

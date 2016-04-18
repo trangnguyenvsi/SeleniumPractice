@@ -7,6 +7,8 @@ import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -65,69 +67,69 @@ public class TS_Timesheet extends TestBase {
 		boolean isMatch = objHRPage.compareTitle(employee, dateFrom, dateTo, department, totalTimesheet, status, createBtn, importBtn);
 		Assert.assertTrue(isMatch);
 	}
-	
-	
-
-	@Test(priority = 1, description = "Verify My Current Timesheet display correctly")
-	public void TS02() throws InterruptedException {
-		TestBase.methodName = "TS02";
-		objCurTS.clickMyCurTimesheet();
-		boolean isExist = objCurTS.getTSTable();
-		Assert.assertTrue(isExist);
-	}
-
-	@Test(priority = 2, description = "Verify Department Timesheet display correctly", dataProvider = "dpLogin_PMO_TS", dataProviderClass = TestData.class)
-	public void TS03(String employee, String dateFrom, String dateTo, String department,
-			String totalTimesheet, String status) throws InterruptedException, ParseException {
-		TestBase.methodName = "TS03";
-		objDeptTS.clickDepartmentTS();
-		boolean isTitle = objDeptTS.compareTitle(employee, dateFrom, dateTo, department, totalTimesheet, status);
-		Assert.assertTrue(isTitle);
-		boolean isMatch = objDeptTS.getTSMonth();
-		Assert.assertTrue(isMatch);
-		objDeptTS.clickMonthTS();
-		boolean isStatus = objDeptTS.getTSStatus();
-		Assert.assertTrue(isStatus);
-
-		objMainPage.clickDrpDwnMenu();
-		objMainPage.clickLogout();
-	}
-
-	@Test(priority = 3, description = "Verify PMO view display correctly", dataProvider = "dp_PMOLoginTS", dataProviderClass = TestData.class)
-	public void TS04(String username, String password, String employee, String dateFrom, String dateTo, String department,
-			String totalTimesheet, String status) throws InterruptedException {
-		TestBase.methodName = "TS04";
-		Thread.sleep(5000);
-		objMainPage.clickDrpDwnMenu();
-		objMainPage.clickLogout();
-		Thread.sleep(2000);
-		objLogin.clearText();
-		objLogin.loginToManagerPage(username, password);
-		objMainPage.clickHRPMO();
-		objPMO.clickPMOView();
-		boolean isMatch = objPMO.compareTitle(employee, dateFrom, dateTo, department, totalTimesheet, status);
-		Assert.assertTrue(isMatch);
+//	
+//	
+//
+//	@Test(priority = 1, description = "Verify My Current Timesheet display correctly")
+//	public void TS02() throws InterruptedException {
+//		TestBase.methodName = "TS02";
+//		objCurTS.clickMyCurTimesheet();
+//		boolean isExist = objCurTS.getTSTable();
+//		Assert.assertTrue(isExist);
+//	}
+//
+//	@Test(priority = 2, description = "Verify Department Timesheet display correctly", dataProvider = "dpLogin_PMO_TS", dataProviderClass = TestData.class)
+//	public void TS03(String employee, String dateFrom, String dateTo, String department,
+//			String totalTimesheet, String status) throws InterruptedException, ParseException {
+//		TestBase.methodName = "TS03";
+//		objDeptTS.clickDepartmentTS();
+//		boolean isTitle = objDeptTS.compareTitle(employee, dateFrom, dateTo, department, totalTimesheet, status);
+//		Assert.assertTrue(isTitle);
+//		boolean isMatch = objDeptTS.getTSMonth();
+//		Assert.assertTrue(isMatch);
+//		objDeptTS.clickMonthTS();
+//		boolean isStatus = objDeptTS.getTSStatus();
+//		Assert.assertTrue(isStatus);
+//
+//		objMainPage.clickDrpDwnMenu();
 //		objMainPage.clickLogout();
-	}
-
-	@Test(priority = 4, description = "Verify user can view his own timesheet display correctly when his worklogs has not approved yet", dataProvider = "dpLogin_PM_TS", dataProviderClass = TestData.class)
-	public void TS05(String username, String password) throws InterruptedException {
+//	}
+//
+//	@Test(priority = 3, description = "Verify PMO view display correctly", dataProvider = "dp_PMOLoginTS", dataProviderClass = TestData.class)
+//	public void TS04(String username, String password, String employee, String dateFrom, String dateTo, String department,
+//			String totalTimesheet, String status) throws InterruptedException {
+//		TestBase.methodName = "TS04";
+//		Thread.sleep(5000);
+//		objMainPage.clickDrpDwnMenu();
+//		objMainPage.clickLogout();
+//		Thread.sleep(2000);
+//		objLogin.clearText();
 //		objLogin.loginToManagerPage(username, password);
-		objMainPage.clickMnHREmp();
-		objHRPage.clickMyTS();
-		Thread.sleep(10000);
-		objMyTS.clickTS();
-		boolean isMatchName = objMyTS.compareName();
-		boolean isMatchSummary = objMyTS.compareSummary();
-		Assert.assertTrue(isMatchName);
-		Assert.assertTrue(isMatchSummary);
-		objMyTS.clickDetails();
-		objMyTS.getTSDetails();
-	}
+//		objMainPage.clickHRPMO();
+//		objPMO.clickPMOView();
+//		boolean isMatch = objPMO.compareTitle(employee, dateFrom, dateTo, department, totalTimesheet, status);
+//		Assert.assertTrue(isMatch);
+////		objMainPage.clickLogout();
+//	}
+//
+//	@Test(priority = 4, description = "Verify user can view his own timesheet display correctly when his worklogs has not approved yet", dataProvider = "dpLogin_PM_TS", dataProviderClass = TestData.class)
+//	public void TS05(String username, String password) throws InterruptedException {
+////		objLogin.loginToManagerPage(username, password);
+//		objMainPage.clickMnHREmp();
+//		objHRPage.clickMyTS();
+//		Thread.sleep(10000);
+//		objMyTS.clickTS();
+//		boolean isMatchName = objMyTS.compareName();
+//		boolean isMatchSummary = objMyTS.compareSummary();
+//		Assert.assertTrue(isMatchName);
+//		Assert.assertTrue(isMatchSummary);
+//		objMyTS.clickDetails();
+//		objMyTS.getTSDetails();
+//	}
 
 	
-	@Test(priority = 8, description = "Verify function Create Timesheet with valid data", dataProvider = "dpCreate_TS_Valid", dataProviderClass = TestData.class)
-	public void TS09(String username, String password, Date dtFrom, Date dtTo, String project, String time)
+//	@Test(priority = 8, description = "Verify function Create Timesheet with valid data", dataProvider = "dpCreate_TS_Valid", dataProviderClass = TestData.class)
+	public void TS09(String username, String password, String dtFrom, String dtTo, String project, String time)
 			throws InterruptedException {
 		TestBase.methodName = "TS09";
 		Thread.sleep(5000);
@@ -135,11 +137,12 @@ public class TS_Timesheet extends TestBase {
 		objMainPage.clickHR();
 		objHRPage.clickMyTimesheet();
 		objCreateTS.clickBtnCreate();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		objCreateTS.inputDate(dtFrom, dtTo);
+		Thread.sleep(3000);
 		objCreateTS.clickBtnAddLine();
 		Thread.sleep(3000);
-		objCreateTS.clickCbbProject();
+//		objCreateTS.clickCbbProject();
 		objCreateTS.selectEleProject(project);
 		objCreateTS.clickAdd();
 		objCreateTS.inputTime(time);
@@ -147,8 +150,8 @@ public class TS_Timesheet extends TestBase {
 		Assert.assertEquals(objCreateTS.getLblStatus(), "Open");
 	}
 
-	@Test(priority = 9, description = "Verify function Create Timesheet with invalid data", dataProvider = "dpCreate_TS_Invalid", dataProviderClass = TestData.class)
-	public void TS10(Date dtFrom, Date dtTo, String project, String time, String errMessage)
+//	@Test(priority = 9, description = "Verify function Create Timesheet with invalid data", dataProvider = "dpCreate_TS_Invalid", dataProviderClass = TestData.class)
+	public void TS10(String dtFrom, String dtTo, String project, String time, String errMessage)
 			throws InterruptedException {
 		TestBase.methodName = "TS10";
 		Thread.sleep(5000);
@@ -200,7 +203,7 @@ public class TS_Timesheet extends TestBase {
 		// Assert.assertEquals(objMyTS.getlblEditbtn(), "Edit");
 	}
 
-	@Test(priority = 18, description = "Verify Edit Timesheet with valid data", dataProvider = "dpEdit_TS_Valid", dataProviderClass = TestData.class)
+//	@Test(priority = 18, description = "Verify Edit Timesheet with valid data", dataProvider = "dpEdit_TS_Valid", dataProviderClass = TestData.class)
 	public void TS19(String time) throws InterruptedException {
 		TestBase.methodName = "TS19";
 		// objLogin.loginToManagerPage(username, password);
@@ -219,7 +222,7 @@ public class TS_Timesheet extends TestBase {
 		objMainPage.clickLogout();
 	}
 
-	@Test(priority = 19, description = "Verify that discard of Delete Timesheet work correctly", dataProvider = "dpDismis_TS_Single", dataProviderClass = TestData.class)
+//	@Test(priority = 19, description = "Verify that discard of Delete Timesheet work correctly", dataProvider = "dpDismis_TS_Single", dataProviderClass = TestData.class)
 	public void TS21(String nameUser, String timeDel) throws InterruptedException {
 		TestBase.methodName = "TS21";
 		objMainPage.clickHR();
@@ -234,7 +237,7 @@ public class TS_Timesheet extends TestBase {
 		Assert.assertFalse(isDel);
 	}
 
-	@Test(priority = 20, description = "Verify that  Delete Timesheet work correctly", dataProvider = "dpDel_TS_Single", dataProviderClass = TestData.class)
+//	@Test(priority = 20, description = "Verify that  Delete Timesheet work correctly", dataProvider = "dpDel_TS_Single", dataProviderClass = TestData.class)
 	public void TS20(String username, String password, String nameUser, String timeDel) throws InterruptedException {
 		TestBase.methodName = "TS20";
 		objLogin.loginToManagerPage(username, password);
@@ -250,7 +253,7 @@ public class TS_Timesheet extends TestBase {
 		Assert.assertTrue(isDel);
 	}
 
-	@Test(priority = 21, description = "Verify that  Delete multiple Timesheets work correctly", dataProvider = "dpDel_TS_Multi", dataProviderClass = TestData.class)
+//	@Test(priority = 21, description = "Verify that  Delete multiple Timesheets work correctly", dataProvider = "dpDel_TS_Multi", dataProviderClass = TestData.class)
 	public void TS22(String nameUser, String timeDel, String i) throws InterruptedException {
 		TestBase.methodName = "TS22";
 		objMainPage.clickHR();
@@ -265,7 +268,7 @@ public class TS_Timesheet extends TestBase {
 		Assert.assertTrue(isDel);
 	}
 
-	@Test(priority = 22, description = "Verify function Submit Timesheet to Manager work correctly")
+//	@Test(priority = 22, description = "Verify function Submit Timesheet to Manager work correctly")
 	public void TS23() throws InterruptedException {
 		TestBase.methodName = "TS23";
 		objMainPage.clickHR();
@@ -276,7 +279,7 @@ public class TS_Timesheet extends TestBase {
 		Assert.assertEquals(objCurTS.getLblStatus(), "Waiting Approval");
 	}
 
-	@Test(priority = 23, description = "Verify that Waiting for Approval timesheet display correctly")
+//	@Test(priority = 23, description = "Verify that Waiting for Approval timesheet display correctly")
 	public void TS24() throws InterruptedException {
 		TestBase.methodName = "TS24";
 		objMainPage.clickHR();
@@ -287,7 +290,7 @@ public class TS_Timesheet extends TestBase {
 		Assert.assertTrue(isSubmit);
 	}
 
-	@Test(priority = 24, description = "Verify function Approve Timesheet work correctly")
+//	@Test(priority = 24, description = "Verify function Approve Timesheet work correctly")
 	public void TS25() throws InterruptedException {
 		TestBase.methodName = "TS25";
 		objMainPage.clickHR();
@@ -299,7 +302,7 @@ public class TS_Timesheet extends TestBase {
 		Assert.assertTrue(isApproved);
 	}
 
-	@Test(priority = 25, description = "Verify function Approve multiple Timesheets work correctly", dataProvider = "dpSelect_User_Multi", dataProviderClass = TestData.class)
+//	@Test(priority = 25, description = "Verify function Approve multiple Timesheets work correctly", dataProvider = "dpSelect_User_Multi", dataProviderClass = TestData.class)
 	public void TS26(String nameUser, String date, String i) throws InterruptedException {
 		TestBase.methodName = "TS26";
 		objMainPage.clickHR();
@@ -320,7 +323,7 @@ public class TS_Timesheet extends TestBase {
 				.getText(), "Approved");
 	}
 
-	@Test(priority = 26, description = "Verify function Approve multiple Timesheets which is not in Wait for approval work correctly", dataProvider = "dpSelect_User_Multi", dataProviderClass = TestData.class)
+//	@Test(priority = 26, description = "Verify function Approve multiple Timesheets which is not in Wait for approval work correctly", dataProvider = "dpSelect_User_Multi", dataProviderClass = TestData.class)
 	public void TS27(String nameUser, String date, String i) throws InterruptedException {
 		TestBase.methodName = "TS27";
 //		objMainPage.clickHR();
@@ -340,7 +343,7 @@ public class TS_Timesheet extends TestBase {
 		objMainPage.clickLogout();
 	}
 
-	@Test(priority = 26, description = "Verify that Approved timesheet display correctly", dataProvider = "", dataProviderClass = TestData.class)
+//	@Test(priority = 26, description = "Verify that Approved timesheet display correctly", dataProvider = "", dataProviderClass = TestData.class)
 	public void TS28(String username, String password) throws InterruptedException {
 		TestBase.methodName = "TS27";
 		objLogin.loginToManagerPage(username, password);
@@ -349,6 +352,12 @@ public class TS_Timesheet extends TestBase {
 
 		
 		objMainPage.clickLogout();
+	}
+	
+	@AfterMethod
+	public void afterMethod(ITestResult testResult) throws Exception {
+		CommonOperations.getMethodTestResult(testResult);
+		CommonOperations.takePicture();
 	}
 
 	@AfterTest
