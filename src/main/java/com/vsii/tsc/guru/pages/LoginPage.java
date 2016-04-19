@@ -13,6 +13,10 @@ public class LoginPage {
 			@FindBy(xpath = "/html/body/div/table/tbody/tr[3]/td[2]/div/div/div[3]/form/ul/li[7]/input")
 			private WebElement passwordtxt;
 
+			
+			@FindBy(xpath ="/html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div[3]/div[1]/img[@src='/web/static/src/img/logo2.png']")
+			private WebElement pageTitle;
+			
 //			// Identify Web element title text
 //			@FindBy(className = "barone")
 //			private WebElement webTitleText;
@@ -87,6 +91,14 @@ public class LoginPage {
 
 			public void setLoginbutt(WebElement loginbutt) {
 				this.loginbutt = loginbutt;
+			}
+
+			public WebElement getPageTitle() {
+				return pageTitle;
+			}
+
+			public void setPageTitle(WebElement pageTitle) {
+				this.pageTitle = pageTitle;
 			}
 
 //			public WebElement getWebTitleText() {
