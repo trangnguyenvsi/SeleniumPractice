@@ -223,4 +223,28 @@ public class TestData {
 		Object[][] data = ExcelHandle.getTable("./data/TestData.xlsx", "CreateTask_PM", "TM31");
 		return data;
 	}
+	
+    @DataProvider(name = "employeeLogin")
+    public static Object[][]  employeeLogin() {
+        Object[][] data = ExcelHandle.getTable("./data/SkillsManagement_TestData.xlsx", "Account", "Employee");
+        return data;
+    }
+    
+    @DataProvider(name = "projectManagerLogin")
+    public static Object[][]  projectManagerLogin() {
+        Object[][] data = ExcelHandle.getTable("./data/SkillsManagement_TestData.xlsx", "Account", "ProjectManager");
+        return data;
+    }
+    
+    @DataProvider(name = "deleteSkill")
+    public static Object[][] deleteSkill() {
+    	Object[][] data = ExcelHandle.getTable("./data/SkillsManagement_TestData.xlsx", "Skill", "SelectedSkill");
+    	return data;
+    }
+    
+    @DataProvider(name = "deleteCategory")
+    public static Object[][] deleteCategory() {
+    	Object[][] data = ExcelHandle.getTable("./data/SkillsManagement_TestData.xlsx", "Category", "SelectedCategory");
+    	return data;
+    }
 }
