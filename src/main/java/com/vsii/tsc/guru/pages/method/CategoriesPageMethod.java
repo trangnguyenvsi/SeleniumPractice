@@ -78,17 +78,24 @@ public class CategoriesPageMethod {
 		objCategoriesPage.getDeleteBtn().click();
 		log.debug("Click Delete button");
 	}
-	
-	//
-	
-	//Get WebElement of Skill to delete
-	public WebElement getSkillToDeleteCbx (String skillName, String parentCategory) {
-		return driver.findElement(By.xpath("//table/tbody/tr/td[@data-field ='name' and contains(text(),'" + skillName + "')]/../td[@data-field = 'parent_id' and contains(text(),'" + parentCategory + "')]/..//input"));
+		
+	//Get WebElement of Category to delete
+	public WebElement getCategoryToDeleteCbx (String categoryName,String categoryType, String parentCategory) {
+		return driver.findElement(By.xpath("//table/tbody/tr/td[@data-field ='name' and contains(text(),'" + categoryName + "')]/../td[@data-field = 'type' and contains(text(),'" + categoryType + "')]/../td[@data-field = 'parent_id' and contains(text(),'" + parentCategory + "')]/..//input"));
 	}
 	
-	//Mark Skill to delete
-	public void markToDelete (String skillName, String parentCategory) {
-		this.getSkillToDeleteCbx(skillName, parentCategory).click();
+	//Mark Category to delete
+	public void markToDelete (String categoryName, String categoryType, String parentCategory) {
+		this.getCategoryToDeleteCbx(categoryName, categoryType, parentCategory).click();
+	}
+	
+	//Get WebElement of Category
+	public WebElement getCategory (String categoryName,String categoryType, String parentCategory) {
+		if (parentCategory.equals("")) {
+			return driver.findElement(By.xpath("//table/tbody/tr/td[@data-field ='name' and contains(text(),'" + categoryName + "')]/../td[@data-field = 'type' and contains(text(),'" + categoryType + "')]/../td[@data-field = 'parent_id' and not(text())]"));
+		} else {
+			return driver.findElement(By.xpath("//table/tbody/tr/td[@data-field ='name' and contains(text(),'" + categoryName + "')]/../td[@data-field = 'type' and contains(text(),'" + categoryType + "')]/../td[@data-field = 'parent_id' and contains(text(),'" + parentCategory + "')]"));
+		}
 	}
 	
 	//Verify each row should represent a skill
@@ -112,7 +119,7 @@ public class CategoriesPageMethod {
 	}
 	
 	//Select Cancel button of alert
-	public void cancelPopup() {
+	public void cancelPopup() throws InterruptedException {
 		CommonMethods.cancelPopup();
 	}
 	

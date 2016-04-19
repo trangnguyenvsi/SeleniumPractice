@@ -97,7 +97,8 @@ public class CommonMethods {
 	}
 	
 	//Cancel alert
-	public static void cancelPopup () {
+	public static void cancelPopup () throws InterruptedException {
+		Thread.sleep(1000);
 		Alert alert = TestBase.driver.switchTo().alert();
 		alert.dismiss();
 	}
@@ -105,7 +106,9 @@ public class CommonMethods {
 	//Get alert message
 	public static String getAlertMessage () {
 		Alert alert = TestBase.driver.switchTo().alert();
-		return alert.getText();
+		String message = alert.getText();
+		alert.dismiss();
+		return message;
 	}
 	
 	//Select option in select box by contains value
@@ -117,4 +120,14 @@ public class CommonMethods {
 			}
 		}
 	}
+	
+	//Verify alert message should be correct
+	public static boolean alertShouldBeCorrect (String message) {
+		boolean isCorrect = false;
+		if(message.equals(CommonMethods.getAlertMessage())) {
+			isCorrect = true;
+		};
+		return isCorrect;
+	}
+
 }

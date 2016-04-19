@@ -160,12 +160,14 @@ public class SkillsManagementHome extends TestBase{
 		objSkillsPage.clickDeleteBtn();
 		
 		Thread.sleep(1000);
-		Assert.assertTrue(objSkillsPage.alertShouldBeCorrect("Do you really want to remove these records?"));
+		Assert.assertTrue(CommonMethods.alertShouldBeCorrect("Do you really want to remove these records?"));
 	}
 	
 	@Test(priority = 7, description = "Verify that user can postpone a request to delete a Skill ", dataProvider = "deleteSkill", dataProviderClass = TestData.class)
-	public void SM_08 (String skillName, String skillDomain)  {
-		CommonMethods.cancelPopup();
+	public void SM_08 (String skillName, String skillDomain) throws InterruptedException  {
+		objSkillsPage.clickMoreBtn();
+		objSkillsPage.clickDeleteBtn();
+		objSkillsPage.cancelPopup();
 		
 		//Verify that Skill is NOT deleted successfully
 		Assert.assertTrue(objSkillsPage.getSkillToDeleteCbx(skillName, skillDomain).isDisplayed());
@@ -173,11 +175,12 @@ public class SkillsManagementHome extends TestBase{
 	
 	@Test(priority = 8, description = "Verify that user can delete a Skill from Skills List", dataProvider = "deleteSkill", dataProviderClass = TestData.class)
 	public void SM_07 (String skillName, String skillDomain)  {
+		objSkillsPage.clickMoreBtn();
 		objSkillsPage.clickDeleteBtn();
 		objSkillsPage.acceptPopup();
 		
 		//Verify that Skill is NOT deleted successfully
-		Assert.assertTrue(objSkillsPage.getSkillToDeleteCbx(skillName, skillDomain).isDisplayed());
+		Assert.assertFalse(objSkillsPage.getSkillToDeleteCbx(skillName, skillDomain).isDisplayed());
 	}
 	
 	@AfterMethod

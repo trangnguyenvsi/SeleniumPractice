@@ -44,8 +44,8 @@ public class SkillsManagementCategories extends TestBase {
 	}
 	
 	@Test(priority = 10, description = "Verify that the system confirm before deleting a category", dataProvider = "deleteCategory", dataProviderClass = TestData.class)
-	public void SM_10 (String skillName, String parentCategory) throws InterruptedException {
-		objCategoriesPage.markToDelete(skillName, parentCategory);
+	public void SM_10 (String categoryName, String categoryType, String parentCategory) throws InterruptedException {
+		objCategoriesPage.markToDelete(categoryName, categoryType, parentCategory);
 		objCategoriesPage.clickMoreBtn();
 		objCategoriesPage.clickDeleteBtn();
 		
@@ -54,24 +54,24 @@ public class SkillsManagementCategories extends TestBase {
 	}
 	
 	@Test(priority = 11, description = "Verify that user can postpone a request to delete a Category", dataProvider = "deleteCategory", dataProviderClass = TestData.class)
-	public void SM_12 (String skillName, String parentCategory) {
+	public void SM_12 (String categoryName, String categoryType, String parentCategory) throws InterruptedException {
 		objCategoriesPage.cancelPopup();
 		
-		Assert.assertTrue(objCategoriesPage.getSkillToDeleteCbx(skillName, parentCategory).isDisplayed());
+		Assert.assertTrue(objCategoriesPage.getCategoryToDeleteCbx(categoryName, categoryType, parentCategory).isDisplayed());
 	}
 	
 	@Test(priority = 12, description = "Verify that user can delete a category from Categories List", dataProvider = "deleteCategory", dataProviderClass = TestData.class)
-	public void SM_11 (String skillName, String parentCategory) {
+	public void SM_11 (String categoryName, String categoryType, String parentCategory) {
 		objCategoriesPage.clickDeleteBtn();
 		objCategoriesPage.acceptPopup();
 		
-		Assert.assertFalse(objCategoriesPage.getSkillToDeleteCbx(skillName, parentCategory).isDisplayed());
+		Assert.assertFalse(objCategoriesPage.getCategoryToDeleteCbx(categoryName, categoryType, parentCategory).isDisplayed());
 	}
 	
-	@Test(priority = 13, description = "Verify that Create form is opened correctly")
-	public void SM_13() {
-		Assert.fail("Not completed this test case yet!");
-	}
+//	@Test(priority = 13, description = "Verify that Create form is opened correctly")
+//	public void SM_13() {
+//		Assert.fail("Not completed this test case yet!");
+//	}
 	
 	@Test(priority = 14, description = "Verify that the fields 'Name', 'Type'  are required field")
 	public void SM_14() {
@@ -86,8 +86,57 @@ public class SkillsManagementCategories extends TestBase {
 	
 	@Test(priority = 15, description = "Verify that user can create a new category", dataProvider = "createCategory", dataProviderClass = TestData.class)
 	public void SM_15(String categoryName, String categoryType, String categoryDescription) {
+		objCreateCategoryPage.inputCategoryName(categoryName);
+		objCreateCategoryPage.selectCategoryType(categoryType);
+		objCreateCategoryPage.inputCategoryDescription(categoryDescription);
+		objCreateCategoryPage.clickSave();
 		
+		Assert.assertTrue(objCreateCategoryPage.getCreatedCategoryName(categoryName).equals(categoryName));
+		Assert.assertTrue(objCreateCategoryPage.getCreatedCategoryType(categoryType).equals(categoryType));
+		Assert.assertTrue(objCreateCategoryPage.getCreatedCategoryDescription(categoryDescription).equals(categoryDescription));
+	}
+	
+//	@Test(priority = 16, description = "Verify that form 'Create: Parent Category' is opened correctly in Categories section", dataProvider = "createCategory", dataProviderClass = TestData.class)
+//	public void SM_16(String categoryName, String categoryType, String categoryDescription) {
+//		objCreateCategoryPage.inputCategoryName(categoryName);
+//		objCreateCategoryPage.selectCategoryType(categoryType);
+//		objCreateCategoryPage.inputCategoryDescription(categoryDescription);
+//		
+//		Assert.fail("[Create and Edit] element is not existed");
+//	}
+	
+	@Test(priority = 18, description = "Verify that user can modifiy the information in a category", dataProvider = "editCategory", dataProviderClass = TestData.class)
+	public void SM_18(String editedCategoryName, String editedCategoryType, String editedCcategoryDescription) {
+		objCreateCategoryPage.clickEditBtn();
+		objCreateCategoryPage.inputCategoryName(editedCategoryName);
+		objCreateCategoryPage.selectCategoryType(editedCategoryType);
+		objCreateCategoryPage.inputCategoryDescription(editedCcategoryDescription);
+		objCreateCategoryPage.clickSave();
+		
+		Assert.assertTrue(objCreateCategoryPage.getCreatedCategoryName(editedCategoryName).equals(editedCategoryName));
+		Assert.assertTrue(objCreateCategoryPage.getCreatedCategoryType(editedCategoryType).equals(editedCategoryType));
+		Assert.assertTrue(objCreateCategoryPage.getCreatedCategoryDescription(editedCcategoryDescription).equals(editedCcategoryDescription));
 	}
 
 	
+	@Test(priority = 19, description = "Verify that the system confirm before discarding edit a category")
+	public void SM_19() {
+		objCreateCategoryPage.clickEditBtn();
+		objCreateCategoryPage.inputCategoryName("Test123");
+		objCreateCategoryPage.clickDiscardBtn();
+		
+		Assert.assertTrue(CommonMethods.alertShouldBeCorrect("Warning, the record has been modified, your changes will be discarded.\n\nAre you sure you want to leave this page ?"));
+	}
+	
+//	@Test(priority = 20, description = "Verify that PM can postpone a request to discard editing a category")
+	
+	@Test(priority = 21, description = "Verify that PM can postpone a request to discard editing a category", dataProvider = "editCategory", dataProviderClass = TestData.class)
+	public void SM_21(String categoryName, String categoryType, String categoryDescription) throws InterruptedException {
+		objCreateCategoryPage.clickDiscardBtn();
+		objCreateCategoryPage.acceptPopup();
+		
+		Assert.assertTrue(objCreateCategoryPage.getCreatedCategoryName(categoryName).equals(categoryName));
+		Assert.assertTrue(objCreateCategoryPage.getCreatedCategoryType(categoryType).equals(categoryType));
+		Assert.assertTrue(objCreateCategoryPage.getCreatedCategoryDescription(categoryDescription).equals(categoryDescription));
+	}
 }

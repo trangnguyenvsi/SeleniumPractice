@@ -30,6 +30,66 @@ public class CreateCategoryPage {
 	@FindBy(xpath = "//div[contains(@class,'oe_notification')]/div[@style='']/h1[text()='The following fields are invalid:']")
 	private WebElement requiredNotification;
 	
+	//WebElement of Created Category Name
+	@FindBy(xpath = "//span[@class='oe_form_char_content']")
+	private WebElement createdCategoryName;
+	
+	//WebElement of Created Category Type
+	@FindBy(xpath = "//span[contains(@class,'oe_form_field_selection')]")
+	private WebElement createdCategoryType;
+	
+	//WebElement of Created Category Description
+	@FindBy(xpath = "//span[@class='oe_form_text_content']")
+	private WebElement createdCategoryDescription;
+	
+	//WebElement of Discard button
+	@FindBy(xpath = "//span[@class='oe_form_buttons_edit']/a[contains(@class,'oe_form_button_cancel')]")
+	private WebElement discardBtn;
+
+	//WebElement of Edit button
+	@FindBy(xpath = "//div[@class = 'oe_form_buttons']/span[@class='oe_form_buttons_view']/div/button[text()='Edit']")
+	private WebElement editBtn;
+
+	public WebElement getDiscardBtn() {
+		return discardBtn;
+	}
+
+	public void setDiscardBtn(WebElement discardBtn) {
+		this.discardBtn = discardBtn;
+	}
+
+	public WebElement getCreatedCategoryName() {
+		return createdCategoryName;
+	}
+
+	public void setCreatedCategoryName(WebElement createdCategoryName) {
+		this.createdCategoryName = createdCategoryName;
+	}
+
+	public WebElement getCreatedCategoryType() {
+		return createdCategoryType;
+	}
+
+	public void setCreatedCategoryType(WebElement createdCategoryType) {
+		this.createdCategoryType = createdCategoryType;
+	}
+
+	public WebElement getCreatedCategoryDescription() {
+		return createdCategoryDescription;
+	}
+
+	public void setCreatedCategoryDescription(WebElement createdCategoryDescription) {
+		this.createdCategoryDescription = createdCategoryDescription;
+	}
+	
+	public WebElement getEditBtn() {
+		return editBtn;
+	}
+
+	public void setEditBtn(WebElement editBtn) {
+		this.editBtn = editBtn;
+	}
+
 	public WebElement getRequiredNotification() {
 		return requiredNotification;
 	}

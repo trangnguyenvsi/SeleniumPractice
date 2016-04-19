@@ -100,17 +100,8 @@ public class SkillsPageMethod {
 		this.getSkillToDeleteCbx(skillName, skillDomain).click();
 	}
 	
-	//Verify alert message should be correct
-	public boolean alertShouldBeCorrect (String message) {
-		boolean isCorrect = false;
-		if(message.equals(CommonMethods.getAlertMessage())) {
-			isCorrect = true;
-		};
-		return isCorrect;
-	}
-	
 	//Select Cancel button of alert
-	public void cancelPopup() {
+	public void cancelPopup() throws InterruptedException {
 		CommonMethods.cancelPopup();
 	}
 	

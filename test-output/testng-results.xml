@@ -1,104 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="17821" started-at="2016-04-15T11:12:02Z" finished-at="2016-04-15T11:12:20Z">
+  <suite name="Suite" duration-ms="39517" started-at="2016-04-19T16:03:24Z" finished-at="2016-04-19T16:04:03Z">
     <groups>
+      <group name="1">
+        <method signature="SkillsManagementHome.SM_01()[pri:1, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="SM_01" class="com.vsii.tsc.guru.testcase.SkillsManagementHome"/>
+        <method signature="SkillsManagementHome.SM_03(java.lang.String, java.lang.String)[pri:2, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="SM_03" class="com.vsii.tsc.guru.testcase.SkillsManagementHome"/>
+      </group> <!-- 1 -->
     </groups>
-    <test name="WebService" duration-ms="17821" started-at="2016-04-15T11:12:02Z" finished-at="2016-04-15T11:12:20Z">
-      <class name="com.vsii.tsc.guru.testcase.Webservice">
-        <test-method status="PASS" signature="setupClass()[pri:0, instance:com.vsii.tsc.guru.testcase.Webservice@100df86]" name="setupClass" is-config="true" duration-ms="2912" started-at="2016-04-15T18:12:02Z" finished-at="2016-04-15T18:12:05Z">
+    <test name="Skill management" duration-ms="39517" started-at="2016-04-19T16:03:24Z" finished-at="2016-04-19T16:04:03Z">
+      <class name="com.vsii.tsc.guru.testcase.SkillsManagementHome">
+        <test-method status="PASS" signature="setupSuite()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="setupSuite" is-config="true" duration-ms="9009" started-at="2016-04-19T23:03:15Z" finished-at="2016-04-19T23:03:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupSuite -->
+        <test-method status="PASS" signature="setupClass()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="setupClass" is-config="true" duration-ms="44" started-at="2016-04-19T23:03:24Z" finished-at="2016-04-19T23:03:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupClass -->
-        <test-method status="PASS" signature="W01(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Webservice@100df86]" name="W01" duration-ms="10819" started-at="2016-04-15T18:12:07Z" description="Create new web service in OpenERP" data-provider="W01" finished-at="2016-04-15T18:12:17Z">
+        <test-method status="PASS" signature="SM_01()[pri:1, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="SM_01" duration-ms="210" started-at="2016-04-19T23:03:24Z" description="Verify OpenERP can open correctly" finished-at="2016-04-19T23:03:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SM_01 -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2283" started-at="2016-04-19T23:03:24Z" finished-at="2016-04-19T23:03:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="SM_03(java.lang.String, java.lang.String)[pri:2, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="SM_03" duration-ms="1751" started-at="2016-04-19T23:03:27Z" description="Verify employee can access OpenERP correctly" data-provider="employeeLogin" finished-at="2016-04-19T23:03:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TestService3]]>
+                <![CDATA[anhptq]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Get]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[http]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[192.168.0.200]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[8085]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[/rest/api/2/search?jql=updated%20%3E%20startOfWeek(-2)%20ORDER%20BY%20updated%20DESC&startAt=0&maxResults=1500&fields=assignee,description,summary,created,updated,duedate,priority,status,worklog,key,id,project,timeestimate,timeoriginalestimate]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[ISO 8601]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[Basic]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[123456@a]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[vsii_project.vsii_JIRA_connector]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[collect_project_worklog]]>
+                <![CDATA[12345678]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- W01 -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Webservice@100df86]" name="afterMethod" is-config="true" duration-ms="2727" started-at="2016-04-15T18:12:17Z" finished-at="2016-04-15T18:12:20Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=W01 status=SUCCESS method=Webservice.W01(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Webservice@100df86] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- SM_03 -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="afterMethod" is-config="true" duration-ms="3503" started-at="2016-04-19T23:03:29Z" finished-at="2016-04-19T23:03:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- com.vsii.tsc.guru.testcase.Webservice -->
-      <class name="com.vsii.tsc.utility.TestBase">
-        <test-method status="PASS" signature="setupSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@dafa95]" name="setupSuite" is-config="true" duration-ms="11363" started-at="2016-04-15T18:11:51Z" finished-at="2016-04-15T18:12:02Z">
+        <test-method status="PASS" signature="teardownSM_02()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="teardownSM_02" is-config="true" duration-ms="468" started-at="2016-04-19T23:03:32Z" finished-at="2016-04-19T23:03:33Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setupSuite -->
-        <test-method status="PASS" signature="teardownSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@dafa95]" name="teardownSuite" is-config="true" duration-ms="0" started-at="2016-04-15T18:12:20Z" finished-at="2016-04-15T18:12:20Z">
+        </test-method> <!-- teardownSM_02 -->
+        <test-method status="PASS" signature="SM_02(java.lang.String, java.lang.String)[pri:3, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="SM_02" duration-ms="3280" started-at="2016-04-19T23:03:33Z" description="Verify PM can access OpenERP correctly" data-provider="projectManagerLogin" finished-at="2016-04-19T23:03:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[lienlt]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12345678]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SM_02 -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="afterMethod" is-config="true" duration-ms="3088" started-at="2016-04-19T23:03:36Z" finished-at="2016-04-19T23:03:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="SM_04()[pri:4, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="SM_04" duration-ms="2996" started-at="2016-04-19T23:03:39Z" description="Verify that Settings is displayed correctly" finished-at="2016-04-19T23:03:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SM_04 -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2652" started-at="2016-04-19T23:03:42Z" finished-at="2016-04-19T23:03:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="SM_05()[pri:5, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="SM_05" duration-ms="4407" started-at="2016-04-19T23:03:45Z" description="Verify that Skills List is displayed correctly" finished-at="2016-04-19T23:03:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SM_05 -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2654" started-at="2016-04-19T23:03:49Z" finished-at="2016-04-19T23:03:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="SM_06(java.lang.String, java.lang.String)[pri:6, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="SM_06" duration-ms="1613" started-at="2016-04-19T23:03:52Z" description="Verify that the system confirm before deleting a Skill" data-provider="deleteSkill" finished-at="2016-04-19T23:03:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Adobe Illustrator]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Requirement Analysis]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SM_06 -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2635" started-at="2016-04-19T23:03:53Z" finished-at="2016-04-19T23:03:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="SM_08(java.lang.String, java.lang.String)[pri:7, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="SM_08" duration-ms="1359" started-at="2016-04-19T23:03:56Z" description="Verify that user can postpone a request to delete a Skill " data-provider="deleteSkill" finished-at="2016-04-19T23:03:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Adobe Illustrator]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Requirement Analysis]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SM_08 -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2730" started-at="2016-04-19T23:03:57Z" finished-at="2016-04-19T23:04:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="SM_07(java.lang.String, java.lang.String)[pri:8, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="SM_07" duration-ms="375" started-at="2016-04-19T23:04:00Z" description="Verify that user can delete a Skill from Skills List" data-provider="deleteSkill" finished-at="2016-04-19T23:04:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Adobe Illustrator]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Requirement Analysis]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SM_07 -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2730" started-at="2016-04-19T23:04:01Z" finished-at="2016-04-19T23:04:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="teardownSuite()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagementHome@6bf256fa]" name="teardownSuite" is-config="true" duration-ms="0" started-at="2016-04-19T23:04:03Z" finished-at="2016-04-19T23:04:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownSuite -->
-      </class> <!-- com.vsii.tsc.utility.TestBase -->
-    </test> <!-- WebService -->
+      </class> <!-- com.vsii.tsc.guru.testcase.SkillsManagementHome -->
+    </test> <!-- Skill management -->
   </suite> <!-- Suite -->
 </testng-results>

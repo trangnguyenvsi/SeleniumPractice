@@ -64,4 +64,40 @@ public class CreateCategoryPageMethod {
 	public WebElement getRequiredNotification(String requiredField1, String requiredField2) {
 		return objCreateCategoryPage.getRequiredNotification().findElement(By.xpath("/../ul/li[contains(text(),'" + requiredField1 +"')]/../li[contains(text(),'" + requiredField2 + "')]"));
 	}
+	
+	//Get value of Created Category Name
+	public String getCreatedCategoryName(String categoryName) {
+		return objCreateCategoryPage.getCreatedCategoryName().getText();
+	}
+	
+	//Get value of Create Category Type
+	public String getCreatedCategoryType(String categoryType) {
+		return objCreateCategoryPage.getCreatedCategoryType().getText();
+	}
+	
+	//Get value of Create Category Description
+	public String getCreatedCategoryDescription(String categoryDescription) {
+		return objCreateCategoryPage.getCreatedCategoryDescription().getText();
+	}
+
+	//Click Edit button
+	public void clickEditBtn() {
+		objCreateCategoryPage.getEditBtn().click();
+	}
+	
+	//Click Discard button
+	public void clickDiscardBtn() {
+		objCreateCategoryPage.getDiscardBtn().click();
+	}
+	
+	//Select Cancel button of alert
+	public void cancelPopup() throws InterruptedException {
+		CommonMethods.cancelPopup();
+	}
+	
+	//Select Ok button of alert
+	public void acceptPopup() {
+		CommonMethods.acceptPopup();
+	}
+
 }

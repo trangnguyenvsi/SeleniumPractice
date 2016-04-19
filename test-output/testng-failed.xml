@@ -4,21 +4,19 @@
   <listeners>
     <listener class-name="com.vsii.tsc.utility.Reports"/>
   </listeners>
-  <test name="WebService(failed)">
+  <test name="Skill management(failed)">
     <classes>
-      <class name="com.vsii.tsc.guru.testcase.Webservice">
+      <class name="com.vsii.tsc.guru.testcase.SkillsManagementHome">
         <methods>
-          <include name="W01" invocation-numbers="0"/>
+          <include name="teardownSM_02"/>
+          <include name="teardownSuite"/>
+          <include name="SM_08" invocation-numbers="0"/>
           <include name="setupClass"/>
+          <include name="SM_07" invocation-numbers="0"/>
+          <include name="setupSuite"/>
           <include name="afterMethod"/>
         </methods>
-      </class> <!-- com.vsii.tsc.guru.testcase.Webservice -->
-      <class name="com.vsii.tsc.utility.TestBase">
-        <methods>
-          <include name="teardownSuite"/>
-          <include name="setupSuite"/>
-        </methods>
-      </class> <!-- com.vsii.tsc.utility.TestBase -->
+      </class> <!-- com.vsii.tsc.guru.testcase.SkillsManagementHome -->
     </classes>
-  </test> <!-- WebService(failed) -->
+  </test> <!-- Skill management(failed) -->
 </suite> <!-- Failed suite [Suite] -->

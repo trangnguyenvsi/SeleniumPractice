@@ -244,7 +244,20 @@ public class TestData {
     
     @DataProvider(name = "deleteCategory")
     public static Object[][] deleteCategory() {
-    	Object[][] data = ExcelHandle.getTable("./data/SkillsManagement_TestData.xlsx", "Category", "SelectedCategory");
+    	Object[][] data = ExcelHandle.getTable("./data/SkillsManagement_TestData.xlsx", "Category", "DeleteCategory");
     	return data;
     }
+    
+    @DataProvider(name = "createCategory")
+    public static Object[][] createCategory() {
+      	Object[][] data = ExcelHandle.getTable("./data/SkillsManagement_TestData.xlsx", "Category", "CreateCategory");
+       	return data;
+    }
+    
+    @DataProvider(name = "editCategory")
+    public static Object[][] editCategory() {
+      	Object[][] data = ExcelHandle.getTable("./data/SkillsManagement_TestData.xlsx", "Category", "EditCategory");
+       	return data;
+    }
+
 }
