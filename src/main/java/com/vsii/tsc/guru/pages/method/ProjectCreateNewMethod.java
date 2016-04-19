@@ -25,8 +25,8 @@ public class ProjectCreateNewMethod {
   public void logout () throws InterruptedException{
 		objCreateProject.getUserLogged().click();
 		objCreateProject.getLogout_btn().click();	
-		Thread.sleep(6000);
-		objCreateProject.getUserNametxt().clear();
+//		Thread.sleep(6000);
+//		objCreateProject.getUserNametxt().clear();
 	
 	}
   
@@ -679,6 +679,13 @@ public String getPopupText() {
 	 
 	 public WebElement getUsername() {
 			return objCreateProject.getUserNametxt();
+		}
+	 public WebElement getTooltip() {
+			return objCreateProject.getTooltip();
+		}
+	 
+	 public String getTooltips() {
+			return objCreateProject.getTooltip().getText();
 		}
 	 
 	 public void clickSubmitReview(){
