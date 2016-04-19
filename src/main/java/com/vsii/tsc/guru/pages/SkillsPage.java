@@ -57,6 +57,58 @@ public class SkillsPage {
 	@FindBy(xpath = "//table/tbody//td[@data-field='name' and text()='Adobe Illustrator']/../th[@class='oe_list_record_selector']/input[@type='checkbox']")
 	private WebElement selectedToDeleteRecord;
 	
+	//WebElement of Create button
+	@FindBy(xpath = "//div[@class='oe_list_buttons']/button[contains(text(),'Create')]")
+	private WebElement createButton;
+	
+	public WebElement getShareLink() {
+		return shareLink;
+	}
+
+	public void setShareLink(WebElement shareLink) {
+		this.shareLink = shareLink;
+	}
+
+	public WebElement getEmbedLink() {
+		return embedLink;
+	}
+
+	public void setEmbedLink(WebElement embedLink) {
+		this.embedLink = embedLink;
+	}
+
+	public WebElement getExportLink() {
+		return exportLink;
+	}
+
+	public void setExportLink(WebElement exportLink) {
+		this.exportLink = exportLink;
+	}
+
+	public WebElement getDeleteLink() {
+		return deleteLink;
+	}
+
+	public void setDeleteLink(WebElement deleteLink) {
+		this.deleteLink = deleteLink;
+	}
+
+	public WebElement getSelectedToDeleteRecord() {
+		return selectedToDeleteRecord;
+	}
+
+	public void setSelectedToDeleteRecord(WebElement selectedToDeleteRecord) {
+		this.selectedToDeleteRecord = selectedToDeleteRecord;
+	}
+
+	public WebElement getCreateButton() {
+		return createButton;
+	}
+
+	public void setCreateButton(WebElement createButton) {
+		this.createButton = createButton;
+	}
+
 	public WebElement getCheckAllCbx() {
 		return checkAllCbx;
 	}

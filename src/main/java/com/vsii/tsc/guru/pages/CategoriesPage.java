@@ -44,8 +44,8 @@ public class CategoriesPage {
 	//WebElement of Delete button
 	@FindBy(xpath = "//div[not(@style) and @class='oe_form_dropdown_section']//a[contains(text(),'Delete')]")
 	private WebElement deleteBtn;
-	
 	//WebElement of Create button
+	
 	@FindBy(xpath = "//div[@class='oe_list_buttons']/button[contains(text(),'Create')]")
 	private WebElement createButton;
 	

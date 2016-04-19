@@ -29,6 +29,18 @@ public class SettingsPage {
 	@FindBy(xpath = "/html/body/div[1]/table/tbody/tr[3]/td[1]/div[1]/div[9]/ul/li[6]/a/span[contains(text(),'Employee Skills')]")
 	private WebElement employeeSkillsSection;
 
+	//WebElement of Create button
+	@FindBy(xpath = "//div[@class='oe_list_buttons']/button[contains(text(),'Create')]")
+	private WebElement createBtn;
+	
+	public WebElement getCreateBtn() {
+		return createBtn;
+	}
+
+	public void setCreateBtn(WebElement createBtn) {
+		this.createBtn = createBtn;
+	}
+
 	public WebElement getSkillsSection() {
 		return skillsSection;
 	}

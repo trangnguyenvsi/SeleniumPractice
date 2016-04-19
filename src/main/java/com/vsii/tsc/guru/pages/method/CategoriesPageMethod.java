@@ -132,4 +132,5 @@ public class CategoriesPageMethod {
 	public void clickCreateBtn() {
 		objCategoriesPage.getCreateButton().click();
 	}
+	
 }

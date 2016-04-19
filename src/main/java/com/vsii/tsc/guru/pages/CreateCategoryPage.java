@@ -7,8 +7,12 @@ import org.openqa.selenium.support.FindBy;
 
 public class CreateCategoryPage {
 	//WebElement of Category Name textbox
-	@FindBy(id = "oe-field-input-119")
+	@FindBy(xpath = "//div[@class='oe_form_nosheet']/span[contains(@class,'oe_form_field_char')]/input[@type='text']")
 	private WebElement categoryNameTbx;
+	
+	//WebElement of Category Name textbox with blank value
+	@FindBy(xpath = "//div[@class='oe_form_nosheet']/span[contains(@class,'oe_form_field_char')]/input[@type='text' and not(text())]")
+	private WebElement categoryNameBlankTbx;
 	
 	//WebElement of Category Type combobox
 	@FindBy(name = "type")
@@ -25,6 +29,27 @@ public class CreateCategoryPage {
 	//WebElement of Category description textarea
 	@FindBy(xpath = "//div[@class='oe_form_field oe_form_field_text']/textarea")
 	private WebElement categoryDescriptionTextarea;
+	
+	public WebElement getCategoryNameBlankTbx() {
+		return categoryNameBlankTbx;
+	}
+
+	public void setCategoryNameBlankTbx(WebElement categoryNameBlankTbx) {
+		this.categoryNameBlankTbx = categoryNameBlankTbx;
+	}
+
+	public WebElement getCategoryDescriptionBlankTextarea() {
+		return categoryDescriptionBlankTextarea;
+	}
+
+	public void setCategoryDescriptionBlankTextarea(
+			WebElement categoryDescriptionBlankTextarea) {
+		this.categoryDescriptionBlankTextarea = categoryDescriptionBlankTextarea;
+	}
+
+	//WebElement of Category description textarea with blank value
+	@FindBy(xpath = "//div[@class='oe_form_field oe_form_field_text']/textarea[not(text())]")
+	private WebElement categoryDescriptionBlankTextarea;
 	
 	//WebElement of Required field notification
 	@FindBy(xpath = "//div[contains(@class,'oe_notification')]/div[@style='']/h1[text()='The following fields are invalid:']")

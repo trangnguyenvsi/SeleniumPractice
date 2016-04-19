@@ -99,5 +99,16 @@ public class CreateCategoryPageMethod {
 	public void acceptPopup() {
 		CommonMethods.acceptPopup();
 	}
+	
+	//Get Element Category Name textbox with blank value
+	public WebElement getCategoryNameBlankTbx() {
+		return objCreateCategoryPage.getCategoryNameBlankTbx();
+	}
+	
+	//Get Element Category Description with blank value
+	public WebElement getCategoryDescriptionBlankTextarea() {
+		return objCreateCategoryPage.getCategoryDescriptionBlankTextarea();
+	}
+
 
 }

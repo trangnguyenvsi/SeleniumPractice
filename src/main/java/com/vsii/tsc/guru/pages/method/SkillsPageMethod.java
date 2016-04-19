@@ -109,4 +109,10 @@ public class SkillsPageMethod {
 	public void acceptPopup() {
 		CommonMethods.acceptPopup();
 	}
+	
+	//Click Create button
+	public void clickCreateBtn() {
+		objSkillsPage.getCreateButton().click();
+	}
+
 }
