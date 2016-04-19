@@ -9,8 +9,8 @@
 		<classes>
 			<class name="com.vsii.tsc.utility.TestBase" />
 			<class name="com.vsii.tsc.guru.testcase.Webservice" />
-<!-- 		<class name="com.vsii.tsc.guru.testcase.CreateTask_PM" />
-			<class name="com.vsii.tsc.guru.testcase.CreateTask_Member" />    -->
+ 		<class name="com.vsii.tsc.guru.testcase.CreateTask_PM" />
+			<class name="com.vsii.tsc.guru.testcase.CreateTask_Member" />    
 <!-- 		<class name="com.vsii.tsc.guru.testcase.Login" /> -->
 		</classes>
 	</test>
