@@ -119,7 +119,7 @@ public class CreateNewProject {
  
     }
 
-  @Test(priority = 0, description = "Create New Project with valid data", dataProvider = "dpNewProject", dataProviderClass = TestData.class)
+//  @Test(priority = 0, description = "Create New Project with valid data", dataProvider = "dpNewProject", dataProviderClass = TestData.class)
     public void PM06(String projectName, String refContract, String projectCode, String privacy, String projectManager,
             String appEffort, String department, String projectType, String commDetails, String customer)
                     throws Exception {
@@ -141,14 +141,15 @@ public class CreateNewProject {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
+        objCreateProjectMethod.logout();
     }
     
-  @Test(priority = 1, description = "Create New Project with invalid data", dataProvider = "dpInvalidCreate1", dataProviderClass = TestData.class)
+//  @Test(priority = 1, description = "Create New Project with invalid data", dataProvider = "dpInvalidCreate1", dataProviderClass = TestData.class)
     public void PM07(String projectName, String refContract, String projectCode, String privacy, String projectManager,
             String appEffort, String department2, String projectType, String commDetails, String customer)
                     throws Exception {
         TestBase.methodName = "PM07";
+        objCreateProjectMethod.getUsername().clear();
         objLogin.loginToManagerPage("phuongnt3", "12345678");
         CommonMethods.waitUntil(objCreateProjectMethod.getmnProject());
         objCreateProjectMethod.clickProjectmn();
@@ -157,6 +158,9 @@ public class CreateNewProject {
         objCreateProjectMethod.createNewProject2(projectName, refContract, projectCode, privacy, projectManager,
                 appEffort, department2, projectType, commDetails, customer);
         Assert.assertTrue(objCreateProjectMethod.getErrorMes().contains("Access Denied"));
+        objCreateProjectMethod.logout();
+//        Thread.sleep(1000);
+        objCreateProjectMethod.closePopup();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
@@ -172,6 +176,7 @@ public class CreateNewProject {
                     throws Exception {
 
         TestBase.methodName = "PM08";
+        objCreateProjectMethod.getUsername().clear();
         objLogin.loginToManagerPage("phuongnt3", "12345678");
         CommonMethods.waitUntil(objCreateProjectMethod.getmnProject());
         objCreateProjectMethod.clickProjectmn();
@@ -179,14 +184,21 @@ public class CreateNewProject {
         objCreateProjectMethod.clickCreatebtn();
         objCreateProjectMethod.createNewProject(projectName, refContract, projectCode, privacy, projectManager,
         appEffort, department, projectType, commDetails, customer);
-        Assert.assertTrue(objCreateProjectMethod.getPopupText().contains("Following fields are invalid"));
+//        Assert.assertTrue(objCreateProjectMethod.getTooltips().contains("The following fields are invalid:"));
+        String toolTipText = objCreateProjectMethod.getTooltip().getText();
+//		Assert.assertEquals("x"+"\n"+"The following fields are invalid:" +"\n"+ "Project Name" +"\n"+ "Project Type"+ "\n"+ "Commercial Details", toolTipText);
+        Assert.assertTrue(objCreateProjectMethod.getTooltip().isDisplayed());
+        Thread.sleep(2000);
+		objCreateProjectMethod.logout();
+		objCreateProjectMethod.closePopup();
+        objCreateProjectMethod.getUsername().clear();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
+        
     }
     
   @Test(priority = 3, description = "Edit Project with valid data", dataProvider = "dpEditProject", dataProviderClass = TestData.class)
@@ -211,7 +223,8 @@ public class CreateNewProject {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
     }
     
 //  Case 10 always wrong: Edit successfully instead of changing department
@@ -878,7 +891,7 @@ public class CreateNewProject {
 	public void afterMethod(ITestResult testResult) throws Exception {
 		CommonOperations.getMethodTestResult(testResult);
 		CommonOperations.takePicture();
-		objCreateProjectMethod.logout();
+//		objCreateProjectMethod.logout();
 	}
 
 
