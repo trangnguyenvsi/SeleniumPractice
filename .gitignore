@@ -1,1 +1,7 @@
 /target/
+/testcase/
+/test-output/
+/ISMS_testng.xml
+/.project
+/pom.xml
+/testng.xml
