@@ -262,6 +262,10 @@ public class ProjectCreateNew {
 	@FindBy (xpath= ".//*[@class='oe_form_field_status oe_form_status oe_form_required']/li[4]/span[1]")
 	private WebElement closeStt;
 	
+	// tool tip
+	
+	@FindBy (xpath= "(html/body/div[1]/div[1]/div[1])[1]")
+	private WebElement tooltip;
 	//Element on page when creating new success
 	
 	@FindBy (xpath= ".//*[contains(text(),'Submit to Review')]")
@@ -1332,6 +1336,14 @@ public class ProjectCreateNew {
 
 	public void setNextpagebtn(WebElement nextpagebtn) {
 		this.nextpagebtn = nextpagebtn;
+	}
+
+	public WebElement getTooltip() {
+		return tooltip;
+	}
+
+	public void setTooltip(WebElement tooltip) {
+		this.tooltip = tooltip;
 	}
 	  
 	
