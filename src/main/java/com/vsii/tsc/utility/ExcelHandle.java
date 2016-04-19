@@ -325,7 +325,7 @@ public class ExcelHandle {
 				sheet.getRow(rowNum).getCell(resultTestCol).setCellValue(result.toUpperCase() + "ED");
 				rowNum++;
 			}
-			if (tc.getTcImageResults().size() > 1) 
+			if (tc.getTcImageResults().size() >= 1) 
 			{
 				j = rowTC + i - 1;
 			}
