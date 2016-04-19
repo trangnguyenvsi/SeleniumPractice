@@ -19,7 +19,7 @@ import com.vsii.tsc.guru.testdata.TestData;
 import com.vsii.tsc.utility.CommonOperations;
 import com.vsii.tsc.utility.TestBase;
 
-public class SkillsManagementHome extends TestBase{
+public class SkillsManagement extends TestBase{
 	LoginPageMethod objLoginPage;
 	PMHomePageMethod objPMHomePage;
 	SettingsPageMethod objSettingsPage;
