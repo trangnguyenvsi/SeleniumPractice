@@ -124,7 +124,7 @@ public class CategoriesPageMethod {
 	}
 	
 	//Select Ok button of alert
-	public void acceptPopup() {
+	public void acceptPopup() throws InterruptedException {
 		CommonMethods.acceptPopup();
 	}
 	

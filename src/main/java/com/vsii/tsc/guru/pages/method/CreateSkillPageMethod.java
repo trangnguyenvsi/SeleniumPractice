@@ -39,8 +39,8 @@ public class CreateSkillPageMethod {
 	
 	//Input Skill Domain
 	public void inputSkillDomain(String skillDomain) {
-		objCreateSkillPage.getCreatedSkillDomain().clear();
-		objCreateSkillPage.getCreatedSkillDomain().sendKeys(skillDomain);
+		objCreateSkillPage.getSkillDomainTbx().clear();
+		objCreateSkillPage.getSkillDomainTbx().sendKeys(skillDomain);
 	}
 		
 	//Input text to Skill Description textarea
@@ -51,7 +51,7 @@ public class CreateSkillPageMethod {
 	
 	//Get Element Required Field Notification
 	public WebElement getRequiredNotification(String requiredField1, String requiredField2) {
-		return objCreateSkillPage.getRequiredNotification().findElement(By.xpath("/../ul/li[contains(text(),'" + requiredField1 +"')]/../li[contains(text(),'" + requiredField2 + "')]"));
+		return driver.findElement(By.xpath("//div[contains(@class,'oe_notification')]/div[@style='']/h1[text()='The following fields are invalid:']/../ul/li[contains(text(),'" + requiredField1 +"')]/../li[contains(text(),'" + requiredField2 + "')]"));
 	}
 	
 	//Get value of Created Skill Name
@@ -85,7 +85,7 @@ public class CreateSkillPageMethod {
 	}
 	
 	//Select Ok button of alert
-	public void acceptPopup() {
+	public void acceptPopup() throws InterruptedException {
 		CommonMethods.acceptPopup();
 	}
 	
@@ -97,6 +97,11 @@ public class CreateSkillPageMethod {
 	//Get Element Skill Description with blank value
 	public WebElement getSkillDescriptionBlankTextarea() {
 		return objCreateSkillPage.getSkillDescriptionBlankTextarea();
+	}
+	
+	//Get Element Edit button
+	public WebElement getEditBtn() {
+		return objCreateSkillPage.getEditBtn();
 	}
 
 }

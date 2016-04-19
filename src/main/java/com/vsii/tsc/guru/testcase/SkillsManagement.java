@@ -182,7 +182,7 @@ public class SkillsManagement extends TestBase{
 	}
 	
 	@Test(priority = 8, description = "Verify that user can delete a Skill from Skills List", dataProvider = "deleteSkill", dataProviderClass = TestData.class, groups = "ProjectManagerHome")
-	public void SM_07 (String skillName, String skillDomain)  {
+	public void SM_07 (String skillName, String skillDomain) throws InterruptedException  {
 		objSkillsPage.clickMoreBtn();
 		objSkillsPage.clickDeleteBtn();
 		objSkillsPage.acceptPopup();
@@ -224,15 +224,15 @@ public class SkillsManagement extends TestBase{
 	@Test(priority = 11, description = "Verify that user can postpone a request to delete a Category", dataProvider = "deleteCategory", dataProviderClass = TestData.class, groups = "Category")
 	public void SM_12 (String categoryName, String categoryType, String parentCategory) throws InterruptedException {
 		objCategoriesPage.cancelPopup();
-		
+		Thread.sleep(500);
 		Assert.assertTrue(objCategoriesPage.getCategoryToDeleteCbx(categoryName, categoryType, parentCategory).isDisplayed());
 	}
 	
 	@Test(priority = 12, description = "Verify that user can delete a category from Categories List", dataProvider = "deleteCategory", dataProviderClass = TestData.class, groups = "Category")
-	public void SM_11 (String categoryName, String categoryType, String parentCategory) {
+	public void SM_11 (String categoryName, String categoryType, String parentCategory) throws InterruptedException {
 		objCategoriesPage.clickDeleteBtn();
 		objCategoriesPage.acceptPopup();
-		
+		Thread.sleep(1000);
 		Assert.assertFalse(objCategoriesPage.getCategoryToDeleteCbx(categoryName, categoryType, parentCategory).isDisplayed());
 	}
 	
@@ -256,6 +256,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 15, description = "Verify that user can create a new category", dataProvider = "createCategory", dataProviderClass = TestData.class, groups = "Category")
 	public void SM_15(String categoryName, String categoryType, String categoryDescription) {
+		CommonMethods.waitUntil(objCreateCategoryPage.getCategoryNameTbx());
 		objCreateCategoryPage.inputCategoryName(categoryName);
 		objCreateCategoryPage.selectCategoryType(categoryType);
 		objCreateCategoryPage.inputCategoryDescription(categoryDescription);
@@ -277,6 +278,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 18, description = "Verify that user can modifiy the information in a category", dataProvider = "editCategory", dataProviderClass = TestData.class, groups = "Category")
 	public void SM_18(String editedCategoryName, String editedCategoryType, String editedCategoryDescription) {
+		CommonMethods.waitUntil(objCreateCategoryPage.getEditBtn());
 		objCreateCategoryPage.clickEditBtn();
 		objCreateCategoryPage.inputCategoryName(editedCategoryName);
 		objCreateCategoryPage.selectCategoryType(editedCategoryType);
@@ -291,6 +293,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 19, description = "Verify that the system confirm before discarding edit a category", groups = "Category")
 	public void SM_19() {
+		CommonMethods.waitUntil(objCreateCategoryPage.getEditBtn());
 		objCreateCategoryPage.clickEditBtn();
 		objCreateCategoryPage.inputCategoryName("Test123");
 		objCreateCategoryPage.clickDiscardBtn();
@@ -304,7 +307,7 @@ public class SkillsManagement extends TestBase{
 	public void SM_21(String categoryName, String categoryType, String categoryDescription) throws InterruptedException {
 		objCreateCategoryPage.clickDiscardBtn();
 		objCreateCategoryPage.acceptPopup();
-		
+		Thread.sleep(2000);
 		Assert.assertTrue(objCreateCategoryPage.getCreatedCategoryName(categoryName).equals(categoryName));
 		Assert.assertTrue(objCreateCategoryPage.getCreatedCategoryType(categoryType).equals(categoryType));
 		Assert.assertTrue(objCreateCategoryPage.getCreatedCategoryDescription(categoryDescription).equals(categoryDescription));
@@ -349,6 +352,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 25, description = "Verify that user can modifiy the information in a category", dataProvider = "editCategory", dataProviderClass = TestData.class, groups = "Skill")
 	public void SM_25(String editedSkillName, String editedSkillDomain, String editedSkillDescription) {
+		CommonMethods.waitUntil(objCreateSkillPage.getEditBtn());
 		objCreateSkillPage.clickEditBtn();
 		objCreateSkillPage.inputSkillName(editedSkillName);
 		objCreateSkillPage.inputSkillDomain(editedSkillDomain);
@@ -362,6 +366,7 @@ public class SkillsManagement extends TestBase{
 
 	@Test(priority = 26, description = "Verify that the system confirm before discarding edit a category", groups = "Skill")
 	public void SM_26() {
+		CommonMethods.waitUntil(objCreateSkillPage.getEditBtn());
 		objCreateSkillPage.clickEditBtn();
 		objCreateSkillPage.inputSkillName("Test123");
 		objCreateSkillPage.clickDiscardBtn();

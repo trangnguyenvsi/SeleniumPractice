@@ -91,7 +91,8 @@ public class CommonMethods {
 	}
 	
 	//Accept alert
-	public static void acceptPopup () {
+	public static void acceptPopup () throws InterruptedException {
+		Thread.sleep(1000);
 		Alert alert = TestBase.driver.switchTo().alert();
 		alert.accept();
 	}

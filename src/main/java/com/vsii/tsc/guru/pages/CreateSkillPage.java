@@ -12,7 +12,7 @@ public class CreateSkillPage {
 	@FindBy(xpath = "//div[@class='oe_form_nosheet']/span[contains(@class,'oe_form_field_char')]/input[@type='text']")
 	private WebElement skillNameTbx;
 	
-	//WebElement of Skill Domain combobox
+	//WebElement of Skill Domain textbox
 	@FindBy(xpath = "//div[@class='oe_form_nosheet']//input[@class='ui-autocomplete-input']")
 	private WebElement skillDomainTbx;
 	

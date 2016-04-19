@@ -39,6 +39,11 @@ public class CreateCategoryPageMethod {
 		objCreateCategoryPage.getCategoryNameTbx().sendKeys(categoryName);
 	}
 	
+	//Get Element Category Name textbox
+	public WebElement getCategoryNameTbx() {
+		return objCreateCategoryPage.getCategoryNameTbx();
+	}
+	
 	//Get Category Type combobox
 	public Select getCategoryTypeCbx() {
 		Select categoryTypeCbx = new Select(objCreateCategoryPage.getCategoryTypeCbx());
@@ -62,7 +67,7 @@ public class CreateCategoryPageMethod {
 	
 	//Get Element Required Field Notification
 	public WebElement getRequiredNotification(String requiredField1, String requiredField2) {
-		return objCreateCategoryPage.getRequiredNotification().findElement(By.xpath("/../ul/li[contains(text(),'" + requiredField1 +"')]/../li[contains(text(),'" + requiredField2 + "')]"));
+		return driver.findElement(By.xpath("//div[contains(@class,'oe_notification')]/div[@style='']/h1[text()='The following fields are invalid:']/../ul/li[contains(text(),'" + requiredField1 +"')]/../li[contains(text(),'" + requiredField2 + "')]"));
 	}
 	
 	//Get value of Created Category Name
@@ -90,13 +95,18 @@ public class CreateCategoryPageMethod {
 		objCreateCategoryPage.getDiscardBtn().click();
 	}
 	
+	//Get Element Edit button
+	public WebElement getEditBtn() {
+		return objCreateCategoryPage.getEditBtn();
+	}
+	
 	//Select Cancel button of alert
 	public void cancelPopup() throws InterruptedException {
 		CommonMethods.cancelPopup();
 	}
 	
 	//Select Ok button of alert
-	public void acceptPopup() {
+	public void acceptPopup() throws InterruptedException {
 		CommonMethods.acceptPopup();
 	}
 	

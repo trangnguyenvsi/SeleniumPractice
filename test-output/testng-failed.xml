@@ -6,17 +6,24 @@
   </listeners>
   <test name="Skill management(failed)">
     <classes>
-      <class name="com.vsii.tsc.guru.testcase.SkillsManagementHome">
+      <class name="com.vsii.tsc.guru.testcase.SkillsManagement">
         <methods>
-          <include name="teardownSM_02"/>
+          <include name="finishProjectManagerHome"/>
           <include name="teardownSuite"/>
-          <include name="SM_08" invocation-numbers="0"/>
+          <include name="SM_26"/>
           <include name="setupClass"/>
           <include name="SM_07" invocation-numbers="0"/>
+          <include name="SM_11" invocation-numbers="0"/>
+          <include name="SM_25" invocation-numbers="0"/>
+          <include name="SM_28"/>
           <include name="setupSuite"/>
+          <include name="SM_12" invocation-numbers="0"/>
+          <include name="finishCategory"/>
+          <include name="SM_24" invocation-numbers="0"/>
+          <include name="finishEmployeeHome"/>
           <include name="afterMethod"/>
         </methods>
-      </class> <!-- com.vsii.tsc.guru.testcase.SkillsManagementHome -->
+      </class> <!-- com.vsii.tsc.guru.testcase.SkillsManagement -->
     </classes>
   </test> <!-- Skill management(failed) -->
 </suite> <!-- Failed suite [Suite] -->
