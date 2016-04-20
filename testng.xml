@@ -22,13 +22,32 @@
 			</class>
 		</classes>
 	</test>
+	
+	<test name="Project Management" preserve-order="true">
+		<classes>
+			<class name="com.vsii.tsc.utility.TestBase" />
+			<class name="com.vsii.tsc.guru.testcase.CreateNewProject" >
+			<methods>
+				<include name="PM01" />
+				<include name="PM02" />
+				<include name="PM03" />
+				<include name="PM04" />
+				<include name="PM05" />
+				<include name="PM06" />
+				<include name="PM07" />
+				<include name="PM08" />
+			</methods>
+			</class>
+		</classes>
+	</test>
 
-	<!-- <test name="Project Management" preserve-order="true"> -->
-	<!-- <classes> -->
-	<!-- <class name="com.vsii.tsc.utility.TestBase" /> -->
-	<!-- <class name="com.vsii.tsc.guru.testcase.CreateNewProject" /> -->
-	<!-- </classes> -->
-	<!-- </test> -->
+<!-- 	<test name="Project Management" preserve-order="true"> -->
+<!-- 	<classes> -->
+<!-- 	<class name="com.vsii.tsc.utility.TestBase" /> -->
+<!-- 	<class name="com.vsii.tsc.guru.testcase.CreateNewProject" /> -->
+	
+<!-- 	</classes> -->
+<!-- 	</test> -->
 
 	<!-- <test name="Skill management" preserve-order="true"> -->
 	<!-- <classes> -->
