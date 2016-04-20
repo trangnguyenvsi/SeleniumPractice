@@ -419,6 +419,8 @@ public class CreateNewProject {
     // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
     }
     // Case 17: Verify function Approve a Project
   @Test(priority = 11, description = "Verify function Approve a Project")
@@ -451,6 +453,8 @@ public class CreateNewProject {
     // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
     }
     
     // Case 18: Verify that PMO can not approve a Project unless PMO input approve effort
@@ -481,6 +485,8 @@ public class CreateNewProject {
         // TODO Auto-generated catch block
                 e.printStackTrace();
             }
+            objCreateProjectMethod.logout();
+            objCreateProjectMethod.getUsername().clear();
         }
         
         // Case 19: Verify function Refuse a Project
@@ -515,6 +521,8 @@ public class CreateNewProject {
         // TODO Auto-generated catch block
                 e.printStackTrace();
             }
+            objCreateProjectMethod.logout();
+            objCreateProjectMethod.getUsername().clear();
         }
         
     // Case 20: Verify that when Edit an in progress project with Not required fields, project is not change to NEW
@@ -548,6 +556,8 @@ public class CreateNewProject {
                 // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
+            objCreateProjectMethod.logout();
+            objCreateProjectMethod.getUsername().clear();
                 }
         
     // Case 21: Verify function Close a Project 
