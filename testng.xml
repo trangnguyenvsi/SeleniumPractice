@@ -5,37 +5,38 @@
 		<listener class-name="com.vsii.tsc.utility.Reports" />
 	</listeners>
 
-	<test name="WebService" preserve-order="true">
-		<classes>
-			<class name="com.vsii.tsc.utility.TestBase" />
-			<class name="com.vsii.tsc.guru.testcase.Webservice" >
-			<methods>
-				<include name="createERPProject" />
-				<include name="W01" />
-				<include name="W02" />
-				<include name="W03" />
-				<include name="W04" />
-				<include name="W05" />
-				<include name="W06" />
-				<include name="W07" />
-			</methods>
-			</class>
-		</classes>
-	</test>
+<!-- 	<test name="WebService" preserve-order="true"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.vsii.tsc.utility.TestBase" /> -->
+<!-- 			<class name="com.vsii.tsc.guru.testcase.Webservice" > -->
+<!-- 			<methods> -->
+<!-- 				<include name="createERPProject" /> -->
+<!-- 				<include name="W01" /> -->
+<!-- 				<include name="W02" /> -->
+<!-- 				<include name="W03" /> -->
+<!-- 				<include name="W04" /> -->
+<!-- 				<include name="W05" /> -->
+<!-- 				<include name="W06" /> -->
+<!-- 				<include name="W07" /> -->
+<!-- 			</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 	
 	<test name="Project Management" preserve-order="true">
 		<classes>
 			<class name="com.vsii.tsc.utility.TestBase" />
 			<class name="com.vsii.tsc.guru.testcase.CreateNewProject" >
 			<methods>
-				<include name="PM01" />
-				<include name="PM02" />
-				<include name="PM03" />
-				<include name="PM04" />
-				<include name="PM05" />
-				<include name="PM06" />
-				<include name="PM07" />
-				<include name="PM08" />
+<!-- 				<include name="PM04" /> -->
+<!-- 				<include name="PM05" /> -->
+<!-- 				<include name="PM06" /> -->
+<!-- 				<include name="PM07" /> -->
+<!-- 				<include name="PM08" /> -->
+<!-- 				<include name="PM09" /> -->
+<!-- 				<include name="PM012" /> -->
+<!-- 				<include name="PM13" /> -->
+				<include name="PM13" />
 			</methods>
 			</class>
 		</classes>
