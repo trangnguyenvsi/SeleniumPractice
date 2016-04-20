@@ -163,6 +163,7 @@ public class DetailTaskPageMethod {
 		this.inputTagOfProject(tagOfProjectDrop);
 		this.inputDescription(descriptionTxtA);
 		this.clickAddItemButt();
+		Thread.sleep(4000);
 		this.inputWorkSummary(workSummaryTxt);
 		this.inputTimeSpent(timeSpentTxt);
 		this.inputDate(dateTxt);

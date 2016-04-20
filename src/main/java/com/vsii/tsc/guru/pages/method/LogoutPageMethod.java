@@ -17,8 +17,9 @@ public class LogoutPageMethod {
 		PageFactory.initElements(driver, objLoginPage);
 	} 
 	
-	public void performLogout() {
+	public void performLogout() throws InterruptedException {
 		objLoginPage.getUserNametxt().click();
 		objLoginPage.getLogoutButt().click();
+		Thread.sleep(5000);
 	}
 }
