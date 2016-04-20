@@ -46,7 +46,7 @@ public class PMHomePageMethod {
 	
 	//Get Humman Resources Link text element
 	public WebElement getHummanResourcesLink() {
-		return objPMHomePage.getHummanResourcesLink();
+		return objPMHomePage.getHumanResourcesLink();
 	}
 
 	//Get ISMS Helpdesk Link text element
@@ -82,5 +82,10 @@ public class PMHomePageMethod {
 	//Get Account Information text
 	public String getAccountInforUsername() {
 		return objPMHomePage.getAccountInforLink().getText();
+	}
+	
+	//Click Human Resources linktext
+	public void clickHumanResourcesLink() {
+		objPMHomePage.getHumanResourcesLink().click();
 	}
 }

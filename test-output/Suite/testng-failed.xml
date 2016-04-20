@@ -9,19 +9,37 @@
       <class name="com.vsii.tsc.guru.testcase.SkillsManagement">
         <methods>
           <include name="finishProjectManagerHome"/>
-          <include name="teardownSuite"/>
-          <include name="SM_26"/>
-          <include name="setupClass"/>
-          <include name="SM_07" invocation-numbers="0"/>
+          <include name="SM_19"/>
+          <include name="SM_15" invocation-numbers="0"/>
+          <include name="SM_18" invocation-numbers="0"/>
           <include name="SM_11" invocation-numbers="0"/>
-          <include name="SM_25" invocation-numbers="0"/>
-          <include name="SM_28"/>
+          <include name="SM_14"/>
           <include name="setupSuite"/>
           <include name="SM_12" invocation-numbers="0"/>
           <include name="finishCategory"/>
+          <include name="SM_10" invocation-numbers="0"/>
+          <include name="SM_13"/>
+          <include name="finishSkill"/>
+          <include name="afterMethod"/>
+          <include name="teardownSuite"/>
+          <include name="SM_08" invocation-numbers="0"/>
+          <include name="SM_09" invocation-numbers="0"/>
+          <include name="SM_04"/>
+          <include name="SM_26"/>
+          <include name="setupClass"/>
+          <include name="SM_07" invocation-numbers="0"/>
+          <include name="SM_05"/>
+          <include name="SM_22" invocation-numbers="0"/>
+          <include name="SM_03" invocation-numbers="0"/>
+          <include name="SM_25" invocation-numbers="0"/>
+          <include name="SM_06" invocation-numbers="0"/>
+          <include name="SM_28" invocation-numbers="0"/>
+          <include name="SM_01"/>
+          <include name="SM_23"/>
+          <include name="SM_21" invocation-numbers="0"/>
+          <include name="SM_02" invocation-numbers="0"/>
           <include name="SM_24" invocation-numbers="0"/>
           <include name="finishEmployeeHome"/>
-          <include name="afterMethod"/>
         </methods>
       </class> <!-- com.vsii.tsc.guru.testcase.SkillsManagement -->
     </classes>

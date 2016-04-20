@@ -24,7 +24,7 @@ public class PMHomePage {
 
 	//WebElement of Human Resources Linktext
 	@FindBy(xpath = "//a[contains(@class,'oe_menu_toggler')]/span[contains(text(),'Human Resources')]")
-	private WebElement hummanResourcesLink;
+	private WebElement humanResourcesLink;
 
 	//WebElement of ISMS Helpdesk
 	@FindBy(xpath = "//a[contains(@class,'oe_menu_toggler')]/span[contains(text(),'ISMS Helpdesk')]")
@@ -86,12 +86,12 @@ public class PMHomePage {
 		this.invoicingLink = invoicingLink;
 	}
 
-	public WebElement getHummanResourcesLink() {
-		return hummanResourcesLink;
+	public WebElement getHumanResourcesLink() {
+		return humanResourcesLink;
 	}
 
 	public void setHummanResourcesLink(WebElement hummanResourcesLink) {
-		this.hummanResourcesLink = hummanResourcesLink;
+		this.humanResourcesLink = hummanResourcesLink;
 	}
 
 	public WebElement getIsmsHelpdeskLink() {
