@@ -4,7 +4,12 @@
 	<listeners>
 		<listener class-name="com.vsii.tsc.utility.Reports" />
 	</listeners>
-
+	<test name="Task Management" preserve-order="true">
+		<classes>
+			<class name="com.vsii.tsc.utility.TestBase" />
+			<class name="com.vsii.tsc.guru.testcase.CreateTask" />
+		</classes>
+	</test>
 <!-- 	<test name="WebService" preserve-order="true"> -->
 <!-- 		<classes> -->
 <!-- 			<class name="com.vsii.tsc.utility.TestBase" /> -->
