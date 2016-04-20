@@ -396,7 +396,7 @@ public class ProjectCreateNew {
 	@FindBy(xpath=".//*[@class='oe_searchview_filters oe_searchview_section']/div/ul[2]/li[3]")
 	private WebElement doneStt;
 	
-	@FindBy(xpath=".//td[contains(text(),'Project with New or Review Stt')]")
+	@FindBy(xpath="//tr[6]/td[3]")
 	private WebElement newProjectStt;
 	
 	@FindBy(xpath=".//td[contains(text(),'Project Approving')]")
