@@ -22,4 +22,9 @@ public class LogoutPageMethod {
 		objLoginPage.getLogoutButt().click();
 		Thread.sleep(5000);
 	}
+	
+	public void logout() {
+		objLoginPage.getUserNametxt().click();
+		objLoginPage.getLogoutButt().click();
+	}
 }

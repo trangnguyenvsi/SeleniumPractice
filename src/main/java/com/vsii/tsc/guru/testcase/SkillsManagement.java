@@ -81,7 +81,7 @@ public class SkillsManagement extends TestBase{
 	@AfterGroups(groups = "EmployeeHome")
 	//Finish Employee Home group and Intitialize Project Manager Home group
 	public void finishEmployeeHome() {
-		objLogoutPage.performLogout();
+		objLogoutPage.logout();
 	}
 	
 	@Test(priority = 3, description = "Verify PM can access OpenERP correctly", dataProvider = "projectManagerLogin", dataProviderClass = TestData.class, groups = "ProjectManagerHome")
@@ -194,7 +194,7 @@ public class SkillsManagement extends TestBase{
 	@AfterGroups(groups = "ProjectManagerHome")
 	//Finish Project Manager Home group and Intitialize Category group
 	public void finishProjectManagerHome() {
-		objLogoutPage.performLogout();
+		objLogoutPage.logout();
 	}
 	
 	@Test(priority = 9, description = "Verify that Categories List is displayed correctly", dataProvider = "projectManagerLogin", dataProviderClass = TestData.class, groups = "Category")
@@ -315,8 +315,8 @@ public class SkillsManagement extends TestBase{
 
 	@AfterGroups(groups = "Category")
 	//Finish Category group and Intitialize Skill group
-	public void finishCategory() {
-		objLogoutPage.performLogout();
+	public void finishCategory()  {
+		objLogoutPage.logout();
 	}
 
 	@Test(priority = 22, description = "Verify that form 'New' is opened correctly in Skills section", dataProvider = "projectManagerLogin", dataProviderClass = TestData.class, groups = "Skill")
@@ -389,7 +389,7 @@ public class SkillsManagement extends TestBase{
 	@AfterGroups(groups = "Skill")
 	//Finish Skill group and Intitialize  group
 	public void finishSkill() {
-		objLogoutPage.performLogout();
+		objLogoutPage.logout();
 	}
 
 	
