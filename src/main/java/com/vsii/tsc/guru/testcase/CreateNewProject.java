@@ -119,7 +119,7 @@ public class CreateNewProject {
  
     }
 
-//  @Test(priority = 0, description = "Create New Project with valid data", dataProvider = "dpNewProject", dataProviderClass = TestData.class)
+  @Test(priority = 0, description = "Create New Project with valid data", dataProvider = "dpNewProject", dataProviderClass = TestData.class)
     public void PM06(String projectName, String refContract, String projectCode, String privacy, String projectManager,
             String appEffort, String department, String projectType, String commDetails, String customer)
                     throws Exception {
@@ -144,7 +144,7 @@ public class CreateNewProject {
         objCreateProjectMethod.logout();
     }
     
-//  @Test(priority = 1, description = "Create New Project with invalid data", dataProvider = "dpInvalidCreate1", dataProviderClass = TestData.class)
+  @Test(priority = 1, description = "Create New Project with invalid data", dataProvider = "dpInvalidCreate1", dataProviderClass = TestData.class)
     public void PM07(String projectName, String refContract, String projectCode, String privacy, String projectManager,
             String appEffort, String department2, String projectType, String commDetails, String customer)
                     throws Exception {
