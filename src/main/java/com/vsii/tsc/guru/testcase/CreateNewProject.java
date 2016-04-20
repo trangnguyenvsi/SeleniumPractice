@@ -229,7 +229,7 @@ public class CreateNewProject {
     }
     
 //  Case 10 always wrong: Edit successfully instead of changing department
-  @Test(priority = 4, description = "Edit Project with invalid data 1", dataProvider = "dpEditProject1", dataProviderClass = TestData.class)
+  @Test(priority = 28, description = "Edit Project with invalid data 1", dataProvider = "dpEditProject1", dataProviderClass = TestData.class)
     public void PM10(String department)
                     throws Exception {
 
@@ -253,10 +253,12 @@ public class CreateNewProject {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.closePopup();
+        objCreateProjectMethod.getUsername().clear();
     }
 //  Case 11: Can NOT get xpath of alert at the right corner 
-  @Test(priority = 5, description = "Edit Project with invalid data 2", dataProvider = "dpEditProject2", dataProviderClass = TestData.class)
+  @Test(priority = 29, description = "Edit Project with invalid data 2", dataProvider = "dpEditProject2", dataProviderClass = TestData.class)
     public void PM11(String department, String projectType, String commDetails)
                     throws Exception {
 
@@ -304,6 +306,10 @@ public class CreateNewProject {
     // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.closePopup();
+        objCreateProjectMethod.getUsername().clear();
     }
 //  Case 13: Click on OK on pop-up
   @Test(priority = 7, description = "Verify cancel edit by clicking Discard")
@@ -329,6 +335,8 @@ public class CreateNewProject {
     // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
     }
     
 //  Case 14: Submit to review
