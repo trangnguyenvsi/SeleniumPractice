@@ -527,6 +527,7 @@ public String getPopupText() {
 	 public String getNewEffort(){
 			return objCreateProject.getNeweffort().getText();
 		}
+	 
 	 // Method for case 14: Get color of element
 	 
 	 public void clickSubmitToReviewbtn() {
