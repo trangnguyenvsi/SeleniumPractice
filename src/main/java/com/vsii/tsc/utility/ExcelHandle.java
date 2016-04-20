@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.IndexedColors;
@@ -146,12 +147,14 @@ public class ExcelHandle {
 		int columnWanted;
 		// define sheet
 		sheet = workbook.getSheet(sheetName);
+		System.out.println("Sheet:"+sheetName);
 
 		// Col is Test Case ID's column
 		columnWanted = tcIDCol;
-		for (int r = 12; r < sheet.getLastRowNum(); r++) {
+		for (int r = 11; r < sheet.getLastRowNum(); r++) {
 			Cell c = null;
 			Row row1 = sheet.getRow(r);
+			System.out.println("colum wanted:"+columnWanted);
 			c = row1.getCell(columnWanted);
 			if (c == null || c.getCellType() == Cell.CELL_TYPE_BLANK) {
 				// Nothing in the cell in this row, skip it
@@ -267,6 +270,8 @@ public class ExcelHandle {
 	@SuppressWarnings("deprecation")
 	public void writeToExcel(XSSFWorkbook workbook, List<TestCase> tcTemple, String categoryName, File fileName) {
 		sheet = workbook.getSheet(categoryName);
+
+		
 		/* Define test result file */
 		int rowNum = Integer.parseInt(TestBase.p.getProperty("resultRow"));
 		int resultIDCol = Integer.parseInt(TestBase.p.getProperty("resultIDCol"));
@@ -317,6 +322,9 @@ public class ExcelHandle {
 				case "fail":
 					myStyle.setFillForegroundColor(IndexedColors.RED.getIndex());
 					break;
+				case "skip":
+					myStyle.setFillForegroundColor(IndexedColors.DARK_BLUE.getIndex());
+					break;
 				default:
 					myStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
 					break;
@@ -329,21 +337,26 @@ public class ExcelHandle {
 			{
 				j = rowTC + i - 1;
 			}
-			
+			/* Merge cell */
+			CellRangeAddress mergeID = new CellRangeAddress(rowTC, j, resultIDCol, resultIDCol);
+			CellRangeAddress mergeDes = new CellRangeAddress(rowTC, j, resultDesCol, resultDesCol);
+			CellRangeAddress mergePre = new CellRangeAddress(rowTC, j, resultPreCol, resultPreCol);
+			CellRangeAddress mergeStep = new CellRangeAddress(rowTC, j, resultStepCol, resultStepCol);
+			CellRangeAddress mergeExpt = new CellRangeAddress(rowTC, j, resultExptCol, resultExptCol);
+
+			sheet.addMergedRegion(mergeID);
+			sheet.addMergedRegion(mergeDes);
+			sheet.addMergedRegion(mergePre);
+			sheet.addMergedRegion(mergeStep);
+			sheet.addMergedRegion(mergeExpt);
+
 		}
-		/* Merge cell */
-		CellRangeAddress mergeID = new CellRangeAddress(rowTC, j, resultIDCol, resultIDCol);
-		CellRangeAddress mergeDes = new CellRangeAddress(rowTC, j, resultDesCol, resultDesCol);
-		CellRangeAddress mergePre = new CellRangeAddress(rowTC, j, resultPreCol, resultPreCol);
-		CellRangeAddress mergeStep = new CellRangeAddress(rowTC, j, resultStepCol, resultStepCol);
-		CellRangeAddress mergeExpt = new CellRangeAddress(rowTC, j, resultExptCol, resultExptCol);
-
-		sheet.addMergedRegion(mergeID);
-		sheet.addMergedRegion(mergeDes);
-		sheet.addMergedRegion(mergePre);
-		sheet.addMergedRegion(mergeStep);
-		sheet.addMergedRegion(mergeExpt);
-
+		
+		/*remove the old rows after write  */
+		for (int i = rowTC+1; i <= sheet.getLastRowNum(); i++) {
+		    XSSFRow rowRemove = sheet.getRow(i);
+		        sheet.removeRow(rowRemove);   
+		}
 	}
 
 	/*
