@@ -1,6 +1,9 @@
 package com.vsii.tsc.guru.testcase;
 
+import java.io.IOException;
+
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterGroups;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -10,6 +13,7 @@ import com.vsii.tsc.guru.commethods.CommonMethods;
 import com.vsii.tsc.guru.pages.method.CategoriesPageMethod;
 import com.vsii.tsc.guru.pages.method.CreateCategoryPageMethod;
 import com.vsii.tsc.guru.pages.method.CreateSkillPageMethod;
+import com.vsii.tsc.guru.pages.method.EmployeeListPageMethod;
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
 import com.vsii.tsc.guru.pages.method.LogoutPageMethod;
 import com.vsii.tsc.guru.pages.method.PMHomePageMethod;
@@ -28,10 +32,12 @@ public class SkillsManagement extends TestBase{
 	CategoriesPageMethod objCategoriesPage;
 	CreateCategoryPageMethod objCreateCategoryPage;
 	CreateSkillPageMethod objCreateSkillPage;
+	EmployeeListPageMethod objEmployeeListPage;
 	
 	
 	@BeforeClass
-	public void setupClass() {
+	public void setupClass() throws IOException {
+		p = CommonOperations.readConfig();
 		objLoginPage = new LoginPageMethod(driver);
 		objPMHomePage = new PMHomePageMethod(driver);
 		objSettingsPage = new SettingsPageMethod(driver);
@@ -44,6 +50,7 @@ public class SkillsManagement extends TestBase{
 		
 	@Test(priority = 1, description = "Verify OpenERP can open correctly", groups = "EmployeeHome")
 	public void SM_01() {
+		methodName = "SM_01";
 		//Verify that Page Title image is displayed
 		CommonMethods.waitUntil(objLoginPage.getPageTitle());
 		Assert.assertTrue(objLoginPage.getPageTitle().isDisplayed());
@@ -59,6 +66,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 2, description = "Verify employee can access OpenERP correctly", dataProvider = "employeeLogin", dataProviderClass = TestData.class, groups = "EmployeeHome")
 	public void SM_03(String username, String password) {
+		methodName = "SM_03";
 		objLoginPage.loginToManagerPage(username, password);
 
 		//Verify that Messaging link text is displayed with employee
@@ -86,6 +94,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 3, description = "Verify PM can access OpenERP correctly", dataProvider = "projectManagerLogin", dataProviderClass = TestData.class, groups = "ProjectManagerHome")
 	public void SM_02(String username, String password) {
+		methodName = "SM_02";
 		objLoginPage.loginToManagerPage(username, password);
 		
 		//Verify that Messaging link text is displayed
@@ -123,6 +132,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 4, description = "Verify that Settings is displayed correctly", groups = "ProjectManagerHome")
 	public void SM_04() throws InterruptedException {
+		methodName = "SM_04";
 		objPMHomePage.clickSettingsLink();
 		
 		//Verify that Skills section is displayed
@@ -144,6 +154,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 5, description = "Verify that Skills List is displayed correctly", groups = "ProjectManagerHome")
 	public void SM_05() {
+		methodName = "SM_05";
 		//Verify that each row should has a skill
 		CommonMethods.waitUntil(objSkillsPage.getNameValueRows());
 		Assert.assertTrue(objSkillsPage.shouldEachRowEachSkill());
@@ -163,6 +174,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 6, description = "Verify that the system confirm before deleting a Skill", dataProvider = "deleteSkill", dataProviderClass = TestData.class, groups = "ProjectManagerHome")
 	public void SM_06(String skillName, String skillDomain) throws InterruptedException {
+		methodName = "SM_06";
 		objSkillsPage.markToDelete(skillName, skillDomain);
 		objSkillsPage.clickMoreBtn();
 		objSkillsPage.clickDeleteBtn();
@@ -173,6 +185,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 7, description = "Verify that user can postpone a request to delete a Skill ", dataProvider = "deleteSkill", dataProviderClass = TestData.class, groups = "ProjectManagerHome")
 	public void SM_08 (String skillName, String skillDomain) throws InterruptedException  {
+		methodName = "SM_08";
 		objSkillsPage.clickMoreBtn();
 		objSkillsPage.clickDeleteBtn();
 		objSkillsPage.cancelPopup();
@@ -183,6 +196,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 8, description = "Verify that user can delete a Skill from Skills List", dataProvider = "deleteSkill", dataProviderClass = TestData.class, groups = "ProjectManagerHome")
 	public void SM_07 (String skillName, String skillDomain) throws InterruptedException  {
+		methodName = "SM_07";
 		objSkillsPage.clickMoreBtn();
 		objSkillsPage.clickDeleteBtn();
 		objSkillsPage.acceptPopup();
@@ -199,6 +213,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 9, description = "Verify that Categories List is displayed correctly", dataProvider = "projectManagerLogin", dataProviderClass = TestData.class, groups = "Category")
 	public void SM_09 (String username, String password) throws InterruptedException {
+		methodName = "SM_09";
 		objLoginPage.loginToManagerPage(username, password);
 		objPMHomePage.clickSettingsLink();
 		objSettingsPage.clickCategoriesSection();
@@ -213,6 +228,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 10, description = "Verify that the system confirm before deleting a category", dataProvider = "deleteCategory", dataProviderClass = TestData.class, groups = "Category")
 	public void SM_10 (String categoryName, String categoryType, String parentCategory) throws InterruptedException {
+		methodName = "SM_10";
 		objCategoriesPage.markToDelete(categoryName, categoryType, parentCategory);
 		objCategoriesPage.clickMoreBtn();
 		objCategoriesPage.clickDeleteBtn();
@@ -223,6 +239,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 11, description = "Verify that user can postpone a request to delete a Category", dataProvider = "deleteCategory", dataProviderClass = TestData.class, groups = "Category")
 	public void SM_12 (String categoryName, String categoryType, String parentCategory) throws InterruptedException {
+		methodName = "SM_12";
 		objCategoriesPage.cancelPopup();
 		Thread.sleep(500);
 		Assert.assertTrue(objCategoriesPage.getCategoryToDeleteCbx(categoryName, categoryType, parentCategory).isDisplayed());
@@ -230,6 +247,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 12, description = "Verify that user can delete a category from Categories List", dataProvider = "deleteCategory", dataProviderClass = TestData.class, groups = "Category")
 	public void SM_11 (String categoryName, String categoryType, String parentCategory) throws InterruptedException {
+		methodName = "SM_11";
 		objCategoriesPage.clickDeleteBtn();
 		objCategoriesPage.acceptPopup();
 		Thread.sleep(1000);
@@ -238,6 +256,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 13, description = "Verify that Create form is opened correctly")
 	public void SM_13() {
+		methodName = "SM_13";
 		objCategoriesPage.clickCreateBtn();
 
 		Assert.assertTrue(objCreateCategoryPage.getCategoryNameBlankTbx().isDisplayed());
@@ -246,6 +265,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 14, description = "Verify that the fields 'Name', 'Type'  are required field", groups = "Category")
 	public void SM_14() {
+		methodName = "SM_14";
 		objCreateCategoryPage.inputCategoryName("");
 		objCreateCategoryPage.selectCategoryType("");
 		objCreateCategoryPage.inputCategoryDescription("");
@@ -256,6 +276,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 15, description = "Verify that user can create a new category", dataProvider = "createCategory", dataProviderClass = TestData.class, groups = "Category")
 	public void SM_15(String categoryName, String categoryType, String categoryDescription) {
+		methodName = "SM_15";
 		CommonMethods.waitUntil(objCreateCategoryPage.getCategoryNameTbx());
 		objCreateCategoryPage.inputCategoryName(categoryName);
 		objCreateCategoryPage.selectCategoryType(categoryType);
@@ -278,6 +299,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 18, description = "Verify that user can modifiy the information in a category", dataProvider = "editCategory", dataProviderClass = TestData.class, groups = "Category")
 	public void SM_18(String editedCategoryName, String editedCategoryType, String editedCategoryDescription) {
+		methodName = "SM_18";
 		CommonMethods.waitUntil(objCreateCategoryPage.getEditBtn());
 		objCreateCategoryPage.clickEditBtn();
 		objCreateCategoryPage.inputCategoryName(editedCategoryName);
@@ -293,6 +315,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 19, description = "Verify that the system confirm before discarding edit a category", groups = "Category")
 	public void SM_19() {
+		methodName = "SM_19";
 		CommonMethods.waitUntil(objCreateCategoryPage.getEditBtn());
 		objCreateCategoryPage.clickEditBtn();
 		objCreateCategoryPage.inputCategoryName("Test123");
@@ -305,6 +328,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 21, description = "Verify that PM can discard to edit a category", dataProvider = "editCategory", dataProviderClass = TestData.class, groups = "Category")
 	public void SM_21(String categoryName, String categoryType, String categoryDescription) throws InterruptedException {
+		methodName = "SM_21";
 		objCreateCategoryPage.clickDiscardBtn();
 		objCreateCategoryPage.acceptPopup();
 		Thread.sleep(2000);
@@ -315,12 +339,13 @@ public class SkillsManagement extends TestBase{
 
 	@AfterGroups(groups = "Category")
 	//Finish Category group and Intitialize Skill group
-	public void finishCategory()  {
+	public void finishCategory() {
 		objLogoutPage.logout();
 	}
 
 	@Test(priority = 22, description = "Verify that form 'New' is opened correctly in Skills section", dataProvider = "projectManagerLogin", dataProviderClass = TestData.class, groups = "Skill")
 	public void SM_22(String username, String password) throws InterruptedException {
+		methodName = "SM_22";
 		objLoginPage.loginToManagerPage(username, password);
 		objPMHomePage.clickSettingsLink();
 		objSkillsPage.clickCreateBtn();
@@ -331,6 +356,7 @@ public class SkillsManagement extends TestBase{
 
 	@Test(priority = 23, description = "Verify that the fields 'Name', ' Type' are required fields", groups = "Skill")
 	public void SM_23() {
+		methodName = "SM_23";
 		objCreateSkillPage.inputSkillName("");
 		objCreateSkillPage.inputSkillDomain("");
 		objCreateSkillPage.clickSave();
@@ -340,6 +366,7 @@ public class SkillsManagement extends TestBase{
 
 	@Test(priority = 24, description = "Verify that user can create a new skill", dataProvider = "createSkill", dataProviderClass = TestData.class, groups = "Skill")
 	public void SM_24(String skillName, String skillDomain, String skillDescription) {
+		methodName = "SM_24";
 		objCreateSkillPage.inputSkillName(skillName);
 		objCreateSkillPage.inputSkillDomain(skillDomain);
 		objCreateSkillPage.inputSkillDescription(skillDescription);
@@ -352,6 +379,7 @@ public class SkillsManagement extends TestBase{
 	
 	@Test(priority = 25, description = "Verify that user can modifiy the information in a category", dataProvider = "editCategory", dataProviderClass = TestData.class, groups = "Skill")
 	public void SM_25(String editedSkillName, String editedSkillDomain, String editedSkillDescription) {
+		methodName = "SM_25";
 		CommonMethods.waitUntil(objCreateSkillPage.getEditBtn());
 		objCreateSkillPage.clickEditBtn();
 		objCreateSkillPage.inputSkillName(editedSkillName);
@@ -366,6 +394,7 @@ public class SkillsManagement extends TestBase{
 
 	@Test(priority = 26, description = "Verify that the system confirm before discarding edit a category", groups = "Skill")
 	public void SM_26() {
+		methodName = "SM_26";
 		CommonMethods.waitUntil(objCreateSkillPage.getEditBtn());
 		objCreateSkillPage.clickEditBtn();
 		objCreateSkillPage.inputSkillName("Test123");
@@ -378,6 +407,7 @@ public class SkillsManagement extends TestBase{
 
 	@Test(priority = 28, description = "Verify that user can discard to edit a skill", dataProvider = "editSkill", dataProviderClass = TestData.class, groups = "Skill")
 	public void SM_28(String skillName, String skillDomain, String skillDescription) throws InterruptedException {
+		methodName = "SM_28";
 		objCreateSkillPage.clickDiscardBtn();
 		objCreateSkillPage.acceptPopup();
 		
@@ -392,9 +422,31 @@ public class SkillsManagement extends TestBase{
 		objLogoutPage.logout();
 	}
 
+	@Test(priority = 29, description = "Verify that Employee List is displayed correctly", dataProvider = "projectManagerLogin", dataProviderClass = TestData.class, groups = "EmployeeSkill")
+	public void SM_29(String username, String password) throws InterruptedException {
+		methodName = "SM_29";
+		objLoginPage.loginToManagerPage(username, password);
+		objPMHomePage.clickHumanResourcesLink();
+		
+		Assert.assertTrue(objEmployeeListPage.shouldEachRowEachEmployee());
+		Assert.assertTrue(objEmployeeListPage.getCheckAllCbx().isDisplayed());
+		Assert.assertTrue(objEmployeeListPage.getNameHeader().isDisplayed());
+		Assert.assertTrue(objEmployeeListPage.getWorkPhoneHeader().isDisplayed());
+		Assert.assertTrue(objEmployeeListPage.getWorkEmailHeader().isDisplayed());
+		Assert.assertTrue(objEmployeeListPage.getDepartmentHeader().isDisplayed());
+		Assert.assertTrue(objEmployeeListPage.getJobHeader().isDisplayed());
+		Assert.assertTrue(objEmployeeListPage.getParentManagerHeader().isDisplayed());
+	}
+	
+	@Test(priority = 30, description = "Verify that the tab 'Skill Information' is displayed correctly", dataProvider = "projectManagerLogin", dataProviderClass = TestData.class, groups = "EmployeeSkill")
+	public void SM_30(String username, String password) throws InterruptedException {
+		methodName = "SM_30";
+		
+	}
 	
 	@AfterMethod
-    public void afterMethod() throws Exception {
+    public void afterMethod(ITestResult testResult) throws Exception {
+		CommonOperations.getMethodTestResult(testResult);
         CommonOperations.takePicture();
     }
 }

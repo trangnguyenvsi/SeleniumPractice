@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import com.vsii.tsc.guru.commethods.CommonMethods;
 import com.vsii.tsc.guru.pages.EmployeeListPage;
 
 public class EmployeeListPageMethod {
@@ -30,4 +31,49 @@ public class EmployeeListPageMethod {
 		return driver.findElement(By.xpath("//table[@class='oe_list_content']/tbody/tr/td[@data-field='name' and contains(text(),'" + selectedEmployeeName + "')]"));
 	}
 	
+	//Get WebElement Employees name header
+	public WebElement getNameHeader() {
+		return objEmployeeListPage.getNameHeader();
+	}
+	
+	//Get WebElement Employees Check All checkbox
+	public WebElement getCheckAllCbx() {
+		return objEmployeeListPage.getCheckAllCbx();
+	}
+
+	//Get WebElement Employees Work Phone header
+	public WebElement getWorkPhoneHeader() {
+		return objEmployeeListPage.getWorkPhoneHeader();
+	}
+
+	//Get WebElement Employees Work Email header
+	public WebElement getWorkEmailHeader() {
+		return objEmployeeListPage.getWorkEmailHeader();
+	}
+	
+	//Get WebElement Employees Department header
+	public WebElement getDepartmentHeader() {
+		return objEmployeeListPage.getDepartmentHeader();
+	}
+
+	//Get WebElement Employees Job header
+	public WebElement getJobHeader() {
+		return objEmployeeListPage.getJobHeader();
+	}
+	
+	//Get WebElement Employees Parent Manger header
+	public WebElement getParentManagerHeader() {
+		return objEmployeeListPage.getParentManagerHeader();
+	}
+	
+	//Verify each row should represent a Employee
+	public boolean shouldEachRowEachEmployee () {		
+		boolean isNotDuplicate = CommonMethods.colShouldNotDuplicated(objEmployeeListPage.getEmployeesNameValues());
+		boolean isNotBlank = CommonMethods.colShouldNotBlank(objEmployeeListPage.getEmployeesNameValues());
+		
+		if (!isNotDuplicate || !isNotBlank) {
+			return false;
+		}
+		return true;
+	}
 }
