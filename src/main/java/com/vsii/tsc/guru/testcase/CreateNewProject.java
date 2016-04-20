@@ -580,6 +580,8 @@ public class CreateNewProject {
         objCreateProjectMethod.clickReopenProjectbtn();
         Assert.assertTrue(objCreateProjectMethod.getColorProgessbtn().contains("#3465a4"));
         Assert.assertTrue(objCreateProjectMethod.getCloseProjbtn().isDisplayed());
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
     }
     
     // Case 22: Verify function Pending a Project   
@@ -606,6 +608,8 @@ public class CreateNewProject {
         Assert.assertTrue(objCreateProjectMethod.getCancelProjectbtn().isEnabled());
         Assert.assertTrue(objCreateProjectMethod.getPendingProjectbtn().isEnabled());
         Assert.assertTrue(objCreateProjectMethod.getSetAsTemp().isEnabled());
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
         }
         
     // Case 23: Verify function Set as Template a Project   
@@ -625,6 +629,8 @@ public class CreateNewProject {
         Thread.sleep(3000);
         Assert.assertTrue(objCreateProjectMethod.getTemplate1().isEnabled());
         Assert.assertTrue(objCreateProjectMethod.getTemplate2().isEnabled());
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
 
     }   
                 
@@ -644,6 +650,8 @@ public class CreateNewProject {
         objCreateProjectMethod.clickCancelProjbtn();
         Thread.sleep(3000);
         Assert.assertTrue(objCreateProjectMethod.getReopenProjbtn().isEnabled());
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
         }
         
     // Case 25: Verify function Add member into a project
@@ -666,6 +674,8 @@ public class CreateNewProject {
         objCreateProjectMethod.addNewMember1(usernameMember, startDate, endDate, allocate);
         Thread.sleep(3000);
         Assert.assertTrue(objCreateProjectMethod.getteamMember().contains(usernameMember));
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
         }
     
     // Case 26: Verify that Allocation Rate is displayed correctly with valid data
@@ -687,7 +697,9 @@ public class CreateNewProject {
         objCreateProjectMethod.clickAddMember();
         objCreateProjectMethod.addNewMember("Nhung-Pham Tuyet Nhung");
         Assert.assertFalse(objCreateProjectMethod.getAllocate().contains("80.00"));
-        Thread.sleep(3000);     
+        Thread.sleep(3000);  
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
     }
     
     // Case 27: Verify that Allocation Rate is displayed correctly with invalid data
@@ -710,7 +722,9 @@ public class CreateNewProject {
         objCreateProjectMethod.addNewMember("Tinh-Le Thi Tinh");
         Assert.assertFalse(objCreateProjectMethod.getAllocate().contains("-50.00"));
         Assert.assertFalse(objCreateProjectMethod.getAllocate().contains("Invalid Allocated Rate"));
-        Thread.sleep(3000);     
+        Thread.sleep(3000);  
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
     }
     
     // Case 28: Verify function Add member into a project. To check with dataProvider has many row, must logout
@@ -733,6 +747,8 @@ public class CreateNewProject {
         objCreateProjectMethod.addNewMember1(usernameMember, startDate, endDate, allocate);
         Thread.sleep(3000);
         Assert.assertTrue(objCreateProjectMethod.getteamMember().contains(usernameMember));
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
         }   
 
     // Case 29: Verify function Remove member from a project
@@ -753,9 +769,10 @@ public class CreateNewProject {
         Thread.sleep(3000);
         objCreateProjectMethod.closePopup();
         objCreateProjectMethod.clickSaveEdbtn();
-//      Assert.assertFalse(objCreateProjectMethod.getteamMember().contains("Anh-Hoang Mai Anh"));
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
     }   
-// Case 30: Verify project member list be paged correctly
+// Case 30: Verify project member list be paged correctly  --> NOT DONE
   @Test(priority = 24, description = "Verify project member list be paged correctly")
     public void PM30() throws Exception {
         TestBase.methodName = "PM30";
@@ -773,6 +790,8 @@ public class CreateNewProject {
         Thread.sleep(3000);
         objCreateProjectMethod.closePopup();
         objCreateProjectMethod.clickSaveEdbtn();
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
 //      Assert.assertFalse(objCreateProjectMethod.getteamMember().contains("Anh-Hoang Mai Anh"));
     }
     
@@ -793,6 +812,8 @@ public class CreateNewProject {
         Assert.assertTrue(objCreateProjectMethod.getNEWdefaultstt().isDisplayed());
         Assert.assertTrue(objCreateProjectMethod.getInProgressdefaultstt().isDisplayed());
         Assert.assertTrue(objCreateProjectMethod.getDonedefaultstt().isDisplayed());
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
         
     }   
     
@@ -855,6 +876,8 @@ public class CreateNewProject {
             Assert.assertTrue(objCreateProjectMethod.getNEWstt().isDisplayed());
             Assert.assertTrue(objCreateProjectMethod.getINPROGRESSstt().isDisplayed());
             Assert.assertTrue(objCreateProjectMethod.getDONEstt().isDisplayed());
+            objCreateProjectMethod.logout();
+            objCreateProjectMethod.getUsername().clear();
             
         }   
         
@@ -906,6 +929,8 @@ public class CreateNewProject {
         objCreateProjectMethod.clickDepart();
         Thread.sleep(1000);
         objCreateProjectMethod.clickProjectwith3Stage();
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
         }
     
     /* Cac ban update phan nay vao trong script cua minh nhe*/
