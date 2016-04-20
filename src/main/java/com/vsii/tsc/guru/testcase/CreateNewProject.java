@@ -355,20 +355,21 @@ public class CreateNewProject {
         Thread.sleep(3000);
         objCreateProjectMethod.clickSubmitToReviewbtn();
         Assert.assertTrue(objCreateProjectMethod.getColorReviewbtn().contains("#3465a4"));
-        
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
     // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
     }
 //  Case 15: Login with account TSC's  management
   @Test(priority = 9, description = "Verify Submit to Review")
     public void PM15() throws Exception {
 
         TestBase.methodName = "PM15";
-//      objLogin.loginToManagerPage("lienlt", "12345678");
+      objLogin.loginToManagerPage("lienlt", "12345678");
         CommonMethods.waitUntil(objCreateProjectMethod.getmnProjectTSC());
         objCreateProjectMethod.clickProjectTSCmn();
 //      CommonMethods.waitUntil(objCreateProjectMethod.getSearchAdtxt());
@@ -387,6 +388,8 @@ public class CreateNewProject {
     // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        objCreateProjectMethod.logout();
+        objCreateProjectMethod.getUsername().clear();
     }
     
 //  Case 16: Projects with new/review status will NOT have Timesheet and Task 
