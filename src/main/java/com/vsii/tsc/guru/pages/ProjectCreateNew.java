@@ -328,7 +328,9 @@ public class ProjectCreateNew {
 	@FindBy(xpath=".//*[@class='oe_bold oe_form_button_cancel']")
 	private WebElement discardbtn;
 	
-	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[3]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[5]/td[2]/span/span")
+	
+	@FindBy(xpath="//tr[5]/td[2]/span/input")
+//	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[3]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[5]/td[2]/span/span")
 	private WebElement neweffort;
 	
 	@FindBy(xpath="//span/select/option[2]")
