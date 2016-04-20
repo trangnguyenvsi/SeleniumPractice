@@ -331,7 +331,8 @@ public class ProjectCreateNew {
 	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[3]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[5]/td[2]/span/span")
 	private WebElement neweffort;
 	
-	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[3]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[3]/td[2]/span")
+	@FindBy(xpath="//span/select/option[2]")
+//	@FindBy(xpath="html/body/div[1]/table/tbody/tr[3]/td[2]/div/div/div/div[3]/div/div[4]/div/div/div[1]/div/table/tbody/tr/td[1]/table/tbody/tr[3]/td[2]/span")
 	private WebElement newprivacy;
 		
 	@FindBy(xpath=".//*[@class='oe_list_group_pagination']/button[2]")
