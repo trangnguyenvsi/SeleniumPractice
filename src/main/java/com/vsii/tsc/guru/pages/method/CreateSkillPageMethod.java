@@ -40,13 +40,23 @@ public class CreateSkillPageMethod {
 	//Input Skill Domain
 	public void inputSkillDomain(String skillDomain) {
 		objCreateSkillPage.getSkillDomainTbx().clear();
-		objCreateSkillPage.getSkillDomainTbx().sendKeys(skillDomain);
+		
+		if(!skillDomain.equals("")) {
+			objCreateSkillPage.getSkillDomainTbx().sendKeys(skillDomain);
+			CommonMethods.waitUntil(this.getSkillDomainOtp(skillDomain));
+			this.getSkillDomainOtp(skillDomain).click();;
+		}
 	}
 		
 	//Input text to Skill Description textarea
 	public void inputSkillDescription (String skillDescription) {
 		objCreateSkillPage.getSkillDescriptionTextarea().clear();
 		objCreateSkillPage.getSkillDescriptionTextarea().sendKeys(skillDescription);
+	}
+	
+	//Get Element Skill domain option
+	public WebElement getSkillDomainOtp(String skillDomain) {
+		return driver.findElement(By.xpath("//li[@class='ui-menu-item']/a[text()='" + skillDomain + "']"));
 	}
 	
 	//Get Element Required Field Notification

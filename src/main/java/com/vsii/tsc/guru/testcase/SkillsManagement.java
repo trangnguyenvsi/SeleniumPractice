@@ -13,6 +13,7 @@ import com.vsii.tsc.guru.commethods.CommonMethods;
 import com.vsii.tsc.guru.pages.method.CategoriesPageMethod;
 import com.vsii.tsc.guru.pages.method.CreateCategoryPageMethod;
 import com.vsii.tsc.guru.pages.method.CreateSkillPageMethod;
+import com.vsii.tsc.guru.pages.method.EmployeeDetailPageMethod;
 import com.vsii.tsc.guru.pages.method.EmployeeListPageMethod;
 import com.vsii.tsc.guru.pages.method.LoginPageMethod;
 import com.vsii.tsc.guru.pages.method.LogoutPageMethod;
@@ -33,6 +34,7 @@ public class SkillsManagement extends TestBase{
 	CreateCategoryPageMethod objCreateCategoryPage;
 	CreateSkillPageMethod objCreateSkillPage;
 	EmployeeListPageMethod objEmployeeListPage;
+	EmployeeDetailPageMethod objEmployeeDetailPage;
 	
 	
 	@BeforeClass
@@ -46,6 +48,8 @@ public class SkillsManagement extends TestBase{
 		objCategoriesPage = new CategoriesPageMethod(driver);
 		objCreateCategoryPage = new CreateCategoryPageMethod(driver);
 		objCreateSkillPage = new CreateSkillPageMethod(driver);
+		objEmployeeListPage = new EmployeeListPageMethod(driver);
+		objEmployeeDetailPage= new EmployeeDetailPageMethod(driver);
 	}
 		
 	@Test(priority = 1, description = "Verify OpenERP can open correctly", groups = "EmployeeHome")
@@ -240,6 +244,8 @@ public class SkillsManagement extends TestBase{
 	@Test(priority = 11, description = "Verify that user can postpone a request to delete a Category", dataProvider = "deleteCategory", dataProviderClass = TestData.class, groups = "Category")
 	public void SM_12 (String categoryName, String categoryType, String parentCategory) throws InterruptedException {
 		methodName = "SM_12";
+		objCategoriesPage.clickMoreBtn();
+		objCategoriesPage.clickDeleteBtn();
 		objCategoriesPage.cancelPopup();
 		Thread.sleep(500);
 		Assert.assertTrue(objCategoriesPage.getCategoryToDeleteCbx(categoryName, categoryType, parentCategory).isDisplayed());
@@ -248,6 +254,7 @@ public class SkillsManagement extends TestBase{
 	@Test(priority = 12, description = "Verify that user can delete a category from Categories List", dataProvider = "deleteCategory", dataProviderClass = TestData.class, groups = "Category")
 	public void SM_11 (String categoryName, String categoryType, String parentCategory) throws InterruptedException {
 		methodName = "SM_11";
+		objCategoriesPage.clickMoreBtn();
 		objCategoriesPage.clickDeleteBtn();
 		objCategoriesPage.acceptPopup();
 		Thread.sleep(1000);
@@ -340,6 +347,7 @@ public class SkillsManagement extends TestBase{
 	@AfterGroups(groups = "Category")
 	//Finish Category group and Intitialize Skill group
 	public void finishCategory() {
+		
 		objLogoutPage.logout();
 	}
 
@@ -377,7 +385,7 @@ public class SkillsManagement extends TestBase{
 		Assert.assertTrue(objCreateSkillPage.getCreatedSkillDescription(skillDescription).equals(skillDescription));
 	}
 	
-	@Test(priority = 25, description = "Verify that user can modifiy the information in a category", dataProvider = "editCategory", dataProviderClass = TestData.class, groups = "Skill")
+	@Test(priority = 25, description = "Verify that user can modifiy the information in a category", dataProvider = "editSkill", dataProviderClass = TestData.class, groups = "Skill")
 	public void SM_25(String editedSkillName, String editedSkillDomain, String editedSkillDescription) {
 		methodName = "SM_25";
 		CommonMethods.waitUntil(objCreateSkillPage.getEditBtn());
@@ -388,8 +396,8 @@ public class SkillsManagement extends TestBase{
 		objCreateSkillPage.clickSave();
 		
 		Assert.assertTrue(objCreateSkillPage.getCreatedSkillName(editedSkillName).equals(editedSkillName));
-		Assert.assertTrue(objCreateSkillPage.getCreatedSkillName(editedSkillDomain).equals(editedSkillDomain));
-		Assert.assertTrue(objCreateSkillPage.getCreatedSkillName(editedSkillDescription).equals(editedSkillDescription));
+		Assert.assertTrue(objCreateSkillPage.getCreatedSkillDomain(editedSkillDomain).equals(editedSkillDomain));
+		Assert.assertTrue(objCreateSkillPage.getCreatedSkillDescription(editedSkillDescription).equals(editedSkillDescription));
 	}
 
 	@Test(priority = 26, description = "Verify that the system confirm before discarding edit a category", groups = "Skill")
@@ -412,7 +420,7 @@ public class SkillsManagement extends TestBase{
 		objCreateSkillPage.acceptPopup();
 		
 		Assert.assertTrue(objCreateSkillPage.getCreatedSkillName(skillName).equals(skillName));
-		Assert.assertTrue(objCreateSkillPage.getCreatedSkillDomain(skillName).equals(skillName));
+		Assert.assertTrue(objCreateSkillPage.getCreatedSkillDomain(skillDomain).equals(skillDomain));
 		Assert.assertTrue(objCreateSkillPage.getCreatedSkillDescription(skillDescription).equals(skillDescription));
 	}
 
@@ -428,6 +436,7 @@ public class SkillsManagement extends TestBase{
 		objLoginPage.loginToManagerPage(username, password);
 		objPMHomePage.clickHumanResourcesLink();
 		
+		CommonMethods.waitUntil(objEmployeeListPage.getEmployeesNameValues());
 		Assert.assertTrue(objEmployeeListPage.shouldEachRowEachEmployee());
 		Assert.assertTrue(objEmployeeListPage.getCheckAllCbx().isDisplayed());
 		Assert.assertTrue(objEmployeeListPage.getNameHeader().isDisplayed());
@@ -438,10 +447,26 @@ public class SkillsManagement extends TestBase{
 		Assert.assertTrue(objEmployeeListPage.getParentManagerHeader().isDisplayed());
 	}
 	
-	@Test(priority = 30, description = "Verify that the tab 'Skill Information' is displayed correctly", dataProvider = "projectManagerLogin", dataProviderClass = TestData.class, groups = "EmployeeSkill")
-	public void SM_30(String username, String password) throws InterruptedException {
+	@Test(priority = 30, description = "Verify that the tab 'Skill Information' is displayed correctly", dataProvider = "selectedEmployee", dataProviderClass = TestData.class, groups = "EmployeeSkill")
+	public void SM_30(String employeeName) {
 		methodName = "SM_30";
+		objEmployeeListPage.selectEmployee(employeeName);
+		objEmployeeDetailPage.clickSkillInformationTab();
 		
+		Assert.assertTrue(objEmployeeDetailPage.skillSectionShouldBeDisplayed());
+		Assert.assertTrue(objEmployeeDetailPage.certificateSectionShouldBeDisplayed());
+		Assert.assertTrue(objEmployeeDetailPage.awardSectionShouldBeDisplayed());
+	}
+	
+	@Test(priority = 31, description = "Verify that form 'Add skills' is displayed correctly", groups = "EmployeeSkill")
+	public void SM_31() {
+		methodName = "SM_31";
+		objEmployeeDetailPage.clickAddSkill();
+		
+		Assert.assertTrue(objEmployeeDetailPage.getSkillDomainDdl().isDisplayed());
+		Assert.assertTrue(objEmployeeDetailPage.getSkillEmployeeDdl().isDisplayed());
+		Assert.assertTrue(objEmployeeDetailPage.getLastUsedTbx().isDisplayed());
+		Assert.assertTrue(objEmployeeDetailPage.getCompetencyLevelDdl().isDisplayed());
 	}
 	
 	@AfterMethod

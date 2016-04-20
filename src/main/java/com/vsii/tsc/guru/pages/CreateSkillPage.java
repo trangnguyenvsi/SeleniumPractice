@@ -52,6 +52,18 @@ public class CreateSkillPage {
 	@FindBy(xpath = "//span[@class='oe_form_text_content']")
 	private WebElement createdSkillDescription;
 	
+	//WebElement of Skill Domain dropdown
+	@FindBy(xpath = "//div/span[@class='oe_m2o_drop_down_button']/img")
+	private WebElement skillDomainDropdown;
+	
+	public WebElement getSkillDomainDropdown() {
+		return skillDomainDropdown;
+	}
+
+	public void setSkillDomainDropdown(WebElement skillDomainDropdown) {
+		this.skillDomainDropdown = skillDomainDropdown;
+	}
+
 	public WebElement getCreatedSkillName() {
 		return createdSkillName;
 	}

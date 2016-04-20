@@ -271,4 +271,10 @@ public class TestData {
       	Object[][] data = ExcelHandle.getTable("./data/SkillsManagement_TestData.xlsx", "Skill", "EditSkill");
        	return data;
     }
+    
+    @DataProvider(name = "selectedEmployee")
+    public static Object[][] selectedEmployee() {
+    	Object[][] data = ExcelHandle.getTable("./data/SkillsManagement_TestData.xlsx", "Employee", "SelectedEmployee");
+    	return data;
+    }
 }

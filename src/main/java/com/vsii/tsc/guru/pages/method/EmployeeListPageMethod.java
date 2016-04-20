@@ -25,12 +25,7 @@ public class EmployeeListPageMethod {
 		PageFactory.initElements(driver, objEmployeeListPage);
 		log.debug("Initiate web driver of Employee List page");
 	}
-	
-	//Get WebElement Selected Employee name
-	public WebElement selectedEmployeeName (String selectedEmployeeName) {
-		return driver.findElement(By.xpath("//table[@class='oe_list_content']/tbody/tr/td[@data-field='name' and contains(text(),'" + selectedEmployeeName + "')]"));
-	}
-	
+		
 	//Get WebElement Employees name header
 	public WebElement getNameHeader() {
 		return objEmployeeListPage.getNameHeader();
@@ -68,12 +63,27 @@ public class EmployeeListPageMethod {
 	
 	//Verify each row should represent a Employee
 	public boolean shouldEachRowEachEmployee () {		
-		boolean isNotDuplicate = CommonMethods.colShouldNotDuplicated(objEmployeeListPage.getEmployeesNameValues());
-		boolean isNotBlank = CommonMethods.colShouldNotBlank(objEmployeeListPage.getEmployeesNameValues());
+		boolean isNotDuplicate = CommonMethods.colShouldNotDuplicated(this.getEmployeesNameValues());
+		boolean isNotBlank = CommonMethods.colShouldNotBlank(this.getEmployeesNameValues());
 		
 		if (!isNotDuplicate || !isNotBlank) {
 			return false;
 		}
 		return true;
+	}
+	
+	//Get Element Employees Name values
+	public WebElement getEmployeesNameValues() {
+		return objEmployeeListPage.getEmployeesNameValues();
+	}
+	
+	//Get Element Employee Name value
+	public WebElement getEmloyeeNameValue(String employeeName) {
+		return driver.findElement(By.xpath("//table[@class='oe_list_content']/tbody/tr/td[@data-field='name' and text()='" + employeeName + "']"));
+	}
+	
+	//Select a Employee
+	public void selectEmployee(String employeeName) {
+		this.getEmloyeeNameValue(employeeName).click();
 	}
 }
