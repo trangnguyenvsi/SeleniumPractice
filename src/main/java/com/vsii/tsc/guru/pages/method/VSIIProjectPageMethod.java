@@ -31,6 +31,7 @@ public class VSIIProjectPageMethod {
 
 	// Input Project name to "Project" dropdown
 	public void setProjectName(String projectName) throws InterruptedException {
+		objVsiiProjectPage.getProjectDropdown().clear();
 		objVsiiProjectPage.getProjectDropdown().click();
 		objVsiiProjectPage.getProjectDropdown().sendKeys(projectName);
 		Thread.sleep(1000);

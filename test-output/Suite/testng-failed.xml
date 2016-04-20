@@ -4,26 +4,25 @@
   <listeners>
     <listener class-name="com.vsii.tsc.utility.Reports"/>
   </listeners>
-  <test name="Skill management(failed)">
+  <test name="WebService(failed)">
     <classes>
-      <class name="com.vsii.tsc.guru.testcase.SkillsManagement">
+      <class name="com.vsii.tsc.guru.testcase.Webservice">
         <methods>
-          <include name="finishProjectManagerHome"/>
-          <include name="teardownSuite"/>
-          <include name="SM_26"/>
+          <include name="W04" invocation-numbers="0"/>
           <include name="setupClass"/>
-          <include name="SM_07" invocation-numbers="0"/>
-          <include name="SM_11" invocation-numbers="0"/>
-          <include name="SM_25" invocation-numbers="0"/>
-          <include name="SM_28"/>
-          <include name="setupSuite"/>
-          <include name="SM_12" invocation-numbers="0"/>
-          <include name="finishCategory"/>
-          <include name="SM_24" invocation-numbers="0"/>
-          <include name="finishEmployeeHome"/>
+          <include name="W06" invocation-numbers="0"/>
+          <include name="W05" invocation-numbers="0"/>
+          <include name="W07" invocation-numbers="0"/>
           <include name="afterMethod"/>
+          <include name="W02" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.vsii.tsc.guru.testcase.SkillsManagement -->
+      </class> <!-- com.vsii.tsc.guru.testcase.Webservice -->
+      <class name="com.vsii.tsc.utility.TestBase">
+        <methods>
+          <include name="teardownSuite"/>
+          <include name="setupSuite"/>
+        </methods>
+      </class> <!-- com.vsii.tsc.utility.TestBase -->
     </classes>
-  </test> <!-- Skill management(failed) -->
+  </test> <!-- WebService(failed) -->
 </suite> <!-- Failed suite [Suite] -->

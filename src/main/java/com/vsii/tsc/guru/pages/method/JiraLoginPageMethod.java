@@ -39,11 +39,16 @@ public class JiraLoginPageMethod extends TestBase {
 	}
 	
 	// PERFORM LOGIN OPERATION
-	public void Login(String username, String password){
+	public void Login(String username, String password) {
+		
 		setJiraUsrName(username);
+
 		setJiraPass(password);
+
 		clickRemember();
+
 		clickLogin();
+
 	}
 	
 }

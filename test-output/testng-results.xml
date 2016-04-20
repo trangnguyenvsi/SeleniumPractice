@@ -1,67 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="6" total="24" passed="17">
+<testng-results skipped="0" failed="5" total="8" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="170365" started-at="2016-04-19T21:47:48Z" finished-at="2016-04-19T21:50:38Z">
+  <suite name="Suite" duration-ms="135817" started-at="2016-04-20T08:35:28Z" finished-at="2016-04-20T08:37:44Z">
     <groups>
-      <group name="Skill">
-        <method signature="SkillsManagement.SM_22(java.lang.String, java.lang.String)[pri:22, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_22" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_23()[pri:23, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_23" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_24(java.lang.String, java.lang.String, java.lang.String)[pri:24, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_24" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_25(java.lang.String, java.lang.String, java.lang.String)[pri:25, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_25" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_26()[pri:26, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_26" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_28(java.lang.String, java.lang.String, java.lang.String)[pri:28, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_28" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-      </group> <!-- Skill -->
-      <group name="Category">
-        <method signature="SkillsManagement.SM_09(java.lang.String, java.lang.String)[pri:9, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_09" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_10(java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_10" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_11(java.lang.String, java.lang.String, java.lang.String)[pri:12, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_11" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_12(java.lang.String, java.lang.String, java.lang.String)[pri:11, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_12" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_14()[pri:14, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_14" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_15(java.lang.String, java.lang.String, java.lang.String)[pri:15, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_15" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_18(java.lang.String, java.lang.String, java.lang.String)[pri:18, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_18" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_19()[pri:19, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_19" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_21(java.lang.String, java.lang.String, java.lang.String)[pri:21, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_21" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-      </group> <!-- Category -->
-      <group name="ProjectManagerHome">
-        <method signature="SkillsManagement.SM_02(java.lang.String, java.lang.String)[pri:3, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_02" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_04()[pri:4, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_04" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_05()[pri:5, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_05" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_06(java.lang.String, java.lang.String)[pri:6, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_06" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_07(java.lang.String, java.lang.String)[pri:8, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_07" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_08(java.lang.String, java.lang.String)[pri:7, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_08" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-      </group> <!-- ProjectManagerHome -->
-      <group name="EmployeeHome">
-        <method signature="SkillsManagement.SM_01()[pri:1, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_01" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-        <method signature="SkillsManagement.SM_03(java.lang.String, java.lang.String)[pri:2, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_03" class="com.vsii.tsc.guru.testcase.SkillsManagement"/>
-      </group> <!-- EmployeeHome -->
     </groups>
-    <test name="Skill management" duration-ms="170365" started-at="2016-04-19T21:47:48Z" finished-at="2016-04-19T21:50:38Z">
-      <class name="com.vsii.tsc.guru.testcase.SkillsManagement">
-        <test-method status="PASS" signature="setupSuite()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="setupSuite" is-config="true" duration-ms="9568" started-at="2016-04-20T04:47:38Z" finished-at="2016-04-20T04:47:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupSuite -->
-        <test-method status="PASS" signature="setupClass()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="setupClass" is-config="true" duration-ms="43" started-at="2016-04-20T04:47:48Z" finished-at="2016-04-20T04:47:48Z">
+    <test name="WebService" duration-ms="135817" started-at="2016-04-20T08:35:28Z" finished-at="2016-04-20T08:37:44Z">
+      <class name="com.vsii.tsc.guru.testcase.Webservice">
+        <test-method status="PASS" signature="setupClass()[pri:0, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="setupClass" is-config="true" duration-ms="4234" started-at="2016-04-20T15:35:28Z" finished-at="2016-04-20T15:35:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupClass -->
-        <test-method status="PASS" signature="SM_01()[pri:1, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_01" duration-ms="210" started-at="2016-04-20T04:47:48Z" description="Verify OpenERP can open correctly" finished-at="2016-04-20T04:47:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SM_01 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2263" started-at="2016-04-20T04:47:48Z" finished-at="2016-04-20T04:47:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="SM_03(java.lang.String, java.lang.String)[pri:2, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_03" duration-ms="1698" started-at="2016-04-20T04:47:51Z" description="Verify employee can access OpenERP correctly" data-provider="employeeLogin" finished-at="2016-04-20T04:47:52Z">
+        <test-method status="PASS" signature="createERPProject(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="createERPProject" duration-ms="7574" started-at="2016-04-20T15:35:33Z" data-provider="createProject" finished-at="2016-04-20T15:35:41Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[anhptq]]>
+                <![CDATA[Selenium Practice]]>
               </value>
             </param>
             <param index="1">
+              <value>
+                <![CDATA[1000]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Training]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Internal Project]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[nhungpth]]>
+              </value>
+            </param>
+            <param index="5">
               <value>
                 <![CDATA[12345678]]>
               </value>
@@ -69,119 +46,134 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SM_03 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="3501" started-at="2016-04-20T04:47:52Z" finished-at="2016-04-20T04:47:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="finishEmployeeHome()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="finishEmployeeHome" is-config="true" duration-ms="461" started-at="2016-04-20T04:47:56Z" finished-at="2016-04-20T04:47:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- finishEmployeeHome -->
-        <test-method status="PASS" signature="SM_02(java.lang.String, java.lang.String)[pri:3, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_02" duration-ms="3510" started-at="2016-04-20T04:47:57Z" description="Verify PM can access OpenERP correctly" data-provider="projectManagerLogin" finished-at="2016-04-20T04:48:00Z">
+        </test-method> <!-- createERPProject -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="afterMethod" is-config="true" duration-ms="2558" started-at="2016-04-20T15:35:41Z" finished-at="2016-04-20T15:35:44Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[lienlt]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[12345678]]>
+                <![CDATA[[TestResult name=createERPProject status=SUCCESS method=Webservice.createERPProject(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SM_02 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2938" started-at="2016-04-20T04:48:00Z" finished-at="2016-04-20T04:48:03Z">
-          <reporter-output>
-          </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="SM_04()[pri:4, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_04" duration-ms="2988" started-at="2016-04-20T04:48:03Z" description="Verify that Settings is displayed correctly" finished-at="2016-04-20T04:48:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SM_04 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2476" started-at="2016-04-20T04:48:06Z" finished-at="2016-04-20T04:48:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="SM_05()[pri:5, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_05" duration-ms="4372" started-at="2016-04-20T04:48:08Z" description="Verify that Skills List is displayed correctly" finished-at="2016-04-20T04:48:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SM_05 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2580" started-at="2016-04-20T04:48:13Z" finished-at="2016-04-20T04:48:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="SM_06(java.lang.String, java.lang.String)[pri:6, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_06" duration-ms="1541" started-at="2016-04-20T04:48:15Z" description="Verify that the system confirm before deleting a Skill" data-provider="deleteSkill" finished-at="2016-04-20T04:48:17Z">
+        <test-method status="PASS" signature="W01(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="W01" duration-ms="8769" started-at="2016-04-20T15:35:44Z" description="Create new web service in OpenERP" data-provider="W01" finished-at="2016-04-20T15:35:52Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Adobe Illustrator]]>
+                <![CDATA[TestService3]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Requirement Analysis]]>
+                <![CDATA[Get]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[192.168.0.200]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[8085]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[/rest/api/2/search?jql=updated%20%3E%20startOfWeek(-2)%20ORDER%20BY%20updated%20DESC&startAt=0&maxResults=1500&fields=assignee,description,summary,created,updated,duedate,priority,status,worklog,key,id,project,timeestimate,timeoriginalestimate]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ISO 8601]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Basic]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[123456@a]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[vsii_project.vsii_JIRA_connector]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[collect_project_worklog]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SM_06 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2483" started-at="2016-04-20T04:48:17Z" finished-at="2016-04-20T04:48:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="SM_08(java.lang.String, java.lang.String)[pri:7, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_08" duration-ms="1325" started-at="2016-04-20T04:48:20Z" description="Verify that user can postpone a request to delete a Skill " data-provider="deleteSkill" finished-at="2016-04-20T04:48:21Z">
+        </test-method> <!-- W01 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="afterMethod" is-config="true" duration-ms="2617" started-at="2016-04-20T15:35:52Z" finished-at="2016-04-20T15:35:55Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Adobe Illustrator]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Requirement Analysis]]>
+                <![CDATA[[TestResult name=W01 status=SUCCESS method=Webservice.W01(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SM_08 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2565" started-at="2016-04-20T04:48:21Z" finished-at="2016-04-20T04:48:23Z">
-          <reporter-output>
-          </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="FAIL" signature="SM_07(java.lang.String, java.lang.String)[pri:8, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_07" duration-ms="1458" started-at="2016-04-20T04:48:23Z" description="Verify that user can delete a Skill from Skills List" data-provider="deleteSkill" finished-at="2016-04-20T04:48:25Z">
+        <test-method status="FAIL" signature="W02(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="W02" duration-ms="8337" started-at="2016-04-20T15:35:55Z" description="Run web service and verify if JIRA project is synchronized with OpenERP" data-provider="W02" finished-at="2016-04-20T15:36:04Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Adobe Illustrator]]>
+                <![CDATA[SP]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Requirement Analysis]]>
+                <![CDATA[Selenium Practice]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[VSII / TSC]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[JIRA]]>
               </value>
             </param>
           </params>
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [false] but found [true]]]>
+              <![CDATA[expected [] but found [Selenium Practice]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [false] but found [true]
+              <![CDATA[java.lang.AssertionError: expected [] but found [Selenium Practice]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:496)
-	at org.testng.Assert.assertFalse(Assert.java:63)
-	at org.testng.Assert.assertFalse(Assert.java:73)
-	at com.vsii.tsc.guru.testcase.SkillsManagement.SM_07(SkillsManagement.java:191)
+	at org.testng.Assert.assertEquals(Assert.java:125)
+	at org.testng.Assert.assertEquals(Assert.java:178)
+	at org.testng.Assert.assertEquals(Assert.java:188)
+	at com.vsii.tsc.guru.testcase.Webservice.W02(Webservice.java:175)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
@@ -199,120 +191,97 @@
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
 	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:75)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:46)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SM_07 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2619" started-at="2016-04-20T04:48:25Z" finished-at="2016-04-20T04:48:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="finishProjectManagerHome()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="finishProjectManagerHome" is-config="true" duration-ms="494" started-at="2016-04-20T04:48:28Z" finished-at="2016-04-20T04:48:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- finishProjectManagerHome -->
-        <test-method status="PASS" signature="SM_09(java.lang.String, java.lang.String)[pri:9, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_09" duration-ms="8618" started-at="2016-04-20T04:48:28Z" description="Verify that Categories List is displayed correctly" data-provider="projectManagerLogin" finished-at="2016-04-20T04:48:37Z">
+        </test-method> <!-- W02 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="afterMethod" is-config="true" duration-ms="2431" started-at="2016-04-20T15:36:04Z" finished-at="2016-04-20T15:36:06Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[lienlt]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[12345678]]>
+                <![CDATA[[TestResult name=W02 status=FAILURE method=Webservice.W02(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SM_09 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2411" started-at="2016-04-20T04:48:37Z" finished-at="2016-04-20T04:48:39Z">
-          <reporter-output>
-          </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="SM_10(java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_10" duration-ms="1467" started-at="2016-04-20T04:48:39Z" description="Verify that the system confirm before deleting a category" data-provider="deleteCategory" finished-at="2016-04-20T04:48:41Z">
+        <test-method status="PASS" signature="W03(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="W03" duration-ms="9378" started-at="2016-04-20T15:36:06Z" description="Verify the ability of mapping imported project from JIRA with existed OpenERP project work correctly" data-provider="W03" finished-at="2016-04-20T15:36:15Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Advanced]]>
+                <![CDATA[SP]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Skill Domain]]>
+                <![CDATA[Selenium Practice]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Software Engineering Knowledge]]>
+                <![CDATA[VSII / TSC]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[JIRA]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SM_10 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2593" started-at="2016-04-20T04:48:41Z" finished-at="2016-04-20T04:48:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="FAIL" signature="SM_12(java.lang.String, java.lang.String, java.lang.String)[pri:11, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_12" duration-ms="3139" started-at="2016-04-20T04:48:43Z" description="Verify that user can postpone a request to delete a Category" data-provider="deleteCategory" finished-at="2016-04-20T04:48:46Z">
+        </test-method> <!-- W03 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="afterMethod" is-config="true" duration-ms="2427" started-at="2016-04-20T15:36:15Z" finished-at="2016-04-20T15:36:18Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Advanced]]>
+                <![CDATA[[TestResult name=W03 status=SUCCESS method=Webservice.W03(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="FAIL" signature="W04(java.lang.String, java.lang.String, java.lang.String)[pri:4, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="W04" duration-ms="20336" started-at="2016-04-20T15:36:18Z" description="Verify importing JIRA project to OpenERP project work correctly" data-provider="W04" finished-at="2016-04-20T15:36:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Selenium Practice]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Skill Domain]]>
+                <![CDATA[04:00]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Software Engineering Knowledge]]>
+                <![CDATA[Trang-Nguyen Thi Thu Trang]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoAlertPresentException">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[No alert is present (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 2.14 seconds
-Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: f7f0ef57-69e1-4f8c-ad33-8f6066433ab0]]>
+              <![CDATA[expected [04:00] but found [02:00]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoAlertPresentException: No alert is present (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 2.14 seconds
-Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: f7f0ef57-69e1-4f8c-ad33-8f6066433ab0
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:701)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1049)
-	at com.vsii.tsc.guru.commethods.CommonMethods.cancelPopup(CommonMethods.java:103)
-	at com.vsii.tsc.guru.pages.method.CategoriesPageMethod.cancelPopup(CategoriesPageMethod.java:123)
-	at com.vsii.tsc.guru.testcase.SkillsManagement.SM_12(SkillsManagement.java:226)
+              <![CDATA[java.lang.AssertionError: expected [04:00] but found [02:00]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertEquals(Assert.java:125)
+	at org.testng.Assert.assertEquals(Assert.java:178)
+	at org.testng.Assert.assertEquals(Assert.java:188)
+	at com.vsii.tsc.guru.testcase.Webservice.W04(Webservice.java:250)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
@@ -330,75 +299,102 @@ Session ID: f7f0ef57-69e1-4f8c-ad33-8f6066433ab0
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
 	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:75)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:46)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoAlertPresentException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SM_12 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2508" started-at="2016-04-20T04:48:46Z" finished-at="2016-04-20T04:48:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="FAIL" signature="SM_11(java.lang.String, java.lang.String, java.lang.String)[pri:12, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_11" duration-ms="2111" started-at="2016-04-20T04:48:49Z" description="Verify that user can delete a category from Categories List" data-provider="deleteCategory" finished-at="2016-04-20T04:48:51Z">
+        </test-method> <!-- W04 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="afterMethod" is-config="true" duration-ms="2719" started-at="2016-04-20T15:36:38Z" finished-at="2016-04-20T15:36:41Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Advanced]]>
+                <![CDATA[[TestResult name=W04 status=FAILURE method=Webservice.W04(java.lang.String, java.lang.String, java.lang.String)[pri:4, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="FAIL" signature="W05(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:5, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="W05" duration-ms="25447" started-at="2016-04-20T15:36:41Z" description="Verify that when add new worklog in JIRA project webservice importing work correctly" data-provider="W05" finished-at="2016-04-20T15:37:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://192.168.0.200:8085/secure/Dashboard.jspa]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Skill Domain]]>
+                <![CDATA[lienlt]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Software Engineering Knowledge]]>
+                <![CDATA[12345678]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Selenium Practice]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[2h]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[02:00]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[LIENLT]]>
               </value>
             </param>
           </params>
           <exception class="org.openqa.selenium.ElementNotVisibleException">
             <message>
               <![CDATA[Element is not currently visible and so may not be interacted with
-Command duration or timeout: 2.08 seconds
+Command duration or timeout: 2.03 seconds
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
+System info: host: 'quyentx-w7', ip: '169.254.145.253', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_74'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: f7f0ef57-69e1-4f8c-ad33-8f6066433ab0]]>
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 5df9d804-4031-4c21-870d-dc6080c037fc]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
-Command duration or timeout: 2.08 seconds
+Command duration or timeout: 2.03 seconds
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
+System info: host: 'quyentx-w7', ip: '169.254.145.253', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_74'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: f7f0ef57-69e1-4f8c-ad33-8f6066433ab0
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 5df9d804-4031-4c21-870d-dc6080c037fc
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
-	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy9.click(Unknown Source)
-	at com.vsii.tsc.guru.pages.method.CategoriesPageMethod.clickDeleteBtn(CategoriesPageMethod.java:78)
-	at com.vsii.tsc.guru.testcase.SkillsManagement.SM_11(SkillsManagement.java:233)
+	at com.sun.proxy.$Proxy10.click(Unknown Source)
+	at com.vsii.tsc.guru.pages.method.WebServiceMethod.clickWebServiceOption(WebServiceMethod.java:40)
+	at com.vsii.tsc.guru.testcase.Webservice.W05(Webservice.java:280)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
@@ -416,218 +412,218 @@ Session ID: f7f0ef57-69e1-4f8c-ad33-8f6066433ab0
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
 	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:75)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:46)
 Caused by: org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
+System info: host: 'quyentx-w7', ip: '169.254.145.253', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_74'
 Driver info: driver.version: unknown
-	at <anonymous class>.fxdriver.preconditions.visible(file:///C:/Users/Administrator/AppData/Local/Temp/anonymous2881919078987181023webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:10045)
-	at <anonymous class>.DelayedCommand.prototype.checkPreconditions_(file:///C:/Users/Administrator/AppData/Local/Temp/anonymous2881919078987181023webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12597)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/Administrator/AppData/Local/Temp/anonymous2881919078987181023webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12614)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/Administrator/AppData/Local/Temp/anonymous2881919078987181023webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:623)
+	at <anonymous class>.fxdriver.preconditions.visible(file:///C:/Users/quyentx/AppData/Local/Temp/anonymous3898371242530374492webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:10045)
+	at <anonymous class>.DelayedCommand.prototype.checkPreconditions_(file:///C:/Users/quyentx/AppData/Local/Temp/anonymous3898371242530374492webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12597)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/quyentx/AppData/Local/Temp/anonymous3898371242530374492webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12614)
+	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/quyentx/AppData/Local/Temp/anonymous3898371242530374492webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:623)
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.ElementNotVisibleException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SM_11 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2414" started-at="2016-04-20T04:48:51Z" finished-at="2016-04-20T04:48:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="SM_13()[pri:13, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_13" duration-ms="536" started-at="2016-04-20T04:48:53Z" description="Verify that Create form is opened correctly" finished-at="2016-04-20T04:48:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SM_13 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2244" started-at="2016-04-20T04:48:54Z" finished-at="2016-04-20T04:48:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="SM_14()[pri:14, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_14" duration-ms="1055" started-at="2016-04-20T04:48:56Z" description="Verify that the fields &#039;Name&#039;, &#039;Type&#039;  are required field" finished-at="2016-04-20T04:48:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SM_14 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2254" started-at="2016-04-20T04:48:57Z" finished-at="2016-04-20T04:49:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="SM_15(java.lang.String, java.lang.String, java.lang.String)[pri:15, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_15" duration-ms="1098" started-at="2016-04-20T04:49:00Z" description="Verify that user can create a new category" data-provider="createCategory" finished-at="2016-04-20T04:49:01Z">
+        </test-method> <!-- W05 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="afterMethod" is-config="true" duration-ms="3864" started-at="2016-04-20T15:37:07Z" finished-at="2016-04-20T15:37:10Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Communication]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Skill Domain]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
+                <![CDATA[[TestResult name=W05 status=FAILURE method=Webservice.W05(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:5, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SM_15 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2246" started-at="2016-04-20T04:49:01Z" finished-at="2016-04-20T04:49:03Z">
-          <reporter-output>
-          </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="SM_18(java.lang.String, java.lang.String, java.lang.String)[pri:18, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_18" duration-ms="859" started-at="2016-04-20T04:49:03Z" description="Verify that user can modifiy the information in a category" data-provider="editCategory" finished-at="2016-04-20T04:49:04Z">
+        <test-method status="FAIL" signature="W06(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:6, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="W06" duration-ms="14442" started-at="2016-04-20T15:37:11Z" description="Verify that when add new worklog in JIRA project webservice importing work correctly" data-provider="W06" finished-at="2016-04-20T15:37:25Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Test]]>
+                <![CDATA[http://192.168.0.200:8085/secure/Dashboard.jspa]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Skill Domain]]>
+                <![CDATA[trangntt]]>
               </value>
             </param>
             <param index="2">
-              <value>
-                <![CDATA[Software Engineering Knowledge]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SM_18 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2225" started-at="2016-04-20T04:49:04Z" finished-at="2016-04-20T04:49:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="SM_19()[pri:19, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_19" duration-ms="650" started-at="2016-04-20T04:49:06Z" description="Verify that the system confirm before discarding edit a category" finished-at="2016-04-20T04:49:07Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SM_19 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2238" started-at="2016-04-20T04:49:07Z" finished-at="2016-04-20T04:49:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="SM_21(java.lang.String, java.lang.String, java.lang.String)[pri:21, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_21" duration-ms="3357" started-at="2016-04-20T04:49:09Z" description="Verify that PM can discard to edit a category" data-provider="editCategory" finished-at="2016-04-20T04:49:12Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Test]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Skill Domain]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Software Engineering Knowledge]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SM_21 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2301" started-at="2016-04-20T04:49:12Z" finished-at="2016-04-20T04:49:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="finishCategory()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="finishCategory" is-config="true" duration-ms="235" started-at="2016-04-20T04:49:15Z" finished-at="2016-04-20T04:49:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- finishCategory -->
-        <test-method status="PASS" signature="SM_22(java.lang.String, java.lang.String)[pri:22, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_22" duration-ms="4362" started-at="2016-04-20T04:49:15Z" description="Verify that form &#039;New&#039; is opened correctly in Skills section" data-provider="projectManagerLogin" finished-at="2016-04-20T04:49:19Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[lienlt]]>
-              </value>
-            </param>
-            <param index="1">
               <value>
                 <![CDATA[12345678]]>
               </value>
             </param>
+            <param index="3">
+              <value>
+                <![CDATA[Selenium Practice]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[2h]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[02:00]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Trang-Nguyen Thi Thu Trang]]>
+              </value>
+            </param>
           </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Element is not clickable at point (228, 187.14999389648438). Other element would receive the click: <div class="loading"></div>
+Command duration or timeout: 731 milliseconds
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'quyentx-w7', ip: '169.254.145.253', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_74'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 5df9d804-4031-4c21-870d-dc6080c037fc]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Element is not clickable at point (228, 187.14999389648438). Other element would receive the click: <div class="loading"></div>
+Command duration or timeout: 731 milliseconds
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'quyentx-w7', ip: '169.254.145.253', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_74'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 5df9d804-4031-4c21-870d-dc6080c037fc
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at sun.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy10.click(Unknown Source)
+	at com.vsii.tsc.guru.pages.method.JiraProjectDetailsPageMethod.clickChooseTask(JiraProjectDetailsPageMethod.java:25)
+	at com.vsii.tsc.guru.testcase.Webservice.W06(Webservice.java:318)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:75)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:46)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SM_22 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2266" started-at="2016-04-20T04:49:19Z" finished-at="2016-04-20T04:49:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="SM_23()[pri:23, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_23" duration-ms="791" started-at="2016-04-20T04:49:21Z" description="Verify that the fields &#039;Name&#039;, &#039; Type&#039; are required fields" finished-at="2016-04-20T04:49:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SM_23 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2255" started-at="2016-04-20T04:49:22Z" finished-at="2016-04-20T04:49:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="FAIL" signature="SM_24(java.lang.String, java.lang.String, java.lang.String)[pri:24, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_24" duration-ms="2450" started-at="2016-04-20T04:49:25Z" description="Verify that user can create a new skill" data-provider="createSkill" finished-at="2016-04-20T04:49:27Z">
+        </test-method> <!-- W06 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="afterMethod" is-config="true" duration-ms="2451" started-at="2016-04-20T15:37:25Z" finished-at="2016-04-20T15:37:27Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Verbal]]>
+                <![CDATA[[TestResult name=W06 status=FAILURE method=Webservice.W06(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:6, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="FAIL" signature="W07(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:7, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="W07" duration-ms="13666" started-at="2016-04-20T15:37:28Z" description="Verify that when add new worklog in JIRA project webservice importing work correctly" data-provider="W07" finished-at="2016-04-20T15:37:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://192.168.0.200:8085/secure/Dashboard.jspa]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Communication]]>
+                <![CDATA[lienlt]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[]]>
+                <![CDATA[12345678]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Selenium Practice]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[02:00]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Trang-Nguyen Thi Thu Trang]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[Unable to locate element: {"method":"xpath","selector":"//span[@class='oe_form_char_content']"}
-Command duration or timeout: 2.05 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[Element is not clickable at point (228, 187.14999389648438). Other element would receive the click: <div class="loading"></div>
+Command duration or timeout: 604 milliseconds
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
+System info: host: 'quyentx-w7', ip: '169.254.145.253', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_74'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: f7f0ef57-69e1-4f8c-ad33-8f6066433ab0
-*** Element info: {Using=xpath, value=//span[@class='oe_form_char_content']}]]>
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 5df9d804-4031-4c21-870d-dc6080c037fc]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//span[@class='oe_form_char_content']"}
-Command duration or timeout: 2.05 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.WebDriverException: Element is not clickable at point (228, 187.14999389648438). Other element would receive the click: <div class="loading"></div>
+Command duration or timeout: 604 milliseconds
 Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
+System info: host: 'quyentx-w7', ip: '169.254.145.253', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_74'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: f7f0ef57-69e1-4f8c-ad33-8f6066433ab0
-*** Element info: {Using=xpath, value=//span[@class='oe_form_char_content']}
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 5df9d804-4031-4c21-870d-dc6080c037fc
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.getText(Unknown Source)
-	at com.vsii.tsc.guru.pages.method.CreateSkillPageMethod.getCreatedSkillName(CreateSkillPageMethod.java:59)
-	at com.vsii.tsc.guru.testcase.SkillsManagement.SM_24(SkillsManagement.java:348)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at sun.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy10.click(Unknown Source)
+	at com.vsii.tsc.guru.pages.method.JiraProjectDetailsPageMethod.clickChooseTask(JiraProjectDetailsPageMethod.java:25)
+	at com.vsii.tsc.guru.testcase.Webservice.W07(Webservice.java:366)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
@@ -645,269 +641,37 @@ Session ID: f7f0ef57-69e1-4f8c-ad33-8f6066433ab0
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
 	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//span[@class='oe_form_char_content']"}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/Administrator/AppData/Local/Temp/anonymous2881919078987181023webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10723)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/Administrator/AppData/Local/Temp/anonymous2881919078987181023webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:623)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:75)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:46)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SM_24 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2256" started-at="2016-04-20T04:49:27Z" finished-at="2016-04-20T04:49:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="FAIL" signature="SM_25(java.lang.String, java.lang.String, java.lang.String)[pri:25, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_25" duration-ms="32152" started-at="2016-04-20T04:49:29Z" description="Verify that user can modifiy the information in a category" data-provider="editCategory" finished-at="2016-04-20T04:50:01Z">
+        </test-method> <!-- W07 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e]" name="afterMethod" is-config="true" duration-ms="2454" started-at="2016-04-20T15:37:41Z" finished-at="2016-04-20T15:37:44Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Test]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Skill Domain]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Software Engineering Knowledge]]>
+                <![CDATA[[TestResult name=W07 status=FAILURE method=Webservice.W07(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:7, instance:com.vsii.tsc.guru.testcase.Webservice@1a5c39e] output={null}]]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Timed out after 30 seconds waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //div[@class = 'oe_form_buttons']/span[@class='oe_form_buttons_view']/div/button[text()='Edit']'
-Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: f7f0ef57-69e1-4f8c-ad33-8f6066433ab0]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Timed out after 30 seconds waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //div[@class = 'oe_form_buttons']/span[@class='oe_form_buttons_view']/div/button[text()='Edit']'
-Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: f7f0ef57-69e1-4f8c-ad33-8f6066433ab0
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
-	at com.vsii.tsc.guru.commethods.CommonMethods.waitUntil(CommonMethods.java:29)
-	at com.vsii.tsc.guru.testcase.SkillsManagement.SM_25(SkillsManagement.java:355)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//div[@class = 'oe_form_buttons']/span[@class='oe_form_buttons_view']/div/button[text()='Edit']"}
-Command duration or timeout: 2.06 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: f7f0ef57-69e1-4f8c-ad33-8f6066433ab0
-*** Element info: {Using=xpath, value=//div[@class = 'oe_form_buttons']/span[@class='oe_form_buttons_view']/div/button[text()='Edit']}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:302)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:41)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:288)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:285)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:696)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:689)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)
-	... 26 more
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//div[@class = 'oe_form_buttons']/span[@class='oe_form_buttons_view']/div/button[text()='Edit']"}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/Administrator/AppData/Local/Temp/anonymous2881919078987181023webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10723)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/Administrator/AppData/Local/Temp/anonymous2881919078987181023webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:623)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SM_25 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2242" started-at="2016-04-20T04:50:01Z" finished-at="2016-04-20T04:50:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="FAIL" signature="SM_26()[pri:26, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_26" duration-ms="32128" started-at="2016-04-20T04:50:04Z" description="Verify that the system confirm before discarding edit a category" finished-at="2016-04-20T04:50:36Z">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Timed out after 30 seconds waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //div[@class = 'oe_form_buttons']/span[@class='oe_form_buttons_view']/div/button[text()='Edit']'
-Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: f7f0ef57-69e1-4f8c-ad33-8f6066433ab0]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Timed out after 30 seconds waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //div[@class = 'oe_form_buttons']/span[@class='oe_form_buttons_view']/div/button[text()='Edit']'
-Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: f7f0ef57-69e1-4f8c-ad33-8f6066433ab0
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
-	at com.vsii.tsc.guru.commethods.CommonMethods.waitUntil(CommonMethods.java:29)
-	at com.vsii.tsc.guru.testcase.SkillsManagement.SM_26(SkillsManagement.java:369)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//div[@class = 'oe_form_buttons']/span[@class='oe_form_buttons_view']/div/button[text()='Edit']"}
-Command duration or timeout: 2.04 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: f7f0ef57-69e1-4f8c-ad33-8f6066433ab0
-*** Element info: {Using=xpath, value=//div[@class = 'oe_form_buttons']/span[@class='oe_form_buttons_view']/div/button[text()='Edit']}
-	at sun.reflect.GeneratedConstructorAccessor37.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy9.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:302)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:41)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:288)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:285)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:696)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:689)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)
-	... 26 more
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//div[@class = 'oe_form_buttons']/span[@class='oe_form_buttons_view']/div/button[text()='Edit']"}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
-System info: host: 'ADMIN', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_71'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/Administrator/AppData/Local/Temp/anonymous2881919078987181023webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10723)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/Administrator/AppData/Local/Temp/anonymous2881919078987181023webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:623)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+      </class> <!-- com.vsii.tsc.guru.testcase.Webservice -->
+      <class name="com.vsii.tsc.utility.TestBase">
+        <test-method status="PASS" signature="setupSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@12108b5]" name="setupSuite" is-config="true" duration-ms="13470" started-at="2016-04-20T15:35:14Z" finished-at="2016-04-20T15:35:28Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SM_26 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="afterMethod" is-config="true" duration-ms="2241" started-at="2016-04-20T04:50:36Z" finished-at="2016-04-20T04:50:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="SKIP" signature="SM_28(java.lang.String, java.lang.String, java.lang.String)[pri:28, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="SM_28" duration-ms="0" started-at="2016-04-20T04:50:38Z" description="Verify that user can discard to edit a skill" data-provider="editSkill" finished-at="2016-04-20T04:50:38Z">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Method public void com.vsii.tsc.guru.testcase.SkillsManagement.SM_28(java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException requires a @DataProvider named : editSkill in class com.vsii.tsc.guru.testdata.TestData]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Method public void com.vsii.tsc.guru.testcase.SkillsManagement.SM_28(java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException requires a @DataProvider named : editSkill in class com.vsii.tsc.guru.testdata.TestData
-	at org.testng.internal.Parameters.findDataProvider(Parameters.java:263)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:419)
-	at org.testng.internal.Invoker.handleParameters(Invoker.java:1270)
-	at org.testng.internal.Invoker.createParameters(Invoker.java:985)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1075)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SM_28 -->
-        <test-method status="PASS" signature="teardownSuite()[pri:0, instance:com.vsii.tsc.guru.testcase.SkillsManagement@6bf256fa]" name="teardownSuite" is-config="true" duration-ms="0" started-at="2016-04-20T04:50:38Z" finished-at="2016-04-20T04:50:38Z">
+        </test-method> <!-- setupSuite -->
+        <test-method status="PASS" signature="teardownSuite()[pri:0, instance:com.vsii.tsc.utility.TestBase@12108b5]" name="teardownSuite" is-config="true" duration-ms="1" started-at="2016-04-20T15:37:44Z" finished-at="2016-04-20T15:37:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownSuite -->
-      </class> <!-- com.vsii.tsc.guru.testcase.SkillsManagement -->
-    </test> <!-- Skill management -->
+      </class> <!-- com.vsii.tsc.utility.TestBase -->
+    </test> <!-- WebService -->
   </suite> <!-- Suite -->
 </testng-results>
