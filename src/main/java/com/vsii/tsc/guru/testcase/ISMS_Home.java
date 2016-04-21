@@ -2,6 +2,7 @@ package com.vsii.tsc.guru.testcase;
 
 import java.io.IOException;
 
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -44,11 +45,10 @@ public class ISMS_Home extends TestBase
         objISMS.logout();
     }
 
-  @AfterMethod
-  public void afterMethod() throws Exception {
-   CommonOperations.takePicture();
-  //TestBase.driver.quit();
- }
+ @AfterMethod
+ public void afterMethod(ITestResult testResult) throws Exception {
+  CommonOperations.getMethodTestResult(testResult);
+  CommonOperations.takePicture();}
 
 //   @AfterClass
 //    public void teardownClass() {
