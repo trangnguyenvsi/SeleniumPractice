@@ -3,6 +3,7 @@ package com.vsii.tsc.guru.testcase;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -338,7 +339,8 @@ Assert.assertEquals(objProject.getActStage(), StageExp);
 }
 
 @AfterMethod
-public void afterMethod() throws Exception {
+public void afterMethod(ITestResult testResult) throws Exception {
+ CommonOperations.getMethodTestResult(testResult);
  CommonOperations.takePicture();
  objISMS.logout();
 
